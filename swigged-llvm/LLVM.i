@@ -32,6 +32,7 @@
 typedef bool LLVMBool;
 REF_CLASS(LLVMMCJITCompilerOptions, MCJITCompilerOptions)
 REF_CLASS(LLVMMCJITMemoryManagerRef, MCJITMemoryManagerRef)
+REF_CLASS(LLVMAttributeRef, AttributeRef)
 REF_CLASS(LLVMBasicBlockRef, BasicBlockRef)
 REF_CLASS(LLVMBuilderRef, BuilderRef)
 REF_CLASS(LLVMContextRef, ContextRef)

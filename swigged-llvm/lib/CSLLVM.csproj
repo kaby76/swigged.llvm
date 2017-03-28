@@ -30,7 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\build\vs2013\lib\Debug_x64\</OutputPath>
+    <OutputPath>..\x64\Debug\</OutputPath>
     <BaseIntermediateOutputPath>..\..\build\vs2013\obj\x64\Debug\SharpLLVM\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
     <DefineConstants>WINDOWS</DefineConstants>
@@ -71,7 +71,7 @@
   <ItemGroup>
     <Compile Include="AtomicOrdering.cs" />
     <Compile Include="AtomicRMWBinOp.cs" />
-    <Compile Include="Attribute.cs" />
+    <Compile Include="AttributeRef.cs" />
     <Compile Include="BasicBlockRef.cs" />
     <Compile Include="BuilderRef.cs" />
     <Compile Include="ByteOrdering.cs" />
@@ -99,12 +99,12 @@
     <Compile Include="PassRegistryRef.cs" />
     <Compile Include="RealPredicate.cs" />
     <Compile Include="RelocMode.cs" />
+    <Compile Include="SWIGTYPE_p_f_LLVMDiagnosticInfoRef_p_void__void.cs" />
     <Compile Include="SWIGTYPE_p_f_p_void_p_p_char__bool.cs" />
     <Compile Include="SWIGTYPE_p_f_p_void_unsigned_int_unsigned_int_unsigned_int_p_q_const__char_bool__p_unsigned_char.cs" />
     <Compile Include="SWIGTYPE_p_f_p_void_unsigned_int_unsigned_int_unsigned_int_p_q_const__char__p_unsigned_char.cs" />
     <Compile Include="SWIGTYPE_p_f_p_void__void.cs" />
     <Compile Include="SWIGTYPE_p_unsigned_int.cs" />
-    <Compile Include="SWIGTYPE_p_void.cs" />
     <Compile Include="TargetDataRef.cs" />
     <Compile Include="TargetLibraryInfoRef.cs" />
     <Compile Include="TargetMachineRef.cs" />
@@ -113,6 +113,7 @@
     <Compile Include="TypeKind.cs" />
     <Compile Include="TypeRef.cs" />
     <Compile Include="UseRef.cs" />
+    <Compile Include="ValueKind.cs" />
     <Compile Include="ValueRef.cs" />
     <Compile Include="VerifierFailureAction.cs" />
     <Compile Include="Visibility.cs" />
