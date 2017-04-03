@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{28159184-D97E-4A6C-8AD1-253DC15640C4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SharpLLVMNative</RootNamespace>
-    <ProjectName>CSLLVM.Native</ProjectName>
+    <RootNamespace>Swigged-LLVM.Native</RootNamespace>
+    <ProjectName>Swigged-LLVM.Native</ProjectName>
     <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
