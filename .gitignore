@@ -3,7 +3,7 @@
 
 # User-specific files
 *.suo
-*.user
+# *.user	NOOOOOOO!!!!! User files for VS contains important DEBUG settings!
 *.userosscache
 *.sln.docstates
 

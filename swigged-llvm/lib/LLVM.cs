@@ -2858,6 +2858,19 @@ public class LLVM {
     return ret;
   }
 
+  public unsafe static bool VerifyModule(ModuleRef M, VerifierFailureAction Action, out string OutMessage)
+  {
+      string msg = new string(new char[1000]);
+      OutMessage = "";
+      bool ret = LLVMPINVOKE.VerifyModule(M.Value, (int)Action, msg);
+     return ret;
+  }
+
+  public unsafe static bool VerifyFunction(ValueRef Fn, VerifierFailureAction Action) {
+    bool ret = LLVMPINVOKE.VerifyFunction(Fn.Value, (int)Action);
+    return ret;
+  }
+
   public unsafe static bool ParseBitcode(MemoryBufferRef MemBuf, out ModuleRef OutModule, out string OutMessage) {
     bool ret = LLVMPINVOKE.ParseBitcode(MemBuf.Value, out OutModule.Value, out OutMessage);
     return ret;
@@ -2917,6 +2930,38 @@ public class LLVM {
 		MemoryBufferRef ret = new MemoryBufferRef(LLVMPINVOKE.WriteBitcodeToMemoryBuffer(M.Value));
 		return ret;
 	}
+
+  public unsafe static System.IntPtr CreateDisasm(string TripleName, System.IntPtr DisInfo, int TagType, SWIGTYPE_p_f_p_void_unsigned_long_long_unsigned_long_long_unsigned_long_long_int_p_void__int GetOpInfo, SWIGTYPE_p_f_p_void_unsigned_long_long_p_unsigned_long_long_unsigned_long_long_p_p_q_const__char__p_char SymbolLookUp) { return LLVMPINVOKE.CreateDisasm(TripleName, DisInfo, TagType, SWIGTYPE_p_f_p_void_unsigned_long_long_unsigned_long_long_unsigned_long_long_int_p_void__int.getCPtr(GetOpInfo), SWIGTYPE_p_f_p_void_unsigned_long_long_p_unsigned_long_long_unsigned_long_long_p_p_q_const__char__p_char.getCPtr(SymbolLookUp)); }
+
+  public unsafe static System.IntPtr CreateDisasmCPU(string Triple, string CPU, System.IntPtr DisInfo, int TagType, SWIGTYPE_p_f_p_void_unsigned_long_long_unsigned_long_long_unsigned_long_long_int_p_void__int GetOpInfo, SWIGTYPE_p_f_p_void_unsigned_long_long_p_unsigned_long_long_unsigned_long_long_p_p_q_const__char__p_char SymbolLookUp) { return LLVMPINVOKE.CreateDisasmCPU(Triple, CPU, DisInfo, TagType, SWIGTYPE_p_f_p_void_unsigned_long_long_unsigned_long_long_unsigned_long_long_int_p_void__int.getCPtr(GetOpInfo), SWIGTYPE_p_f_p_void_unsigned_long_long_p_unsigned_long_long_unsigned_long_long_p_p_q_const__char__p_char.getCPtr(SymbolLookUp)); }
+
+  public unsafe static System.IntPtr CreateDisasmCPUFeatures(string Triple, string CPU, string Features, System.IntPtr DisInfo, int TagType, SWIGTYPE_p_f_p_void_unsigned_long_long_unsigned_long_long_unsigned_long_long_int_p_void__int GetOpInfo, SWIGTYPE_p_f_p_void_unsigned_long_long_p_unsigned_long_long_unsigned_long_long_p_p_q_const__char__p_char SymbolLookUp) { return LLVMPINVOKE.CreateDisasmCPUFeatures(Triple, CPU, Features, DisInfo, TagType, SWIGTYPE_p_f_p_void_unsigned_long_long_unsigned_long_long_unsigned_long_long_int_p_void__int.getCPtr(GetOpInfo), SWIGTYPE_p_f_p_void_unsigned_long_long_p_unsigned_long_long_unsigned_long_long_p_p_q_const__char__p_char.getCPtr(SymbolLookUp)); }
+
+  public unsafe static int SetDisasmOptions(System.IntPtr DC, ulong Options) {
+    int ret = LLVMPINVOKE.SetDisasmOptions(DC, Options);
+    return ret;
+  }
+
+  public unsafe static void DisasmDispose(System.IntPtr DC) {
+    LLVMPINVOKE.DisasmDispose(DC);
+  }
+
+  public unsafe static uint DisasmInstruction(System.IntPtr DC, SWIGTYPE_p_unsigned_char Bytes, ulong BytesSize, ulong PC, string OutString, uint OutStringSize) {
+    uint ret = LLVMPINVOKE.DisasmInstruction(DC, SWIGTYPE_p_unsigned_char.getCPtr(Bytes), BytesSize, PC, OutString, OutStringSize);
+    return ret;
+  }
+
+  public unsafe static void InstallFatalErrorHandler(SWIGTYPE_p_f_p_q_const__char__void Handler) {
+    LLVMPINVOKE.InstallFatalErrorHandler(SWIGTYPE_p_f_p_q_const__char__void.getCPtr(Handler));
+  }
+
+  public unsafe static void ResetFatalErrorHandler() {
+    LLVMPINVOKE.ResetFatalErrorHandler();
+  }
+
+  public unsafe static void EnablePrettyStackTrace() {
+    LLVMPINVOKE.EnablePrettyStackTrace();
+  }
 
   public unsafe static void LinkInMCJIT() {
     LLVMPINVOKE.LinkInMCJIT();
@@ -3061,6 +3106,384 @@ public class LLVM {
 
   public unsafe static void DisposeMCJITMemoryManager(MCJITMemoryManagerRef MM) {
     LLVMPINVOKE.DisposeMCJITMemoryManager(MM.Value);
+  }
+
+  public unsafe static void InitializeTransformUtils(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeTransformUtils(R.Value);
+  }
+
+  public unsafe static void InitializeScalarOpts(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeScalarOpts(R.Value);
+  }
+
+  public unsafe static void InitializeObjCARCOpts(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeObjCARCOpts(R.Value);
+  }
+
+  public unsafe static void InitializeVectorization(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeVectorization(R.Value);
+  }
+
+  public unsafe static void InitializeInstCombine(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeInstCombine(R.Value);
+  }
+
+  public unsafe static void InitializeIPO(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeIPO(R.Value);
+  }
+
+  public unsafe static void InitializeInstrumentation(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeInstrumentation(R.Value);
+  }
+
+  public unsafe static void InitializeAnalysis(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeAnalysis(R.Value);
+  }
+
+  public unsafe static void InitializeIPA(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeIPA(R.Value);
+  }
+
+  public unsafe static void InitializeCodeGen(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeCodeGen(R.Value);
+  }
+
+  public unsafe static void InitializeTarget(PassRegistryRef R) {
+    LLVMPINVOKE.InitializeTarget(R.Value);
+  }
+
+  public unsafe static bool ParseIRInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutM, out string OutMessage) {
+    bool ret = LLVMPINVOKE.ParseIRInContext(ContextRef.Value, MemBuf.Value, out OutM.Value, out OutMessage);
+    return ret;
+  }
+
+  public unsafe static bool LinkModules2(ModuleRef Dest, ModuleRef Src) {
+    bool ret = LLVMPINVOKE.LinkModules2(Dest.Value, Src.Value);
+    return ret;
+  }
+
+  public unsafe static OrcJITStackRef OrcCreateInstance(TargetMachineRef TM) {
+		OrcJITStackRef ret = new OrcJITStackRef(LLVMPINVOKE.OrcCreateInstance(TM.Value));
+		return ret;
+	}
+
+  public unsafe static string OrcGetErrorMsg(OrcJITStackRef JITStack) {
+    string ret = LLVMPINVOKE.OrcGetErrorMsg(JITStack.Value);
+    return ret;
+  }
+
+  public unsafe static void OrcGetMangledSymbol(OrcJITStackRef JITStack, out string MangledSymbol, string Symbol) {
+    LLVMPINVOKE.OrcGetMangledSymbol(JITStack.Value, out MangledSymbol, Symbol);
+  }
+
+  public unsafe static void OrcDisposeMangledSymbol(string MangledSymbol) {
+    LLVMPINVOKE.OrcDisposeMangledSymbol(MangledSymbol);
+  }
+
+  public unsafe static ulong OrcCreateLazyCompileCallback(OrcJITStackRef JITStack, SWIGTYPE_p_f_LLVMOrcJITStackRef_p_void__unsigned_long_long Callback, System.IntPtr CallbackCtx) {
+    ulong ret = LLVMPINVOKE.OrcCreateLazyCompileCallback(JITStack.Value, SWIGTYPE_p_f_LLVMOrcJITStackRef_p_void__unsigned_long_long.getCPtr(Callback), CallbackCtx);
+    return ret;
+  }
+
+  public unsafe static OrcErrorCode OrcCreateIndirectStub(OrcJITStackRef JITStack, string StubName, ulong InitAddr) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcCreateIndirectStub(JITStack.Value, StubName, InitAddr);
+    return ret;
+  }
+
+  public unsafe static OrcErrorCode OrcSetIndirectStubPointer(OrcJITStackRef JITStack, string StubName, ulong NewAddr) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcSetIndirectStubPointer(JITStack.Value, StubName, NewAddr);
+    return ret;
+  }
+
+  public unsafe static uint OrcAddEagerlyCompiledIR(OrcJITStackRef JITStack, ModuleRef Mod, SWIGTYPE_p_f_p_q_const__char_p_void__unsigned_long_long SymbolResolver, System.IntPtr SymbolResolverCtx) {
+    uint ret = LLVMPINVOKE.OrcAddEagerlyCompiledIR(JITStack.Value, Mod.Value, SWIGTYPE_p_f_p_q_const__char_p_void__unsigned_long_long.getCPtr(SymbolResolver), SymbolResolverCtx);
+    return ret;
+  }
+
+  public unsafe static uint OrcAddLazilyCompiledIR(OrcJITStackRef JITStack, ModuleRef Mod, SWIGTYPE_p_f_p_q_const__char_p_void__unsigned_long_long SymbolResolver, System.IntPtr SymbolResolverCtx) {
+    uint ret = LLVMPINVOKE.OrcAddLazilyCompiledIR(JITStack.Value, Mod.Value, SWIGTYPE_p_f_p_q_const__char_p_void__unsigned_long_long.getCPtr(SymbolResolver), SymbolResolverCtx);
+    return ret;
+  }
+
+  public unsafe static void OrcRemoveModule(OrcJITStackRef JITStack, uint H) {
+    LLVMPINVOKE.OrcRemoveModule(JITStack.Value, H);
+  }
+
+  public unsafe static ulong OrcGetSymbolAddress(OrcJITStackRef JITStack, string SymbolName) {
+    ulong ret = LLVMPINVOKE.OrcGetSymbolAddress(JITStack.Value, SymbolName);
+    return ret;
+  }
+
+  public unsafe static void OrcDisposeInstance(OrcJITStackRef JITStack) {
+    LLVMPINVOKE.OrcDisposeInstance(JITStack.Value);
+  }
+
+  public unsafe static bool LoadLibraryPermanently(string Filename) {
+    bool ret = LLVMPINVOKE.LoadLibraryPermanently(Filename);
+    return ret;
+  }
+
+  public unsafe static void ParseCommandLineOptions(int argc, out string argv, string Overview) {
+    LLVMPINVOKE.ParseCommandLineOptions(argc, out argv, Overview);
+  }
+
+  public unsafe static System.IntPtr SearchForAddressOfSymbol(string symbolName) { return LLVMPINVOKE.SearchForAddressOfSymbol(symbolName); }
+
+  public unsafe static void AddSymbol(string symbolName, System.IntPtr symbolValue) {
+    LLVMPINVOKE.AddSymbol(symbolName, symbolValue);
+  }
+
+  public unsafe static void InitializeAllTargetInfos() {
+    LLVMPINVOKE.InitializeAllTargetInfos();
+  }
+
+  public unsafe static void InitializeAllTargets() {
+    LLVMPINVOKE.InitializeAllTargets();
+  }
+
+  public unsafe static void InitializeAllTargetMCs() {
+    LLVMPINVOKE.InitializeAllTargetMCs();
+  }
+
+  public unsafe static void InitializeAllAsmPrinters() {
+    LLVMPINVOKE.InitializeAllAsmPrinters();
+  }
+
+  public unsafe static void InitializeAllAsmParsers() {
+    LLVMPINVOKE.InitializeAllAsmParsers();
+  }
+
+  public unsafe static void InitializeAllDisassemblers() {
+    LLVMPINVOKE.InitializeAllDisassemblers();
+  }
+
+  public unsafe static bool InitializeNativeTarget() {
+    bool ret = LLVMPINVOKE.InitializeNativeTarget();
+    return ret;
+  }
+
+  public unsafe static bool InitializeNativeAsmParser() {
+    bool ret = LLVMPINVOKE.InitializeNativeAsmParser();
+    return ret;
+  }
+
+  public unsafe static bool InitializeNativeAsmPrinter() {
+    bool ret = LLVMPINVOKE.InitializeNativeAsmPrinter();
+    return ret;
+  }
+
+  public unsafe static bool InitializeNativeDisassembler() {
+    bool ret = LLVMPINVOKE.InitializeNativeDisassembler();
+    return ret;
+  }
+
+  public unsafe static TargetDataRef GetModuleDataLayout(ModuleRef M) {
+		TargetDataRef ret = new TargetDataRef(LLVMPINVOKE.GetModuleDataLayout(M.Value));
+		return ret;
+	}
+
+  public unsafe static void SetModuleDataLayout(ModuleRef M, TargetDataRef DL) {
+    LLVMPINVOKE.SetModuleDataLayout(M.Value, DL.Value);
+  }
+
+  public unsafe static TargetDataRef CreateTargetData(string StringRep) {
+		TargetDataRef ret = new TargetDataRef(LLVMPINVOKE.CreateTargetData(StringRep));
+		return ret;
+	}
+
+  public unsafe static void DisposeTargetData(TargetDataRef TD) {
+    LLVMPINVOKE.DisposeTargetData(TD.Value);
+  }
+
+  public unsafe static void AddTargetLibraryInfo(TargetLibraryInfoRef TLI, PassManagerRef PM) {
+    LLVMPINVOKE.AddTargetLibraryInfo(TLI.Value, PM.Value);
+  }
+
+  public unsafe static string CopyStringRepOfTargetData(TargetDataRef TD) {
+    string ret = LLVMPINVOKE.CopyStringRepOfTargetData(TD.Value);
+    return ret;
+  }
+
+  public unsafe static ByteOrdering ByteOrder(TargetDataRef TD) {
+    ByteOrdering ret = (ByteOrdering)LLVMPINVOKE.ByteOrder(TD.Value);
+    return ret;
+  }
+
+  public unsafe static uint PointerSize(TargetDataRef TD) {
+    uint ret = LLVMPINVOKE.PointerSize(TD.Value);
+    return ret;
+  }
+
+  public unsafe static uint PointerSizeForAS(TargetDataRef TD, uint AS) {
+    uint ret = LLVMPINVOKE.PointerSizeForAS(TD.Value, AS);
+    return ret;
+  }
+
+  public unsafe static TypeRef IntPtrType(TargetDataRef TD) {
+		TypeRef ret = new TypeRef(LLVMPINVOKE.IntPtrType(TD.Value));
+		return ret;
+	}
+
+  public unsafe static TypeRef IntPtrTypeForAS(TargetDataRef TD, uint AS) {
+		TypeRef ret = new TypeRef(LLVMPINVOKE.IntPtrTypeForAS(TD.Value, AS));
+		return ret;
+	}
+
+  public unsafe static TypeRef IntPtrTypeInContext(ContextRef C, TargetDataRef TD) {
+		TypeRef ret = new TypeRef(LLVMPINVOKE.IntPtrTypeInContext(C.Value, TD.Value));
+		return ret;
+	}
+
+  public unsafe static TypeRef IntPtrTypeForASInContext(ContextRef C, TargetDataRef TD, uint AS) {
+		TypeRef ret = new TypeRef(LLVMPINVOKE.IntPtrTypeForASInContext(C.Value, TD.Value, AS));
+		return ret;
+	}
+
+  public unsafe static ulong SizeOfTypeInBits(TargetDataRef TD, TypeRef Ty) {
+    ulong ret = LLVMPINVOKE.SizeOfTypeInBits(TD.Value, Ty.Value);
+    return ret;
+  }
+
+  public unsafe static ulong StoreSizeOfType(TargetDataRef TD, TypeRef Ty) {
+    ulong ret = LLVMPINVOKE.StoreSizeOfType(TD.Value, Ty.Value);
+    return ret;
+  }
+
+  public unsafe static ulong ABISizeOfType(TargetDataRef TD, TypeRef Ty) {
+    ulong ret = LLVMPINVOKE.ABISizeOfType(TD.Value, Ty.Value);
+    return ret;
+  }
+
+  public unsafe static uint ABIAlignmentOfType(TargetDataRef TD, TypeRef Ty) {
+    uint ret = LLVMPINVOKE.ABIAlignmentOfType(TD.Value, Ty.Value);
+    return ret;
+  }
+
+  public unsafe static uint CallFrameAlignmentOfType(TargetDataRef TD, TypeRef Ty) {
+    uint ret = LLVMPINVOKE.CallFrameAlignmentOfType(TD.Value, Ty.Value);
+    return ret;
+  }
+
+  public unsafe static uint PreferredAlignmentOfType(TargetDataRef TD, TypeRef Ty) {
+    uint ret = LLVMPINVOKE.PreferredAlignmentOfType(TD.Value, Ty.Value);
+    return ret;
+  }
+
+  public unsafe static uint PreferredAlignmentOfGlobal(TargetDataRef TD, ValueRef GlobalVar) {
+    uint ret = LLVMPINVOKE.PreferredAlignmentOfGlobal(TD.Value, GlobalVar.Value);
+    return ret;
+  }
+
+  public unsafe static uint ElementAtOffset(TargetDataRef TD, TypeRef StructTy, ulong Offset) {
+    uint ret = LLVMPINVOKE.ElementAtOffset(TD.Value, StructTy.Value, Offset);
+    return ret;
+  }
+
+  public unsafe static ulong OffsetOfElement(TargetDataRef TD, TypeRef StructTy, uint Element) {
+    ulong ret = LLVMPINVOKE.OffsetOfElement(TD.Value, StructTy.Value, Element);
+    return ret;
+  }
+
+  public unsafe static TargetRef GetFirstTarget() {
+		TargetRef ret = new TargetRef(LLVMPINVOKE.GetFirstTarget());
+		return ret;
+	}
+
+  public unsafe static TargetRef GetNextTarget(TargetRef T) {
+		TargetRef ret = new TargetRef(LLVMPINVOKE.GetNextTarget(T.Value));
+		return ret;
+	}
+
+  public unsafe static TargetRef GetTargetFromName(string Name) {
+		TargetRef ret = new TargetRef(LLVMPINVOKE.GetTargetFromName(Name));
+		return ret;
+	}
+
+  public unsafe static bool GetTargetFromTriple(string Triple, out TargetRef T, out string ErrorMessage) {
+    bool ret = LLVMPINVOKE.GetTargetFromTriple(Triple, out T.Value, out ErrorMessage);
+    return ret;
+  }
+
+  public unsafe static string GetTargetName(TargetRef T) {
+    string ret = LLVMPINVOKE.GetTargetName(T.Value);
+    return ret;
+  }
+
+  public unsafe static string GetTargetDescription(TargetRef T) {
+    string ret = LLVMPINVOKE.GetTargetDescription(T.Value);
+    return ret;
+  }
+
+  public unsafe static bool TargetHasJIT(TargetRef T) {
+    bool ret = LLVMPINVOKE.TargetHasJIT(T.Value);
+    return ret;
+  }
+
+  public unsafe static bool TargetHasTargetMachine(TargetRef T) {
+    bool ret = LLVMPINVOKE.TargetHasTargetMachine(T.Value);
+    return ret;
+  }
+
+  public unsafe static bool TargetHasAsmBackend(TargetRef T) {
+    bool ret = LLVMPINVOKE.TargetHasAsmBackend(T.Value);
+    return ret;
+  }
+
+  public unsafe static TargetMachineRef CreateTargetMachine(TargetRef T, string Triple, string CPU, string Features, CodeGenOptLevel Level, RelocMode Reloc, CodeModel CodeModel) {
+		TargetMachineRef ret = new TargetMachineRef(LLVMPINVOKE.CreateTargetMachine(T.Value, Triple, CPU, Features, (int)Level, (int)Reloc, (int)CodeModel));
+		return ret;
+	}
+
+  public unsafe static void DisposeTargetMachine(TargetMachineRef T) {
+    LLVMPINVOKE.DisposeTargetMachine(T.Value);
+  }
+
+  public unsafe static TargetRef GetTargetMachineTarget(TargetMachineRef T) {
+		TargetRef ret = new TargetRef(LLVMPINVOKE.GetTargetMachineTarget(T.Value));
+		return ret;
+	}
+
+  public unsafe static string GetTargetMachineTriple(TargetMachineRef T) {
+    string ret = LLVMPINVOKE.GetTargetMachineTriple(T.Value);
+    return ret;
+  }
+
+  public unsafe static string GetTargetMachineCPU(TargetMachineRef T) {
+    string ret = LLVMPINVOKE.GetTargetMachineCPU(T.Value);
+    return ret;
+  }
+
+  public unsafe static string GetTargetMachineFeatureString(TargetMachineRef T) {
+    string ret = LLVMPINVOKE.GetTargetMachineFeatureString(T.Value);
+    return ret;
+  }
+
+  public unsafe static TargetDataRef CreateTargetDataLayout(TargetMachineRef T) {
+		TargetDataRef ret = new TargetDataRef(LLVMPINVOKE.CreateTargetDataLayout(T.Value));
+		return ret;
+	}
+
+  public unsafe static void SetTargetMachineAsmVerbosity(TargetMachineRef T, bool VerboseAsm) {
+    LLVMPINVOKE.SetTargetMachineAsmVerbosity(T.Value, VerboseAsm);
+  }
+
+  public unsafe static bool TargetMachineEmitToFile(TargetMachineRef T, ModuleRef M, string Filename, CodeGenFileType codegen, out string ErrorMessage) {
+    bool ret = LLVMPINVOKE.TargetMachineEmitToFile(T.Value, M.Value, Filename, (int)codegen, out ErrorMessage);
+    return ret;
+  }
+
+  public unsafe static bool TargetMachineEmitToMemoryBuffer(TargetMachineRef T, ModuleRef M, CodeGenFileType codegen, out string ErrorMessage, out MemoryBufferRef OutMemBuf) {
+    bool ret = LLVMPINVOKE.TargetMachineEmitToMemoryBuffer(T.Value, M.Value, (int)codegen, out ErrorMessage, out OutMemBuf.Value);
+    return ret;
+  }
+
+  public unsafe static string GetDefaultTargetTriple() {
+    string ret = LLVMPINVOKE.GetDefaultTargetTriple();
+    return ret;
+  }
+
+  public unsafe static void AddAnalysisPasses(TargetMachineRef T, PassManagerRef PM) {
+    LLVMPINVOKE.AddAnalysisPasses(T.Value, PM.Value);
   }
 
   public unsafe static void AddArgumentPromotionPass(PassManagerRef PM) {
@@ -3336,280 +3759,40 @@ public class LLVM {
     LLVMPINVOKE.AddSLPVectorizePass(PM.Value);
   }
 
-  public unsafe static void InitializeAllTargetInfos() {
-    LLVMPINVOKE.InitializeAllTargetInfos();
-  }
-
-  public unsafe static void InitializeAllTargets() {
-    LLVMPINVOKE.InitializeAllTargets();
-  }
-
-  public unsafe static void InitializeAllTargetMCs() {
-    LLVMPINVOKE.InitializeAllTargetMCs();
-  }
-
-  public unsafe static void InitializeAllAsmPrinters() {
-    LLVMPINVOKE.InitializeAllAsmPrinters();
-  }
-
-  public unsafe static void InitializeAllAsmParsers() {
-    LLVMPINVOKE.InitializeAllAsmParsers();
-  }
-
-  public unsafe static void InitializeAllDisassemblers() {
-    LLVMPINVOKE.InitializeAllDisassemblers();
-  }
-
-  public unsafe static bool InitializeNativeTarget() {
-    bool ret = LLVMPINVOKE.InitializeNativeTarget();
-    return ret;
-  }
-
-  public unsafe static bool InitializeNativeAsmParser() {
-    bool ret = LLVMPINVOKE.InitializeNativeAsmParser();
-    return ret;
-  }
-
-  public unsafe static bool InitializeNativeAsmPrinter() {
-    bool ret = LLVMPINVOKE.InitializeNativeAsmPrinter();
-    return ret;
-  }
-
-  public unsafe static bool InitializeNativeDisassembler() {
-    bool ret = LLVMPINVOKE.InitializeNativeDisassembler();
-    return ret;
-  }
-
-  public unsafe static TargetDataRef GetModuleDataLayout(ModuleRef M) {
-		TargetDataRef ret = new TargetDataRef(LLVMPINVOKE.GetModuleDataLayout(M.Value));
-		return ret;
-	}
-
-  public unsafe static void SetModuleDataLayout(ModuleRef M, TargetDataRef DL) {
-    LLVMPINVOKE.SetModuleDataLayout(M.Value, DL.Value);
-  }
-
-  public unsafe static TargetDataRef CreateTargetData(string StringRep) {
-		TargetDataRef ret = new TargetDataRef(LLVMPINVOKE.CreateTargetData(StringRep));
-		return ret;
-	}
-
-  public unsafe static void DisposeTargetData(TargetDataRef TD) {
-    LLVMPINVOKE.DisposeTargetData(TD.Value);
-  }
-
-  public unsafe static void AddTargetLibraryInfo(TargetLibraryInfoRef TLI, PassManagerRef PM) {
-    LLVMPINVOKE.AddTargetLibraryInfo(TLI.Value, PM.Value);
-  }
-
-  public unsafe static string CopyStringRepOfTargetData(TargetDataRef TD) {
-    string ret = LLVMPINVOKE.CopyStringRepOfTargetData(TD.Value);
-    return ret;
-  }
-
-  public unsafe static ByteOrdering ByteOrder(TargetDataRef TD) {
-    ByteOrdering ret = (ByteOrdering)LLVMPINVOKE.ByteOrder(TD.Value);
-    return ret;
-  }
-
-  public unsafe static uint PointerSize(TargetDataRef TD) {
-    uint ret = LLVMPINVOKE.PointerSize(TD.Value);
-    return ret;
-  }
-
-  public unsafe static uint PointerSizeForAS(TargetDataRef TD, uint AS) {
-    uint ret = LLVMPINVOKE.PointerSizeForAS(TD.Value, AS);
-    return ret;
-  }
-
-  public unsafe static TypeRef IntPtrType(TargetDataRef TD) {
-		TypeRef ret = new TypeRef(LLVMPINVOKE.IntPtrType(TD.Value));
-		return ret;
-	}
-
-  public unsafe static TypeRef IntPtrTypeForAS(TargetDataRef TD, uint AS) {
-		TypeRef ret = new TypeRef(LLVMPINVOKE.IntPtrTypeForAS(TD.Value, AS));
-		return ret;
-	}
-
-  public unsafe static TypeRef IntPtrTypeInContext(ContextRef C, TargetDataRef TD) {
-		TypeRef ret = new TypeRef(LLVMPINVOKE.IntPtrTypeInContext(C.Value, TD.Value));
-		return ret;
-	}
-
-  public unsafe static TypeRef IntPtrTypeForASInContext(ContextRef C, TargetDataRef TD, uint AS) {
-		TypeRef ret = new TypeRef(LLVMPINVOKE.IntPtrTypeForASInContext(C.Value, TD.Value, AS));
-		return ret;
-	}
-
-  public unsafe static ulong SizeOfTypeInBits(TargetDataRef TD, TypeRef Ty) {
-    ulong ret = LLVMPINVOKE.SizeOfTypeInBits(TD.Value, Ty.Value);
-    return ret;
-  }
-
-  public unsafe static ulong StoreSizeOfType(TargetDataRef TD, TypeRef Ty) {
-    ulong ret = LLVMPINVOKE.StoreSizeOfType(TD.Value, Ty.Value);
-    return ret;
-  }
-
-  public unsafe static ulong ABISizeOfType(TargetDataRef TD, TypeRef Ty) {
-    ulong ret = LLVMPINVOKE.ABISizeOfType(TD.Value, Ty.Value);
-    return ret;
-  }
-
-  public unsafe static uint ABIAlignmentOfType(TargetDataRef TD, TypeRef Ty) {
-    uint ret = LLVMPINVOKE.ABIAlignmentOfType(TD.Value, Ty.Value);
-    return ret;
-  }
-
-  public unsafe static uint CallFrameAlignmentOfType(TargetDataRef TD, TypeRef Ty) {
-    uint ret = LLVMPINVOKE.CallFrameAlignmentOfType(TD.Value, Ty.Value);
-    return ret;
-  }
-
-  public unsafe static uint PreferredAlignmentOfType(TargetDataRef TD, TypeRef Ty) {
-    uint ret = LLVMPINVOKE.PreferredAlignmentOfType(TD.Value, Ty.Value);
-    return ret;
-  }
-
-  public unsafe static uint PreferredAlignmentOfGlobal(TargetDataRef TD, ValueRef GlobalVar) {
-    uint ret = LLVMPINVOKE.PreferredAlignmentOfGlobal(TD.Value, GlobalVar.Value);
-    return ret;
-  }
-
-  public unsafe static uint ElementAtOffset(TargetDataRef TD, TypeRef StructTy, ulong Offset) {
-    uint ret = LLVMPINVOKE.ElementAtOffset(TD.Value, StructTy.Value, Offset);
-    return ret;
-  }
-
-  public unsafe static ulong OffsetOfElement(TargetDataRef TD, TypeRef StructTy, uint Element) {
-    ulong ret = LLVMPINVOKE.OffsetOfElement(TD.Value, StructTy.Value, Element);
-    return ret;
-  }
-
-  public unsafe static TargetRef GetFirstTarget() {
-		TargetRef ret = new TargetRef(LLVMPINVOKE.GetFirstTarget());
-		return ret;
-	}
-
-  public unsafe static TargetRef GetNextTarget(TargetRef T) {
-		TargetRef ret = new TargetRef(LLVMPINVOKE.GetNextTarget(T.Value));
-		return ret;
-	}
-
-  public unsafe static TargetRef GetTargetFromName(string Name) {
-		TargetRef ret = new TargetRef(LLVMPINVOKE.GetTargetFromName(Name));
-		return ret;
-	}
-
-  public unsafe static bool GetTargetFromTriple(string Triple, out TargetRef T, out string ErrorMessage) {
-    bool ret = LLVMPINVOKE.GetTargetFromTriple(Triple, out T.Value, out ErrorMessage);
-    return ret;
-  }
-
-  public unsafe static string GetTargetName(TargetRef T) {
-    string ret = LLVMPINVOKE.GetTargetName(T.Value);
-    return ret;
-  }
-
-  public unsafe static string GetTargetDescription(TargetRef T) {
-    string ret = LLVMPINVOKE.GetTargetDescription(T.Value);
-    return ret;
-  }
-
-  public unsafe static bool TargetHasJIT(TargetRef T) {
-    bool ret = LLVMPINVOKE.TargetHasJIT(T.Value);
-    return ret;
-  }
-
-  public unsafe static bool TargetHasTargetMachine(TargetRef T) {
-    bool ret = LLVMPINVOKE.TargetHasTargetMachine(T.Value);
-    return ret;
-  }
-
-  public unsafe static bool TargetHasAsmBackend(TargetRef T) {
-    bool ret = LLVMPINVOKE.TargetHasAsmBackend(T.Value);
-    return ret;
-  }
-
-  public unsafe static TargetMachineRef CreateTargetMachine(TargetRef T, string Triple, string CPU, string Features, CodeGenOptLevel Level, RelocMode Reloc, CodeModel CodeModel) {
-		TargetMachineRef ret = new TargetMachineRef(LLVMPINVOKE.CreateTargetMachine(T.Value, Triple, CPU, Features, (int)Level, (int)Reloc, (int)CodeModel));
-		return ret;
-	}
-
-  public unsafe static void DisposeTargetMachine(TargetMachineRef T) {
-    LLVMPINVOKE.DisposeTargetMachine(T.Value);
-  }
-
-  public unsafe static TargetRef GetTargetMachineTarget(TargetMachineRef T) {
-		TargetRef ret = new TargetRef(LLVMPINVOKE.GetTargetMachineTarget(T.Value));
-		return ret;
-	}
-
-  public unsafe static string GetTargetMachineTriple(TargetMachineRef T) {
-    string ret = LLVMPINVOKE.GetTargetMachineTriple(T.Value);
-    return ret;
-  }
-
-  public unsafe static string GetTargetMachineCPU(TargetMachineRef T) {
-    string ret = LLVMPINVOKE.GetTargetMachineCPU(T.Value);
-    return ret;
-  }
-
-  public unsafe static string GetTargetMachineFeatureString(TargetMachineRef T) {
-    string ret = LLVMPINVOKE.GetTargetMachineFeatureString(T.Value);
-    return ret;
-  }
-
-  public unsafe static TargetDataRef CreateTargetDataLayout(TargetMachineRef T) {
-		TargetDataRef ret = new TargetDataRef(LLVMPINVOKE.CreateTargetDataLayout(T.Value));
-		return ret;
-	}
-
-  public unsafe static void SetTargetMachineAsmVerbosity(TargetMachineRef T, bool VerboseAsm) {
-    LLVMPINVOKE.SetTargetMachineAsmVerbosity(T.Value, VerboseAsm);
-  }
-
-  public unsafe static bool TargetMachineEmitToFile(TargetMachineRef T, ModuleRef M, string Filename, CodeGenFileType codegen, out string ErrorMessage) {
-    bool ret = LLVMPINVOKE.TargetMachineEmitToFile(T.Value, M.Value, Filename, (int)codegen, out ErrorMessage);
-    return ret;
-  }
-
-  public unsafe static bool TargetMachineEmitToMemoryBuffer(TargetMachineRef T, ModuleRef M, CodeGenFileType codegen, out string ErrorMessage, out MemoryBufferRef OutMemBuf) {
-    bool ret = LLVMPINVOKE.TargetMachineEmitToMemoryBuffer(T.Value, M.Value, (int)codegen, out ErrorMessage, out OutMemBuf.Value);
-    return ret;
-  }
-
-  public unsafe static string GetDefaultTargetTriple() {
-    string ret = LLVMPINVOKE.GetDefaultTargetTriple();
-    return ret;
-  }
-
-  public unsafe static void AddAnalysisPasses(TargetMachineRef T, PassManagerRef PM) {
-    LLVMPINVOKE.AddAnalysisPasses(T.Value, PM.Value);
-  }
-
-  public unsafe static bool VerifyModule(ModuleRef M, VerifierFailureAction Action, out string OutMessage) {
-    bool ret = LLVMPINVOKE.VerifyModule(M.Value, (int)Action, out OutMessage);
-    return ret;
-  }
-
-  public unsafe static bool VerifyFunction(ValueRef Fn, VerifierFailureAction Action) {
-    bool ret = LLVMPINVOKE.VerifyFunction(Fn.Value, (int)Action);
-    return ret;
-  }
-
-  public unsafe static void ViewFunctionCFG(ValueRef Fn) {
-    LLVMPINVOKE.ViewFunctionCFG(Fn.Value);
-  }
-
-  public unsafe static void ViewFunctionCFGOnly(ValueRef Fn) {
-    LLVMPINVOKE.ViewFunctionCFGOnly(Fn.Value);
-  }
-
   public unsafe static readonly int AttributeReturnIndex = LLVMPINVOKE.AttributeReturnIndex_get();
   public unsafe static readonly int AttributeFunctionIndex = LLVMPINVOKE.AttributeFunctionIndex_get();
 
+  public unsafe static readonly int Disassembler_VariantKind_None = LLVMPINVOKE.Disassembler_VariantKind_None_get();
+  public unsafe static readonly int Disassembler_VariantKind_ARM_HI16 = LLVMPINVOKE.Disassembler_VariantKind_ARM_HI16_get();
+  public unsafe static readonly int Disassembler_VariantKind_ARM_LO16 = LLVMPINVOKE.Disassembler_VariantKind_ARM_LO16_get();
+  public unsafe static readonly int Disassembler_VariantKind_ARM64_PAGE = LLVMPINVOKE.Disassembler_VariantKind_ARM64_PAGE_get();
+  public unsafe static readonly int Disassembler_VariantKind_ARM64_PAGEOFF = LLVMPINVOKE.Disassembler_VariantKind_ARM64_PAGEOFF_get();
+  public unsafe static readonly int Disassembler_VariantKind_ARM64_GOTPAGE = LLVMPINVOKE.Disassembler_VariantKind_ARM64_GOTPAGE_get();
+  public unsafe static readonly int Disassembler_VariantKind_ARM64_GOTPAGEOFF = LLVMPINVOKE.Disassembler_VariantKind_ARM64_GOTPAGEOFF_get();
+  public unsafe static readonly int Disassembler_VariantKind_ARM64_TLVP = LLVMPINVOKE.Disassembler_VariantKind_ARM64_TLVP_get();
+  public unsafe static readonly int Disassembler_VariantKind_ARM64_TLVOFF = LLVMPINVOKE.Disassembler_VariantKind_ARM64_TLVOFF_get();
+  public unsafe static readonly int Disassembler_ReferenceType_InOut_None = LLVMPINVOKE.Disassembler_ReferenceType_InOut_None_get();
+  public unsafe static readonly int Disassembler_ReferenceType_In_Branch = LLVMPINVOKE.Disassembler_ReferenceType_In_Branch_get();
+  public unsafe static readonly int Disassembler_ReferenceType_In_PCrel_Load = LLVMPINVOKE.Disassembler_ReferenceType_In_PCrel_Load_get();
+  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_ADRP = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_ADRP_get();
+  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_ADDXri = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_ADDXri_get();
+  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_LDRXui = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_LDRXui_get();
+  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_LDRXl = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_LDRXl_get();
+  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_ADR = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_ADR_get();
+  public unsafe static readonly int Disassembler_ReferenceType_Out_SymbolStub = LLVMPINVOKE.Disassembler_ReferenceType_Out_SymbolStub_get();
+  public unsafe static readonly int Disassembler_ReferenceType_Out_LitPool_SymAddr = LLVMPINVOKE.Disassembler_ReferenceType_Out_LitPool_SymAddr_get();
+  public unsafe static readonly int Disassembler_ReferenceType_Out_LitPool_CstrAddr = LLVMPINVOKE.Disassembler_ReferenceType_Out_LitPool_CstrAddr_get();
+  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_CFString_Ref = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_CFString_Ref_get();
+  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_Message = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_Message_get();
+  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_Message_Ref = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_Message_Ref_get();
+  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_Selector_Ref = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_Selector_Ref_get();
+  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_Class_Ref = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_Class_Ref_get();
+  public unsafe static readonly int Disassembler_ReferenceType_DeMangled_Name = LLVMPINVOKE.Disassembler_ReferenceType_DeMangled_Name_get();
+  public unsafe static readonly int Disassembler_Option_UseMarkup = LLVMPINVOKE.Disassembler_Option_UseMarkup_get();
+  public unsafe static readonly int Disassembler_Option_PrintImmHex = LLVMPINVOKE.Disassembler_Option_PrintImmHex_get();
+  public unsafe static readonly int Disassembler_Option_AsmPrinterVariant = LLVMPINVOKE.Disassembler_Option_AsmPrinterVariant_get();
+  public unsafe static readonly int Disassembler_Option_SetInstrComments = LLVMPINVOKE.Disassembler_Option_SetInstrComments_get();
+  public unsafe static readonly int Disassembler_Option_PrintLatency = LLVMPINVOKE.Disassembler_Option_PrintLatency_get();
 }
 
 }

@@ -1913,6 +1913,12 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_IsMultithreaded")]
   public static extern bool IsMultithreaded();
 
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_VerifyModule")]
+  public static extern bool VerifyModule(System.IntPtr jarg1, int jarg2, string jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_VerifyFunction")]
+  public static extern bool VerifyFunction(System.IntPtr jarg1, int jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ParseBitcode")]
   public static extern bool ParseBitcode(System.IntPtr jarg1, out System.IntPtr jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
 
@@ -1948,6 +1954,126 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_WriteBitcodeToMemoryBuffer")]
   public static extern System.IntPtr WriteBitcodeToMemoryBuffer(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_VariantKind_None_get")]
+  public static extern int Disassembler_VariantKind_None_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_VariantKind_ARM_HI16_get")]
+  public static extern int Disassembler_VariantKind_ARM_HI16_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_VariantKind_ARM_LO16_get")]
+  public static extern int Disassembler_VariantKind_ARM_LO16_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_VariantKind_ARM64_PAGE_get")]
+  public static extern int Disassembler_VariantKind_ARM64_PAGE_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_VariantKind_ARM64_PAGEOFF_get")]
+  public static extern int Disassembler_VariantKind_ARM64_PAGEOFF_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_VariantKind_ARM64_GOTPAGE_get")]
+  public static extern int Disassembler_VariantKind_ARM64_GOTPAGE_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_VariantKind_ARM64_GOTPAGEOFF_get")]
+  public static extern int Disassembler_VariantKind_ARM64_GOTPAGEOFF_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_VariantKind_ARM64_TLVP_get")]
+  public static extern int Disassembler_VariantKind_ARM64_TLVP_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_VariantKind_ARM64_TLVOFF_get")]
+  public static extern int Disassembler_VariantKind_ARM64_TLVOFF_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_InOut_None_get")]
+  public static extern int Disassembler_ReferenceType_InOut_None_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_In_Branch_get")]
+  public static extern int Disassembler_ReferenceType_In_Branch_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_In_PCrel_Load_get")]
+  public static extern int Disassembler_ReferenceType_In_PCrel_Load_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADRP_get")]
+  public static extern int Disassembler_ReferenceType_In_ARM64_ADRP_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADDXri_get")]
+  public static extern int Disassembler_ReferenceType_In_ARM64_ADDXri_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_LDRXui_get")]
+  public static extern int Disassembler_ReferenceType_In_ARM64_LDRXui_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_LDRXl_get")]
+  public static extern int Disassembler_ReferenceType_In_ARM64_LDRXl_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADR_get")]
+  public static extern int Disassembler_ReferenceType_In_ARM64_ADR_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_Out_SymbolStub_get")]
+  public static extern int Disassembler_ReferenceType_Out_SymbolStub_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_Out_LitPool_SymAddr_get")]
+  public static extern int Disassembler_ReferenceType_Out_LitPool_SymAddr_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_Out_LitPool_CstrAddr_get")]
+  public static extern int Disassembler_ReferenceType_Out_LitPool_CstrAddr_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_CFString_Ref_get")]
+  public static extern int Disassembler_ReferenceType_Out_Objc_CFString_Ref_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Message_get")]
+  public static extern int Disassembler_ReferenceType_Out_Objc_Message_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Message_Ref_get")]
+  public static extern int Disassembler_ReferenceType_Out_Objc_Message_Ref_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Selector_Ref_get")]
+  public static extern int Disassembler_ReferenceType_Out_Objc_Selector_Ref_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Class_Ref_get")]
+  public static extern int Disassembler_ReferenceType_Out_Objc_Class_Ref_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_ReferenceType_DeMangled_Name_get")]
+  public static extern int Disassembler_ReferenceType_DeMangled_Name_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CreateDisasm")]
+  public static extern System.IntPtr CreateDisasm(string jarg1, System.IntPtr jarg2, int jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, global::System.Runtime.InteropServices.HandleRef jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CreateDisasmCPU")]
+  public static extern System.IntPtr CreateDisasmCPU(string jarg1, string jarg2, System.IntPtr jarg3, int jarg4, global::System.Runtime.InteropServices.HandleRef jarg5, global::System.Runtime.InteropServices.HandleRef jarg6);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CreateDisasmCPUFeatures")]
+  public static extern System.IntPtr CreateDisasmCPUFeatures(string jarg1, string jarg2, string jarg3, System.IntPtr jarg4, int jarg5, global::System.Runtime.InteropServices.HandleRef jarg6, global::System.Runtime.InteropServices.HandleRef jarg7);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_SetDisasmOptions")]
+  public static extern int SetDisasmOptions(System.IntPtr jarg1, ulong jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_Option_UseMarkup_get")]
+  public static extern int Disassembler_Option_UseMarkup_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_Option_PrintImmHex_get")]
+  public static extern int Disassembler_Option_PrintImmHex_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_Option_AsmPrinterVariant_get")]
+  public static extern int Disassembler_Option_AsmPrinterVariant_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_Option_SetInstrComments_get")]
+  public static extern int Disassembler_Option_SetInstrComments_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_Disassembler_Option_PrintLatency_get")]
+  public static extern int Disassembler_Option_PrintLatency_get();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_DisasmDispose")]
+  public static extern void DisasmDispose(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_DisasmInstruction")]
+  public static extern uint DisasmInstruction(System.IntPtr jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, ulong jarg3, ulong jarg4, string jarg5, uint jarg6);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InstallFatalErrorHandler")]
+  public static extern void InstallFatalErrorHandler(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ResetFatalErrorHandler")]
+  public static extern void ResetFatalErrorHandler();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_EnablePrettyStackTrace")]
+  public static extern void EnablePrettyStackTrace();
 
   [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_LinkInMCJIT")]
   public static extern void LinkInMCJIT();
@@ -2047,6 +2173,252 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_DisposeMCJITMemoryManager")]
   public static extern void DisposeMCJITMemoryManager(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeTransformUtils")]
+  public static extern void InitializeTransformUtils(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeScalarOpts")]
+  public static extern void InitializeScalarOpts(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeObjCARCOpts")]
+  public static extern void InitializeObjCARCOpts(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeVectorization")]
+  public static extern void InitializeVectorization(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeInstCombine")]
+  public static extern void InitializeInstCombine(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeIPO")]
+  public static extern void InitializeIPO(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeInstrumentation")]
+  public static extern void InitializeInstrumentation(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAnalysis")]
+  public static extern void InitializeAnalysis(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeIPA")]
+  public static extern void InitializeIPA(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeCodeGen")]
+  public static extern void InitializeCodeGen(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeTarget")]
+  public static extern void InitializeTarget(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ParseIRInContext")]
+  public static extern bool ParseIRInContext(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_LinkModules2")]
+  public static extern bool LinkModules2(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcCreateInstance")]
+  public static extern System.IntPtr OrcCreateInstance(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcGetErrorMsg")]
+  public static extern string OrcGetErrorMsg(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcGetMangledSymbol")]
+  public static extern void OrcGetMangledSymbol(System.IntPtr jarg1, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg2, string jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcDisposeMangledSymbol")]
+  public static extern void OrcDisposeMangledSymbol(string jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcCreateLazyCompileCallback")]
+  public static extern ulong OrcCreateLazyCompileCallback(System.IntPtr jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, System.IntPtr jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcCreateIndirectStub")]
+  public static extern int OrcCreateIndirectStub(System.IntPtr jarg1, string jarg2, ulong jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcSetIndirectStubPointer")]
+  public static extern int OrcSetIndirectStubPointer(System.IntPtr jarg1, string jarg2, ulong jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcAddEagerlyCompiledIR")]
+  public static extern uint OrcAddEagerlyCompiledIR(System.IntPtr jarg1, System.IntPtr jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, System.IntPtr jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcAddLazilyCompiledIR")]
+  public static extern uint OrcAddLazilyCompiledIR(System.IntPtr jarg1, System.IntPtr jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, System.IntPtr jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcRemoveModule")]
+  public static extern void OrcRemoveModule(System.IntPtr jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcGetSymbolAddress")]
+  public static extern ulong OrcGetSymbolAddress(System.IntPtr jarg1, string jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OrcDisposeInstance")]
+  public static extern void OrcDisposeInstance(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_LoadLibraryPermanently")]
+  public static extern bool LoadLibraryPermanently(string jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ParseCommandLineOptions")]
+  public static extern void ParseCommandLineOptions(int jarg1, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg2, string jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_SearchForAddressOfSymbol")]
+  public static extern System.IntPtr SearchForAddressOfSymbol(string jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_AddSymbol")]
+  public static extern void AddSymbol(string jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllTargetInfos")]
+  public static extern void InitializeAllTargetInfos();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllTargets")]
+  public static extern void InitializeAllTargets();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllTargetMCs")]
+  public static extern void InitializeAllTargetMCs();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllAsmPrinters")]
+  public static extern void InitializeAllAsmPrinters();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllAsmParsers")]
+  public static extern void InitializeAllAsmParsers();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllDisassemblers")]
+  public static extern void InitializeAllDisassemblers();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeNativeTarget")]
+  public static extern bool InitializeNativeTarget();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeNativeAsmParser")]
+  public static extern bool InitializeNativeAsmParser();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeNativeAsmPrinter")]
+  public static extern bool InitializeNativeAsmPrinter();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeNativeDisassembler")]
+  public static extern bool InitializeNativeDisassembler();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetModuleDataLayout")]
+  public static extern System.IntPtr GetModuleDataLayout(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_SetModuleDataLayout")]
+  public static extern void SetModuleDataLayout(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CreateTargetData")]
+  public static extern System.IntPtr CreateTargetData(string jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_DisposeTargetData")]
+  public static extern void DisposeTargetData(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_AddTargetLibraryInfo")]
+  public static extern void AddTargetLibraryInfo(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CopyStringRepOfTargetData")]
+  public static extern string CopyStringRepOfTargetData(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ByteOrder")]
+  public static extern int ByteOrder(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_PointerSize")]
+  public static extern uint PointerSize(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_PointerSizeForAS")]
+  public static extern uint PointerSizeForAS(System.IntPtr jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_IntPtrType")]
+  public static extern System.IntPtr IntPtrType(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_IntPtrTypeForAS")]
+  public static extern System.IntPtr IntPtrTypeForAS(System.IntPtr jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_IntPtrTypeInContext")]
+  public static extern System.IntPtr IntPtrTypeInContext(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_IntPtrTypeForASInContext")]
+  public static extern System.IntPtr IntPtrTypeForASInContext(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_SizeOfTypeInBits")]
+  public static extern ulong SizeOfTypeInBits(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_StoreSizeOfType")]
+  public static extern ulong StoreSizeOfType(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ABISizeOfType")]
+  public static extern ulong ABISizeOfType(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ABIAlignmentOfType")]
+  public static extern uint ABIAlignmentOfType(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CallFrameAlignmentOfType")]
+  public static extern uint CallFrameAlignmentOfType(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_PreferredAlignmentOfType")]
+  public static extern uint PreferredAlignmentOfType(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_PreferredAlignmentOfGlobal")]
+  public static extern uint PreferredAlignmentOfGlobal(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ElementAtOffset")]
+  public static extern uint ElementAtOffset(System.IntPtr jarg1, System.IntPtr jarg2, ulong jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OffsetOfElement")]
+  public static extern ulong OffsetOfElement(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetFirstTarget")]
+  public static extern System.IntPtr GetFirstTarget();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetNextTarget")]
+  public static extern System.IntPtr GetNextTarget(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetFromName")]
+  public static extern System.IntPtr GetTargetFromName(string jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetFromTriple")]
+  public static extern bool GetTargetFromTriple(string jarg1, out System.IntPtr jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetName")]
+  public static extern string GetTargetName(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetDescription")]
+  public static extern string GetTargetDescription(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetHasJIT")]
+  public static extern bool TargetHasJIT(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetHasTargetMachine")]
+  public static extern bool TargetHasTargetMachine(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetHasAsmBackend")]
+  public static extern bool TargetHasAsmBackend(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CreateTargetMachine")]
+  public static extern System.IntPtr CreateTargetMachine(System.IntPtr jarg1, string jarg2, string jarg3, string jarg4, int jarg5, int jarg6, int jarg7);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_DisposeTargetMachine")]
+  public static extern void DisposeTargetMachine(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetMachineTarget")]
+  public static extern System.IntPtr GetTargetMachineTarget(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetMachineTriple")]
+  public static extern string GetTargetMachineTriple(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetMachineCPU")]
+  public static extern string GetTargetMachineCPU(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetMachineFeatureString")]
+  public static extern string GetTargetMachineFeatureString(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CreateTargetDataLayout")]
+  public static extern System.IntPtr CreateTargetDataLayout(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_SetTargetMachineAsmVerbosity")]
+  public static extern void SetTargetMachineAsmVerbosity(System.IntPtr jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetMachineEmitToFile")]
+  public static extern bool TargetMachineEmitToFile(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, int jarg4, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetMachineEmitToMemoryBuffer")]
+  public static extern bool TargetMachineEmitToMemoryBuffer(System.IntPtr jarg1, System.IntPtr jarg2, int jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4, out System.IntPtr jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetDefaultTargetTriple")]
+  public static extern string GetDefaultTargetTriple();
+
+  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_AddAnalysisPasses")]
+  public static extern void AddAnalysisPasses(System.IntPtr jarg1, System.IntPtr jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_AddArgumentPromotionPass")]
   public static extern void AddArgumentPromotionPass(System.IntPtr jarg1);
@@ -2251,177 +2623,6 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_AddSLPVectorizePass")]
   public static extern void AddSLPVectorizePass(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllTargetInfos")]
-  public static extern void InitializeAllTargetInfos();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllTargets")]
-  public static extern void InitializeAllTargets();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllTargetMCs")]
-  public static extern void InitializeAllTargetMCs();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllAsmPrinters")]
-  public static extern void InitializeAllAsmPrinters();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllAsmParsers")]
-  public static extern void InitializeAllAsmParsers();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeAllDisassemblers")]
-  public static extern void InitializeAllDisassemblers();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeNativeTarget")]
-  public static extern bool InitializeNativeTarget();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeNativeAsmParser")]
-  public static extern bool InitializeNativeAsmParser();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeNativeAsmPrinter")]
-  public static extern bool InitializeNativeAsmPrinter();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_InitializeNativeDisassembler")]
-  public static extern bool InitializeNativeDisassembler();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetModuleDataLayout")]
-  public static extern System.IntPtr GetModuleDataLayout(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_SetModuleDataLayout")]
-  public static extern void SetModuleDataLayout(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CreateTargetData")]
-  public static extern System.IntPtr CreateTargetData(string jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_DisposeTargetData")]
-  public static extern void DisposeTargetData(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_AddTargetLibraryInfo")]
-  public static extern void AddTargetLibraryInfo(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CopyStringRepOfTargetData")]
-  public static extern string CopyStringRepOfTargetData(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ByteOrder")]
-  public static extern int ByteOrder(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_PointerSize")]
-  public static extern uint PointerSize(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_PointerSizeForAS")]
-  public static extern uint PointerSizeForAS(System.IntPtr jarg1, uint jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_IntPtrType")]
-  public static extern System.IntPtr IntPtrType(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_IntPtrTypeForAS")]
-  public static extern System.IntPtr IntPtrTypeForAS(System.IntPtr jarg1, uint jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_IntPtrTypeInContext")]
-  public static extern System.IntPtr IntPtrTypeInContext(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_IntPtrTypeForASInContext")]
-  public static extern System.IntPtr IntPtrTypeForASInContext(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_SizeOfTypeInBits")]
-  public static extern ulong SizeOfTypeInBits(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_StoreSizeOfType")]
-  public static extern ulong StoreSizeOfType(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ABISizeOfType")]
-  public static extern ulong ABISizeOfType(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ABIAlignmentOfType")]
-  public static extern uint ABIAlignmentOfType(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CallFrameAlignmentOfType")]
-  public static extern uint CallFrameAlignmentOfType(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_PreferredAlignmentOfType")]
-  public static extern uint PreferredAlignmentOfType(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_PreferredAlignmentOfGlobal")]
-  public static extern uint PreferredAlignmentOfGlobal(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ElementAtOffset")]
-  public static extern uint ElementAtOffset(System.IntPtr jarg1, System.IntPtr jarg2, ulong jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_OffsetOfElement")]
-  public static extern ulong OffsetOfElement(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetFirstTarget")]
-  public static extern System.IntPtr GetFirstTarget();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetNextTarget")]
-  public static extern System.IntPtr GetNextTarget(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetFromName")]
-  public static extern System.IntPtr GetTargetFromName(string jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetFromTriple")]
-  public static extern bool GetTargetFromTriple(string jarg1, out System.IntPtr jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetName")]
-  public static extern string GetTargetName(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetDescription")]
-  public static extern string GetTargetDescription(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetHasJIT")]
-  public static extern bool TargetHasJIT(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetHasTargetMachine")]
-  public static extern bool TargetHasTargetMachine(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetHasAsmBackend")]
-  public static extern bool TargetHasAsmBackend(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CreateTargetMachine")]
-  public static extern System.IntPtr CreateTargetMachine(System.IntPtr jarg1, string jarg2, string jarg3, string jarg4, int jarg5, int jarg6, int jarg7);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_DisposeTargetMachine")]
-  public static extern void DisposeTargetMachine(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetMachineTarget")]
-  public static extern System.IntPtr GetTargetMachineTarget(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetMachineTriple")]
-  public static extern string GetTargetMachineTriple(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetMachineCPU")]
-  public static extern string GetTargetMachineCPU(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetTargetMachineFeatureString")]
-  public static extern string GetTargetMachineFeatureString(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_CreateTargetDataLayout")]
-  public static extern System.IntPtr CreateTargetDataLayout(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_SetTargetMachineAsmVerbosity")]
-  public static extern void SetTargetMachineAsmVerbosity(System.IntPtr jarg1, bool jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetMachineEmitToFile")]
-  public static extern bool TargetMachineEmitToFile(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, int jarg4, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg5);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_TargetMachineEmitToMemoryBuffer")]
-  public static extern bool TargetMachineEmitToMemoryBuffer(System.IntPtr jarg1, System.IntPtr jarg2, int jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4, out System.IntPtr jarg5);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_GetDefaultTargetTriple")]
-  public static extern string GetDefaultTargetTriple();
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_AddAnalysisPasses")]
-  public static extern void AddAnalysisPasses(System.IntPtr jarg1, System.IntPtr jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_VerifyModule")]
-  public static extern bool VerifyModule(System.IntPtr jarg1, int jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_VerifyFunction")]
-  public static extern bool VerifyFunction(System.IntPtr jarg1, int jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ViewFunctionCFG")]
-  public static extern void ViewFunctionCFG(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("CSLLVM.Native.dll", EntryPoint="CSharp_CSLLVM_ViewFunctionCFGOnly")]
-  public static extern void ViewFunctionCFGOnly(System.IntPtr jarg1);
 }
 
 }

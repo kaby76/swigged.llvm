@@ -300,16 +300,24 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_LLVM(SWIG_CSharpStringHel
 
 
 #include <llvm-c/Core.h>
+#include <llvm-c/Analysis.h>
 #include <llvm-c/BitReader.h>
 #include <llvm-c/BitWriter.h>
+#include <llvm-c/Disassembler.h>
+#include <llvm-c/ErrorHandling.h>
 #include <llvm-c/ExecutionEngine.h>
+#include <llvm-c/Initialization.h>
+#include <llvm-c/IRReader.h>
+#include <llvm-c/Linker.h>
+//#include <llvm-c/LinkTimeOptimizer.h>
+#include <llvm-c/OrcBindings.h>
+#include <llvm-c/Support.h>
+#include <llvm-c/Target.h>
+#include <llvm-c/TargetMachine.h>
 #include <llvm-c/Transforms/IPO.h>
 #include <llvm-c/Transforms/PassManagerBuilder.h>
 #include <llvm-c/Transforms/Scalar.h>
 #include <llvm-c/Transforms/Vectorize.h>
-#include <llvm-c/Target.h>
-#include <llvm-c/TargetMachine.h>
-#include <llvm-c/Analysis.h>
 #include "Additional.h"
 #include "DebugInfo.h"
 
@@ -7899,6 +7907,40 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsMultithreaded() {
 }
 
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_VerifyModule(void * jarg1, int jarg2, void * jarg3) {
+  unsigned int jresult ;
+  LLVMModuleRef arg1 ;
+  LLVMVerifierFailureAction arg2 ;
+  char **arg3 = (char **) 0 ;
+  LLVMBool result;
+  
+  arg1 = (LLVMModuleRef)jarg1; 
+  arg2 = (LLVMVerifierFailureAction)jarg2; 
+  {
+    // Used in generating wrap.cpp:
+    // Converts input parameter of target type to C.
+    arg3 = (char**)jarg3;
+  }
+  result = (LLVMBool)LLVMVerifyModule(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_VerifyFunction(void * jarg1, int jarg2) {
+  unsigned int jresult ;
+  LLVMValueRef arg1 ;
+  LLVMVerifierFailureAction arg2 ;
+  LLVMBool result;
+  
+  arg1 = (LLVMValueRef)jarg1; 
+  arg2 = (LLVMVerifierFailureAction)jarg2; 
+  result = (LLVMBool)LLVMVerifyFunction(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseBitcode(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMMemoryBufferRef arg1 ;
@@ -8098,6 +8140,444 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_WriteBitcodeToMemoryBuffer(void * ja
   result = LLVMWriteBitcodeToMemoryBuffer(arg1);
   jresult = result; 
   return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_None_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(0);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM_HI16_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM_LO16_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_PAGE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_PAGEOFF_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_GOTPAGE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_GOTPAGEOFF_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(4);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_TLVP_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(5);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_TLVOFF_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(6);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_InOut_None_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(0);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_Branch_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_PCrel_Load_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADRP_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(0x100000001);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADDXri_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(0x100000002);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_LDRXui_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(0x100000003);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_LDRXl_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(0x100000004);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADR_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(0x100000005);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_SymbolStub_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_LitPool_SymAddr_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_LitPool_CstrAddr_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_CFString_Ref_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(4);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Message_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(5);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Message_Ref_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(6);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Selector_Ref_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(7);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Class_Ref_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(8);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_DeMangled_Name_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(9);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateDisasm(char * jarg1, void * jarg2, int jarg3, void * jarg4, void * jarg5) {
+  void * jresult ;
+  char *arg1 = (char *) 0 ;
+  void *arg2 = (void *) 0 ;
+  int arg3 ;
+  LLVMOpInfoCallback arg4 = (LLVMOpInfoCallback) 0 ;
+  LLVMSymbolLookupCallback arg5 = (LLVMSymbolLookupCallback) 0 ;
+  LLVMDisasmContextRef result;
+  
+  arg1 = (char *)jarg1; 
+  arg2 = jarg2; 
+  arg3 = (int)jarg3; 
+  arg4 = (LLVMOpInfoCallback)jarg4; 
+  arg5 = (LLVMSymbolLookupCallback)jarg5; 
+  result = (LLVMDisasmContextRef)LLVMCreateDisasm((char const *)arg1,arg2,arg3,arg4,(char const *(*)(void *,unsigned long long,unsigned long long *,unsigned long long,char const **))arg5);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateDisasmCPU(char * jarg1, char * jarg2, void * jarg3, int jarg4, void * jarg5, void * jarg6) {
+  void * jresult ;
+  char *arg1 = (char *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *arg3 = (void *) 0 ;
+  int arg4 ;
+  LLVMOpInfoCallback arg5 = (LLVMOpInfoCallback) 0 ;
+  LLVMSymbolLookupCallback arg6 = (LLVMSymbolLookupCallback) 0 ;
+  LLVMDisasmContextRef result;
+  
+  arg1 = (char *)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = jarg3; 
+  arg4 = (int)jarg4; 
+  arg5 = (LLVMOpInfoCallback)jarg5; 
+  arg6 = (LLVMSymbolLookupCallback)jarg6; 
+  result = (LLVMDisasmContextRef)LLVMCreateDisasmCPU((char const *)arg1,(char const *)arg2,arg3,arg4,arg5,(char const *(*)(void *,unsigned long long,unsigned long long *,unsigned long long,char const **))arg6);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateDisasmCPUFeatures(char * jarg1, char * jarg2, char * jarg3, void * jarg4, int jarg5, void * jarg6, void * jarg7) {
+  void * jresult ;
+  char *arg1 = (char *) 0 ;
+  char *arg2 = (char *) 0 ;
+  char *arg3 = (char *) 0 ;
+  void *arg4 = (void *) 0 ;
+  int arg5 ;
+  LLVMOpInfoCallback arg6 = (LLVMOpInfoCallback) 0 ;
+  LLVMSymbolLookupCallback arg7 = (LLVMSymbolLookupCallback) 0 ;
+  LLVMDisasmContextRef result;
+  
+  arg1 = (char *)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = jarg4; 
+  arg5 = (int)jarg5; 
+  arg6 = (LLVMOpInfoCallback)jarg6; 
+  arg7 = (LLVMSymbolLookupCallback)jarg7; 
+  result = (LLVMDisasmContextRef)LLVMCreateDisasmCPUFeatures((char const *)arg1,(char const *)arg2,(char const *)arg3,arg4,arg5,arg6,(char const *(*)(void *,unsigned long long,unsigned long long *,unsigned long long,char const **))arg7);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_SetDisasmOptions(void * jarg1, unsigned long long jarg2) {
+  int jresult ;
+  LLVMDisasmContextRef arg1 = (LLVMDisasmContextRef) 0 ;
+  uint64_t arg2 ;
+  int result;
+  
+  arg1 = jarg1; 
+  arg2 = (uint64_t)jarg2; 
+  result = (int)LLVMSetDisasmOptions(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_UseMarkup_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_PrintImmHex_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_AsmPrinterVariant_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(4);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_SetInstrComments_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(8);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_PrintLatency_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(16);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisasmDispose(void * jarg1) {
+  LLVMDisasmContextRef arg1 = (LLVMDisasmContextRef) 0 ;
+  
+  arg1 = jarg1; 
+  LLVMDisasmDispose(arg1);
+}
+
+
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_CSLLVM_DisasmInstruction(void * jarg1, void * jarg2, unsigned long long jarg3, unsigned long long jarg4, char * jarg5, unsigned long jarg6) {
+  unsigned long jresult ;
+  LLVMDisasmContextRef arg1 = (LLVMDisasmContextRef) 0 ;
+  uint8_t *arg2 = (uint8_t *) 0 ;
+  uint64_t arg3 ;
+  uint64_t arg4 ;
+  char *arg5 = (char *) 0 ;
+  size_t arg6 ;
+  size_t result;
+  
+  arg1 = jarg1; 
+  arg2 = (uint8_t *)jarg2; 
+  arg3 = (uint64_t)jarg3; 
+  arg4 = (uint64_t)jarg4; 
+  arg5 = (char *)jarg5; 
+  arg6 = (size_t)jarg6; 
+  result = LLVMDisasmInstruction(arg1,arg2,arg3,arg4,arg5,arg6);
+  jresult = (unsigned long)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InstallFatalErrorHandler(void * jarg1) {
+  LLVMFatalErrorHandler arg1 = (LLVMFatalErrorHandler) 0 ;
+  
+  arg1 = (LLVMFatalErrorHandler)jarg1; 
+  LLVMInstallFatalErrorHandler(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ResetFatalErrorHandler() {
+  LLVMResetFatalErrorHandler();
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_EnablePrettyStackTrace() {
+  LLVMEnablePrettyStackTrace();
 }
 
 
@@ -8557,575 +9037,341 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeMCJITMemoryManager(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddArgumentPromotionPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeTransformUtils(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddArgumentPromotionPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeTransformUtils(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddConstantMergePass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeScalarOpts(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddConstantMergePass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeScalarOpts(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDeadArgEliminationPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeObjCARCOpts(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddDeadArgEliminationPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeObjCARCOpts(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddFunctionAttrsPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeVectorization(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddFunctionAttrsPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeVectorization(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddFunctionInliningPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeInstCombine(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddFunctionInliningPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeInstCombine(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAlwaysInlinerPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeIPO(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddAlwaysInlinerPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeIPO(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalDCEPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeInstrumentation(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddGlobalDCEPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeInstrumentation(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalOptimizerPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeAnalysis(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddGlobalOptimizerPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeAnalysis(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIPConstantPropagationPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeIPA(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddIPConstantPropagationPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeIPA(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPruneEHPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeCodeGen(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddPruneEHPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeCodeGen(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIPSCCPPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeTarget(void * jarg1) {
+  LLVMPassRegistryRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddIPSCCPPass(arg1);
+  arg1 = (LLVMPassRegistryRef)jarg1; 
+  LLVMInitializeTarget(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddInternalizePass(void * jarg1, unsigned int jarg2) {
-  LLVMPassManagerRef arg1 ;
-  unsigned int arg2 ;
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseIRInContext(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+  unsigned int jresult ;
+  LLVMContextRef arg1 ;
+  LLVMMemoryBufferRef arg2 ;
+  LLVMModuleRef *arg3 = (LLVMModuleRef *) 0 ;
+  char **arg4 = (char **) 0 ;
+  LLVMBool result;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  LLVMAddInternalizePass(arg1,arg2);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddStripDeadPrototypesPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddStripDeadPrototypesPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddStripSymbolsPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddStripSymbolsPass(arg1);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderCreate() {
-  void * jresult ;
-  LLVMPassManagerBuilderRef result;
-  
-  result = LLVMPassManagerBuilderCreate();
+  arg1 = (LLVMContextRef)jarg1; 
+  arg2 = (LLVMMemoryBufferRef)jarg2; 
+  arg3 = (LLVMModuleRef *)jarg3; 
+  {
+    // Used in generating wrap.cpp:
+    // Converts input parameter of target type to C.
+    arg4 = (char**)jarg4;
+  }
+  result = (LLVMBool)LLVMParseIRInContext(arg1,arg2,arg3,arg4);
   jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderDispose(void * jarg1) {
-  LLVMPassManagerBuilderRef arg1 ;
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_LinkModules2(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  LLVMModuleRef arg1 ;
+  LLVMModuleRef arg2 ;
+  LLVMBool result;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  LLVMPassManagerBuilderDispose(arg1);
+  arg1 = (LLVMModuleRef)jarg1; 
+  arg2 = (LLVMModuleRef)jarg2; 
+  result = (LLVMBool)LLVMLinkModules2(arg1,arg2);
+  jresult = result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetOptLevel(void * jarg1, unsigned int jarg2) {
-  LLVMPassManagerBuilderRef arg1 ;
-  unsigned int arg2 ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_OrcCreateInstance(void * jarg1) {
+  void * jresult ;
+  LLVMTargetMachineRef arg1 ;
+  LLVMOrcJITStackRef result;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  LLVMPassManagerBuilderSetOptLevel(arg1,arg2);
+  arg1 = (LLVMTargetMachineRef)jarg1; 
+  result = LLVMOrcCreateInstance(arg1);
+  jresult = result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetSizeLevel(void * jarg1, unsigned int jarg2) {
-  LLVMPassManagerBuilderRef arg1 ;
-  unsigned int arg2 ;
+SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_OrcGetErrorMsg(void * jarg1) {
+  char * jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  char *result = 0 ;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  LLVMPassManagerBuilderSetSizeLevel(arg1,arg2);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  result = (char *)LLVMOrcGetErrorMsg(arg1);
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableUnitAtATime(void * jarg1, unsigned int jarg2) {
-  LLVMPassManagerBuilderRef arg1 ;
-  LLVMBool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcGetMangledSymbol(void * jarg1, void * jarg2, char * jarg3) {
+  LLVMOrcJITStackRef arg1 ;
+  char **arg2 = (char **) 0 ;
+  char *arg3 = (char *) 0 ;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  arg2 = jarg2 ? true : false; 
-  LLVMPassManagerBuilderSetDisableUnitAtATime(arg1,arg2);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  {
+    // Used in generating wrap.cpp:
+    // Converts input parameter of target type to C.
+    arg2 = (char**)jarg2;
+  }
+  arg3 = (char *)jarg3; 
+  LLVMOrcGetMangledSymbol(arg1,arg2,(char const *)arg3);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableUnrollLoops(void * jarg1, unsigned int jarg2) {
-  LLVMPassManagerBuilderRef arg1 ;
-  LLVMBool arg2 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcDisposeMangledSymbol(char * jarg1) {
+  char *arg1 = (char *) 0 ;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  arg2 = jarg2 ? true : false; 
-  LLVMPassManagerBuilderSetDisableUnrollLoops(arg1,arg2);
+  arg1 = (char *)jarg1; 
+  LLVMOrcDisposeMangledSymbol(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableSimplifyLibCalls(void * jarg1, unsigned int jarg2) {
-  LLVMPassManagerBuilderRef arg1 ;
-  LLVMBool arg2 ;
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_OrcCreateLazyCompileCallback(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned long long jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  LLVMOrcLazyCompileCallbackFn arg2 = (LLVMOrcLazyCompileCallbackFn) 0 ;
+  void *arg3 = (void *) 0 ;
+  LLVMOrcTargetAddress result;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  arg2 = jarg2 ? true : false; 
-  LLVMPassManagerBuilderSetDisableSimplifyLibCalls(arg1,arg2);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (LLVMOrcLazyCompileCallbackFn)jarg2; 
+  arg3 = jarg3; 
+  result = (LLVMOrcTargetAddress)LLVMOrcCreateLazyCompileCallback(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderUseInlinerWithThreshold(void * jarg1, unsigned int jarg2) {
-  LLVMPassManagerBuilderRef arg1 ;
-  unsigned int arg2 ;
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_OrcCreateIndirectStub(void * jarg1, char * jarg2, unsigned long long jarg3) {
+  int jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  char *arg2 = (char *) 0 ;
+  LLVMOrcTargetAddress arg3 ;
+  LLVMOrcErrorCode result;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  arg2 = (unsigned int)jarg2; 
-  LLVMPassManagerBuilderUseInlinerWithThreshold(arg1,arg2);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = (LLVMOrcTargetAddress)jarg3; 
+  result = (LLVMOrcErrorCode)LLVMOrcCreateIndirectStub(arg1,(char const *)arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateFunctionPassManager(void * jarg1, void * jarg2) {
-  LLVMPassManagerBuilderRef arg1 ;
-  LLVMPassManagerRef arg2 ;
+SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_OrcSetIndirectStubPointer(void * jarg1, char * jarg2, unsigned long long jarg3) {
+  int jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  char *arg2 = (char *) 0 ;
+  LLVMOrcTargetAddress arg3 ;
+  LLVMOrcErrorCode result;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  arg2 = (LLVMPassManagerRef)jarg2; 
-  LLVMPassManagerBuilderPopulateFunctionPassManager(arg1,arg2);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = (LLVMOrcTargetAddress)jarg3; 
+  result = (LLVMOrcErrorCode)LLVMOrcSetIndirectStubPointer(arg1,(char const *)arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateModulePassManager(void * jarg1, void * jarg2) {
-  LLVMPassManagerBuilderRef arg1 ;
-  LLVMPassManagerRef arg2 ;
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_OrcAddEagerlyCompiledIR(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+  unsigned int jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  LLVMModuleRef arg2 ;
+  LLVMOrcSymbolResolverFn arg3 = (LLVMOrcSymbolResolverFn) 0 ;
+  void *arg4 = (void *) 0 ;
+  LLVMOrcModuleHandle result;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  arg2 = (LLVMPassManagerRef)jarg2; 
-  LLVMPassManagerBuilderPopulateModulePassManager(arg1,arg2);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (LLVMModuleRef)jarg2; 
+  arg3 = (LLVMOrcSymbolResolverFn)jarg3; 
+  arg4 = jarg4; 
+  result = (LLVMOrcModuleHandle)LLVMOrcAddEagerlyCompiledIR(arg1,arg2,arg3,arg4);
+  jresult = result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateLTOPassManager(void * jarg1, void * jarg2, unsigned int jarg3, unsigned int jarg4) {
-  LLVMPassManagerBuilderRef arg1 ;
-  LLVMPassManagerRef arg2 ;
-  LLVMBool arg3 ;
-  LLVMBool arg4 ;
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_OrcAddLazilyCompiledIR(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+  unsigned int jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  LLVMModuleRef arg2 ;
+  LLVMOrcSymbolResolverFn arg3 = (LLVMOrcSymbolResolverFn) 0 ;
+  void *arg4 = (void *) 0 ;
+  LLVMOrcModuleHandle result;
   
-  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
-  arg2 = (LLVMPassManagerRef)jarg2; 
-  arg3 = jarg3 ? true : false; 
-  arg4 = jarg4 ? true : false; 
-  LLVMPassManagerBuilderPopulateLTOPassManager(arg1,arg2,arg3,arg4);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (LLVMModuleRef)jarg2; 
+  arg3 = (LLVMOrcSymbolResolverFn)jarg3; 
+  arg4 = jarg4; 
+  result = (LLVMOrcModuleHandle)LLVMOrcAddLazilyCompiledIR(arg1,arg2,arg3,arg4);
+  jresult = result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAggressiveDCEPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcRemoveModule(void * jarg1, unsigned int jarg2) {
+  LLVMOrcJITStackRef arg1 ;
+  LLVMOrcModuleHandle arg2 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddAggressiveDCEPass(arg1);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (LLVMOrcModuleHandle)jarg2; 
+  LLVMOrcRemoveModule(arg1,arg2);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBitTrackingDCEPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_OrcGetSymbolAddress(void * jarg1, char * jarg2) {
+  unsigned long long jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  char *arg2 = (char *) 0 ;
+  LLVMOrcTargetAddress result;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddBitTrackingDCEPass(arg1);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (char *)jarg2; 
+  result = (LLVMOrcTargetAddress)LLVMOrcGetSymbolAddress(arg1,(char const *)arg2);
+  jresult = result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAlignmentFromAssumptionsPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcDisposeInstance(void * jarg1) {
+  LLVMOrcJITStackRef arg1 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddAlignmentFromAssumptionsPass(arg1);
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  LLVMOrcDisposeInstance(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCFGSimplificationPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_LoadLibraryPermanently(char * jarg1) {
+  unsigned int jresult ;
+  char *arg1 = (char *) 0 ;
+  LLVMBool result;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddCFGSimplificationPass(arg1);
+  arg1 = (char *)jarg1; 
+  result = (LLVMBool)LLVMLoadLibraryPermanently((char const *)arg1);
+  jresult = result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDeadStoreEliminationPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ParseCommandLineOptions(int jarg1, void * jarg2, char * jarg3) {
+  int arg1 ;
+  char **arg2 = (char **) 0 ;
+  char *arg3 = (char *) 0 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddDeadStoreEliminationPass(arg1);
+  arg1 = (int)jarg1; 
+  {
+    // Used in generating wrap.cpp:
+    // Converts input parameter of target type to C.
+    arg2 = (char**)jarg2;
+  }
+  arg3 = (char *)jarg3; 
+  LLVMParseCommandLineOptions(arg1,(char const *const *)arg2,(char const *)arg3);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarizerPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_SearchForAddressOfSymbol(char * jarg1) {
+  void * jresult ;
+  char *arg1 = (char *) 0 ;
+  void *result = 0 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddScalarizerPass(arg1);
+  arg1 = (char *)jarg1; 
+  result = (void *)LLVMSearchForAddressOfSymbol((char const *)arg1);
+  jresult = result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddMergedLoadStoreMotionPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSymbol(char * jarg1, void * jarg2) {
+  char *arg1 = (char *) 0 ;
+  void *arg2 = (void *) 0 ;
   
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddMergedLoadStoreMotionPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGVNPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddGVNPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddNewGVNPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddNewGVNPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIndVarSimplifyPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddIndVarSimplifyPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddInstructionCombiningPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddInstructionCombiningPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddJumpThreadingPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddJumpThreadingPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLICMPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLICMPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopDeletionPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLoopDeletionPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopIdiomPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLoopIdiomPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopRotatePass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLoopRotatePass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopRerollPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLoopRerollPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopUnrollPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLoopUnrollPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopUnswitchPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLoopUnswitchPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddMemCpyOptPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddMemCpyOptPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPartiallyInlineLibCallsPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddPartiallyInlineLibCallsPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLowerSwitchPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLowerSwitchPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPromoteMemoryToRegisterPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddPromoteMemoryToRegisterPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddReassociatePass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddReassociatePass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSCCPPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddSCCPPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddScalarReplAggregatesPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPassSSA(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddScalarReplAggregatesPassSSA(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPassWithThreshold(void * jarg1, int jarg2) {
-  LLVMPassManagerRef arg1 ;
-  int arg2 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  arg2 = (int)jarg2; 
-  LLVMAddScalarReplAggregatesPassWithThreshold(arg1,arg2);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSimplifyLibCallsPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddSimplifyLibCallsPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTailCallEliminationPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddTailCallEliminationPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddConstantPropagationPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddConstantPropagationPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDemoteMemoryToRegisterPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddDemoteMemoryToRegisterPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddVerifierPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddVerifierPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCorrelatedValuePropagationPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddCorrelatedValuePropagationPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddEarlyCSEPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddEarlyCSEPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddEarlyCSEMemSSAPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddEarlyCSEMemSSAPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLowerExpectIntrinsicPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLowerExpectIntrinsicPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTypeBasedAliasAnalysisPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddTypeBasedAliasAnalysisPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScopedNoAliasAAPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddScopedNoAliasAAPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBasicAliasAnalysisPass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddBasicAliasAnalysisPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBBVectorizePass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddBBVectorizePass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopVectorizePass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLoopVectorizePass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSLPVectorizePass(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddSLPVectorizePass(arg1);
+  arg1 = (char *)jarg1; 
+  arg2 = jarg2; 
+  LLVMAddSymbol((char const *)arg1,arg2);
 }
 
 
@@ -9771,53 +10017,575 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAnalysisPasses(void * jarg1, void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_VerifyModule(void * jarg1, int jarg2, void * jarg3) {
-  unsigned int jresult ;
-  LLVMModuleRef arg1 ;
-  LLVMVerifierFailureAction arg2 ;
-  char **arg3 = (char **) 0 ;
-  LLVMBool result;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddArgumentPromotionPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
   
-  arg1 = (LLVMModuleRef)jarg1; 
-  arg2 = (LLVMVerifierFailureAction)jarg2; 
-  {
-    // Used in generating wrap.cpp:
-    // Converts input parameter of target type to C.
-    arg3 = (char**)jarg3;
-  }
-  result = (LLVMBool)LLVMVerifyModule(arg1,arg2,arg3);
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddArgumentPromotionPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddConstantMergePass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddConstantMergePass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDeadArgEliminationPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddDeadArgEliminationPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddFunctionAttrsPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddFunctionAttrsPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddFunctionInliningPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddFunctionInliningPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAlwaysInlinerPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddAlwaysInlinerPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalDCEPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddGlobalDCEPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalOptimizerPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddGlobalOptimizerPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIPConstantPropagationPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddIPConstantPropagationPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPruneEHPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddPruneEHPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIPSCCPPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddIPSCCPPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddInternalizePass(void * jarg1, unsigned int jarg2) {
+  LLVMPassManagerRef arg1 ;
+  unsigned int arg2 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  LLVMAddInternalizePass(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddStripDeadPrototypesPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddStripDeadPrototypesPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddStripSymbolsPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddStripSymbolsPass(arg1);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderCreate() {
+  void * jresult ;
+  LLVMPassManagerBuilderRef result;
+  
+  result = LLVMPassManagerBuilderCreate();
   jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_VerifyFunction(void * jarg1, int jarg2) {
-  unsigned int jresult ;
-  LLVMValueRef arg1 ;
-  LLVMVerifierFailureAction arg2 ;
-  LLVMBool result;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderDispose(void * jarg1) {
+  LLVMPassManagerBuilderRef arg1 ;
   
-  arg1 = (LLVMValueRef)jarg1; 
-  arg2 = (LLVMVerifierFailureAction)jarg2; 
-  result = (LLVMBool)LLVMVerifyFunction(arg1,arg2);
-  jresult = result; 
-  return jresult;
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  LLVMPassManagerBuilderDispose(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ViewFunctionCFG(void * jarg1) {
-  LLVMValueRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetOptLevel(void * jarg1, unsigned int jarg2) {
+  LLVMPassManagerBuilderRef arg1 ;
+  unsigned int arg2 ;
   
-  arg1 = (LLVMValueRef)jarg1; 
-  LLVMViewFunctionCFG(arg1);
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  LLVMPassManagerBuilderSetOptLevel(arg1,arg2);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ViewFunctionCFGOnly(void * jarg1) {
-  LLVMValueRef arg1 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetSizeLevel(void * jarg1, unsigned int jarg2) {
+  LLVMPassManagerBuilderRef arg1 ;
+  unsigned int arg2 ;
   
-  arg1 = (LLVMValueRef)jarg1; 
-  LLVMViewFunctionCFGOnly(arg1);
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  LLVMPassManagerBuilderSetSizeLevel(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableUnitAtATime(void * jarg1, unsigned int jarg2) {
+  LLVMPassManagerBuilderRef arg1 ;
+  LLVMBool arg2 ;
+  
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  LLVMPassManagerBuilderSetDisableUnitAtATime(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableUnrollLoops(void * jarg1, unsigned int jarg2) {
+  LLVMPassManagerBuilderRef arg1 ;
+  LLVMBool arg2 ;
+  
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  LLVMPassManagerBuilderSetDisableUnrollLoops(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableSimplifyLibCalls(void * jarg1, unsigned int jarg2) {
+  LLVMPassManagerBuilderRef arg1 ;
+  LLVMBool arg2 ;
+  
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  LLVMPassManagerBuilderSetDisableSimplifyLibCalls(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderUseInlinerWithThreshold(void * jarg1, unsigned int jarg2) {
+  LLVMPassManagerBuilderRef arg1 ;
+  unsigned int arg2 ;
+  
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  LLVMPassManagerBuilderUseInlinerWithThreshold(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateFunctionPassManager(void * jarg1, void * jarg2) {
+  LLVMPassManagerBuilderRef arg1 ;
+  LLVMPassManagerRef arg2 ;
+  
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  arg2 = (LLVMPassManagerRef)jarg2; 
+  LLVMPassManagerBuilderPopulateFunctionPassManager(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateModulePassManager(void * jarg1, void * jarg2) {
+  LLVMPassManagerBuilderRef arg1 ;
+  LLVMPassManagerRef arg2 ;
+  
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  arg2 = (LLVMPassManagerRef)jarg2; 
+  LLVMPassManagerBuilderPopulateModulePassManager(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateLTOPassManager(void * jarg1, void * jarg2, unsigned int jarg3, unsigned int jarg4) {
+  LLVMPassManagerBuilderRef arg1 ;
+  LLVMPassManagerRef arg2 ;
+  LLVMBool arg3 ;
+  LLVMBool arg4 ;
+  
+  arg1 = (LLVMPassManagerBuilderRef)jarg1; 
+  arg2 = (LLVMPassManagerRef)jarg2; 
+  arg3 = jarg3 ? true : false; 
+  arg4 = jarg4 ? true : false; 
+  LLVMPassManagerBuilderPopulateLTOPassManager(arg1,arg2,arg3,arg4);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAggressiveDCEPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddAggressiveDCEPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBitTrackingDCEPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddBitTrackingDCEPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAlignmentFromAssumptionsPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddAlignmentFromAssumptionsPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCFGSimplificationPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddCFGSimplificationPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDeadStoreEliminationPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddDeadStoreEliminationPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarizerPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddScalarizerPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddMergedLoadStoreMotionPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddMergedLoadStoreMotionPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGVNPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddGVNPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddNewGVNPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddNewGVNPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIndVarSimplifyPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddIndVarSimplifyPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddInstructionCombiningPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddInstructionCombiningPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddJumpThreadingPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddJumpThreadingPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLICMPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLICMPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopDeletionPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLoopDeletionPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopIdiomPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLoopIdiomPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopRotatePass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLoopRotatePass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopRerollPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLoopRerollPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopUnrollPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLoopUnrollPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopUnswitchPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLoopUnswitchPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddMemCpyOptPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddMemCpyOptPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPartiallyInlineLibCallsPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddPartiallyInlineLibCallsPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLowerSwitchPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLowerSwitchPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPromoteMemoryToRegisterPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddPromoteMemoryToRegisterPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddReassociatePass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddReassociatePass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSCCPPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddSCCPPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddScalarReplAggregatesPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPassSSA(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddScalarReplAggregatesPassSSA(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPassWithThreshold(void * jarg1, int jarg2) {
+  LLVMPassManagerRef arg1 ;
+  int arg2 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  arg2 = (int)jarg2; 
+  LLVMAddScalarReplAggregatesPassWithThreshold(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSimplifyLibCallsPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddSimplifyLibCallsPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTailCallEliminationPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddTailCallEliminationPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddConstantPropagationPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddConstantPropagationPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDemoteMemoryToRegisterPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddDemoteMemoryToRegisterPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddVerifierPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddVerifierPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCorrelatedValuePropagationPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddCorrelatedValuePropagationPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddEarlyCSEPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddEarlyCSEPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddEarlyCSEMemSSAPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddEarlyCSEMemSSAPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLowerExpectIntrinsicPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLowerExpectIntrinsicPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTypeBasedAliasAnalysisPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddTypeBasedAliasAnalysisPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScopedNoAliasAAPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddScopedNoAliasAAPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBasicAliasAnalysisPass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddBasicAliasAnalysisPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBBVectorizePass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddBBVectorizePass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopVectorizePass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLoopVectorizePass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSLPVectorizePass(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddSLPVectorizePass(arg1);
 }
 
 

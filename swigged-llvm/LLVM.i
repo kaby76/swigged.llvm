@@ -4,16 +4,24 @@
 
 %{
 #include <llvm-c/Core.h>
+#include <llvm-c/Analysis.h>
 #include <llvm-c/BitReader.h>
 #include <llvm-c/BitWriter.h>
+#include <llvm-c/Disassembler.h>
+#include <llvm-c/ErrorHandling.h>
 #include <llvm-c/ExecutionEngine.h>
+#include <llvm-c/Initialization.h>
+#include <llvm-c/IRReader.h>
+#include <llvm-c/Linker.h>
+//#include <llvm-c/LinkTimeOptimizer.h>
+#include <llvm-c/OrcBindings.h>
+#include <llvm-c/Support.h>
+#include <llvm-c/Target.h>
+#include <llvm-c/TargetMachine.h>
 #include <llvm-c/Transforms/IPO.h>
 #include <llvm-c/Transforms/PassManagerBuilder.h>
 #include <llvm-c/Transforms/Scalar.h>
 #include <llvm-c/Transforms/Vectorize.h>
-#include <llvm-c/Target.h>
-#include <llvm-c/TargetMachine.h>
-#include <llvm-c/Analysis.h>
 #include "Additional.h"
 #include "DebugInfo.h"
 %}
@@ -28,6 +36,10 @@
 %ignore LLVMContextSetDiagnosticHandler;
 %ignore LLVMContextSetYieldCallback;
 %ignore LLVMConstIntOfArbitraryPrecision;
+%ignore LLVMOrcAddObjectFile;
+// No GUI, so ignore these functions.
+%ignore LLVMViewFunctionCFG;
+%ignore LLVMViewFunctionCFGOnly;
 
 typedef bool LLVMBool;
 REF_CLASS(LLVMMCJITCompilerOptions, MCJITCompilerOptions)
@@ -44,6 +56,8 @@ REF_CLASS(LLVMExecutionEngineRef, ExecutionEngineRef)
 REF_CLASS(LLVMGenericValueRef, GenericValueRef)
 REF_CLASS(LLVMPassManagerBuilderRef, PassManagerBuilderRef)
 REF_CLASS(LLVMPassManagerRef, PassManagerRef)
+REF_CLASS(LLVMObjectFileRef, ObjectFileRef)
+REF_CLASS(LLVMOrcJITStackRef, OrcJITStackRef)
 REF_CLASS(LLVMPassRegistryRef, PassRegistryRef)
 REF_CLASS(LLVMTargetDataRef, TargetDataRef)
 REF_CLASS(LLVMTargetLibraryInfoRef, TargetLibraryInfoRef)
@@ -52,7 +66,10 @@ REF_CLASS(LLVMTargetRef, TargetRef)
 REF_CLASS(LLVMTypeRef, TypeRef)
 REF_CLASS(LLVMUseRef, UseRef)
 REF_CLASS(LLVMValueRef, ValueRef)
-		  
+
+REF_CLASS(LLVMOpInfoSymbol1,OpInfoSymbol1)
+REF_CLASS(LLVMOpInfo1,OpInfo1)
+   
 REF_ARRAY(unsigned,uint)
 REF_ARRAY(uint64_t,ulong)
 REF_ARRAY(int64_t,long)
@@ -79,15 +96,23 @@ REF_ARRAY(int64_t,long)
 %apply LLVMBool *OUTPUT { LLVMBool *losesInfo };
 
 %include "llvm-c/Core.h"
+%include "llvm-c/Analysis.h"
 %include "llvm-c/BitReader.h"
 %include "llvm-c/BitWriter.h"
+%include "llvm-c/Disassembler.h"
+%include "llvm-c/ErrorHandling.h"
 %include "llvm-c/ExecutionEngine.h"   
+%include "llvm-c/Initialization.h"
+%include "llvm-c/IRReader.h"
+%include "llvm-c/Linker.h"
+//%include "llvm-c/LinkTimeOptimizer.h"
+%include "llvm-c/OrcBindings.h"
+%include "llvm-c/Support.h"
+%include "llvm-c/Target.h"
+%include "llvm-c/TargetMachine.h"
 %include "llvm-c/Transforms/IPO.h"
 %include "llvm-c/Transforms/PassManagerBuilder.h"
 %include "llvm-c/Transforms/Scalar.h"
 %include "llvm-c/Transforms/Vectorize.h"
-%include "llvm-c/Target.h"
-%include "llvm-c/TargetMachine.h"
-%include "llvm-c/Analysis.h"
 %include "Additional.h"
 %include "DebugInfo.h"

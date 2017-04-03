@@ -100,6 +100,8 @@
 %typemap(cstype) char** ArgV "out string"
 %typemap(cstype) char** EnvP "out string"
 %typemap(cstype) char** arg1 "out string"
+%typemap(cstype) char** MangledSymbol "out string"
+%typemap(cstype) char** argv "out string"
 // Output garbage for other cases not checked.
 %typemap(cstype) char**  "outasdfadfs string"
 %typemap(csin) char** "out $csinput"
