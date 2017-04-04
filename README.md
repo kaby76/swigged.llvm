@@ -11,16 +11,15 @@ additional LLVM-C functions.
 1) git clone https://github.com/kaby76/swigged-llvm.git
 2) cd swigged-llvm
 3) git clone -b release_40 https://github.com/llvm-mirror/llvm.git
-4) mkdir build-win64
+4) mkdir build-win64 build-win32
 5) cd build-win64
 6) "%VS150BASE%\VC\Auxiliary\Build\vcvarsall.bat" x64
 7) cmake -G "Visual Studio 15 2017 Win64" ..\llvm
 8) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x64
 9) cd ..
-9) mkdir build-win32
 10) cd build-win32
 11) "%VS150BASE%\VC\Auxiliary\Build\vcvarsall.bat" x86
-12) cmake -G "Visual Studio 15 2017 Win32" ..\llvm
+12) cmake -G "Visual Studio 15 2017" ..\llvm
 13) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x32
 14) cd ../swigged-llvm
 15) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform=x64
