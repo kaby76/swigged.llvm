@@ -1,10 +1,11 @@
 # Swigged-LLVM
 
-This project is a SWIG-generated C# wrapper API for LLVM-C. This code
+This project is a [SWIG](http://swig.org)-generated C# wrapper API for LLVM-C. This code
 based upon [SharpLang](https://github.com/xen2/SharpLang), which is defunct. The purpose of that project
-was to compile MS IL, and was abandoned with the open sourcing of RyuJIT. But it also contained a
-SWIG-generated C# wrappar for LLVM-C. Swigged-LLVM drops the MS IL reader and extends the API to contain
-additional LLVM-C functions.
+was to compile MS IL, and was abandoned when Microsoft open sourced much of the .NET runtime, including
+RyuJIT. But, SharpLang contained a SWIG-generated C# wrappar for LLVM-C, useful in it's own right.
+Swigged-LLVM takes up the C# API for LLVM, drops the MS IL reader, and extends the API to contain
+additional LLVM-C functionality.
 
 ## Build Instructions:
 
