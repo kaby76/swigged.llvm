@@ -3,7 +3,7 @@
 This project is a SWIG-generated C# wrapper API for LLVM-C. This code
 based upon SharpLLVM, a project that is now defunct.
 
-Build Instructions:
+## Build Instructions:
 
 1) git clone https://github.com/kaby76/swigged-llvm.git
 2) cd swigged-llvm
@@ -16,3 +16,6 @@ Build Instructions:
 9) cd swigged-llvm
 10) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform=x64
 
+## Doxygen Documentation:
+
+http://llvm.org/docs/doxygen/html/modules.html
