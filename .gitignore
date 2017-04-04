@@ -252,3 +252,4 @@ paket-files/
 *.sln.iml
 build/
 build-win64/
+build-win32/

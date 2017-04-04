@@ -20,9 +20,17 @@ additional LLVM-C functions.
 10) cd build-win32
 11) "%VS150BASE%\VC\Auxiliary\Build\vcvarsall.bat" x86
 12) cmake -G "Visual Studio 15 2017" ..\llvm
-13) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x32
+13) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=Win32
 14) cd ../swigged-llvm
-15) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform=x64
+15) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform=x86
+
+## Testing
+
+Make sure to set the Default Processor Architecture to x86 or x64, then
+recompile in Visual Studio 2017. If you don't set the DPA, then
+no tests will be discovered, and so cannot be run.
+
+Test>Test Settings>Default Processor Architecture>X64
 
 ## Doxygen Documentation:
 

@@ -23,7 +23,6 @@ namespace UnitTestProject1
             LLVM.BuildRet(builder, LLVM.ConstInt(LLVM.Int32Type(), 42, false));
             string msg = new string(new char[1000]);
             LLVM.VerifyModule(Module, VerifierFailureAction.PrintMessageAction, out msg);
-//            LLVM.DisposeMessage(Error);
 
             LLVM.DisposeBuilder(builder);
         }
