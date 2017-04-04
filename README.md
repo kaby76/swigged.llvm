@@ -40,3 +40,7 @@ http://llvm.org/docs/doxygen/html/modules.html
 ## Alternative LLVM Framework for C#
 
 LLVMSharp (https://www.nuget.org/packages/LLVMSharp/3.9.1-rc3)
+
+Note: LLVMSharp is a NET Core API. It cannot be used with NET Framework applications.
+(At the moment, NET Framework assemblies can be used in NET Core applications but not
+the other way around.)
