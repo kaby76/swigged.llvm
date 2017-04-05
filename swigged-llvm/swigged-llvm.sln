@@ -15,6 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject2", "UnitTes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{690AB4A2-DCCD-4643-86C3-4E43CA31530B}"
 	ProjectSection(SolutionItems) = preProject
+		Package.nuspec = Package.nuspec
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
@@ -46,6 +47,7 @@ Global
 		{28159184-D97E-4A6C-8AD1-253DC15640C4}.Debug|x64.Build.0 = Debug|x64
 		{28159184-D97E-4A6C-8AD1-253DC15640C4}.Release|Any CPU.ActiveCfg = Release|Win32
 		{28159184-D97E-4A6C-8AD1-253DC15640C4}.Release|Win32.ActiveCfg = Release|Win32
+		{28159184-D97E-4A6C-8AD1-253DC15640C4}.Release|Win32.Build.0 = Release|Win32
 		{28159184-D97E-4A6C-8AD1-253DC15640C4}.Release|x64.ActiveCfg = Release|x64
 		{28159184-D97E-4A6C-8AD1-253DC15640C4}.Release|x64.Build.0 = Release|x64
 		{A9DDFE84-68A8-4835-8D4B-196697F0DDB0}.Debug|Any CPU.ActiveCfg = Debug|x64
