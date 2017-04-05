@@ -79,9 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\lib\swigged-llvm.csproj">
+    <ProjectReference Include="..\swigged.llvm\swigged.llvm.csproj">
       <Project>{1e7a06ee-8ae4-ba64-d322-6c0a3fcc98b9}</Project>
-      <Name>CSLLVM</Name>
+      <Name>swigged.llvm</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

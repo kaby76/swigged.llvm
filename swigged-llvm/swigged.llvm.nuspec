@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <!-- The identifier that must be unique within the hosting gallery -->
+    <id>swigged.llvm</id>
+
+    <version>4.0.0</version>
+
+    <!-- Authors contain text that appears directly on the gallery -->
+    <authors>Ken Domino</authors>
+    
+    <!-- Owners are typically nuget.org identities that allow gallery
+            users to easily find other packages by the same owners.
+    -->
+    <owners>Ken Domino</owners>
+
+    <!-- License, project, icon links for the gallery -->
+    <projectUrl>https://github.com/kaby76/swigged-llvm</projectUrl>
+    <iconUrl>https://raw.github.com/kaby76/swigged-llvm/master/.gif</iconUrl>
+    <licenseUrl>https://raw.github.com/kaby76/swigged-llvm/master/LICENSE</licenseUrl>
+
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A SWIG-generated C# API of the C API of LLVM.</description>
+    <releaseNotes>First release, using LLVM 4.0.0</releaseNotes>
+
+    <!-- Copyright information -->
+    <copyright>Copyright © 2017</copyright>
+
+    <!-- Tags appear in the gallery and can be used for tag searches -->
+    <tags>LLVM SWIG native</tags>
+
+    <!-- Dependencies are automatically installed when the package is installed -->
+    <dependencies>
+    </dependencies>
+  </metadata>
+  
+  <files>
+    <file src="x86\Release\swigged.llvm.dll" target="swigged.llvm\x86" />
+    <file src="x86\Release\swigged.llvm.native.dll" target="swigged.llvm\x86" />
+    <file src="x64\Release\swigged.llvm.dll" target="swigged.llvm\x64" />
+    <file src="x64\Release\swigged.llvm.native.dll" target="swigged.llvm\x64" />
+    <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" />
+    <file src="swigged.llvm.props" target="build\swigged.llvm.props" />
+  </files>
+</package>

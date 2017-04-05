@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSLLVM;
+using Swigged.LLVM;
 
 namespace UnitTestProject1
 {
@@ -16,7 +16,7 @@ namespace UnitTestProject1
 
             var Function = LLVM.AddFunction(Module, "simple_function",
                 LLVM.FunctionType(LLVM.Int32Type(), new TypeRef[0], false));
-            LLVM.SetFunctionCallConv(Function, (uint)CSLLVM.CallConv.CCallConv);
+            LLVM.SetFunctionCallConv(Function, (uint)Swigged.LLVM.CallConv.CCallConv);
             var entry = LLVM.AppendBasicBlock(Function, "entry");
             var builder = LLVM.CreateBuilder();
             LLVM.PositionBuilderAtEnd(builder, entry);
@@ -27,10 +27,10 @@ namespace UnitTestProject1
             LLVM.DisposeBuilder(builder);
         }
 
-        CSLLVM.ModuleRef llvm_load_module(bool Lazy, bool New)
+        Swigged.LLVM.ModuleRef llvm_load_module(bool Lazy, bool New)
         {
-            CSLLVM.MemoryBufferRef MB;
-            CSLLVM.ModuleRef M;
+            Swigged.LLVM.MemoryBufferRef MB;
+            Swigged.LLVM.ModuleRef M;
             string msg = null;
             if (LLVM.CreateMemoryBufferWithSTDIN(out MB, out msg))
             {
@@ -40,34 +40,34 @@ namespace UnitTestProject1
             bool Ret;
             if (New)
             {
-                ContextRef c = CSLLVM.LLVM.GetGlobalContext();
+                ContextRef c = Swigged.LLVM.LLVM.GetGlobalContext();
                 // LLVMContextSetDiagnosticHandler(C, diagnosticHandler, NULL);
                 if (Lazy)
-                    Ret = CSLLVM.LLVM.GetBitcodeModule2(MB, out M);
+                    Ret = Swigged.LLVM.LLVM.GetBitcodeModule2(MB, out M);
                 else
-                    Ret = CSLLVM.LLVM.ParseBitcode2(MB, out M);
+                    Ret = Swigged.LLVM.LLVM.ParseBitcode2(MB, out M);
             }
             else
             {
                 if (Lazy)
-                    Ret = CSLLVM.LLVM.GetBitcodeModule(MB, out M, out msg);
+                    Ret = Swigged.LLVM.LLVM.GetBitcodeModule(MB, out M, out msg);
                 else
-                    Ret = CSLLVM.LLVM.ParseBitcode(MB, out M, out msg);
+                    Ret = Swigged.LLVM.LLVM.ParseBitcode(MB, out M, out msg);
             }
             if (Ret)
             {
                 System.Console.WriteLine("Error parsing bitcode: " + msg);
-                return default(CSLLVM.ModuleRef);
+                return default(Swigged.LLVM.ModuleRef);
             }
             if (!Lazy)
-                CSLLVM.LLVM.DisposeMemoryBuffer(MB);
+                Swigged.LLVM.LLVM.DisposeMemoryBuffer(MB);
             return M;
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            CSLLVM.LLVM.EnablePrettyStackTrace();
+            Swigged.LLVM.LLVM.EnablePrettyStackTrace();
             buildSimpleFunction();
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSLLVM;
+using Swigged.LLVM;
 using System.Runtime.InteropServices;
 
 namespace UnitTestProject2
@@ -33,7 +33,7 @@ namespace UnitTestProject2
         public void TestMethod1()
         {
 
-            CSLLVM.ContextRef g = CSLLVM.LLVM.GetGlobalContext();
+            Swigged.LLVM.ContextRef g = Swigged.LLVM.LLVM.GetGlobalContext();
             var Module = LLVM.ModuleCreateWithName("tut2");
             var triple = LLVM.GetDefaultTargetTriple();
             LLVM.SetTarget(Module, triple);
@@ -43,7 +43,7 @@ namespace UnitTestProject2
                 LLVM.FunctionType(LLVM.Int32Type(),
                 arg_types,
                 false));
-            LLVM.SetFunctionCallConv(gcd, (uint)CSLLVM.CallConv.CCallConv);
+            LLVM.SetFunctionCallConv(gcd, (uint)Swigged.LLVM.CallConv.CCallConv);
 
             var x = LLVM.GetParam(gcd, 0);
             var y = LLVM.GetParam(gcd, 1);
@@ -106,7 +106,7 @@ namespace UnitTestProject2
                     }
                 }
 
-            var pm = CSLLVM.LLVM.CreatePassManager();
+            var pm = Swigged.LLVM.LLVM.CreatePassManager();
             var str = LLVM.PrintModuleToString(Module);
             LLVM.DumpModule(Module);
             LLVM.DisposeBuilder(builder);
