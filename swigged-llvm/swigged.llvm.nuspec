@@ -40,6 +40,5 @@
     <file src="x64\Release\swigged.llvm.dll" target="swigged.llvm\x64" />
     <file src="x64\Release\swigged.llvm.native.dll" target="swigged.llvm\x64" />
     <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" />
-    <file src="swigged.llvm.props" target="build\swigged.llvm.props" />
   </files>
 </package>

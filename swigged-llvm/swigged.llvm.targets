@@ -16,6 +16,17 @@
     <CsllvmBinaries64 Include="$(MSBuildThisFileDirectory)..\swigged.llvm\x64\*.*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="swigged.llvm" Condition="'$(Platform)' == 'x86'">
+      <HintPath>$(MSBuildThisFileDirectory)..\swigged.llvm\x86\swigged.llvm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="swigged.llvm" Condition="'$(Platform)' == 'x64'">
+      <HintPath>$(MSBuildThisFileDirectory)..\swigged.llvm\x64\swigged.llvm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+
   <PropertyGroup>
     <CsllvmTargetDir Condition=" '$(CsllvmTargetDir)' == '' ">$(TargetDir)</CsllvmTargetDir>
   </PropertyGroup>
