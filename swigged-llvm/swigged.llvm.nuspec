@@ -4,7 +4,7 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
 
-    <version>4.0.0</version>
+    <version>4.0.1.1-alpha</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -16,12 +16,18 @@
 
     <!-- License, project, icon links for the gallery -->
     <projectUrl>https://github.com/kaby76/swigged-llvm</projectUrl>
-    <iconUrl>https://raw.github.com/kaby76/swigged-llvm/master/.gif</iconUrl>
+    <iconUrl>https://raw.github.com/kaby76/swigged-llvm/master/logo.png</iconUrl>
     <licenseUrl>https://raw.github.com/kaby76/swigged-llvm/master/LICENSE</licenseUrl>
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of the C API of LLVM.</description>
-    <releaseNotes>First release, using LLVM 4.0.0</releaseNotes>
+    <releaseNotes>First release, using LLVM version 4.0.1. When building, select either
+       x86 or x64 for platform. Also, make sure "unsafe code" is allowed in the build
+       in your C# code. Note, this API is a little large, as LLVM was configured to generate
+       code for all available targets. If you want to configure and build a subset,
+       see https://github.com/kaby76/swigged-llvm. After installing the package, select the
+       platform then save, close, and re-open your project/solution.
+    </releaseNotes>
 
     <!-- Copyright information -->
     <copyright>Copyright © 2017</copyright>
