@@ -41,6 +41,7 @@ http://llvm.org/docs/doxygen/html/modules.html
 
 LLVMSharp (https://www.nuget.org/packages/LLVMSharp/3.9.1-rc3)
 
-Note: LLVMSharp is a NET Core API. It cannot be used with NET Framework applications.
-(At the moment, NET Framework assemblies can be used in NET Core applications but not
-the other way around.)
+Note: LLVMSharp is a NET Core API. It appears it cannot be used with NET Framework applications,
+at least I have had no luck in doing so. In theory, NET Framework assemblies can be used in
+NET Core applications but not the other way around. However, although swigged.llvm 
+is a NET Framework API, it does not seem to work with NET Core apps.
