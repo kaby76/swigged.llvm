@@ -318,8 +318,8 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_LLVM(SWIG_CSharpStringHel
 #include <llvm-c/Transforms/PassManagerBuilder.h>
 #include <llvm-c/Transforms/Scalar.h>
 #include <llvm-c/Transforms/Vectorize.h>
-#include "Additional.h"
-#include "DebugInfo.h"
+//#include "Additional.h"
+//#include "DebugInfo.h"
 
 
 #include <stdint.h>		// Use the C99 official header
@@ -329,7 +329,7 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_LLVM(SWIG_CSharpStringHel
 extern "C" {
 #endif
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_AttributeReturnIndex_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_AttributeReturnIndex_get___() {
   int jresult ;
   int result;
   
@@ -339,7 +339,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_AttributeReturnIndex_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_AttributeFunctionIndex_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_AttributeFunctionIndex_get___() {
   int jresult ;
   int result;
   
@@ -349,7 +349,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_AttributeFunctionIndex_get() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeCore(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeCore___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -357,12 +357,12 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeCore(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_Shutdown() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_Shutdown___() {
   LLVMShutdown();
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_CreateMessage(char * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateMessage___(char * jarg1) {
   char * jresult ;
   char *arg1 = (char *) 0 ;
   char *result = 0 ;
@@ -374,7 +374,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_CreateMessage(char * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeMessage(char * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeMessage___(char * jarg1) {
   char *arg1 = (char *) 0 ;
   
   arg1 = (char *)jarg1; 
@@ -382,7 +382,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeMessage(char * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ContextCreate() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ContextCreate___() {
   void * jresult ;
   LLVMContextRef result;
   
@@ -392,7 +392,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ContextCreate() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetGlobalContext() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetGlobalContext___() {
   void * jresult ;
   LLVMContextRef result;
   
@@ -402,19 +402,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetGlobalContext() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ContextGetDiagnosticHandler(void * jarg1) {
-  void * jresult ;
-  LLVMContextRef arg1 ;
-  LLVMDiagnosticHandler result;
-  
-  arg1 = (LLVMContextRef)jarg1; 
-  result = (LLVMDiagnosticHandler)LLVMContextGetDiagnosticHandler(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ContextGetDiagnosticContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ContextGetDiagnosticContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   void *result = 0 ;
@@ -426,7 +414,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ContextGetDiagnosticContext(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ContextDispose(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_ContextDispose___(void * jarg1) {
   LLVMContextRef arg1 ;
   
   arg1 = (LLVMContextRef)jarg1; 
@@ -434,7 +422,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ContextDispose(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetDiagInfoDescription(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetDiagInfoDescription___(void * jarg1) {
   char * jresult ;
   LLVMDiagnosticInfoRef arg1 ;
   char *result = 0 ;
@@ -446,7 +434,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetDiagInfoDescription(void * jarg1)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetDiagInfoSeverity(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetDiagInfoSeverity___(void * jarg1) {
   int jresult ;
   LLVMDiagnosticInfoRef arg1 ;
   LLVMDiagnosticSeverity result;
@@ -458,7 +446,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetDiagInfoSeverity(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetMDKindIDInContext(void * jarg1, char * jarg2, unsigned int jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetMDKindIDInContext___(void * jarg1, char * jarg2, unsigned int jarg3) {
   unsigned int jresult ;
   LLVMContextRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -474,7 +462,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetMDKindIDInContext(void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetMDKindID(char * jarg1, unsigned int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetMDKindID___(char * jarg1, unsigned int jarg2) {
   unsigned int jresult ;
   char *arg1 = (char *) 0 ;
   unsigned int arg2 ;
@@ -488,7 +476,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetMDKindID(char * jarg1, unsi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetEnumAttributeKindForName(char * jarg1, unsigned long jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetEnumAttributeKindForName___(char * jarg1, unsigned long jarg2) {
   unsigned int jresult ;
   char *arg1 = (char *) 0 ;
   size_t arg2 ;
@@ -502,7 +490,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetEnumAttributeKindForName(ch
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetLastEnumAttributeKind() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetLastEnumAttributeKind___() {
   unsigned int jresult ;
   unsigned int result;
   
@@ -512,7 +500,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetLastEnumAttributeKind() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateEnumAttribute(void * jarg1, unsigned int jarg2, unsigned long long jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateEnumAttribute___(void * jarg1, unsigned int jarg2, unsigned long long jarg3) {
   void * jresult ;
   LLVMContextRef arg1 ;
   unsigned int arg2 ;
@@ -528,7 +516,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateEnumAttribute(void * jarg1, un
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetEnumAttributeKind(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetEnumAttributeKind___(void * jarg1) {
   unsigned int jresult ;
   LLVMAttributeRef arg1 ;
   unsigned int result;
@@ -540,7 +528,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetEnumAttributeKind(void * ja
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_GetEnumAttributeValue(void * jarg1) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_GetEnumAttributeValue___(void * jarg1) {
   unsigned long long jresult ;
   LLVMAttributeRef arg1 ;
   uint64_t result;
@@ -552,7 +540,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_GetEnumAttributeValue(vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateStringAttribute(void * jarg1, char * jarg2, unsigned int jarg3, char * jarg4, unsigned int jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateStringAttribute___(void * jarg1, char * jarg2, unsigned int jarg3, char * jarg4, unsigned int jarg5) {
   void * jresult ;
   LLVMContextRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -572,7 +560,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateStringAttribute(void * jarg1, 
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetStringAttributeKind(void * jarg1, void * jarg2) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetStringAttributeKind___(void * jarg1, void * jarg2) {
   char * jresult ;
   LLVMAttributeRef arg1 ;
   unsigned int *arg2 = (unsigned int *) 0 ;
@@ -586,7 +574,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetStringAttributeKind(void * jarg1,
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetStringAttributeValue(void * jarg1, void * jarg2) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetStringAttributeValue___(void * jarg1, void * jarg2) {
   char * jresult ;
   LLVMAttributeRef arg1 ;
   unsigned int *arg2 = (unsigned int *) 0 ;
@@ -600,7 +588,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetStringAttributeValue(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsEnumAttribute(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsEnumAttribute___(void * jarg1) {
   unsigned int jresult ;
   LLVMAttributeRef arg1 ;
   LLVMBool result;
@@ -612,7 +600,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsEnumAttribute(void * jarg1) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsStringAttribute(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsStringAttribute___(void * jarg1) {
   unsigned int jresult ;
   LLVMAttributeRef arg1 ;
   LLVMBool result;
@@ -624,7 +612,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsStringAttribute(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ModuleCreateWithName(char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ModuleCreateWithName___(char * jarg1) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   LLVMModuleRef result;
@@ -636,7 +624,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ModuleCreateWithName(char * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ModuleCreateWithNameInContext(char * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ModuleCreateWithNameInContext___(char * jarg1, void * jarg2) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   LLVMContextRef arg2 ;
@@ -650,7 +638,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ModuleCreateWithNameInContext(char *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CloneModule(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CloneModule___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMModuleRef result;
@@ -662,7 +650,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CloneModule(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeModule(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeModule___(void * jarg1) {
   LLVMModuleRef arg1 ;
   
   arg1 = (LLVMModuleRef)jarg1; 
@@ -670,7 +658,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeModule(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetModuleIdentifier(void * jarg1, void * jarg2) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetModuleIdentifier___(void * jarg1, void * jarg2) {
   char * jresult ;
   LLVMModuleRef arg1 ;
   size_t *arg2 = (size_t *) 0 ;
@@ -684,7 +672,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetModuleIdentifier(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetModuleIdentifier(void * jarg1, char * jarg2, unsigned long jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetModuleIdentifier___(void * jarg1, char * jarg2, unsigned long jarg3) {
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
   size_t arg3 ;
@@ -696,7 +684,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetModuleIdentifier(void * jarg1, char
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetDataLayoutStr(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetDataLayoutStr___(void * jarg1) {
   char * jresult ;
   LLVMModuleRef arg1 ;
   char *result = 0 ;
@@ -708,7 +696,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetDataLayoutStr(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetDataLayout(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetDataLayout___(void * jarg1) {
   char * jresult ;
   LLVMModuleRef arg1 ;
   char *result = 0 ;
@@ -720,7 +708,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetDataLayout(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetDataLayout(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetDataLayout___(void * jarg1, char * jarg2) {
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
   
@@ -730,7 +718,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetDataLayout(void * jarg1, char * jar
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTarget(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTarget___(void * jarg1) {
   char * jresult ;
   LLVMModuleRef arg1 ;
   char *result = 0 ;
@@ -742,7 +730,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTarget(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetTarget(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetTarget___(void * jarg1, char * jarg2) {
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
   
@@ -752,7 +740,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetTarget(void * jarg1, char * jarg2) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DumpModule(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DumpModule___(void * jarg1) {
   LLVMModuleRef arg1 ;
   
   arg1 = (LLVMModuleRef)jarg1; 
@@ -760,7 +748,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DumpModule(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PrintModuleToFile(void * jarg1, char * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_PrintModuleToFile___(void * jarg1, char * jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -780,7 +768,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PrintModuleToFile(void * jarg1
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_PrintModuleToString(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_PrintModuleToString___(void * jarg1) {
   char * jresult ;
   LLVMModuleRef arg1 ;
   char *result = 0 ;
@@ -792,7 +780,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_PrintModuleToString(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetModuleInlineAsm(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetModuleInlineAsm___(void * jarg1, char * jarg2) {
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
   
@@ -802,7 +790,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetModuleInlineAsm(void * jarg1, char 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetModuleContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetModuleContext___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMContextRef result;
@@ -814,7 +802,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetModuleContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetTypeByName(void * jarg1, char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTypeByName___(void * jarg1, char * jarg2) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -828,7 +816,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetTypeByName(void * jarg1, char * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNamedMetadataNumOperands(void * jarg1, char * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetNamedMetadataNumOperands___(void * jarg1, char * jarg2) {
   unsigned int jresult ;
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -842,7 +830,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNamedMetadataNumOperands(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetNamedMetadataOperands(void * jarg1, char * jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_GetNamedMetadataOperands___(void * jarg1, char * jarg2, void * jarg3) {
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
   LLVMValueRef *arg3 = (LLVMValueRef *) 0 ;
@@ -854,7 +842,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetNamedMetadataOperands(void * jarg1,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddNamedMetadataOperand(void * jarg1, char * jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddNamedMetadataOperand___(void * jarg1, char * jarg2, void * jarg3) {
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
   LLVMValueRef arg3 ;
@@ -866,7 +854,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddNamedMetadataOperand(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AddFunction(void * jarg1, char * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_AddFunction___(void * jarg1, char * jarg2, void * jarg3) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -882,7 +870,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AddFunction(void * jarg1, char * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNamedFunction(void * jarg1, char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNamedFunction___(void * jarg1, char * jarg2) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -896,7 +884,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNamedFunction(void * jarg1, char 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstFunction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetFirstFunction___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMValueRef result;
@@ -908,7 +896,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstFunction(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastFunction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetLastFunction___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMValueRef result;
@@ -920,7 +908,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastFunction(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextFunction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNextFunction___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -932,7 +920,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextFunction(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousFunction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetPreviousFunction___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -944,7 +932,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousFunction(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetTypeKind(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetTypeKind___(void * jarg1) {
   int jresult ;
   LLVMTypeRef arg1 ;
   LLVMTypeKind result;
@@ -956,7 +944,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetTypeKind(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TypeIsSized(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_TypeIsSized___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   LLVMBool result;
@@ -968,7 +956,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TypeIsSized(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetTypeContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTypeContext___(void * jarg1) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMContextRef result;
@@ -980,7 +968,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetTypeContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DumpType(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DumpType___(void * jarg1) {
   LLVMTypeRef arg1 ;
   
   arg1 = (LLVMTypeRef)jarg1; 
@@ -988,7 +976,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DumpType(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_PrintTypeToString(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_PrintTypeToString___(void * jarg1) {
   char * jresult ;
   LLVMTypeRef arg1 ;
   char *result = 0 ;
@@ -1000,7 +988,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_PrintTypeToString(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int1TypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int1TypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1012,7 +1000,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int1TypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int8TypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int8TypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1024,7 +1012,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int8TypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int16TypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int16TypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1036,7 +1024,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int16TypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int32TypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int32TypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1048,7 +1036,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int32TypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int64TypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int64TypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1060,7 +1048,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int64TypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int128TypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int128TypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1072,7 +1060,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int128TypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntTypeInContext(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IntTypeInContext___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMContextRef arg1 ;
   unsigned int arg2 ;
@@ -1086,7 +1074,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntTypeInContext(void * jarg1, unsig
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int1Type() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int1Type___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1096,7 +1084,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int1Type() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int8Type() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int8Type___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1106,7 +1094,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int8Type() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int16Type() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int16Type___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1116,7 +1104,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int16Type() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int32Type() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int32Type___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1126,7 +1114,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int32Type() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int64Type() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int64Type___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1136,7 +1124,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int64Type() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int128Type() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_Int128Type___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1146,7 +1134,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_Int128Type() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntType(unsigned int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IntType___(unsigned int jarg1) {
   void * jresult ;
   unsigned int arg1 ;
   LLVMTypeRef result;
@@ -1158,7 +1146,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntType(unsigned int jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetIntTypeWidth(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetIntTypeWidth___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   unsigned int result;
@@ -1170,7 +1158,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetIntTypeWidth(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_HalfTypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_HalfTypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1182,7 +1170,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_HalfTypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FloatTypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_FloatTypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1194,7 +1182,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FloatTypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_DoubleTypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DoubleTypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1206,7 +1194,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_DoubleTypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_X86FP80TypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_X86FP80TypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1218,7 +1206,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_X86FP80TypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FP128TypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_FP128TypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1230,7 +1218,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FP128TypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PPCFP128TypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_PPCFP128TypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1242,7 +1230,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PPCFP128TypeInContext(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_HalfType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_HalfType___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1252,7 +1240,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_HalfType() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FloatType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_FloatType___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1262,7 +1250,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FloatType() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_DoubleType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DoubleType___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1272,7 +1260,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_DoubleType() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_X86FP80Type() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_X86FP80Type___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1282,7 +1270,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_X86FP80Type() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FP128Type() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_FP128Type___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1292,7 +1280,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FP128Type() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PPCFP128Type() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_PPCFP128Type___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1302,7 +1290,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PPCFP128Type() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FunctionType(void * jarg1, void* arg2_data, unsigned int jarg2, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_FunctionType___(void * jarg1, void* arg2_data, unsigned int jarg2, unsigned int jarg4) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMTypeRef *arg2 = (LLVMTypeRef *) 0 ;
@@ -1319,7 +1307,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_FunctionType(void * jarg1, void* arg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsFunctionVarArg(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsFunctionVarArg___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   LLVMBool result;
@@ -1331,7 +1319,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsFunctionVarArg(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetReturnType(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetReturnType___(void * jarg1) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMTypeRef result;
@@ -1343,7 +1331,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetReturnType(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountParamTypes(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CountParamTypes___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   unsigned int result;
@@ -1355,7 +1343,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountParamTypes(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetParamTypes(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_GetParamTypes___(void * jarg1, void * jarg2) {
   LLVMTypeRef arg1 ;
   LLVMTypeRef *arg2 = (LLVMTypeRef *) 0 ;
   
@@ -1365,7 +1353,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetParamTypes(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_StructTypeInContext(void * jarg1, void* arg2_data, unsigned int jarg2, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_StructTypeInContext___(void * jarg1, void* arg2_data, unsigned int jarg2, unsigned int jarg4) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef *arg2 = (LLVMTypeRef *) 0 ;
@@ -1382,7 +1370,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_StructTypeInContext(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_StructType(void* arg1_data, unsigned int jarg1, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_StructType___(void* arg1_data, unsigned int jarg1, unsigned int jarg3) {
   void * jresult ;
   LLVMTypeRef *arg1 = (LLVMTypeRef *) 0 ;
   unsigned int arg2 ;
@@ -1397,7 +1385,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_StructType(void* arg1_data, unsigned
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_StructCreateNamed(void * jarg1, char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_StructCreateNamed___(void * jarg1, char * jarg2) {
   void * jresult ;
   LLVMContextRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -1411,7 +1399,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_StructCreateNamed(void * jarg1, char
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetStructName(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetStructName___(void * jarg1) {
   char * jresult ;
   LLVMTypeRef arg1 ;
   char *result = 0 ;
@@ -1423,7 +1411,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetStructName(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_StructSetBody(void * jarg1, void* arg2_data, unsigned int jarg2, unsigned int jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_StructSetBody___(void * jarg1, void* arg2_data, unsigned int jarg2, unsigned int jarg4) {
   LLVMTypeRef arg1 ;
   LLVMTypeRef *arg2 = (LLVMTypeRef *) 0 ;
   unsigned int arg3 ;
@@ -1436,7 +1424,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_StructSetBody(void * jarg1, void* arg2
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountStructElementTypes(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CountStructElementTypes___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   unsigned int result;
@@ -1448,7 +1436,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountStructElementTypes(void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetStructElementTypes(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_GetStructElementTypes___(void * jarg1, void * jarg2) {
   LLVMTypeRef arg1 ;
   LLVMTypeRef *arg2 = (LLVMTypeRef *) 0 ;
   
@@ -1458,7 +1446,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetStructElementTypes(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_StructGetTypeAtIndex(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_StructGetTypeAtIndex___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   unsigned int arg2 ;
@@ -1472,7 +1460,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_StructGetTypeAtIndex(void * jarg1, u
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsPackedStruct(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsPackedStruct___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   LLVMBool result;
@@ -1484,7 +1472,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsPackedStruct(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsOpaqueStruct(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsOpaqueStruct___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   LLVMBool result;
@@ -1496,7 +1484,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsOpaqueStruct(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetElementType(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetElementType___(void * jarg1) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMTypeRef result;
@@ -1508,7 +1496,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetElementType(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ArrayType(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ArrayType___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   unsigned int arg2 ;
@@ -1522,7 +1510,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ArrayType(void * jarg1, unsigned int
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetArrayLength(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetArrayLength___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   unsigned int result;
@@ -1534,7 +1522,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetArrayLength(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PointerType(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_PointerType___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   unsigned int arg2 ;
@@ -1548,7 +1536,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PointerType(void * jarg1, unsigned i
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetPointerAddressSpace(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetPointerAddressSpace___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   unsigned int result;
@@ -1560,7 +1548,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetPointerAddressSpace(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_VectorType(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_VectorType___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   unsigned int arg2 ;
@@ -1574,7 +1562,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_VectorType(void * jarg1, unsigned in
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetVectorSize(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetVectorSize___(void * jarg1) {
   unsigned int jresult ;
   LLVMTypeRef arg1 ;
   unsigned int result;
@@ -1586,7 +1574,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetVectorSize(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_VoidTypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_VoidTypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1598,7 +1586,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_VoidTypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_LabelTypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_LabelTypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1610,7 +1598,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_LabelTypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_X86MMXTypeInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_X86MMXTypeInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTypeRef result;
@@ -1622,7 +1610,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_X86MMXTypeInContext(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_VoidType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_VoidType___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1632,7 +1620,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_VoidType() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_LabelType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_LabelType___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1642,7 +1630,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_LabelType() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_X86MMXType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_X86MMXType___() {
   void * jresult ;
   LLVMTypeRef result;
   
@@ -1652,7 +1640,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_X86MMXType() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_TypeOf(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_TypeOf___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef result;
@@ -1664,7 +1652,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_TypeOf(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetValueKind(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetValueKind___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMValueKind result;
@@ -1676,7 +1664,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetValueKind(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetValueName(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetValueName___(void * jarg1) {
   char * jresult ;
   LLVMValueRef arg1 ;
   char *result = 0 ;
@@ -1688,7 +1676,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetValueName(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetValueName(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetValueName___(void * jarg1, char * jarg2) {
   LLVMValueRef arg1 ;
   char *arg2 = (char *) 0 ;
   
@@ -1698,7 +1686,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetValueName(void * jarg1, char * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DumpValue(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DumpValue___(void * jarg1) {
   LLVMValueRef arg1 ;
   
   arg1 = (LLVMValueRef)jarg1; 
@@ -1706,7 +1694,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DumpValue(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_PrintValueToString(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_PrintValueToString___(void * jarg1) {
   char * jresult ;
   LLVMValueRef arg1 ;
   char *result = 0 ;
@@ -1718,7 +1706,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_PrintValueToString(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ReplaceAllUsesWith(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_ReplaceAllUsesWith___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -1728,7 +1716,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ReplaceAllUsesWith(void * jarg1, void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsConstant(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsConstant___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -1740,7 +1728,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsConstant(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsUndef(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsUndef___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -1752,7 +1740,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsUndef(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAArgument(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAArgument___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1764,7 +1752,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAArgument(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABasicBlock(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsABasicBlock___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1776,7 +1764,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABasicBlock(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInlineAsm(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAInlineAsm___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1788,7 +1776,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInlineAsm(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUser(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAUser___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1800,7 +1788,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUser(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstant(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstant___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1812,7 +1800,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstant(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABlockAddress(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsABlockAddress___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1824,7 +1812,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABlockAddress(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantAggregateZero(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantAggregateZero___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1836,7 +1824,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantAggregateZero(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantArray(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantArray___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1848,7 +1836,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantArray(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantDataSequential(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantDataSequential___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1860,7 +1848,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantDataSequential(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantDataArray(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantDataArray___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1872,7 +1860,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantDataArray(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantDataVector(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantDataVector___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1884,7 +1872,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantDataVector(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantExpr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantExpr___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1896,7 +1884,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantExpr(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantFP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantFP___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1908,7 +1896,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantFP(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantInt(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantInt___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1920,7 +1908,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantInt(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantPointerNull(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantPointerNull___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1932,7 +1920,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantPointerNull(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantStruct(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantStruct___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1944,7 +1932,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantStruct(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantTokenNone(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantTokenNone___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1956,7 +1944,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantTokenNone(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantVector(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAConstantVector___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1968,7 +1956,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAConstantVector(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGlobalValue(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAGlobalValue___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1980,7 +1968,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGlobalValue(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGlobalAlias(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAGlobalAlias___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -1992,7 +1980,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGlobalAlias(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGlobalObject(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAGlobalObject___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2004,7 +1992,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGlobalObject(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFunction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAFunction___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2016,7 +2004,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFunction(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGlobalVariable(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAGlobalVariable___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2028,7 +2016,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGlobalVariable(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUndefValue(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAUndefValue___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2040,7 +2028,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUndefValue(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInstruction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAInstruction___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2052,7 +2040,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInstruction(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABinaryOperator(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsABinaryOperator___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2064,7 +2052,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABinaryOperator(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACallInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsACallInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2076,7 +2064,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACallInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAIntrinsicInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAIntrinsicInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2088,7 +2076,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAIntrinsicInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsADbgInfoIntrinsic(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsADbgInfoIntrinsic___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2100,7 +2088,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsADbgInfoIntrinsic(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsADbgDeclareInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsADbgDeclareInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2112,7 +2100,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsADbgDeclareInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMemIntrinsic(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAMemIntrinsic___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2124,7 +2112,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMemIntrinsic(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMemCpyInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAMemCpyInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2136,7 +2124,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMemCpyInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMemMoveInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAMemMoveInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2148,7 +2136,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMemMoveInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMemSetInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAMemSetInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2160,7 +2148,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMemSetInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACmpInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsACmpInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2172,7 +2160,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACmpInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFCmpInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAFCmpInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2184,7 +2172,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFCmpInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAICmpInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAICmpInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2196,7 +2184,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAICmpInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAExtractElementInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAExtractElementInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2208,7 +2196,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAExtractElementInst(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGetElementPtrInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAGetElementPtrInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2220,7 +2208,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAGetElementPtrInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInsertElementInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAInsertElementInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2232,7 +2220,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInsertElementInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInsertValueInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAInsertValueInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2244,7 +2232,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInsertValueInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsALandingPadInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsALandingPadInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2256,7 +2244,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsALandingPadInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAPHINode(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAPHINode___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2268,7 +2256,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAPHINode(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsASelectInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsASelectInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2280,7 +2268,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsASelectInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAShuffleVectorInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAShuffleVectorInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2292,7 +2280,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAShuffleVectorInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAStoreInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAStoreInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2304,7 +2292,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAStoreInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsATerminatorInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsATerminatorInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2316,7 +2304,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsATerminatorInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABranchInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsABranchInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2328,7 +2316,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABranchInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAIndirectBrInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAIndirectBrInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2340,7 +2328,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAIndirectBrInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInvokeInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAInvokeInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2352,7 +2340,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAInvokeInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAReturnInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAReturnInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2364,7 +2352,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAReturnInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsASwitchInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsASwitchInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2376,7 +2364,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsASwitchInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUnreachableInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAUnreachableInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2388,7 +2376,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUnreachableInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAResumeInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAResumeInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2400,7 +2388,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAResumeInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACleanupReturnInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsACleanupReturnInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2412,7 +2400,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACleanupReturnInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACatchReturnInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsACatchReturnInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2424,7 +2412,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACatchReturnInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFuncletPadInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAFuncletPadInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2436,7 +2424,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFuncletPadInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACatchPadInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsACatchPadInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2448,7 +2436,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACatchPadInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACleanupPadInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsACleanupPadInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2460,7 +2448,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACleanupPadInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUnaryInstruction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAUnaryInstruction___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2472,7 +2460,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUnaryInstruction(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAAllocaInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAAllocaInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2484,7 +2472,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAAllocaInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACastInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsACastInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2496,7 +2484,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsACastInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAAddrSpaceCastInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAAddrSpaceCastInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2508,7 +2496,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAAddrSpaceCastInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABitCastInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsABitCastInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2520,7 +2508,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsABitCastInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFPExtInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAFPExtInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2532,7 +2520,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFPExtInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFPToSIInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAFPToSIInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2544,7 +2532,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFPToSIInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFPToUIInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAFPToUIInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2556,7 +2544,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFPToUIInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFPTruncInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAFPTruncInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2568,7 +2556,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAFPTruncInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAIntToPtrInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAIntToPtrInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2580,7 +2568,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAIntToPtrInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAPtrToIntInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAPtrToIntInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2592,7 +2580,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAPtrToIntInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsASExtInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsASExtInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2604,7 +2592,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsASExtInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsASIToFPInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsASIToFPInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2616,7 +2604,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsASIToFPInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsATruncInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsATruncInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2628,7 +2616,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsATruncInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUIToFPInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAUIToFPInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2640,7 +2628,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAUIToFPInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAZExtInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAZExtInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2652,7 +2640,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAZExtInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAExtractValueInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAExtractValueInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2664,7 +2652,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAExtractValueInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsALoadInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsALoadInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2676,7 +2664,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsALoadInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAVAArgInst(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAVAArgInst___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2688,7 +2676,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAVAArgInst(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMDNode(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAMDNode___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2700,7 +2688,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMDNode(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMDString(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IsAMDString___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -2712,7 +2700,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IsAMDString(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstUse(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetFirstUse___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMUseRef result;
@@ -2724,7 +2712,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstUse(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextUse(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNextUse___(void * jarg1) {
   void * jresult ;
   LLVMUseRef arg1 ;
   LLVMUseRef result;
@@ -2736,7 +2724,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextUse(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetUser(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetUser___(void * jarg1) {
   void * jresult ;
   LLVMUseRef arg1 ;
   LLVMValueRef result;
@@ -2748,7 +2736,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetUser(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetUsedValue(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetUsedValue___(void * jarg1) {
   void * jresult ;
   LLVMUseRef arg1 ;
   LLVMValueRef result;
@@ -2760,7 +2748,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetUsedValue(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetOperand(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetOperand___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
@@ -2774,7 +2762,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetOperand(void * jarg1, unsigned in
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetOperandUse(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetOperandUse___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
@@ -2788,7 +2776,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetOperandUse(void * jarg1, unsigned
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetOperand(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetOperand___(void * jarg1, unsigned int jarg2, void * jarg3) {
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
   LLVMValueRef arg3 ;
@@ -2800,7 +2788,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetOperand(void * jarg1, unsigned int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetNumOperands(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetNumOperands___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   int result;
@@ -2812,7 +2800,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetNumOperands(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNull(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNull___(void * jarg1) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMValueRef result;
@@ -2824,7 +2812,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNull(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAllOnes(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstAllOnes___(void * jarg1) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMValueRef result;
@@ -2836,7 +2824,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAllOnes(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetUndef(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetUndef___(void * jarg1) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMValueRef result;
@@ -2848,7 +2836,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetUndef(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsNull(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsNull___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -2860,7 +2848,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsNull(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstPointerNull(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstPointerNull___(void * jarg1) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMValueRef result;
@@ -2872,7 +2860,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstPointerNull(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInt(void * jarg1, unsigned long long jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstInt___(void * jarg1, unsigned long long jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   unsigned long long arg2 ;
@@ -2888,7 +2876,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInt(void * jarg1, unsigned long
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstIntOfString(void * jarg1, char * jarg2, unsigned char jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstIntOfString___(void * jarg1, char * jarg2, unsigned char jarg3) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -2904,7 +2892,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstIntOfString(void * jarg1, char 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstIntOfStringAndSize(void * jarg1, char * jarg2, unsigned int jarg3, unsigned char jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstIntOfStringAndSize___(void * jarg1, char * jarg2, unsigned int jarg3, unsigned char jarg4) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -2922,7 +2910,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstIntOfStringAndSize(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstReal(void * jarg1, double jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstReal___(void * jarg1, double jarg2) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   double arg2 ;
@@ -2936,7 +2924,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstReal(void * jarg1, double jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstRealOfString(void * jarg1, char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstRealOfString___(void * jarg1, char * jarg2) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -2950,7 +2938,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstRealOfString(void * jarg1, char
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstRealOfStringAndSize(void * jarg1, char * jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstRealOfStringAndSize___(void * jarg1, char * jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -2966,7 +2954,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstRealOfStringAndSize(void * jarg
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_ConstIntGetZExtValue(void * jarg1) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_ConstIntGetZExtValue___(void * jarg1) {
   unsigned long long jresult ;
   LLVMValueRef arg1 ;
   unsigned long long result;
@@ -2978,7 +2966,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_ConstIntGetZExtValue(voi
 }
 
 
-SWIGEXPORT long long SWIGSTDCALL CSharp_CSLLVM_ConstIntGetSExtValue(void * jarg1) {
+SWIGEXPORT long long SWIGSTDCALL CSharp_SwiggedfLLVM_ConstIntGetSExtValue___(void * jarg1) {
   long long jresult ;
   LLVMValueRef arg1 ;
   long long result;
@@ -2990,7 +2978,7 @@ SWIGEXPORT long long SWIGSTDCALL CSharp_CSLLVM_ConstIntGetSExtValue(void * jarg1
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_CSLLVM_ConstRealGetDouble(void * jarg1, unsigned int * jarg2) {
+SWIGEXPORT double SWIGSTDCALL CSharp_SwiggedfLLVM_ConstRealGetDouble___(void * jarg1, unsigned int * jarg2) {
   double jresult ;
   LLVMValueRef arg1 ;
   LLVMBool *arg2 = (LLVMBool *) 0 ;
@@ -3005,7 +2993,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_CSLLVM_ConstRealGetDouble(void * jarg1, uns
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstStringInContext(void * jarg1, char * jarg2, unsigned int jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstStringInContext___(void * jarg1, char * jarg2, unsigned int jarg3, unsigned int jarg4) {
   void * jresult ;
   LLVMContextRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -3023,7 +3011,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstStringInContext(void * jarg1, c
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstString(char * jarg1, unsigned int jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstString___(char * jarg1, unsigned int jarg2, unsigned int jarg3) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   unsigned int arg2 ;
@@ -3039,7 +3027,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstString(char * jarg1, unsigned i
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsConstantString(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsConstantString___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -3051,7 +3039,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsConstantString(void * jarg1)
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetAsString(void * jarg1, void * jarg2) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetAsString___(void * jarg1, void * jarg2) {
   char * jresult ;
   LLVMValueRef arg1 ;
   size_t *arg2 = (size_t *) 0 ;
@@ -3065,7 +3053,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetAsString(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstStructInContext(void * jarg1, void* arg2_data, unsigned int jarg2, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstStructInContext___(void * jarg1, void* arg2_data, unsigned int jarg2, unsigned int jarg4) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
@@ -3082,7 +3070,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstStructInContext(void * jarg1, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstStruct(void* arg1_data, unsigned int jarg1, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstStruct___(void* arg1_data, unsigned int jarg1, unsigned int jarg3) {
   void * jresult ;
   LLVMValueRef *arg1 = (LLVMValueRef *) 0 ;
   unsigned int arg2 ;
@@ -3097,7 +3085,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstStruct(void* arg1_data, unsigne
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstArray(void * jarg1, void* arg2_data, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstArray___(void * jarg1, void* arg2_data, unsigned int jarg2) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
@@ -3112,7 +3100,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstArray(void * jarg1, void* arg2_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNamedStruct(void * jarg1, void* arg2_data, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNamedStruct___(void * jarg1, void* arg2_data, unsigned int jarg2) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
@@ -3127,7 +3115,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNamedStruct(void * jarg1, void*
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetElementAsConstant(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetElementAsConstant___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
@@ -3141,7 +3129,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetElementAsConstant(void * jarg1, u
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstVector(void* arg1_data, unsigned int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstVector___(void* arg1_data, unsigned int jarg1) {
   void * jresult ;
   LLVMValueRef *arg1 = (LLVMValueRef *) 0 ;
   unsigned int arg2 ;
@@ -3154,7 +3142,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstVector(void* arg1_data, unsigne
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetConstOpcode(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetConstOpcode___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMOpcode result;
@@ -3166,7 +3154,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetConstOpcode(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AlignOf(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_AlignOf___(void * jarg1) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMValueRef result;
@@ -3178,7 +3166,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AlignOf(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_SizeOf(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_SizeOf___(void * jarg1) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   LLVMValueRef result;
@@ -3190,7 +3178,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_SizeOf(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNeg(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNeg___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -3202,7 +3190,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNeg(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNSWNeg(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNSWNeg___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -3214,7 +3202,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNSWNeg(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNUWNeg(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNUWNeg___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -3226,7 +3214,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNUWNeg(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFNeg(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFNeg___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -3238,7 +3226,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFNeg(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNot(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNot___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -3250,7 +3238,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNot(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAdd(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstAdd___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3264,7 +3252,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAdd(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNSWAdd(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNSWAdd___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3278,7 +3266,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNSWAdd(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNUWAdd(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNUWAdd___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3292,7 +3280,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNUWAdd(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFAdd(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFAdd___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3306,7 +3294,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFAdd(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSub(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstSub___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3320,7 +3308,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSub(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNSWSub(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNSWSub___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3334,7 +3322,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNSWSub(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNUWSub(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNUWSub___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3348,7 +3336,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNUWSub(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFSub(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFSub___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3362,7 +3350,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFSub(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstMul(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstMul___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3376,7 +3364,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstMul(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNSWMul(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNSWMul___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3390,7 +3378,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNSWMul(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNUWMul(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstNUWMul___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3404,7 +3392,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstNUWMul(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFMul(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFMul___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3418,7 +3406,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFMul(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstUDiv(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstUDiv___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3432,7 +3420,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstUDiv(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstExactUDiv(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstExactUDiv___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3446,7 +3434,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstExactUDiv(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSDiv(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstSDiv___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3460,7 +3448,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSDiv(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstExactSDiv(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstExactSDiv___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3474,7 +3462,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstExactSDiv(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFDiv(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFDiv___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3488,7 +3476,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFDiv(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstURem(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstURem___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3502,7 +3490,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstURem(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSRem(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstSRem___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3516,7 +3504,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSRem(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFRem(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFRem___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3530,7 +3518,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFRem(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAnd(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstAnd___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3544,7 +3532,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAnd(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstOr(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstOr___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3558,7 +3546,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstOr(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstXor(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstXor___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3572,7 +3560,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstXor(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstICmp(int jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstICmp___(int jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
   LLVMIntPredicate arg1 ;
   LLVMValueRef arg2 ;
@@ -3588,7 +3576,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstICmp(int jarg1, void * jarg2, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFCmp(int jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFCmp___(int jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
   LLVMRealPredicate arg1 ;
   LLVMValueRef arg2 ;
@@ -3604,7 +3592,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFCmp(int jarg1, void * jarg2, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstShl(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstShl___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3618,7 +3606,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstShl(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstLShr(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstLShr___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3632,7 +3620,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstLShr(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAShr(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstAShr___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3646,7 +3634,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAShr(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstGEP(void * jarg1, void* arg2_data, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstGEP___(void * jarg1, void* arg2_data, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
@@ -3661,7 +3649,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstGEP(void * jarg1, void* arg2_da
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInBoundsGEP(void * jarg1, void* arg2_data, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstInBoundsGEP___(void * jarg1, void* arg2_data, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
@@ -3676,7 +3664,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInBoundsGEP(void * jarg1, void*
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstTrunc(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstTrunc___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3690,7 +3678,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstTrunc(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSExt(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstSExt___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3704,7 +3692,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSExt(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstZExt(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstZExt___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3718,7 +3706,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstZExt(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPTrunc(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFPTrunc___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3732,7 +3720,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPTrunc(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPExt(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFPExt___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3746,7 +3734,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPExt(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstUIToFP(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstUIToFP___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3760,7 +3748,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstUIToFP(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSIToFP(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstSIToFP___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3774,7 +3762,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSIToFP(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPToUI(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFPToUI___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3788,7 +3776,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPToUI(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPToSI(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFPToSI___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3802,7 +3790,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPToSI(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstPtrToInt(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstPtrToInt___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3816,7 +3804,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstPtrToInt(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstIntToPtr(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstIntToPtr___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3830,7 +3818,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstIntToPtr(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstBitCast(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstBitCast___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3844,7 +3832,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstBitCast(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAddrSpaceCast(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstAddrSpaceCast___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3858,7 +3846,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstAddrSpaceCast(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstZExtOrBitCast(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstZExtOrBitCast___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3872,7 +3860,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstZExtOrBitCast(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSExtOrBitCast(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstSExtOrBitCast___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3886,7 +3874,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSExtOrBitCast(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstTruncOrBitCast(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstTruncOrBitCast___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3900,7 +3888,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstTruncOrBitCast(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstPointerCast(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstPointerCast___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3914,7 +3902,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstPointerCast(void * jarg1, void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstIntCast(void * jarg1, void * jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstIntCast___(void * jarg1, void * jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3930,7 +3918,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstIntCast(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPCast(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstFPCast___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -3944,7 +3932,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstFPCast(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSelect(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstSelect___(void * jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3960,7 +3948,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstSelect(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstExtractElement(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstExtractElement___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3974,7 +3962,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstExtractElement(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInsertElement(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstInsertElement___(void * jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -3990,7 +3978,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInsertElement(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstShuffleVector(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstShuffleVector___(void * jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -4006,7 +3994,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstShuffleVector(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstExtractValue(void * jarg1, void* arg2_data, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstExtractValue___(void * jarg1, void* arg2_data, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int *arg2 = (unsigned int *) 0 ;
@@ -4021,7 +4009,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstExtractValue(void * jarg1, void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInsertValue(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstInsertValue___(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
@@ -4038,7 +4026,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInsertValue(void * jarg1, void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInlineAsm(void * jarg1, char * jarg2, char * jarg3, unsigned int jarg4, unsigned int jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstInlineAsm___(void * jarg1, char * jarg2, char * jarg3, unsigned int jarg4, unsigned int jarg5) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -4058,7 +4046,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ConstInlineAsm(void * jarg1, char * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BlockAddress(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BlockAddress___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef arg2 ;
@@ -4072,7 +4060,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BlockAddress(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetGlobalParent(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetGlobalParent___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMModuleRef result;
@@ -4084,7 +4072,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetGlobalParent(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsDeclaration(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsDeclaration___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -4096,7 +4084,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsDeclaration(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetLinkage(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetLinkage___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMLinkage result;
@@ -4108,7 +4096,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetLinkage(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetLinkage(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetLinkage___(void * jarg1, int jarg2) {
   LLVMValueRef arg1 ;
   LLVMLinkage arg2 ;
   
@@ -4118,7 +4106,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetLinkage(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetSection(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetSection___(void * jarg1) {
   char * jresult ;
   LLVMValueRef arg1 ;
   char *result = 0 ;
@@ -4130,7 +4118,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetSection(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetSection(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetSection___(void * jarg1, char * jarg2) {
   LLVMValueRef arg1 ;
   char *arg2 = (char *) 0 ;
   
@@ -4140,7 +4128,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetSection(void * jarg1, char * jarg2)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetVisibility(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetVisibility___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMVisibility result;
@@ -4152,7 +4140,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetVisibility(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetVisibility(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetVisibility___(void * jarg1, int jarg2) {
   LLVMValueRef arg1 ;
   LLVMVisibility arg2 ;
   
@@ -4162,7 +4150,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetVisibility(void * jarg1, int jarg2)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetDLLStorageClass(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetDLLStorageClass___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMDLLStorageClass result;
@@ -4174,7 +4162,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetDLLStorageClass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetDLLStorageClass(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetDLLStorageClass___(void * jarg1, int jarg2) {
   LLVMValueRef arg1 ;
   LLVMDLLStorageClass arg2 ;
   
@@ -4184,7 +4172,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetDLLStorageClass(void * jarg1, int j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_HasUnnamedAddr(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_HasUnnamedAddr___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -4196,7 +4184,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_HasUnnamedAddr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetUnnamedAddr(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetUnnamedAddr___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   LLVMBool arg2 ;
   
@@ -4206,7 +4194,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetUnnamedAddr(void * jarg1, unsigned 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetAlignment(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetAlignment___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -4218,7 +4206,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetAlignment(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetAlignment(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetAlignment___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
   
@@ -4228,7 +4216,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetAlignment(void * jarg1, unsigned in
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AddGlobal(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_AddGlobal___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -4244,7 +4232,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AddGlobal(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AddGlobalInAddressSpace(void * jarg1, void * jarg2, char * jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_AddGlobalInAddressSpace___(void * jarg1, void * jarg2, char * jarg3, unsigned int jarg4) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -4262,7 +4250,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AddGlobalInAddressSpace(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNamedGlobal(void * jarg1, char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNamedGlobal___(void * jarg1, char * jarg2) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -4276,7 +4264,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNamedGlobal(void * jarg1, char * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstGlobal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetFirstGlobal___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMValueRef result;
@@ -4288,7 +4276,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstGlobal(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastGlobal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetLastGlobal___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMValueRef result;
@@ -4300,7 +4288,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastGlobal(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextGlobal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNextGlobal___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -4312,7 +4300,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextGlobal(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousGlobal(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetPreviousGlobal___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -4324,7 +4312,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousGlobal(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DeleteGlobal(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DeleteGlobal___(void * jarg1) {
   LLVMValueRef arg1 ;
   
   arg1 = (LLVMValueRef)jarg1; 
@@ -4332,7 +4320,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DeleteGlobal(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetInitializer(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetInitializer___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -4344,7 +4332,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetInitializer(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetInitializer(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetInitializer___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -4354,7 +4342,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetInitializer(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsThreadLocal(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsThreadLocal___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -4366,7 +4354,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsThreadLocal(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetThreadLocal(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetThreadLocal___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   LLVMBool arg2 ;
   
@@ -4376,7 +4364,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetThreadLocal(void * jarg1, unsigned 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsGlobalConstant(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsGlobalConstant___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -4388,7 +4376,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsGlobalConstant(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetGlobalConstant(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetGlobalConstant___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   LLVMBool arg2 ;
   
@@ -4398,7 +4386,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetGlobalConstant(void * jarg1, unsign
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetThreadLocalMode(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetThreadLocalMode___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMThreadLocalMode result;
@@ -4410,7 +4398,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetThreadLocalMode(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetThreadLocalMode(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetThreadLocalMode___(void * jarg1, int jarg2) {
   LLVMValueRef arg1 ;
   LLVMThreadLocalMode arg2 ;
   
@@ -4420,7 +4408,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetThreadLocalMode(void * jarg1, int j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsExternallyInitialized(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsExternallyInitialized___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -4432,7 +4420,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsExternallyInitialized(void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetExternallyInitialized(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetExternallyInitialized___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   LLVMBool arg2 ;
   
@@ -4442,7 +4430,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetExternallyInitialized(void * jarg1,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AddAlias(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_AddAlias___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -4460,7 +4448,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AddAlias(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DeleteFunction(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DeleteFunction___(void * jarg1) {
   LLVMValueRef arg1 ;
   
   arg1 = (LLVMValueRef)jarg1; 
@@ -4468,7 +4456,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DeleteFunction(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_HasPersonalityFn(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_HasPersonalityFn___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -4480,7 +4468,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_HasPersonalityFn(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPersonalityFn(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetPersonalityFn___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -4492,7 +4480,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPersonalityFn(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetPersonalityFn(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetPersonalityFn___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -4502,7 +4490,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetPersonalityFn(void * jarg1, void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetIntrinsicID(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetIntrinsicID___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -4514,7 +4502,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetIntrinsicID(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetFunctionCallConv(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetFunctionCallConv___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -4526,7 +4514,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetFunctionCallConv(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetFunctionCallConv(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetFunctionCallConv___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
   
@@ -4536,7 +4524,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetFunctionCallConv(void * jarg1, unsi
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetGC(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetGC___(void * jarg1) {
   char * jresult ;
   LLVMValueRef arg1 ;
   char *result = 0 ;
@@ -4548,7 +4536,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetGC(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetGC(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetGC___(void * jarg1, char * jarg2) {
   LLVMValueRef arg1 ;
   char *arg2 = (char *) 0 ;
   
@@ -4558,7 +4546,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetGC(void * jarg1, char * jarg2) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAttributeAtIndex(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddAttributeAtIndex___(void * jarg1, unsigned int jarg2, void * jarg3) {
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
   LLVMAttributeRef arg3 ;
@@ -4570,7 +4558,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAttributeAtIndex(void * jarg1, unsi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetAttributeCountAtIndex(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetAttributeCountAtIndex___(void * jarg1, unsigned int jarg2) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
@@ -4584,7 +4572,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetAttributeCountAtIndex(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetAttributesAtIndex(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_GetAttributesAtIndex___(void * jarg1, unsigned int jarg2, void * jarg3) {
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
   LLVMAttributeRef *arg3 = (LLVMAttributeRef *) 0 ;
@@ -4596,7 +4584,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetAttributesAtIndex(void * jarg1, uns
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetEnumAttributeAtIndex(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetEnumAttributeAtIndex___(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
@@ -4612,7 +4600,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetEnumAttributeAtIndex(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetStringAttributeAtIndex(void * jarg1, unsigned int jarg2, char * jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetStringAttributeAtIndex___(void * jarg1, unsigned int jarg2, char * jarg3, unsigned int jarg4) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
@@ -4630,7 +4618,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetStringAttributeAtIndex(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveEnumAttributeAtIndex(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_RemoveEnumAttributeAtIndex___(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
   unsigned int arg3 ;
@@ -4642,7 +4630,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveEnumAttributeAtIndex(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveStringAttributeAtIndex(void * jarg1, unsigned int jarg2, char * jarg3, unsigned int jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_RemoveStringAttributeAtIndex___(void * jarg1, unsigned int jarg2, char * jarg3, unsigned int jarg4) {
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
   char *arg3 = (char *) 0 ;
@@ -4656,7 +4644,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveStringAttributeAtIndex(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTargetDependentFunctionAttr(void * jarg1, char * jarg2, char * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddTargetDependentFunctionAttr___(void * jarg1, char * jarg2, char * jarg3) {
   LLVMValueRef arg1 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -4668,7 +4656,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTargetDependentFunctionAttr(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountParams(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CountParams___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -4680,7 +4668,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountParams(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetParams(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_GetParams___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
   
@@ -4690,7 +4678,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetParams(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetParam(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetParam___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
@@ -4704,7 +4692,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetParam(void * jarg1, unsigned int 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetParamParent(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetParamParent___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -4716,7 +4704,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetParamParent(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstParam(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetFirstParam___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -4728,7 +4716,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstParam(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastParam(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetLastParam___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -4740,7 +4728,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastParam(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextParam(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNextParam___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -4752,7 +4740,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextParam(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousParam(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetPreviousParam___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -4764,7 +4752,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousParam(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetParamAlignment(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetParamAlignment___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
   
@@ -4774,7 +4762,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetParamAlignment(void * jarg1, unsign
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_MDStringInContext(void * jarg1, char * jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MDStringInContext___(void * jarg1, char * jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMContextRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -4790,7 +4778,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_MDStringInContext(void * jarg1, char
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_MDString(char * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MDString___(char * jarg1, unsigned int jarg2) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   unsigned int arg2 ;
@@ -4804,7 +4792,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_MDString(char * jarg1, unsigned int 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_MDNodeInContext(void * jarg1, void* arg2_data, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MDNodeInContext___(void * jarg1, void* arg2_data, unsigned int jarg2) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
@@ -4819,7 +4807,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_MDNodeInContext(void * jarg1, void* 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_MDNode(void* arg1_data, unsigned int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MDNode___(void* arg1_data, unsigned int jarg1) {
   void * jresult ;
   LLVMValueRef *arg1 = (LLVMValueRef *) 0 ;
   unsigned int arg2 ;
@@ -4832,7 +4820,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_MDNode(void* arg1_data, unsigned int
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetMDString(void * jarg1, void * jarg2) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetMDString___(void * jarg1, void * jarg2) {
   char * jresult ;
   LLVMValueRef arg1 ;
   unsigned int *arg2 = (unsigned int *) 0 ;
@@ -4846,7 +4834,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetMDString(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetMDNodeNumOperands(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetMDNodeNumOperands___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -4858,7 +4846,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetMDNodeNumOperands(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetMDNodeOperands(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_GetMDNodeOperands___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
   
@@ -4868,7 +4856,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetMDNodeOperands(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BasicBlockAsValue(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BasicBlockAsValue___(void * jarg1) {
   void * jresult ;
   LLVMBasicBlockRef arg1 ;
   LLVMValueRef result;
@@ -4880,7 +4868,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BasicBlockAsValue(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ValueIsBasicBlock(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_ValueIsBasicBlock___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -4892,7 +4880,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ValueIsBasicBlock(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ValueAsBasicBlock(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ValueAsBasicBlock___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef result;
@@ -4904,7 +4892,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_ValueAsBasicBlock(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetBasicBlockName(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetBasicBlockName___(void * jarg1) {
   char * jresult ;
   LLVMBasicBlockRef arg1 ;
   char *result = 0 ;
@@ -4916,7 +4904,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetBasicBlockName(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetBasicBlockParent(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetBasicBlockParent___(void * jarg1) {
   void * jresult ;
   LLVMBasicBlockRef arg1 ;
   LLVMValueRef result;
@@ -4928,7 +4916,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetBasicBlockParent(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetBasicBlockTerminator(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetBasicBlockTerminator___(void * jarg1) {
   void * jresult ;
   LLVMBasicBlockRef arg1 ;
   LLVMValueRef result;
@@ -4940,7 +4928,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetBasicBlockTerminator(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountBasicBlocks(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CountBasicBlocks___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -4952,7 +4940,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountBasicBlocks(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetBasicBlocks(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_GetBasicBlocks___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef *arg2 = (LLVMBasicBlockRef *) 0 ;
   
@@ -4962,7 +4950,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetBasicBlocks(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstBasicBlock(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetFirstBasicBlock___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef result;
@@ -4974,7 +4962,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstBasicBlock(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastBasicBlock(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetLastBasicBlock___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef result;
@@ -4986,7 +4974,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastBasicBlock(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextBasicBlock(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNextBasicBlock___(void * jarg1) {
   void * jresult ;
   LLVMBasicBlockRef arg1 ;
   LLVMBasicBlockRef result;
@@ -4998,7 +4986,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextBasicBlock(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousBasicBlock(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetPreviousBasicBlock___(void * jarg1) {
   void * jresult ;
   LLVMBasicBlockRef arg1 ;
   LLVMBasicBlockRef result;
@@ -5010,7 +4998,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousBasicBlock(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetEntryBasicBlock(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetEntryBasicBlock___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef result;
@@ -5022,7 +5010,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetEntryBasicBlock(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AppendBasicBlockInContext(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_AppendBasicBlockInContext___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMValueRef arg2 ;
@@ -5038,7 +5026,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AppendBasicBlockInContext(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AppendBasicBlock(void * jarg1, char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_AppendBasicBlock___(void * jarg1, char * jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -5052,7 +5040,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_AppendBasicBlock(void * jarg1, char 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_InsertBasicBlockInContext(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_InsertBasicBlockInContext___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMBasicBlockRef arg2 ;
@@ -5068,7 +5056,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_InsertBasicBlockInContext(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_InsertBasicBlock(void * jarg1, char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_InsertBasicBlock___(void * jarg1, char * jarg2) {
   void * jresult ;
   LLVMBasicBlockRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -5082,7 +5070,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_InsertBasicBlock(void * jarg1, char 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DeleteBasicBlock(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DeleteBasicBlock___(void * jarg1) {
   LLVMBasicBlockRef arg1 ;
   
   arg1 = (LLVMBasicBlockRef)jarg1; 
@@ -5090,7 +5078,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DeleteBasicBlock(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveBasicBlockFromParent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_RemoveBasicBlockFromParent___(void * jarg1) {
   LLVMBasicBlockRef arg1 ;
   
   arg1 = (LLVMBasicBlockRef)jarg1; 
@@ -5098,7 +5086,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveBasicBlockFromParent(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_MoveBasicBlockBefore(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_MoveBasicBlockBefore___(void * jarg1, void * jarg2) {
   LLVMBasicBlockRef arg1 ;
   LLVMBasicBlockRef arg2 ;
   
@@ -5108,7 +5096,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_MoveBasicBlockBefore(void * jarg1, voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_MoveBasicBlockAfter(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_MoveBasicBlockAfter___(void * jarg1, void * jarg2) {
   LLVMBasicBlockRef arg1 ;
   LLVMBasicBlockRef arg2 ;
   
@@ -5118,7 +5106,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_MoveBasicBlockAfter(void * jarg1, void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstInstruction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetFirstInstruction___(void * jarg1) {
   void * jresult ;
   LLVMBasicBlockRef arg1 ;
   LLVMValueRef result;
@@ -5130,7 +5118,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstInstruction(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastInstruction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetLastInstruction___(void * jarg1) {
   void * jresult ;
   LLVMBasicBlockRef arg1 ;
   LLVMValueRef result;
@@ -5142,7 +5130,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetLastInstruction(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_HasMetadata(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_HasMetadata___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   int result;
@@ -5154,7 +5142,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_HasMetadata(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetMetadata(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetMetadata___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
@@ -5168,7 +5156,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetMetadata(void * jarg1, unsigned i
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetMetadata(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetMetadata___(void * jarg1, unsigned int jarg2, void * jarg3) {
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
   LLVMValueRef arg3 ;
@@ -5180,7 +5168,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetMetadata(void * jarg1, unsigned int
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetInstructionParent(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetInstructionParent___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef result;
@@ -5192,7 +5180,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetInstructionParent(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextInstruction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNextInstruction___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -5204,7 +5192,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextInstruction(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousInstruction(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetPreviousInstruction___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -5216,7 +5204,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPreviousInstruction(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InstructionRemoveFromParent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InstructionRemoveFromParent___(void * jarg1) {
   LLVMValueRef arg1 ;
   
   arg1 = (LLVMValueRef)jarg1; 
@@ -5224,7 +5212,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InstructionRemoveFromParent(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InstructionEraseFromParent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InstructionEraseFromParent___(void * jarg1) {
   LLVMValueRef arg1 ;
   
   arg1 = (LLVMValueRef)jarg1; 
@@ -5232,7 +5220,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InstructionEraseFromParent(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetInstructionOpcode(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetInstructionOpcode___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMOpcode result;
@@ -5244,7 +5232,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetInstructionOpcode(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetICmpPredicate(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetICmpPredicate___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMIntPredicate result;
@@ -5256,7 +5244,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetICmpPredicate(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetFCmpPredicate(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetFCmpPredicate___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMRealPredicate result;
@@ -5268,7 +5256,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetFCmpPredicate(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_InstructionClone(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_InstructionClone___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -5280,7 +5268,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_InstructionClone(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNumArgOperands(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetNumArgOperands___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -5292,7 +5280,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNumArgOperands(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetInstructionCallConv(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetInstructionCallConv___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
   
@@ -5302,7 +5290,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetInstructionCallConv(void * jarg1, u
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetInstructionCallConv(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetInstructionCallConv___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -5314,7 +5302,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetInstructionCallConv(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetInstrParamAlignment(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetInstrParamAlignment___(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
   unsigned int arg3 ;
@@ -5326,7 +5314,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetInstrParamAlignment(void * jarg1, u
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCallSiteAttribute(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddCallSiteAttribute___(void * jarg1, unsigned int jarg2, void * jarg3) {
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
   LLVMAttributeRef arg3 ;
@@ -5338,7 +5326,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCallSiteAttribute(void * jarg1, uns
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetCallSiteAttributeCount(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetCallSiteAttributeCount___(void * jarg1, unsigned int jarg2) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
@@ -5352,7 +5340,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetCallSiteAttributeCount(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetCallSiteAttributes(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_GetCallSiteAttributes___(void * jarg1, unsigned int jarg2, void * jarg3) {
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
   LLVMAttributeRef *arg3 = (LLVMAttributeRef *) 0 ;
@@ -5364,7 +5352,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_GetCallSiteAttributes(void * jarg1, un
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCallSiteEnumAttribute(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetCallSiteEnumAttribute___(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
@@ -5380,7 +5368,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCallSiteEnumAttribute(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCallSiteStringAttribute(void * jarg1, unsigned int jarg2, char * jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetCallSiteStringAttribute___(void * jarg1, unsigned int jarg2, char * jarg3, unsigned int jarg4) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
@@ -5398,7 +5386,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCallSiteStringAttribute(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveCallSiteEnumAttribute(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_RemoveCallSiteEnumAttribute___(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
   unsigned int arg3 ;
@@ -5410,7 +5398,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveCallSiteEnumAttribute(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveCallSiteStringAttribute(void * jarg1, unsigned int jarg2, char * jarg3, unsigned int jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_RemoveCallSiteStringAttribute___(void * jarg1, unsigned int jarg2, char * jarg3, unsigned int jarg4) {
   LLVMValueRef arg1 ;
   LLVMAttributeIndex arg2 ;
   char *arg3 = (char *) 0 ;
@@ -5424,7 +5412,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RemoveCallSiteStringAttribute(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCalledValue(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetCalledValue___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -5436,7 +5424,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCalledValue(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsTailCall(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsTailCall___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -5448,7 +5436,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsTailCall(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetTailCall(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetTailCall___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   LLVMBool arg2 ;
   
@@ -5458,7 +5446,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetTailCall(void * jarg1, unsigned int
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNormalDest(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNormalDest___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef result;
@@ -5470,7 +5458,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNormalDest(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetUnwindDest(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetUnwindDest___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef result;
@@ -5482,7 +5470,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetUnwindDest(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetNormalDest(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetNormalDest___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef arg2 ;
   
@@ -5492,7 +5480,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetNormalDest(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetUnwindDest(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetUnwindDest___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef arg2 ;
   
@@ -5502,7 +5490,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetUnwindDest(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNumSuccessors(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetNumSuccessors___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -5514,7 +5502,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNumSuccessors(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetSuccessor(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetSuccessor___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
@@ -5528,7 +5516,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetSuccessor(void * jarg1, unsigned 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetSuccessor(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetSuccessor___(void * jarg1, unsigned int jarg2, void * jarg3) {
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
   LLVMBasicBlockRef arg3 ;
@@ -5540,7 +5528,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetSuccessor(void * jarg1, unsigned in
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsConditional(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsConditional___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -5552,7 +5540,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsConditional(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCondition(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetCondition___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMValueRef result;
@@ -5564,7 +5552,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCondition(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCondition(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetCondition___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -5574,7 +5562,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCondition(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetSwitchDefaultDest(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetSwitchDefaultDest___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef result;
@@ -5586,7 +5574,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetSwitchDefaultDest(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetAllocatedType(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetAllocatedType___(void * jarg1) {
   void * jresult ;
   LLVMValueRef arg1 ;
   LLVMTypeRef result;
@@ -5598,7 +5586,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetAllocatedType(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsInBounds(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsInBounds___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -5610,7 +5598,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsInBounds(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetIsInBounds(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetIsInBounds___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   LLVMBool arg2 ;
   
@@ -5620,7 +5608,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetIsInBounds(void * jarg1, unsigned i
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIncoming(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddIncoming___(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3) {
   LLVMValueRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
   LLVMBasicBlockRef *arg3 = (LLVMBasicBlockRef *) 0 ;
@@ -5633,7 +5621,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIncoming(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountIncoming(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CountIncoming___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -5645,7 +5633,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CountIncoming(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetIncomingValue(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetIncomingValue___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
@@ -5659,7 +5647,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetIncomingValue(void * jarg1, unsig
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetIncomingBlock(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetIncomingBlock___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
@@ -5673,7 +5661,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetIncomingBlock(void * jarg1, unsig
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNumIndices(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetNumIndices___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -5685,19 +5673,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNumIndices(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetIndices(void * jarg1) {
-  void * jresult ;
-  LLVMValueRef arg1 ;
-  unsigned int *result = 0 ;
-  
-  arg1 = (LLVMValueRef)jarg1; 
-  result = (unsigned int *)LLVMGetIndices(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateBuilderInContext(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateBuilderInContext___(void * jarg1) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMBuilderRef result;
@@ -5709,7 +5685,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateBuilderInContext(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateBuilder() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateBuilder___() {
   void * jresult ;
   LLVMBuilderRef result;
   
@@ -5719,7 +5695,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateBuilder() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PositionBuilder(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PositionBuilder___(void * jarg1, void * jarg2, void * jarg3) {
   LLVMBuilderRef arg1 ;
   LLVMBasicBlockRef arg2 ;
   LLVMValueRef arg3 ;
@@ -5731,7 +5707,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PositionBuilder(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PositionBuilderBefore(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PositionBuilderBefore___(void * jarg1, void * jarg2) {
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -5741,7 +5717,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PositionBuilderBefore(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PositionBuilderAtEnd(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PositionBuilderAtEnd___(void * jarg1, void * jarg2) {
   LLVMBuilderRef arg1 ;
   LLVMBasicBlockRef arg2 ;
   
@@ -5751,7 +5727,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PositionBuilderAtEnd(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetInsertBlock(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetInsertBlock___(void * jarg1) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMBasicBlockRef result;
@@ -5763,7 +5739,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetInsertBlock(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ClearInsertionPosition(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_ClearInsertionPosition___(void * jarg1) {
   LLVMBuilderRef arg1 ;
   
   arg1 = (LLVMBuilderRef)jarg1; 
@@ -5771,7 +5747,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ClearInsertionPosition(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InsertIntoBuilder(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InsertIntoBuilder___(void * jarg1, void * jarg2) {
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -5781,7 +5757,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InsertIntoBuilder(void * jarg1, void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InsertIntoBuilderWithName(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InsertIntoBuilderWithName___(void * jarg1, void * jarg2, char * jarg3) {
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
   char *arg3 = (char *) 0 ;
@@ -5793,7 +5769,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InsertIntoBuilderWithName(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeBuilder(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeBuilder___(void * jarg1) {
   LLVMBuilderRef arg1 ;
   
   arg1 = (LLVMBuilderRef)jarg1; 
@@ -5801,7 +5777,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeBuilder(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCurrentDebugLocation(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetCurrentDebugLocation___(void * jarg1, void * jarg2) {
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -5811,7 +5787,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCurrentDebugLocation(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCurrentDebugLocation(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetCurrentDebugLocation___(void * jarg1) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef result;
@@ -5823,7 +5799,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetCurrentDebugLocation(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetInstDebugLocation(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetInstDebugLocation___(void * jarg1, void * jarg2) {
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -5833,7 +5809,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetInstDebugLocation(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildRetVoid(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildRetVoid___(void * jarg1) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef result;
@@ -5845,7 +5821,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildRetVoid(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildRet(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildRet___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -5859,7 +5835,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildRet(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAggregateRet(void * jarg1, void* arg2_data, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildAggregateRet___(void * jarg1, void* arg2_data, unsigned int jarg2) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef *arg2 = (LLVMValueRef *) 0 ;
@@ -5874,7 +5850,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAggregateRet(void * jarg1, void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildBr(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildBr___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMBasicBlockRef arg2 ;
@@ -5888,7 +5864,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildBr(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildCondBr(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildCondBr___(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -5906,7 +5882,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildCondBr(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSwitch(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildSwitch___(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -5924,7 +5900,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSwitch(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIndirectBr(void * jarg1, void * jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildIndirectBr___(void * jarg1, void * jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -5940,7 +5916,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIndirectBr(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildInvoke(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3, void * jarg5, void * jarg6, char * jarg7) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildInvoke___(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3, void * jarg5, void * jarg6, char * jarg7) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -5963,7 +5939,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildInvoke(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildLandingPad(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildLandingPad___(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -5983,7 +5959,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildLandingPad(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildResume(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildResume___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -5997,7 +5973,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildResume(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildUnreachable(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildUnreachable___(void * jarg1) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef result;
@@ -6009,7 +5985,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildUnreachable(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCase(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddCase___(void * jarg1, void * jarg2, void * jarg3) {
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
   LLVMBasicBlockRef arg3 ;
@@ -6021,7 +5997,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCase(void * jarg1, void * jarg2, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDestination(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddDestination___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMBasicBlockRef arg2 ;
   
@@ -6031,7 +6007,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDestination(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNumClauses(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetNumClauses___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   unsigned int result;
@@ -6043,7 +6019,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetNumClauses(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetClause(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetClause___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMValueRef arg1 ;
   unsigned int arg2 ;
@@ -6057,7 +6033,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetClause(void * jarg1, unsigned int
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddClause(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddClause___(void * jarg1, void * jarg2) {
   LLVMValueRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -6067,7 +6043,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddClause(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsCleanup(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsCleanup___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -6079,7 +6055,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsCleanup(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCleanup(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetCleanup___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   LLVMBool arg2 ;
   
@@ -6089,7 +6065,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCleanup(void * jarg1, unsigned int 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAdd(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildAdd___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6107,7 +6083,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAdd(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNSWAdd(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNSWAdd___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6125,7 +6101,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNSWAdd(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNUWAdd(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNUWAdd___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6143,7 +6119,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNUWAdd(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFAdd(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFAdd___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6161,7 +6137,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFAdd(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSub(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildSub___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6179,7 +6155,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSub(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNSWSub(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNSWSub___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6197,7 +6173,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNSWSub(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNUWSub(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNUWSub___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6215,7 +6191,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNUWSub(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFSub(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFSub___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6233,7 +6209,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFSub(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildMul(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildMul___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6251,7 +6227,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildMul(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNSWMul(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNSWMul___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6269,7 +6245,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNSWMul(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNUWMul(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNUWMul___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6287,7 +6263,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNUWMul(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFMul(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFMul___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6305,7 +6281,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFMul(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildUDiv(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildUDiv___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6323,7 +6299,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildUDiv(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildExactUDiv(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildExactUDiv___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6341,7 +6317,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildExactUDiv(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSDiv(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildSDiv___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6359,7 +6335,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSDiv(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildExactSDiv(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildExactSDiv___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6377,7 +6353,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildExactSDiv(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFDiv(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFDiv___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6395,7 +6371,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFDiv(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildURem(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildURem___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6413,7 +6389,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildURem(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSRem(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildSRem___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6431,7 +6407,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSRem(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFRem(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFRem___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6449,7 +6425,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFRem(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildShl(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildShl___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6467,7 +6443,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildShl(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildLShr(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildLShr___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6485,7 +6461,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildLShr(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAShr(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildAShr___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6503,7 +6479,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAShr(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAnd(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildAnd___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6521,7 +6497,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAnd(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildOr(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildOr___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6539,7 +6515,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildOr(void * jarg1, void * jarg2, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildXor(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildXor___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6557,7 +6533,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildXor(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildBinOp(void * jarg1, int jarg2, void * jarg3, void * jarg4, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildBinOp___(void * jarg1, int jarg2, void * jarg3, void * jarg4, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMOpcode arg2 ;
@@ -6577,7 +6553,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildBinOp(void * jarg1, int jarg2, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNeg(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNeg___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6593,7 +6569,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNeg(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNSWNeg(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNSWNeg___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6609,7 +6585,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNSWNeg(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNUWNeg(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNUWNeg___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6625,7 +6601,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNUWNeg(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFNeg(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFNeg___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6641,7 +6617,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFNeg(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNot(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildNot___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6657,7 +6633,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildNot(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildMalloc(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildMalloc___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -6673,7 +6649,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildMalloc(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildArrayMalloc(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildArrayMalloc___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -6691,7 +6667,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildArrayMalloc(void * jarg1, void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAlloca(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildAlloca___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -6707,7 +6683,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAlloca(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildArrayAlloca(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildArrayAlloca___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -6725,7 +6701,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildArrayAlloca(void * jarg1, void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFree(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFree___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6739,7 +6715,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFree(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildLoad(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildLoad___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6755,7 +6731,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildLoad(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildStore(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildStore___(void * jarg1, void * jarg2, void * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6771,7 +6747,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildStore(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildGEP(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildGEP___(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6790,7 +6766,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildGEP(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildInBoundsGEP(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildInBoundsGEP___(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6809,7 +6785,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildInBoundsGEP(void * jarg1, void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildStructGEP(void * jarg1, void * jarg2, unsigned int jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildStructGEP___(void * jarg1, void * jarg2, unsigned int jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6827,7 +6803,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildStructGEP(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildGlobalString(void * jarg1, char * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildGlobalString___(void * jarg1, char * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -6843,7 +6819,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildGlobalString(void * jarg1, char
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildGlobalStringPtr(void * jarg1, char * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildGlobalStringPtr___(void * jarg1, char * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -6859,7 +6835,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildGlobalStringPtr(void * jarg1, c
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetVolatile(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetVolatile___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -6871,7 +6847,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetVolatile(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetVolatile(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetVolatile___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   LLVMBool arg2 ;
   
@@ -6881,7 +6857,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetVolatile(void * jarg1, unsigned int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetOrdering(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetOrdering___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMAtomicOrdering result;
@@ -6893,7 +6869,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetOrdering(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetOrdering(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetOrdering___(void * jarg1, int jarg2) {
   LLVMValueRef arg1 ;
   LLVMAtomicOrdering arg2 ;
   
@@ -6903,7 +6879,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetOrdering(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildTrunc(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildTrunc___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6921,7 +6897,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildTrunc(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildZExt(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildZExt___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6939,7 +6915,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildZExt(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSExt(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildSExt___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6957,7 +6933,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSExt(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPToUI(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFPToUI___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6975,7 +6951,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPToUI(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPToSI(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFPToSI___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -6993,7 +6969,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPToSI(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildUIToFP(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildUIToFP___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7011,7 +6987,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildUIToFP(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSIToFP(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildSIToFP___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7029,7 +7005,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSIToFP(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPTrunc(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFPTrunc___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7047,7 +7023,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPTrunc(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPExt(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFPExt___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7065,7 +7041,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPExt(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildPtrToInt(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildPtrToInt___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7083,7 +7059,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildPtrToInt(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIntToPtr(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildIntToPtr___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7101,7 +7077,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIntToPtr(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildBitCast(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildBitCast___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7119,7 +7095,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildBitCast(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAddrSpaceCast(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildAddrSpaceCast___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7137,7 +7113,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAddrSpaceCast(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildZExtOrBitCast(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildZExtOrBitCast___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7155,7 +7131,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildZExtOrBitCast(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSExtOrBitCast(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildSExtOrBitCast___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7173,7 +7149,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSExtOrBitCast(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildTruncOrBitCast(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildTruncOrBitCast___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7191,7 +7167,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildTruncOrBitCast(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildCast(void * jarg1, int jarg2, void * jarg3, void * jarg4, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildCast___(void * jarg1, int jarg2, void * jarg3, void * jarg4, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMOpcode arg2 ;
@@ -7211,7 +7187,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildCast(void * jarg1, int jarg2, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildPointerCast(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildPointerCast___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7229,7 +7205,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildPointerCast(void * jarg1, void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIntCast(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildIntCast___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7247,7 +7223,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIntCast(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPCast(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFPCast___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7265,7 +7241,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFPCast(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildICmp(void * jarg1, int jarg2, void * jarg3, void * jarg4, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildICmp___(void * jarg1, int jarg2, void * jarg3, void * jarg4, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMIntPredicate arg2 ;
@@ -7285,7 +7261,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildICmp(void * jarg1, int jarg2, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFCmp(void * jarg1, int jarg2, void * jarg3, void * jarg4, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFCmp___(void * jarg1, int jarg2, void * jarg3, void * jarg4, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMRealPredicate arg2 ;
@@ -7305,7 +7281,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFCmp(void * jarg1, int jarg2, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildPhi(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildPhi___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -7321,7 +7297,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildPhi(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildCall(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildCall___(void * jarg1, void * jarg2, void* arg3_data, unsigned int jarg3, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7340,7 +7316,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildCall(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSelect(void * jarg1, void * jarg2, void * jarg3, void * jarg4, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildSelect___(void * jarg1, void * jarg2, void * jarg3, void * jarg4, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7360,7 +7336,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildSelect(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildVAArg(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildVAArg___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7378,7 +7354,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildVAArg(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildExtractElement(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildExtractElement___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7396,7 +7372,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildExtractElement(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildInsertElement(void * jarg1, void * jarg2, void * jarg3, void * jarg4, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildInsertElement___(void * jarg1, void * jarg2, void * jarg3, void * jarg4, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7416,7 +7392,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildInsertElement(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildShuffleVector(void * jarg1, void * jarg2, void * jarg3, void * jarg4, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildShuffleVector___(void * jarg1, void * jarg2, void * jarg3, void * jarg4, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7436,7 +7412,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildShuffleVector(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildExtractValue(void * jarg1, void * jarg2, unsigned int jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildExtractValue___(void * jarg1, void * jarg2, unsigned int jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7454,7 +7430,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildExtractValue(void * jarg1, void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildInsertValue(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4, char * jarg5) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildInsertValue___(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4, char * jarg5) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7474,7 +7450,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildInsertValue(void * jarg1, void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIsNull(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildIsNull___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7490,7 +7466,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIsNull(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIsNotNull(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildIsNotNull___(void * jarg1, void * jarg2, char * jarg3) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7506,7 +7482,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildIsNotNull(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildPtrDiff(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildPtrDiff___(void * jarg1, void * jarg2, void * jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7524,7 +7500,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildPtrDiff(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFence(void * jarg1, int jarg2, unsigned int jarg3, char * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildFence___(void * jarg1, int jarg2, unsigned int jarg3, char * jarg4) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMAtomicOrdering arg2 ;
@@ -7542,7 +7518,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildFence(void * jarg1, int jarg2, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAtomicRMW(void * jarg1, int jarg2, void * jarg3, void * jarg4, int jarg5, unsigned int jarg6) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildAtomicRMW___(void * jarg1, int jarg2, void * jarg3, void * jarg4, int jarg5, unsigned int jarg6) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMAtomicRMWBinOp arg2 ;
@@ -7564,7 +7540,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAtomicRMW(void * jarg1, int jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAtomicCmpXchg(void * jarg1, void * jarg2, void * jarg3, void * jarg4, int jarg5, int jarg6, unsigned int jarg7) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_BuildAtomicCmpXchg___(void * jarg1, void * jarg2, void * jarg3, void * jarg4, int jarg5, int jarg6, unsigned int jarg7) {
   void * jresult ;
   LLVMBuilderRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7588,7 +7564,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_BuildAtomicCmpXchg(void * jarg1, voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsAtomicSingleThread(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsAtomicSingleThread___(void * jarg1) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMBool result;
@@ -7600,7 +7576,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsAtomicSingleThread(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetAtomicSingleThread(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetAtomicSingleThread___(void * jarg1, unsigned int jarg2) {
   LLVMValueRef arg1 ;
   LLVMBool arg2 ;
   
@@ -7610,7 +7586,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetAtomicSingleThread(void * jarg1, un
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetCmpXchgSuccessOrdering(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetCmpXchgSuccessOrdering___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMAtomicOrdering result;
@@ -7622,7 +7598,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetCmpXchgSuccessOrdering(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCmpXchgSuccessOrdering(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetCmpXchgSuccessOrdering___(void * jarg1, int jarg2) {
   LLVMValueRef arg1 ;
   LLVMAtomicOrdering arg2 ;
   
@@ -7632,7 +7608,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCmpXchgSuccessOrdering(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetCmpXchgFailureOrdering(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_GetCmpXchgFailureOrdering___(void * jarg1) {
   int jresult ;
   LLVMValueRef arg1 ;
   LLVMAtomicOrdering result;
@@ -7644,7 +7620,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_GetCmpXchgFailureOrdering(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCmpXchgFailureOrdering(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetCmpXchgFailureOrdering___(void * jarg1, int jarg2) {
   LLVMValueRef arg1 ;
   LLVMAtomicOrdering arg2 ;
   
@@ -7654,7 +7630,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetCmpXchgFailureOrdering(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateModuleProviderForExistingModule(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateModuleProviderForExistingModule___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMModuleProviderRef result;
@@ -7666,7 +7642,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateModuleProviderForExistingModul
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeModuleProvider(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeModuleProvider___(void * jarg1) {
   LLVMModuleProviderRef arg1 ;
   
   arg1 = (LLVMModuleProviderRef)jarg1; 
@@ -7674,7 +7650,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeModuleProvider(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateMemoryBufferWithContentsOfFile(char * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CreateMemoryBufferWithContentsOfFile___(char * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   char *arg1 = (char *) 0 ;
   LLVMMemoryBufferRef *arg2 = (LLVMMemoryBufferRef *) 0 ;
@@ -7694,7 +7670,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateMemoryBufferWithContents
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateMemoryBufferWithSTDIN(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CreateMemoryBufferWithSTDIN___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMMemoryBufferRef *arg1 = (LLVMMemoryBufferRef *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -7712,7 +7688,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateMemoryBufferWithSTDIN(vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateMemoryBufferWithMemoryRange(char * jarg1, unsigned long jarg2, char * jarg3, unsigned int jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateMemoryBufferWithMemoryRange___(char * jarg1, unsigned long jarg2, char * jarg3, unsigned int jarg4) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   size_t arg2 ;
@@ -7730,7 +7706,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateMemoryBufferWithMemoryRange(ch
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateMemoryBufferWithMemoryRangeCopy(char * jarg1, unsigned long jarg2, char * jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateMemoryBufferWithMemoryRangeCopy___(char * jarg1, unsigned long jarg2, char * jarg3) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   size_t arg2 ;
@@ -7746,7 +7722,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateMemoryBufferWithMemoryRangeCop
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetBufferStart(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetBufferStart___(void * jarg1) {
   char * jresult ;
   LLVMMemoryBufferRef arg1 ;
   char *result = 0 ;
@@ -7758,7 +7734,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetBufferStart(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_CSLLVM_GetBufferSize(void * jarg1) {
+SWIGEXPORT unsigned long SWIGSTDCALL CSharp_SwiggedfLLVM_GetBufferSize___(void * jarg1) {
   unsigned long jresult ;
   LLVMMemoryBufferRef arg1 ;
   size_t result;
@@ -7770,7 +7746,7 @@ SWIGEXPORT unsigned long SWIGSTDCALL CSharp_CSLLVM_GetBufferSize(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeMemoryBuffer(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeMemoryBuffer___(void * jarg1) {
   LLVMMemoryBufferRef arg1 ;
   
   arg1 = (LLVMMemoryBufferRef)jarg1; 
@@ -7778,7 +7754,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeMemoryBuffer(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetGlobalPassRegistry() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetGlobalPassRegistry___() {
   void * jresult ;
   LLVMPassRegistryRef result;
   
@@ -7788,7 +7764,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetGlobalPassRegistry() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreatePassManager() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreatePassManager___() {
   void * jresult ;
   LLVMPassManagerRef result;
   
@@ -7798,7 +7774,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreatePassManager() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateFunctionPassManagerForModule(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateFunctionPassManagerForModule___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMPassManagerRef result;
@@ -7810,7 +7786,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateFunctionPassManagerForModule(v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateFunctionPassManager(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateFunctionPassManager___(void * jarg1) {
   void * jresult ;
   LLVMModuleProviderRef arg1 ;
   LLVMPassManagerRef result;
@@ -7822,7 +7798,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateFunctionPassManager(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_RunPassManager(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_RunPassManager___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMPassManagerRef arg1 ;
   LLVMModuleRef arg2 ;
@@ -7836,7 +7812,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_RunPassManager(void * jarg1, v
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeFunctionPassManager(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeFunctionPassManager___(void * jarg1) {
   unsigned int jresult ;
   LLVMPassManagerRef arg1 ;
   LLVMBool result;
@@ -7848,7 +7824,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeFunctionPassManager(
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_RunFunctionPassManager(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_RunFunctionPassManager___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMPassManagerRef arg1 ;
   LLVMValueRef arg2 ;
@@ -7862,7 +7838,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_RunFunctionPassManager(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_FinalizeFunctionPassManager(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_FinalizeFunctionPassManager___(void * jarg1) {
   unsigned int jresult ;
   LLVMPassManagerRef arg1 ;
   LLVMBool result;
@@ -7874,7 +7850,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_FinalizeFunctionPassManager(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposePassManager(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposePassManager___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -7882,7 +7858,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposePassManager(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_StartMultithreaded() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_StartMultithreaded___() {
   unsigned int jresult ;
   LLVMBool result;
   
@@ -7892,12 +7868,12 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_StartMultithreaded() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_StopMultithreaded() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_StopMultithreaded___() {
   LLVMStopMultithreaded();
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsMultithreaded() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_IsMultithreaded___() {
   unsigned int jresult ;
   LLVMBool result;
   
@@ -7907,7 +7883,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_IsMultithreaded() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_VerifyModule(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_VerifyModule___(void * jarg1, int jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMModuleRef arg1 ;
   LLVMVerifierFailureAction arg2 ;
@@ -7927,7 +7903,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_VerifyModule(void * jarg1, int
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_VerifyFunction(void * jarg1, int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_VerifyFunction___(void * jarg1, int jarg2) {
   unsigned int jresult ;
   LLVMValueRef arg1 ;
   LLVMVerifierFailureAction arg2 ;
@@ -7941,7 +7917,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_VerifyFunction(void * jarg1, i
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseBitcode(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_ParseBitcode___(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMMemoryBufferRef arg1 ;
   LLVMModuleRef *arg2 = (LLVMModuleRef *) 0 ;
@@ -7961,7 +7937,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseBitcode(void * jarg1, voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseBitcode2(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_ParseBitcode2___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMMemoryBufferRef arg1 ;
   LLVMModuleRef *arg2 = (LLVMModuleRef *) 0 ;
@@ -7975,7 +7951,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseBitcode2(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseBitcodeInContext(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_ParseBitcodeInContext___(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
   unsigned int jresult ;
   LLVMContextRef arg1 ;
   LLVMMemoryBufferRef arg2 ;
@@ -7997,7 +7973,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseBitcodeInContext(void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseBitcodeInContext2(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_ParseBitcodeInContext2___(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMContextRef arg1 ;
   LLVMMemoryBufferRef arg2 ;
@@ -8013,7 +7989,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseBitcodeInContext2(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetBitcodeModuleInContext(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetBitcodeModuleInContext___(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
   unsigned int jresult ;
   LLVMContextRef arg1 ;
   LLVMMemoryBufferRef arg2 ;
@@ -8035,7 +8011,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetBitcodeModuleInContext(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetBitcodeModuleInContext2(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetBitcodeModuleInContext2___(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMContextRef arg1 ;
   LLVMMemoryBufferRef arg2 ;
@@ -8051,7 +8027,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetBitcodeModuleInContext2(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetBitcodeModule(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetBitcodeModule___(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMMemoryBufferRef arg1 ;
   LLVMModuleRef *arg2 = (LLVMModuleRef *) 0 ;
@@ -8071,7 +8047,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetBitcodeModule(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetBitcodeModule2(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetBitcodeModule2___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMMemoryBufferRef arg1 ;
   LLVMModuleRef *arg2 = (LLVMModuleRef *) 0 ;
@@ -8085,7 +8061,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetBitcodeModule2(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_WriteBitcodeToFile(void * jarg1, char * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_WriteBitcodeToFile___(void * jarg1, char * jarg2) {
   int jresult ;
   LLVMModuleRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -8099,7 +8075,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_WriteBitcodeToFile(void * jarg1, char *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_WriteBitcodeToFD(void * jarg1, int jarg2, int jarg3, int jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_WriteBitcodeToFD___(void * jarg1, int jarg2, int jarg3, int jarg4) {
   int jresult ;
   LLVMModuleRef arg1 ;
   int arg2 ;
@@ -8117,7 +8093,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_WriteBitcodeToFD(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_WriteBitcodeToFileHandle(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_WriteBitcodeToFileHandle___(void * jarg1, int jarg2) {
   int jresult ;
   LLVMModuleRef arg1 ;
   int arg2 ;
@@ -8131,7 +8107,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_WriteBitcodeToFileHandle(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_WriteBitcodeToMemoryBuffer(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_WriteBitcodeToMemoryBuffer___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMMemoryBufferRef result;
@@ -8143,7 +8119,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_WriteBitcodeToMemoryBuffer(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_None_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_VariantKind_None_get___() {
   int jresult ;
   int result;
   
@@ -8153,7 +8129,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_None_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM_HI16_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM_HI16_get___() {
   int jresult ;
   int result;
   
@@ -8163,7 +8139,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM_HI16_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM_LO16_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM_LO16_get___() {
   int jresult ;
   int result;
   
@@ -8173,7 +8149,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM_LO16_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_PAGE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_PAGE_get___() {
   int jresult ;
   int result;
   
@@ -8183,7 +8159,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_PAGE_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_PAGEOFF_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_PAGEOFF_get___() {
   int jresult ;
   int result;
   
@@ -8193,7 +8169,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_PAGEOFF_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_GOTPAGE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_GOTPAGE_get___() {
   int jresult ;
   int result;
   
@@ -8203,7 +8179,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_GOTPAGE_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_GOTPAGEOFF_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_GOTPAGEOFF_get___() {
   int jresult ;
   int result;
   
@@ -8213,7 +8189,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_GOTPAGEO
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_TLVP_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_TLVP_get___() {
   int jresult ;
   int result;
   
@@ -8223,7 +8199,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_TLVP_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_TLVOFF_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_TLVOFF_get___() {
   int jresult ;
   int result;
   
@@ -8233,7 +8209,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_VariantKind_ARM64_TLVOFF_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_InOut_None_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_InOut_None_get___() {
   int jresult ;
   int result;
   
@@ -8243,7 +8219,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_InOut_None_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_Branch_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_Branch_get___() {
   int jresult ;
   int result;
   
@@ -8253,7 +8229,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_Branch_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_PCrel_Load_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_PCrel_Load_get___() {
   int jresult ;
   int result;
   
@@ -8263,7 +8239,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_PCrel_Loa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADRP_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_ADRP_get___() {
   int jresult ;
   int result;
   
@@ -8273,7 +8249,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADDXri_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_ADDXri_get___() {
   int jresult ;
   int result;
   
@@ -8283,7 +8259,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADD
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_LDRXui_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_LDRXui_get___() {
   int jresult ;
   int result;
   
@@ -8293,7 +8269,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_LDR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_LDRXl_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_LDRXl_get___() {
   int jresult ;
   int result;
   
@@ -8303,7 +8279,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_LDR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_ADR_get___() {
   int jresult ;
   int result;
   
@@ -8313,7 +8289,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_In_ARM64_ADR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_SymbolStub_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_SymbolStub_get___() {
   int jresult ;
   int result;
   
@@ -8323,7 +8299,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_SymbolSt
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_LitPool_SymAddr_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_LitPool_SymAddr_get___() {
   int jresult ;
   int result;
   
@@ -8333,7 +8309,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_LitPool_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_LitPool_CstrAddr_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_LitPool_CstrAddr_get___() {
   int jresult ;
   int result;
   
@@ -8343,7 +8319,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_LitPool_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_CFString_Ref_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_CFString_Ref_get___() {
   int jresult ;
   int result;
   
@@ -8353,7 +8329,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_CFS
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Message_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_Message_get___() {
   int jresult ;
   int result;
   
@@ -8363,7 +8339,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Mes
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Message_Ref_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_Message_Ref_get___() {
   int jresult ;
   int result;
   
@@ -8373,7 +8349,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Mes
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Selector_Ref_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_Selector_Ref_get___() {
   int jresult ;
   int result;
   
@@ -8383,7 +8359,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Sel
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Class_Ref_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_Class_Ref_get___() {
   int jresult ;
   int result;
   
@@ -8393,7 +8369,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_Out_Objc_Cla
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_DeMangled_Name_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_ReferenceType_DeMangled_Name_get___() {
   int jresult ;
   int result;
   
@@ -8403,73 +8379,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_ReferenceType_DeMangled_Na
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateDisasm(char * jarg1, void * jarg2, int jarg3, void * jarg4, void * jarg5) {
-  void * jresult ;
-  char *arg1 = (char *) 0 ;
-  void *arg2 = (void *) 0 ;
-  int arg3 ;
-  LLVMOpInfoCallback arg4 = (LLVMOpInfoCallback) 0 ;
-  LLVMSymbolLookupCallback arg5 = (LLVMSymbolLookupCallback) 0 ;
-  LLVMDisasmContextRef result;
-  
-  arg1 = (char *)jarg1; 
-  arg2 = jarg2; 
-  arg3 = (int)jarg3; 
-  arg4 = (LLVMOpInfoCallback)jarg4; 
-  arg5 = (LLVMSymbolLookupCallback)jarg5; 
-  result = (LLVMDisasmContextRef)LLVMCreateDisasm((char const *)arg1,arg2,arg3,arg4,(char const *(*)(void *,unsigned long long,unsigned long long *,unsigned long long,char const **))arg5);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateDisasmCPU(char * jarg1, char * jarg2, void * jarg3, int jarg4, void * jarg5, void * jarg6) {
-  void * jresult ;
-  char *arg1 = (char *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *arg3 = (void *) 0 ;
-  int arg4 ;
-  LLVMOpInfoCallback arg5 = (LLVMOpInfoCallback) 0 ;
-  LLVMSymbolLookupCallback arg6 = (LLVMSymbolLookupCallback) 0 ;
-  LLVMDisasmContextRef result;
-  
-  arg1 = (char *)jarg1; 
-  arg2 = (char *)jarg2; 
-  arg3 = jarg3; 
-  arg4 = (int)jarg4; 
-  arg5 = (LLVMOpInfoCallback)jarg5; 
-  arg6 = (LLVMSymbolLookupCallback)jarg6; 
-  result = (LLVMDisasmContextRef)LLVMCreateDisasmCPU((char const *)arg1,(char const *)arg2,arg3,arg4,arg5,(char const *(*)(void *,unsigned long long,unsigned long long *,unsigned long long,char const **))arg6);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateDisasmCPUFeatures(char * jarg1, char * jarg2, char * jarg3, void * jarg4, int jarg5, void * jarg6, void * jarg7) {
-  void * jresult ;
-  char *arg1 = (char *) 0 ;
-  char *arg2 = (char *) 0 ;
-  char *arg3 = (char *) 0 ;
-  void *arg4 = (void *) 0 ;
-  int arg5 ;
-  LLVMOpInfoCallback arg6 = (LLVMOpInfoCallback) 0 ;
-  LLVMSymbolLookupCallback arg7 = (LLVMSymbolLookupCallback) 0 ;
-  LLVMDisasmContextRef result;
-  
-  arg1 = (char *)jarg1; 
-  arg2 = (char *)jarg2; 
-  arg3 = (char *)jarg3; 
-  arg4 = jarg4; 
-  arg5 = (int)jarg5; 
-  arg6 = (LLVMOpInfoCallback)jarg6; 
-  arg7 = (LLVMSymbolLookupCallback)jarg7; 
-  result = (LLVMDisasmContextRef)LLVMCreateDisasmCPUFeatures((char const *)arg1,(char const *)arg2,(char const *)arg3,arg4,arg5,arg6,(char const *(*)(void *,unsigned long long,unsigned long long *,unsigned long long,char const **))arg7);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_SetDisasmOptions(void * jarg1, unsigned long long jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_SetDisasmOptions___(void * jarg1, unsigned long long jarg2) {
   int jresult ;
   LLVMDisasmContextRef arg1 = (LLVMDisasmContextRef) 0 ;
   uint64_t arg2 ;
@@ -8483,7 +8393,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_SetDisasmOptions(void * jarg1, unsigned
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_UseMarkup_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_Option_UseMarkup_get___() {
   int jresult ;
   int result;
   
@@ -8493,7 +8403,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_UseMarkup_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_PrintImmHex_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_Option_PrintImmHex_get___() {
   int jresult ;
   int result;
   
@@ -8503,7 +8413,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_PrintImmHex_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_AsmPrinterVariant_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_Option_AsmPrinterVariant_get___() {
   int jresult ;
   int result;
   
@@ -8513,7 +8423,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_AsmPrinterVariant_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_SetInstrComments_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_Option_SetInstrComments_get___() {
   int jresult ;
   int result;
   
@@ -8523,7 +8433,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_SetInstrComments_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_PrintLatency_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_Disassembler_Option_PrintLatency_get___() {
   int jresult ;
   int result;
   
@@ -8533,7 +8443,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_Disassembler_Option_PrintLatency_get() 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisasmDispose(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisasmDispose___(void * jarg1) {
   LLVMDisasmContextRef arg1 = (LLVMDisasmContextRef) 0 ;
   
   arg1 = jarg1; 
@@ -8541,57 +8451,27 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisasmDispose(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned long SWIGSTDCALL CSharp_CSLLVM_DisasmInstruction(void * jarg1, void * jarg2, unsigned long long jarg3, unsigned long long jarg4, char * jarg5, unsigned long jarg6) {
-  unsigned long jresult ;
-  LLVMDisasmContextRef arg1 = (LLVMDisasmContextRef) 0 ;
-  uint8_t *arg2 = (uint8_t *) 0 ;
-  uint64_t arg3 ;
-  uint64_t arg4 ;
-  char *arg5 = (char *) 0 ;
-  size_t arg6 ;
-  size_t result;
-  
-  arg1 = jarg1; 
-  arg2 = (uint8_t *)jarg2; 
-  arg3 = (uint64_t)jarg3; 
-  arg4 = (uint64_t)jarg4; 
-  arg5 = (char *)jarg5; 
-  arg6 = (size_t)jarg6; 
-  result = LLVMDisasmInstruction(arg1,arg2,arg3,arg4,arg5,arg6);
-  jresult = (unsigned long)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InstallFatalErrorHandler(void * jarg1) {
-  LLVMFatalErrorHandler arg1 = (LLVMFatalErrorHandler) 0 ;
-  
-  arg1 = (LLVMFatalErrorHandler)jarg1; 
-  LLVMInstallFatalErrorHandler(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ResetFatalErrorHandler() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_ResetFatalErrorHandler___() {
   LLVMResetFatalErrorHandler();
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_EnablePrettyStackTrace() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_EnablePrettyStackTrace___() {
   LLVMEnablePrettyStackTrace();
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_LinkInMCJIT() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_LinkInMCJIT___() {
   LLVMLinkInMCJIT();
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_LinkInInterpreter() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_LinkInInterpreter___() {
   LLVMLinkInInterpreter();
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateGenericValueOfInt(void * jarg1, unsigned long long jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateGenericValueOfInt___(void * jarg1, unsigned long long jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   unsigned long long arg2 ;
@@ -8607,7 +8487,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateGenericValueOfInt(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateGenericValueOfPointer(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateGenericValueOfPointer___(void * jarg1) {
   void * jresult ;
   void *arg1 = (void *) 0 ;
   LLVMGenericValueRef result;
@@ -8619,7 +8499,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateGenericValueOfPointer(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateGenericValueOfFloat(void * jarg1, double jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateGenericValueOfFloat___(void * jarg1, double jarg2) {
   void * jresult ;
   LLVMTypeRef arg1 ;
   double arg2 ;
@@ -8633,7 +8513,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateGenericValueOfFloat(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GenericValueIntWidth(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GenericValueIntWidth___(void * jarg1) {
   unsigned int jresult ;
   LLVMGenericValueRef arg1 ;
   unsigned int result;
@@ -8645,7 +8525,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GenericValueIntWidth(void * ja
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_GenericValueToInt(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_GenericValueToInt___(void * jarg1, unsigned int jarg2) {
   unsigned long long jresult ;
   LLVMGenericValueRef arg1 ;
   LLVMBool arg2 ;
@@ -8659,7 +8539,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_GenericValueToInt(void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GenericValueToPointer(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GenericValueToPointer___(void * jarg1) {
   void * jresult ;
   LLVMGenericValueRef arg1 ;
   void *result = 0 ;
@@ -8671,7 +8551,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GenericValueToPointer(void * jarg1) 
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_CSLLVM_GenericValueToFloat(void * jarg1, void * jarg2) {
+SWIGEXPORT double SWIGSTDCALL CSharp_SwiggedfLLVM_GenericValueToFloat___(void * jarg1, void * jarg2) {
   double jresult ;
   LLVMTypeRef arg1 ;
   LLVMGenericValueRef arg2 ;
@@ -8685,7 +8565,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_CSLLVM_GenericValueToFloat(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeGenericValue(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeGenericValue___(void * jarg1) {
   LLVMGenericValueRef arg1 ;
   
   arg1 = (LLVMGenericValueRef)jarg1; 
@@ -8693,7 +8573,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeGenericValue(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateExecutionEngineForModule(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CreateExecutionEngineForModule___(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
   LLVMModuleRef arg2 ;
@@ -8713,7 +8593,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateExecutionEngineForModule
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateInterpreterForModule(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CreateInterpreterForModule___(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
   LLVMModuleRef arg2 ;
@@ -8733,7 +8613,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateInterpreterForModule(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateJITCompilerForModule(void * jarg1, void * jarg2, unsigned int jarg3, void * jarg4) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CreateJITCompilerForModule___(void * jarg1, void * jarg2, unsigned int jarg3, void * jarg4) {
   unsigned int jresult ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
   LLVMModuleRef arg2 ;
@@ -8755,7 +8635,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateJITCompilerForModule(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeMCJITCompilerOptions(void * jarg1, unsigned long jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeMCJITCompilerOptions___(void * jarg1, unsigned long jarg2) {
   LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
   size_t arg2 ;
   
@@ -8765,7 +8645,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeMCJITCompilerOptions(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateMCJITCompilerForModule(void * jarg1, void * jarg2, void * jarg3, unsigned long jarg4, void * jarg5) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CreateMCJITCompilerForModule___(void * jarg1, void * jarg2, void * jarg3, unsigned long jarg4, void * jarg5) {
   unsigned int jresult ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
   LLVMModuleRef arg2 ;
@@ -8789,7 +8669,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CreateMCJITCompilerForModule(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeExecutionEngine(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeExecutionEngine___(void * jarg1) {
   LLVMExecutionEngineRef arg1 ;
   
   arg1 = (LLVMExecutionEngineRef)jarg1; 
@@ -8797,7 +8677,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeExecutionEngine(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RunStaticConstructors(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_RunStaticConstructors___(void * jarg1) {
   LLVMExecutionEngineRef arg1 ;
   
   arg1 = (LLVMExecutionEngineRef)jarg1; 
@@ -8805,7 +8685,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RunStaticConstructors(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RunStaticDestructors(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_RunStaticDestructors___(void * jarg1) {
   LLVMExecutionEngineRef arg1 ;
   
   arg1 = (LLVMExecutionEngineRef)jarg1; 
@@ -8813,7 +8693,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_RunStaticDestructors(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_RunFunctionAsMain(void * jarg1, void * jarg2, unsigned int jarg3, void * jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_RunFunctionAsMain___(void * jarg1, void * jarg2, unsigned int jarg3, void * jarg4, void * jarg5) {
   int jresult ;
   LLVMExecutionEngineRef arg1 ;
   LLVMValueRef arg2 ;
@@ -8841,7 +8721,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_RunFunctionAsMain(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_RunFunction(void * jarg1, void * jarg2, unsigned int jarg3, void * jarg4) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_RunFunction___(void * jarg1, void * jarg2, unsigned int jarg3, void * jarg4) {
   void * jresult ;
   LLVMExecutionEngineRef arg1 ;
   LLVMValueRef arg2 ;
@@ -8859,7 +8739,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_RunFunction(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_FreeMachineCodeForFunction(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_FreeMachineCodeForFunction___(void * jarg1, void * jarg2) {
   LLVMExecutionEngineRef arg1 ;
   LLVMValueRef arg2 ;
   
@@ -8869,7 +8749,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_FreeMachineCodeForFunction(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddModule(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddModule___(void * jarg1, void * jarg2) {
   LLVMExecutionEngineRef arg1 ;
   LLVMModuleRef arg2 ;
   
@@ -8879,7 +8759,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddModule(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_RemoveModule(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_RemoveModule___(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
   unsigned int jresult ;
   LLVMExecutionEngineRef arg1 ;
   LLVMModuleRef arg2 ;
@@ -8901,7 +8781,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_RemoveModule(void * jarg1, voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_FindFunction(void * jarg1, char * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_FindFunction___(void * jarg1, char * jarg2, void * jarg3) {
   unsigned int jresult ;
   LLVMExecutionEngineRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -8917,7 +8797,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_FindFunction(void * jarg1, cha
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_RecompileAndRelinkFunction(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_RecompileAndRelinkFunction___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMExecutionEngineRef arg1 ;
   LLVMValueRef arg2 ;
@@ -8931,7 +8811,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_RecompileAndRelinkFunction(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetExecutionEngineTargetData(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetExecutionEngineTargetData___(void * jarg1) {
   void * jresult ;
   LLVMExecutionEngineRef arg1 ;
   LLVMTargetDataRef result;
@@ -8943,7 +8823,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetExecutionEngineTargetData(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetExecutionEngineTargetMachine(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetExecutionEngineTargetMachine___(void * jarg1) {
   void * jresult ;
   LLVMExecutionEngineRef arg1 ;
   LLVMTargetMachineRef result;
@@ -8955,7 +8835,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetExecutionEngineTargetMachine(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalMapping(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddGlobalMapping___(void * jarg1, void * jarg2, void * jarg3) {
   LLVMExecutionEngineRef arg1 ;
   LLVMValueRef arg2 ;
   void *arg3 = (void *) 0 ;
@@ -8967,7 +8847,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalMapping(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPointerToGlobal(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetPointerToGlobal___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMExecutionEngineRef arg1 ;
   LLVMValueRef arg2 ;
@@ -8981,7 +8861,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetPointerToGlobal(void * jarg1, voi
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_GetGlobalValueAddress(void * jarg1, char * jarg2) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_GetGlobalValueAddress___(void * jarg1, char * jarg2) {
   unsigned long long jresult ;
   LLVMExecutionEngineRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -8995,7 +8875,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_GetGlobalValueAddress(vo
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_GetFunctionAddress(void * jarg1, char * jarg2) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_GetFunctionAddress___(void * jarg1, char * jarg2) {
   unsigned long long jresult ;
   LLVMExecutionEngineRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -9009,27 +8889,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_GetFunctionAddress(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateSimpleMCJITMemoryManager(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
-  void * jresult ;
-  void *arg1 = (void *) 0 ;
-  LLVMMemoryManagerAllocateCodeSectionCallback arg2 = (LLVMMemoryManagerAllocateCodeSectionCallback) 0 ;
-  LLVMMemoryManagerAllocateDataSectionCallback arg3 = (LLVMMemoryManagerAllocateDataSectionCallback) 0 ;
-  LLVMMemoryManagerFinalizeMemoryCallback arg4 = (LLVMMemoryManagerFinalizeMemoryCallback) 0 ;
-  LLVMMemoryManagerDestroyCallback arg5 = (LLVMMemoryManagerDestroyCallback) 0 ;
-  LLVMMCJITMemoryManagerRef result;
-  
-  arg1 = jarg1; 
-  arg2 = (LLVMMemoryManagerAllocateCodeSectionCallback)jarg2; 
-  arg3 = (LLVMMemoryManagerAllocateDataSectionCallback)jarg3; 
-  arg4 = (LLVMMemoryManagerFinalizeMemoryCallback)jarg4; 
-  arg5 = (LLVMMemoryManagerDestroyCallback)jarg5; 
-  result = LLVMCreateSimpleMCJITMemoryManager(arg1,arg2,arg3,arg4,arg5);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeMCJITMemoryManager(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeMCJITMemoryManager___(void * jarg1) {
   LLVMMCJITMemoryManagerRef arg1 ;
   
   arg1 = (LLVMMCJITMemoryManagerRef)jarg1; 
@@ -9037,7 +8897,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeMCJITMemoryManager(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeTransformUtils(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeTransformUtils___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9045,7 +8905,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeTransformUtils(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeScalarOpts(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeScalarOpts___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9053,7 +8913,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeScalarOpts(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeObjCARCOpts(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeObjCARCOpts___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9061,7 +8921,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeObjCARCOpts(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeVectorization(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeVectorization___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9069,7 +8929,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeVectorization(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeInstCombine(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeInstCombine___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9077,7 +8937,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeInstCombine(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeIPO(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeIPO___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9085,7 +8945,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeIPO(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeInstrumentation(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeInstrumentation___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9093,7 +8953,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeInstrumentation(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeAnalysis(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeAnalysis___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9101,7 +8961,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeAnalysis(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeIPA(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeIPA___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9109,7 +8969,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeIPA(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeCodeGen(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeCodeGen___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9117,7 +8977,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeCodeGen(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeTarget(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeTarget___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
   arg1 = (LLVMPassRegistryRef)jarg1; 
@@ -9125,7 +8985,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeTarget(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseIRInContext(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_ParseIRInContext___(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
   unsigned int jresult ;
   LLVMContextRef arg1 ;
   LLVMMemoryBufferRef arg2 ;
@@ -9147,7 +9007,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ParseIRInContext(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_LinkModules2(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_LinkModules2___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMModuleRef arg1 ;
   LLVMModuleRef arg2 ;
@@ -9161,7 +9021,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_LinkModules2(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_OrcCreateInstance(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_OrcCreateInstance___(void * jarg1) {
   void * jresult ;
   LLVMTargetMachineRef arg1 ;
   LLVMOrcJITStackRef result;
@@ -9173,7 +9033,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_OrcCreateInstance(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_OrcGetErrorMsg(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_OrcGetErrorMsg___(void * jarg1) {
   char * jresult ;
   LLVMOrcJITStackRef arg1 ;
   char *result = 0 ;
@@ -9185,7 +9045,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_OrcGetErrorMsg(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcGetMangledSymbol(void * jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcGetMangledSymbol___(void * jarg1, void * jarg2, char * jarg3) {
   LLVMOrcJITStackRef arg1 ;
   char **arg2 = (char **) 0 ;
   char *arg3 = (char *) 0 ;
@@ -9201,7 +9061,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcGetMangledSymbol(void * jarg1, void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcDisposeMangledSymbol(char * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeMangledSymbol___(char * jarg1) {
   char *arg1 = (char *) 0 ;
   
   arg1 = (char *)jarg1; 
@@ -9209,23 +9069,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcDisposeMangledSymbol(char * jarg1) 
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_OrcCreateLazyCompileCallback(void * jarg1, void * jarg2, void * jarg3) {
-  unsigned long long jresult ;
-  LLVMOrcJITStackRef arg1 ;
-  LLVMOrcLazyCompileCallbackFn arg2 = (LLVMOrcLazyCompileCallbackFn) 0 ;
-  void *arg3 = (void *) 0 ;
-  LLVMOrcTargetAddress result;
-  
-  arg1 = (LLVMOrcJITStackRef)jarg1; 
-  arg2 = (LLVMOrcLazyCompileCallbackFn)jarg2; 
-  arg3 = jarg3; 
-  result = (LLVMOrcTargetAddress)LLVMOrcCreateLazyCompileCallback(arg1,arg2,arg3);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_OrcCreateIndirectStub(void * jarg1, char * jarg2, unsigned long long jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcCreateIndirectStub___(void * jarg1, char * jarg2, unsigned long long jarg3) {
   int jresult ;
   LLVMOrcJITStackRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -9241,7 +9085,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_OrcCreateIndirectStub(void * jarg1, cha
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_OrcSetIndirectStubPointer(void * jarg1, char * jarg2, unsigned long long jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcSetIndirectStubPointer___(void * jarg1, char * jarg2, unsigned long long jarg3) {
   int jresult ;
   LLVMOrcJITStackRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -9257,43 +9101,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_OrcSetIndirectStubPointer(void * jarg1,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_OrcAddEagerlyCompiledIR(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
-  unsigned int jresult ;
-  LLVMOrcJITStackRef arg1 ;
-  LLVMModuleRef arg2 ;
-  LLVMOrcSymbolResolverFn arg3 = (LLVMOrcSymbolResolverFn) 0 ;
-  void *arg4 = (void *) 0 ;
-  LLVMOrcModuleHandle result;
-  
-  arg1 = (LLVMOrcJITStackRef)jarg1; 
-  arg2 = (LLVMModuleRef)jarg2; 
-  arg3 = (LLVMOrcSymbolResolverFn)jarg3; 
-  arg4 = jarg4; 
-  result = (LLVMOrcModuleHandle)LLVMOrcAddEagerlyCompiledIR(arg1,arg2,arg3,arg4);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_OrcAddLazilyCompiledIR(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
-  unsigned int jresult ;
-  LLVMOrcJITStackRef arg1 ;
-  LLVMModuleRef arg2 ;
-  LLVMOrcSymbolResolverFn arg3 = (LLVMOrcSymbolResolverFn) 0 ;
-  void *arg4 = (void *) 0 ;
-  LLVMOrcModuleHandle result;
-  
-  arg1 = (LLVMOrcJITStackRef)jarg1; 
-  arg2 = (LLVMModuleRef)jarg2; 
-  arg3 = (LLVMOrcSymbolResolverFn)jarg3; 
-  arg4 = jarg4; 
-  result = (LLVMOrcModuleHandle)LLVMOrcAddLazilyCompiledIR(arg1,arg2,arg3,arg4);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcRemoveModule(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcRemoveModule___(void * jarg1, unsigned int jarg2) {
   LLVMOrcJITStackRef arg1 ;
   LLVMOrcModuleHandle arg2 ;
   
@@ -9303,7 +9111,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcRemoveModule(void * jarg1, unsigned
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_OrcGetSymbolAddress(void * jarg1, char * jarg2) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_OrcGetSymbolAddress___(void * jarg1, char * jarg2) {
   unsigned long long jresult ;
   LLVMOrcJITStackRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -9317,7 +9125,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_OrcGetSymbolAddress(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcDisposeInstance(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeInstance___(void * jarg1) {
   LLVMOrcJITStackRef arg1 ;
   
   arg1 = (LLVMOrcJITStackRef)jarg1; 
@@ -9325,7 +9133,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_OrcDisposeInstance(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_LoadLibraryPermanently(char * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_LoadLibraryPermanently___(char * jarg1) {
   unsigned int jresult ;
   char *arg1 = (char *) 0 ;
   LLVMBool result;
@@ -9337,7 +9145,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_LoadLibraryPermanently(char * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ParseCommandLineOptions(int jarg1, void * jarg2, char * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_ParseCommandLineOptions___(int jarg1, void * jarg2, char * jarg3) {
   int arg1 ;
   char **arg2 = (char **) 0 ;
   char *arg3 = (char *) 0 ;
@@ -9353,7 +9161,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_ParseCommandLineOptions(int jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_SearchForAddressOfSymbol(char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_SearchForAddressOfSymbol___(char * jarg1) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   void *result = 0 ;
@@ -9365,7 +9173,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_SearchForAddressOfSymbol(char * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSymbol(char * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddSymbol___(char * jarg1, void * jarg2) {
   char *arg1 = (char *) 0 ;
   void *arg2 = (void *) 0 ;
   
@@ -9375,37 +9183,37 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSymbol(char * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeAllTargetInfos() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeAllTargetInfos___() {
   LLVMInitializeAllTargetInfos();
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeAllTargets() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeAllTargets___() {
   LLVMInitializeAllTargets();
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeAllTargetMCs() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeAllTargetMCs___() {
   LLVMInitializeAllTargetMCs();
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeAllAsmPrinters() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeAllAsmPrinters___() {
   LLVMInitializeAllAsmPrinters();
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeAllAsmParsers() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeAllAsmParsers___() {
   LLVMInitializeAllAsmParsers();
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_InitializeAllDisassemblers() {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeAllDisassemblers___() {
   LLVMInitializeAllDisassemblers();
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeNativeTarget() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeNativeTarget___() {
   unsigned int jresult ;
   LLVMBool result;
   
@@ -9415,7 +9223,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeNativeTarget() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeNativeAsmParser() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeNativeAsmParser___() {
   unsigned int jresult ;
   LLVMBool result;
   
@@ -9425,7 +9233,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeNativeAsmParser() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeNativeAsmPrinter() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeNativeAsmPrinter___() {
   unsigned int jresult ;
   LLVMBool result;
   
@@ -9435,7 +9243,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeNativeAsmPrinter() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeNativeDisassembler() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeNativeDisassembler___() {
   unsigned int jresult ;
   LLVMBool result;
   
@@ -9445,7 +9253,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_InitializeNativeDisassembler()
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetModuleDataLayout(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetModuleDataLayout___(void * jarg1) {
   void * jresult ;
   LLVMModuleRef arg1 ;
   LLVMTargetDataRef result;
@@ -9457,7 +9265,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetModuleDataLayout(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetModuleDataLayout(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetModuleDataLayout___(void * jarg1, void * jarg2) {
   LLVMModuleRef arg1 ;
   LLVMTargetDataRef arg2 ;
   
@@ -9467,7 +9275,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetModuleDataLayout(void * jarg1, void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateTargetData(char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateTargetData___(char * jarg1) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   LLVMTargetDataRef result;
@@ -9479,7 +9287,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateTargetData(char * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeTargetData(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeTargetData___(void * jarg1) {
   LLVMTargetDataRef arg1 ;
   
   arg1 = (LLVMTargetDataRef)jarg1; 
@@ -9487,7 +9295,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeTargetData(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTargetLibraryInfo(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddTargetLibraryInfo___(void * jarg1, void * jarg2) {
   LLVMTargetLibraryInfoRef arg1 ;
   LLVMPassManagerRef arg2 ;
   
@@ -9497,7 +9305,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTargetLibraryInfo(void * jarg1, voi
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_CopyStringRepOfTargetData(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_CopyStringRepOfTargetData___(void * jarg1) {
   char * jresult ;
   LLVMTargetDataRef arg1 ;
   char *result = 0 ;
@@ -9509,7 +9317,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_CopyStringRepOfTargetData(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_ByteOrder(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_ByteOrder___(void * jarg1) {
   int jresult ;
   LLVMTargetDataRef arg1 ;
   enum LLVMByteOrdering result;
@@ -9521,7 +9329,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_CSLLVM_ByteOrder(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PointerSize(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_PointerSize___(void * jarg1) {
   unsigned int jresult ;
   LLVMTargetDataRef arg1 ;
   unsigned int result;
@@ -9533,7 +9341,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PointerSize(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PointerSizeForAS(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_PointerSizeForAS___(void * jarg1, unsigned int jarg2) {
   unsigned int jresult ;
   LLVMTargetDataRef arg1 ;
   unsigned int arg2 ;
@@ -9547,7 +9355,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PointerSizeForAS(void * jarg1,
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntPtrType(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IntPtrType___(void * jarg1) {
   void * jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMTypeRef result;
@@ -9559,7 +9367,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntPtrType(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntPtrTypeForAS(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IntPtrTypeForAS___(void * jarg1, unsigned int jarg2) {
   void * jresult ;
   LLVMTargetDataRef arg1 ;
   unsigned int arg2 ;
@@ -9573,7 +9381,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntPtrTypeForAS(void * jarg1, unsign
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntPtrTypeInContext(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IntPtrTypeInContext___(void * jarg1, void * jarg2) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTargetDataRef arg2 ;
@@ -9587,7 +9395,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntPtrTypeInContext(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntPtrTypeForASInContext(void * jarg1, void * jarg2, unsigned int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_IntPtrTypeForASInContext___(void * jarg1, void * jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMContextRef arg1 ;
   LLVMTargetDataRef arg2 ;
@@ -9603,7 +9411,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_IntPtrTypeForASInContext(void * jarg
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_SizeOfTypeInBits(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_SizeOfTypeInBits___(void * jarg1, void * jarg2) {
   unsigned long long jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -9617,7 +9425,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_SizeOfTypeInBits(void * 
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_StoreSizeOfType(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_StoreSizeOfType___(void * jarg1, void * jarg2) {
   unsigned long long jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -9631,7 +9439,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_StoreSizeOfType(void * j
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_ABISizeOfType(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_ABISizeOfType___(void * jarg1, void * jarg2) {
   unsigned long long jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -9645,7 +9453,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_ABISizeOfType(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ABIAlignmentOfType(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_ABIAlignmentOfType___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -9659,7 +9467,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ABIAlignmentOfType(void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CallFrameAlignmentOfType(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CallFrameAlignmentOfType___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -9673,7 +9481,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_CallFrameAlignmentOfType(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PreferredAlignmentOfType(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_PreferredAlignmentOfType___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -9687,7 +9495,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PreferredAlignmentOfType(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PreferredAlignmentOfGlobal(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_PreferredAlignmentOfGlobal___(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMValueRef arg2 ;
@@ -9701,7 +9509,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_PreferredAlignmentOfGlobal(voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ElementAtOffset(void * jarg1, void * jarg2, unsigned long long jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_ElementAtOffset___(void * jarg1, void * jarg2, unsigned long long jarg3) {
   unsigned int jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -9717,7 +9525,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_ElementAtOffset(void * jarg1, 
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_OffsetOfElement(void * jarg1, void * jarg2, unsigned int jarg3) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_OffsetOfElement___(void * jarg1, void * jarg2, unsigned int jarg3) {
   unsigned long long jresult ;
   LLVMTargetDataRef arg1 ;
   LLVMTypeRef arg2 ;
@@ -9733,7 +9541,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_CSLLVM_OffsetOfElement(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstTarget() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetFirstTarget___() {
   void * jresult ;
   LLVMTargetRef result;
   
@@ -9743,7 +9551,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetFirstTarget() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextTarget(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetNextTarget___(void * jarg1) {
   void * jresult ;
   LLVMTargetRef arg1 ;
   LLVMTargetRef result;
@@ -9755,7 +9563,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetNextTarget(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetTargetFromName(char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTargetFromName___(char * jarg1) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   LLVMTargetRef result;
@@ -9767,7 +9575,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetTargetFromName(char * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetTargetFromTriple(char * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetTargetFromTriple___(char * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   char *arg1 = (char *) 0 ;
   LLVMTargetRef *arg2 = (LLVMTargetRef *) 0 ;
@@ -9787,7 +9595,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_GetTargetFromTriple(char * jar
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetName(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTargetName___(void * jarg1) {
   char * jresult ;
   LLVMTargetRef arg1 ;
   char *result = 0 ;
@@ -9799,7 +9607,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetName(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetDescription(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTargetDescription___(void * jarg1) {
   char * jresult ;
   LLVMTargetRef arg1 ;
   char *result = 0 ;
@@ -9811,7 +9619,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetDescription(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetHasJIT(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_TargetHasJIT___(void * jarg1) {
   unsigned int jresult ;
   LLVMTargetRef arg1 ;
   LLVMBool result;
@@ -9823,7 +9631,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetHasJIT(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetHasTargetMachine(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_TargetHasTargetMachine___(void * jarg1) {
   unsigned int jresult ;
   LLVMTargetRef arg1 ;
   LLVMBool result;
@@ -9835,7 +9643,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetHasTargetMachine(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetHasAsmBackend(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_TargetHasAsmBackend___(void * jarg1) {
   unsigned int jresult ;
   LLVMTargetRef arg1 ;
   LLVMBool result;
@@ -9847,7 +9655,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetHasAsmBackend(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateTargetMachine(void * jarg1, char * jarg2, char * jarg3, char * jarg4, int jarg5, int jarg6, int jarg7) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateTargetMachine___(void * jarg1, char * jarg2, char * jarg3, char * jarg4, int jarg5, int jarg6, int jarg7) {
   void * jresult ;
   LLVMTargetRef arg1 ;
   char *arg2 = (char *) 0 ;
@@ -9871,7 +9679,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateTargetMachine(void * jarg1, ch
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeTargetMachine(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DisposeTargetMachine___(void * jarg1) {
   LLVMTargetMachineRef arg1 ;
   
   arg1 = (LLVMTargetMachineRef)jarg1; 
@@ -9879,7 +9687,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_DisposeTargetMachine(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetTargetMachineTarget(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTargetMachineTarget___(void * jarg1) {
   void * jresult ;
   LLVMTargetMachineRef arg1 ;
   LLVMTargetRef result;
@@ -9891,7 +9699,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_GetTargetMachineTarget(void * jarg1)
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetMachineTriple(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTargetMachineTriple___(void * jarg1) {
   char * jresult ;
   LLVMTargetMachineRef arg1 ;
   char *result = 0 ;
@@ -9903,7 +9711,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetMachineTriple(void * jarg1)
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetMachineCPU(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTargetMachineCPU___(void * jarg1) {
   char * jresult ;
   LLVMTargetMachineRef arg1 ;
   char *result = 0 ;
@@ -9915,7 +9723,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetMachineCPU(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetMachineFeatureString(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTargetMachineFeatureString___(void * jarg1) {
   char * jresult ;
   LLVMTargetMachineRef arg1 ;
   char *result = 0 ;
@@ -9927,7 +9735,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetTargetMachineFeatureString(void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateTargetDataLayout(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateTargetDataLayout___(void * jarg1) {
   void * jresult ;
   LLVMTargetMachineRef arg1 ;
   LLVMTargetDataRef result;
@@ -9939,7 +9747,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_CreateTargetDataLayout(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetTargetMachineAsmVerbosity(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetTargetMachineAsmVerbosity___(void * jarg1, unsigned int jarg2) {
   LLVMTargetMachineRef arg1 ;
   LLVMBool arg2 ;
   
@@ -9949,7 +9757,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_SetTargetMachineAsmVerbosity(void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetMachineEmitToFile(void * jarg1, void * jarg2, char * jarg3, int jarg4, void * jarg5) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_TargetMachineEmitToFile___(void * jarg1, void * jarg2, char * jarg3, int jarg4, void * jarg5) {
   unsigned int jresult ;
   LLVMTargetMachineRef arg1 ;
   LLVMModuleRef arg2 ;
@@ -9973,7 +9781,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetMachineEmitToFile(void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetMachineEmitToMemoryBuffer(void * jarg1, void * jarg2, int jarg3, void * jarg4, void * jarg5) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_TargetMachineEmitToMemoryBuffer___(void * jarg1, void * jarg2, int jarg3, void * jarg4, void * jarg5) {
   unsigned int jresult ;
   LLVMTargetMachineRef arg1 ;
   LLVMModuleRef arg2 ;
@@ -9997,7 +9805,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CSLLVM_TargetMachineEmitToMemoryBuffe
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetDefaultTargetTriple() {
+SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_GetDefaultTargetTriple___() {
   char * jresult ;
   char *result = 0 ;
   
@@ -10007,7 +9815,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_CSLLVM_GetDefaultTargetTriple() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAnalysisPasses(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddAnalysisPasses___(void * jarg1, void * jarg2) {
   LLVMTargetMachineRef arg1 ;
   LLVMPassManagerRef arg2 ;
   
@@ -10017,7 +9825,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAnalysisPasses(void * jarg1, void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddArgumentPromotionPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddArgumentPromotionPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10025,7 +9833,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddArgumentPromotionPass(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddConstantMergePass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddConstantMergePass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10033,7 +9841,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddConstantMergePass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDeadArgEliminationPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddDeadArgEliminationPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10041,7 +9849,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDeadArgEliminationPass(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddFunctionAttrsPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddFunctionAttrsPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10049,7 +9857,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddFunctionAttrsPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddFunctionInliningPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddFunctionInliningPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10057,7 +9865,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddFunctionInliningPass(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAlwaysInlinerPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddAlwaysInlinerPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10065,7 +9873,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAlwaysInlinerPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalDCEPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddGlobalDCEPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10073,7 +9881,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalDCEPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalOptimizerPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddGlobalOptimizerPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10081,7 +9889,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGlobalOptimizerPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIPConstantPropagationPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddIPConstantPropagationPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10089,7 +9897,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIPConstantPropagationPass(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPruneEHPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddPruneEHPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10097,7 +9905,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPruneEHPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIPSCCPPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddIPSCCPPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10105,7 +9913,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIPSCCPPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddInternalizePass(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddInternalizePass___(void * jarg1, unsigned int jarg2) {
   LLVMPassManagerRef arg1 ;
   unsigned int arg2 ;
   
@@ -10115,7 +9923,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddInternalizePass(void * jarg1, unsig
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddStripDeadPrototypesPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddStripDeadPrototypesPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10123,7 +9931,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddStripDeadPrototypesPass(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddStripSymbolsPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddStripSymbolsPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10131,7 +9939,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddStripSymbolsPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderCreate() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderCreate___() {
   void * jresult ;
   LLVMPassManagerBuilderRef result;
   
@@ -10141,7 +9949,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderCreate() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderDispose(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderDispose___(void * jarg1) {
   LLVMPassManagerBuilderRef arg1 ;
   
   arg1 = (LLVMPassManagerBuilderRef)jarg1; 
@@ -10149,7 +9957,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderDispose(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetOptLevel(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderSetOptLevel___(void * jarg1, unsigned int jarg2) {
   LLVMPassManagerBuilderRef arg1 ;
   unsigned int arg2 ;
   
@@ -10159,7 +9967,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetOptLevel(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetSizeLevel(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderSetSizeLevel___(void * jarg1, unsigned int jarg2) {
   LLVMPassManagerBuilderRef arg1 ;
   unsigned int arg2 ;
   
@@ -10169,7 +9977,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetSizeLevel(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableUnitAtATime(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderSetDisableUnitAtATime___(void * jarg1, unsigned int jarg2) {
   LLVMPassManagerBuilderRef arg1 ;
   LLVMBool arg2 ;
   
@@ -10179,7 +9987,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableUnitAtATim
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableUnrollLoops(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderSetDisableUnrollLoops___(void * jarg1, unsigned int jarg2) {
   LLVMPassManagerBuilderRef arg1 ;
   LLVMBool arg2 ;
   
@@ -10189,7 +9997,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableUnrollLoop
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableSimplifyLibCalls(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderSetDisableSimplifyLibCalls___(void * jarg1, unsigned int jarg2) {
   LLVMPassManagerBuilderRef arg1 ;
   LLVMBool arg2 ;
   
@@ -10199,7 +10007,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderSetDisableSimplifyLi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderUseInlinerWithThreshold(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderUseInlinerWithThreshold___(void * jarg1, unsigned int jarg2) {
   LLVMPassManagerBuilderRef arg1 ;
   unsigned int arg2 ;
   
@@ -10209,7 +10017,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderUseInlinerWithThresh
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateFunctionPassManager(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderPopulateFunctionPassManager___(void * jarg1, void * jarg2) {
   LLVMPassManagerBuilderRef arg1 ;
   LLVMPassManagerRef arg2 ;
   
@@ -10219,7 +10027,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateFunctionPass
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateModulePassManager(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderPopulateModulePassManager___(void * jarg1, void * jarg2) {
   LLVMPassManagerBuilderRef arg1 ;
   LLVMPassManagerRef arg2 ;
   
@@ -10229,7 +10037,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateModulePassMa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateLTOPassManager(void * jarg1, void * jarg2, unsigned int jarg3, unsigned int jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_PassManagerBuilderPopulateLTOPassManager___(void * jarg1, void * jarg2, unsigned int jarg3, unsigned int jarg4) {
   LLVMPassManagerBuilderRef arg1 ;
   LLVMPassManagerRef arg2 ;
   LLVMBool arg3 ;
@@ -10243,7 +10051,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_PassManagerBuilderPopulateLTOPassManag
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAggressiveDCEPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddAggressiveDCEPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10251,7 +10059,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAggressiveDCEPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBitTrackingDCEPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddBitTrackingDCEPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10259,7 +10067,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBitTrackingDCEPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAlignmentFromAssumptionsPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddAlignmentFromAssumptionsPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10267,7 +10075,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddAlignmentFromAssumptionsPass(void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCFGSimplificationPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddCFGSimplificationPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10275,7 +10083,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCFGSimplificationPass(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDeadStoreEliminationPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddDeadStoreEliminationPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10283,7 +10091,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDeadStoreEliminationPass(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarizerPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddScalarizerPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10291,7 +10099,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarizerPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddMergedLoadStoreMotionPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddMergedLoadStoreMotionPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10299,7 +10107,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddMergedLoadStoreMotionPass(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGVNPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddGVNPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10307,7 +10115,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddGVNPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddNewGVNPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddNewGVNPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10315,7 +10123,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddNewGVNPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIndVarSimplifyPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddIndVarSimplifyPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10323,7 +10131,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddIndVarSimplifyPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddInstructionCombiningPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddInstructionCombiningPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10331,7 +10139,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddInstructionCombiningPass(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddJumpThreadingPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddJumpThreadingPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10339,7 +10147,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddJumpThreadingPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLICMPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLICMPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10347,7 +10155,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLICMPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopDeletionPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLoopDeletionPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10355,7 +10163,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopDeletionPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopIdiomPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLoopIdiomPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10363,7 +10171,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopIdiomPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopRotatePass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLoopRotatePass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10371,7 +10179,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopRotatePass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopRerollPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLoopRerollPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10379,7 +10187,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopRerollPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopUnrollPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLoopUnrollPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10387,7 +10195,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopUnrollPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopUnswitchPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLoopUnswitchPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10395,7 +10203,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopUnswitchPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddMemCpyOptPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddMemCpyOptPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10403,7 +10211,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddMemCpyOptPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPartiallyInlineLibCallsPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddPartiallyInlineLibCallsPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10411,7 +10219,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPartiallyInlineLibCallsPass(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLowerSwitchPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLowerSwitchPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10419,7 +10227,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLowerSwitchPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPromoteMemoryToRegisterPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddPromoteMemoryToRegisterPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10427,7 +10235,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddPromoteMemoryToRegisterPass(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddReassociatePass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddReassociatePass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10435,7 +10243,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddReassociatePass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSCCPPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddSCCPPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10443,7 +10251,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSCCPPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddScalarReplAggregatesPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10451,7 +10259,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPass(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPassSSA(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddScalarReplAggregatesPassSSA___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10459,7 +10267,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPassSSA(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPassWithThreshold(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddScalarReplAggregatesPassWithThreshold___(void * jarg1, int jarg2) {
   LLVMPassManagerRef arg1 ;
   int arg2 ;
   
@@ -10469,7 +10277,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScalarReplAggregatesPassWithThresho
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSimplifyLibCallsPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddSimplifyLibCallsPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10477,7 +10285,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSimplifyLibCallsPass(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTailCallEliminationPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddTailCallEliminationPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10485,7 +10293,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTailCallEliminationPass(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddConstantPropagationPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddConstantPropagationPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10493,7 +10301,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddConstantPropagationPass(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDemoteMemoryToRegisterPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddDemoteMemoryToRegisterPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10501,7 +10309,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddDemoteMemoryToRegisterPass(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddVerifierPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddVerifierPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10509,7 +10317,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddVerifierPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCorrelatedValuePropagationPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddCorrelatedValuePropagationPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10517,7 +10325,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddCorrelatedValuePropagationPass(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddEarlyCSEPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddEarlyCSEPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10525,7 +10333,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddEarlyCSEPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddEarlyCSEMemSSAPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddEarlyCSEMemSSAPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10533,7 +10341,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddEarlyCSEMemSSAPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLowerExpectIntrinsicPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLowerExpectIntrinsicPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10541,7 +10349,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLowerExpectIntrinsicPass(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTypeBasedAliasAnalysisPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddTypeBasedAliasAnalysisPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10549,7 +10357,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddTypeBasedAliasAnalysisPass(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScopedNoAliasAAPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddScopedNoAliasAAPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10557,7 +10365,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddScopedNoAliasAAPass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBasicAliasAnalysisPass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddBasicAliasAnalysisPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10565,7 +10373,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBasicAliasAnalysisPass(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBBVectorizePass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddBBVectorizePass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10573,7 +10381,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddBBVectorizePass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopVectorizePass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLoopVectorizePass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 
@@ -10581,7 +10389,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddLoopVectorizePass(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_CSLLVM_AddSLPVectorizePass(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddSLPVectorizePass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
   arg1 = (LLVMPassManagerRef)jarg1; 

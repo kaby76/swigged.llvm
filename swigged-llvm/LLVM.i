@@ -22,8 +22,8 @@
 #include <llvm-c/Transforms/PassManagerBuilder.h>
 #include <llvm-c/Transforms/Scalar.h>
 #include <llvm-c/Transforms/Vectorize.h>
-#include "Additional.h"
-#include "DebugInfo.h"
+//#include "Additional.h"
+//#include "DebugInfo.h"
 %}
 
 %csmethodmodifiers "public unsafe"
@@ -41,7 +41,27 @@
 %ignore LLVMViewFunctionCFG;
 %ignore LLVMViewFunctionCFGOnly;
 
+// Not sure to handle these. Implement one at a time in future.
+%ignore LLVMGetIndices;
+%ignore LLVMDisasmInstruction;
+%ignore LLVMCreateDisasm;
+%ignore LLVMCreateDisasmCPU;
+%ignore LLVMCreateDisasmCPUFeatures;
+%ignore LLVMCreateSimpleMCJITMemoryManager;
+%ignore LLVMOrcAddEagerlyCompiledIR;
+%ignore LLVMOrcAddLazilyCompiledIR;
+%ignore LLVMInstallFatalErrorHandler;
+%ignore LLVMOrcCreateLazyCompileCallback;
+%ignore LLVMContextGetDiagnosticHandler;
+
 typedef bool LLVMBool;
+
+REF_ARRAY(unsigned, uint)
+REF_ARRAY(uint64_t, ulong)
+REF_ARRAY(int64_t, long)
+REF_ARRAY(uint8_t, byte)
+
+
 REF_CLASS(LLVMMCJITCompilerOptions, MCJITCompilerOptions)
 REF_CLASS(LLVMMCJITMemoryManagerRef, MCJITMemoryManagerRef)
 REF_CLASS(LLVMAttributeRef, AttributeRef)
@@ -70,10 +90,6 @@ REF_CLASS(LLVMValueRef, ValueRef)
 REF_CLASS(LLVMOpInfoSymbol1,OpInfoSymbol1)
 REF_CLASS(LLVMOpInfo1,OpInfo1)
    
-REF_ARRAY(unsigned,uint)
-REF_ARRAY(uint64_t,ulong)
-REF_ARRAY(int64_t,long)
-
 %apply (LLVMTypeRef *ARRAY) {(LLVMTypeRef *Dest)};
 %apply (LLVMTypeRef *ARRAY, unsigned ARRAYSIZE) {(LLVMTypeRef *ElementTypes, unsigned ElementCount)};
 %apply (LLVMTypeRef *ARRAY, unsigned ARRAYSIZE) {(LLVMTypeRef *ParamTypes, unsigned ParamCount)};
@@ -114,5 +130,5 @@ REF_ARRAY(int64_t,long)
 %include "llvm-c/Transforms/PassManagerBuilder.h"
 %include "llvm-c/Transforms/Scalar.h"
 %include "llvm-c/Transforms/Vectorize.h"
-%include "Additional.h"
-%include "DebugInfo.h"
+//%include "Additional.h"
+//%include "DebugInfo.h"

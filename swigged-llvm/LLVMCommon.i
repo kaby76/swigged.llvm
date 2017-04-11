@@ -29,53 +29,53 @@
     %typemap(csin) TYPE "$csinput.Value"
     %typemap(imtype) TYPE "System.IntPtr"
     %typemap(imtype, out="System.IntPtr") TYPE* "out System.IntPtr"
-	%typemap(csinterfaces) TYPE "System.IEquatable<$csclassname>"
-	%typemap(csclassmodifiers) TYPE "public partial struct"
-	%typemap(csout, excode=SWIGEXCODE) TYPE {
-		$&csclassname ret = new $&csclassname($imcall);$excode
-		return ret;
-	}
-	%typemap(csbody) TYPE %{
-		public $csclassname(global::System.IntPtr cPtr)
-		{
-			Value = cPtr;
-		}
+    %typemap(csinterfaces) TYPE "System.IEquatable<$csclassname>"
+    %typemap(csclassmodifiers) TYPE "public partial struct"
+    %typemap(csout, excode=SWIGEXCODE) TYPE {
+        $&csclassname ret = new $&csclassname($imcall);$excode
+        return ret;
+    }
+    %typemap(csbody) TYPE %{
+        public $csclassname(global::System.IntPtr cPtr)
+        {
+            Value = cPtr;
+        }
 
-		public System.IntPtr Value;
+        public System.IntPtr Value;
 
-		public bool Equals($csclassname other)
-		{
-			return Value.Equals(other.Value);
-		}
+        public bool Equals($csclassname other)
+        {
+            return Value.Equals(other.Value);
+        }
 
-		public override bool Equals(object obj)
-		{
-			if (ReferenceEquals(null, obj)) return false;
-			return obj is $csclassname && Equals(($csclassname)obj);
-		}
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is $csclassname && Equals(($csclassname)obj);
+        }
 
-		public override int GetHashCode()
-		{
-			return Value.GetHashCode();
-		}
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
 
-		public static bool operator ==($csclassname left, $csclassname right)
-		{
-			return left.Equals(right);
-		}
+        public static bool operator ==($csclassname left, $csclassname right)
+        {
+            return left.Equals(right);
+        }
 
-		public static bool operator !=($csclassname left, $csclassname right)
-		{
-			return !left.Equals(right);
-		}
-	%}
+        public static bool operator !=($csclassname left, $csclassname right)
+        {
+            return !left.Equals(right);
+        }
+    %}
 
-	%typemap(csdestruct) SWIGTYPE ;
-	%typemap(csfinalize) SWIGTYPE ;
+    %typemap(csdestruct) SWIGTYPE ;
+    %typemap(csfinalize) SWIGTYPE ;
 
     REF_ARRAY(TYPE, CSTYPE)
 
-	typedef struct TYPE { } TYPE;
+    typedef struct TYPE { } TYPE;
 %enddef
 
 %define REF_CLASS_SPECIAL(TYPE, CSTYPE)
@@ -123,6 +123,13 @@
 %typemap(imtype) size_t* "out System.IntPtr"
 %typemap(cstype) size_t* "out System.IntPtr"
 %typemap(csin) size_t* "out $csinput"
+
+
+%typemap(cstype) unsigned * Length "out uint"
+// Output garbage to catch cases not handled.
+%typemap(cstype) unsigned * "outasdf uint"
+%typemap(imtype) unsigned * "out uint"
+%typemap(csin) unsigned * "out $csinput"
 
 %typemap(cstype) unsigned "uint"
 %typemap(csin) unsigned "$csinput"

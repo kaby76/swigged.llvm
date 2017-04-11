@@ -9,15 +9,16 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>swigged.llvm</RootNamespace>
     <AssemblyName>swigged.llvm</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\x86\Debug\</OutputPath>
+    <OutputPath>x86\Debug\</OutputPath>
     <BaseIntermediateOutputPath>x86\Debug</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
     <DefineConstants>WINDOWS</DefineConstants>
@@ -30,7 +31,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\x64\Debug\</OutputPath>
+    <OutputPath>x64\Debug\</OutputPath>
     <BaseIntermediateOutputPath>x64\Debug</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
     <DefineConstants>WINDOWS</DefineConstants>
@@ -43,7 +44,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\x86\Release\</OutputPath>
+    <OutputPath>x86\Release\</OutputPath>
     <BaseIntermediateOutputPath>x86\Release\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
     <DefineConstants>WINDOWS</DefineConstants>
@@ -56,7 +57,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\x64\Release\</OutputPath>
+    <OutputPath>x64\Release\</OutputPath>
     <BaseIntermediateOutputPath>x64\Release\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
     <DefineConstants>WINDOWS</DefineConstants>
@@ -89,7 +90,6 @@
     <Compile Include="LandingPadClauseTy.cs" />
     <Compile Include="Linkage.cs" />
     <Compile Include="LinkerMode.cs" />
-    <Compile Include="llvm_lto_status_t.cs" />
     <Compile Include="MCJITCompilerOptions.cs" />
     <Compile Include="MCJITMemoryManagerRef.cs" />
     <Compile Include="MemoryBufferRef.cs" />
@@ -106,18 +106,6 @@
     <Compile Include="PassRegistryRef.cs" />
     <Compile Include="RealPredicate.cs" />
     <Compile Include="RelocMode.cs" />
-    <Compile Include="SWIGTYPE_p_f_LLVMDiagnosticInfoRef_p_void__void.cs" />
-    <Compile Include="SWIGTYPE_p_f_LLVMOrcJITStackRef_p_void__unsigned_long_long.cs" />
-    <Compile Include="SWIGTYPE_p_f_p_q_const__char_p_void__unsigned_long_long.cs" />
-    <Compile Include="SWIGTYPE_p_f_p_q_const__char__void.cs" />
-    <Compile Include="SWIGTYPE_p_f_p_void_p_p_char__bool.cs" />
-    <Compile Include="SWIGTYPE_p_f_p_void_unsigned_int_unsigned_int_unsigned_int_p_q_const__char_bool__p_unsigned_char.cs" />
-    <Compile Include="SWIGTYPE_p_f_p_void_unsigned_int_unsigned_int_unsigned_int_p_q_const__char__p_unsigned_char.cs" />
-    <Compile Include="SWIGTYPE_p_f_p_void_unsigned_long_long_p_unsigned_long_long_unsigned_long_long_p_p_q_const__char__p_char.cs" />
-    <Compile Include="SWIGTYPE_p_f_p_void_unsigned_long_long_unsigned_long_long_unsigned_long_long_int_p_void__int.cs" />
-    <Compile Include="SWIGTYPE_p_f_p_void__void.cs" />
-    <Compile Include="SWIGTYPE_p_unsigned_char.cs" />
-    <Compile Include="SWIGTYPE_p_unsigned_int.cs" />
     <Compile Include="TargetDataRef.cs" />
     <Compile Include="TargetLibraryInfoRef.cs" />
     <Compile Include="TargetMachineRef.cs" />
