@@ -5,9 +5,13 @@ based upon [SharpLang](https://github.com/xen2/SharpLang), which is defunct. The
 was to compile MS IL, and was abandoned when Microsoft open sourced much of the .NET runtime, including
 RyuJIT. But, SharpLang contained a SWIG-generated C# wrappar for LLVM-C, useful in it's own right.
 Swigged-LLVM takes up the C# API for LLVM, drops the MS IL reader, and extends the API to contain
-additional LLVM-C functionality.
+additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the problems that were never
+fixed in SharpLang, and adds numerous unit tests (whereas SharpLang had only one test, calling only
+LLVM.ModuleCreateWithName("Module Name"), and doing nothing more: https://github.com/xen2/SharpLang/blob/coreclr/src/SharpLLVM.Tests/TestLLVM.cs).
 
 ## Build Instructions:
+
+Swigged.llvm requires a build of LLVM, described below.
 
 1) git clone https://github.com/kaby76/swigged-llvm.git
 2) cd swigged-llvm
