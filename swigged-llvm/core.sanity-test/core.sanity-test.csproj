@@ -35,6 +35,10 @@ if "Release|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\std.swigged.llvm\std.swigged.llvm.csproj" />
   </ItemGroup>
