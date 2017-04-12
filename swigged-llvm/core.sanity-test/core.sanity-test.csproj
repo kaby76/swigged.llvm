@@ -4,10 +4,14 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <NoWin32Manifest>true</NoWin32Manifest>
-    <PostBuildEvent>if "Debug|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.*"
-if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.*"
-if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.*"
-if "Release|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.*"
+    <PostBuildEvent>if "Debug|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.dll"
+if "Debug|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.pdb"
+if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.dll"
+if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.pdb"
+if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.dll"
+if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.pdb"
+if "Release|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.dll"
+if "Release|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.pdb"
 </PostBuildEvent>
   </PropertyGroup>
 
