@@ -63,7 +63,7 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -89,6 +89,13 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if "Debug|x64" == "$(Configuration)|$(Platform)"  copy "$(SolutionDir)x64\Debug\swigged.llvm.native.*"
+if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy "$(SolutionDir)x86\Debug\swigged.llvm.native.*"
+if "Release|x64" == "$(Configuration)|$(Platform)"  copy "$(SolutionDir)x86\Release\swigged.llvm.native.*"
+if "Release|Win32" == "$(Configuration)|$(Platform)"  copy "$(SolutionDir)x86\Release\swigged.llvm.native.*"
+</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

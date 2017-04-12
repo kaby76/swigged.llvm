@@ -20,7 +20,7 @@ namespace ConsoleApplication1
             LLVM.PositionBuilderAtEnd(builder, entry);
             ValueRef tmp = LLVM.BuildAdd(builder, LLVM.GetParam(sum, 0), LLVM.GetParam(sum, 1), "tmp");
             LLVM.BuildRet(builder, tmp);
-            string error;
+            string error = null;
             //LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, out error);
             //LLVM.DisposeMessage(error);
             ExecutionEngineRef engine;
@@ -43,7 +43,6 @@ namespace ConsoleApplication1
             LLVM.DumpModule(mod);
             LLVM.DisposeBuilder(builder);
             LLVM.DisposeExecutionEngine(engine);
-            Console.ReadKey();
         }
     }
 }

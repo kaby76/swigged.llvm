@@ -6,19 +6,11 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-  </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutputPath>bin\x64\Debug\</OutputPath>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <PostBuildEvent>copy "$(SolutionDir)x64\Debug\swigged.llvm.native.dll" "swigged.llvm.native.dll"</PostBuildEvent>
+    <PostBuildEvent>copy "$(SolutionDir)x64\Debug\swigged.llvm.native.pdb" "swigged.llvm.native.pdb"</PostBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
