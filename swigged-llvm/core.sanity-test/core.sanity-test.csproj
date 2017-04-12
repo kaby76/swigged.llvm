@@ -8,8 +8,8 @@
 if "Debug|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.pdb"
 if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.dll"
 if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.pdb"
-if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.dll"
-if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.pdb"
+if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Release\swigged.llvm.native.dll"
+if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Release\swigged.llvm.native.pdb"
 if "Release|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.dll"
 if "Release|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.pdb"
 </PostBuildEvent>

@@ -83,9 +83,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\std.swigged.llvm\std.swigged.llvm.csproj">
-      <Project>{dcf9c0b3-961f-40e4-87bc-a2cc20e4b5a1}</Project>
-      <Name>std.swigged.llvm</Name>
+    <ProjectReference Include="..\swigged.llvm\swigged.llvm.csproj">
+      <Project>{1e7a06ee-8ae4-ba64-d322-6c0a3fcc98b9}</Project>
+      <Name>swigged.llvm</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -94,8 +94,8 @@
 if "Debug|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.pdb"
 if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.dll"
 if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.pdb"
-if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.dll"
-if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.pdb"
+if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Release\swigged.llvm.native.dll"
+if "Release|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Release\swigged.llvm.native.pdb"
 if "Release|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.dll"
 if "Release|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.pdb"
 </PostBuildEvent>
