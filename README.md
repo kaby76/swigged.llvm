@@ -7,7 +7,7 @@ RyuJIT. But, SharpLang contained a SWIG-generated C# wrappar for LLVM-C, useful 
 Swigged-LLVM takes up the C# API for LLVM, drops the MS IL reader, and extends the API to contain
 additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the problems that were never
 fixed in SharpLang, and adds numerous unit tests (whereas SharpLang had only one test, calling only
-LLVM.ModuleCreateWithName("Module Name"), and doing nothing more: https://github.com/xen2/SharpLang/blob/coreclr/src/SharpLLVM.Tests/TestLLVM.cs).
+LLVM.ModuleCreateWithName("Module Name"), i.e., https://github.com/xen2/SharpLang/blob/coreclr/src/SharpLLVM.Tests/TestLLVM.cs).
 
 ## Build Instructions:
 
