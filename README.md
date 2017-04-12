@@ -37,6 +37,11 @@ no tests will be discovered, and so cannot be run.
 
 Test>Test Settings>Default Processor Architecture>X64
 
+## Debugging
+
+Make sure to enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>),
+and unsafe code (<AllowUnsafeBlocks>true</AllowUnsafeBlocks>).
+
 ## Doxygen Documentation:
 
 http://llvm.org/docs/doxygen/html/modules.html
