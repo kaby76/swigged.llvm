@@ -4,106 +4,104 @@
     <TargetFrameworks>netstandard1.6;net45;net461</TargetFrameworks>
   </PropertyGroup>
 
-  <!-- Release/netstandard1.6 -->
-
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>any\Release\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|Win32'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>x86\Release\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|x64'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>x64\Release\</OutputPath>
   </PropertyGroup>
 
   <!-- Debug/netstandard1.6 -->
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.6|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>any\Debug\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.6|Win32'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>x86\Debug\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.6|x64'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>x64\Debug\</OutputPath>
   </PropertyGroup>
 
   <!-- Release/net45 -->
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>any\Release\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|Win32'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>x86\Release\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|x64'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>x64\Release\</OutputPath>
   </PropertyGroup>
 
   <!-- Debug/net45 -->
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>any\Debug\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|Win32'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>x86\Debug\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|x64'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>x64\Debug\</OutputPath>
   </PropertyGroup>
 
   <!-- Release/net461 -->
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>any\Release\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|Win32'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>x86\Release\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|x64'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>x64\Release\</OutputPath>
   </PropertyGroup>
 
   <!-- Debug/net461 -->
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>any\Debug\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|Win32'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>x86\Debug\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|x64'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>x64\Debug\</OutputPath>
   </PropertyGroup>
 
 </Project>

@@ -21,13 +21,10 @@
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of the C API of LLVM.</description>
-    <releaseNotes>4.0.1.2-alpha, using LLVM version 4.0.1. In this release, NET Standard target with net461, netstandard1.6, net45 target implementation frameworks.
+    <releaseNotes>
+Uses LLVM version 4.0.1. When building, select Platform = "AnyCPU", config = "Debug" or "Release" (the Dll's are a Release build). In the properties for the executable, un-check "Prefer 32-bit" in Build properties, and check "Enable native code debugging" (note, unavailable in NetCore apps). The targets file for the package will copy the appropriate "swigged.llvm.native.dll" to your build directory. Targets currently built are net45, net461, and netstandard1.6, which should work with NetCore apps.
 
-See http://138.197.39.133:9000/index.html for details of the API.
-
-Make sure to enable unmanaged debugging (true), and unsafe code (true).
-
-Note, this API is a little large, as LLVM was configured to generate code for all available targets. If you want to configure and build a subset, see https://github.com/kaby76/swigged-llvm. After installing the package, select the platform then save, close, and re-open your project/solution.
+For further information, see https://github.com/kaby76/swigged-llvm.
     </releaseNotes>
 
     <!-- Copyright information -->
@@ -58,24 +55,22 @@ Note, this API is a little large, as LLVM was configured to generate code for al
     targets do not matter for the code as the MSIL is the same
     regardless. 
     -->
-    <file src="std.swigged.llvm\bin\Release\net45\std.swigged.llvm.dll" target="lib\net45" />
-    <file src="std.swigged.llvm\bin\Release\net45\std.swigged.llvm.pdb" target="lib\net45" />
-    <file src="std.swigged.llvm\bin\Release\net461\std.swigged.llvm.dll" target="lib\net461" />
-    <file src="std.swigged.llvm\bin\Release\net461\std.swigged.llvm.pdb" target="lib\net461" />
-    <file src="std.swigged.llvm\bin\Release\netstandard1.6\std.swigged.llvm.dll" target="lib\netstandard1.6" />
-    <file src="std.swigged.llvm\bin\Release\netstandard1.6\std.swigged.llvm.pdb" target="lib\netstandard1.6" />
+    <file src="std.swigged.llvm\any\Release\net45\std.swigged.llvm.dll" target="lib\net45" />
+    <file src="std.swigged.llvm\any\Release\net45\std.swigged.llvm.pdb" target="lib\net45" />
+    <file src="std.swigged.llvm\any\Release\net461\std.swigged.llvm.dll" target="lib\net461" />
+    <file src="std.swigged.llvm\any\Release\net461\std.swigged.llvm.pdb" target="lib\net461" />
+    <file src="std.swigged.llvm\any\Release\netstandard1.6\std.swigged.llvm.dll" target="lib\netstandard1.6" />
+    <file src="std.swigged.llvm\any\Release\netstandard1.6\std.swigged.llvm.pdb" target="lib\netstandard1.6" />
     
     <!-- There are 2 possible dll's for swigged.llvm,
     corresponding to Release configuration, and the
     target framework net461. Platform
     targets do not matter for the code as the MSIL is the same
     regardless.
-
-    Note: We don't include because std.swigged.llvm works.
-
     <file src="swigged.llvm\bin\Release\swigged.llvm.dll" target="lib\net461" />
     <file src="swigged.llvm\bin\Release\swigged.llvm.pdb" target="lib\net461" />
     -->
+
     <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" />
 
   </files>
