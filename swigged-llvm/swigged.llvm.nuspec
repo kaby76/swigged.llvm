@@ -21,8 +21,13 @@
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of the C API of LLVM.</description>
-    <releaseNotes>4.0.1.1-alpha, using LLVM version 4.0.1. When building, select either x86 or x64 for platform. Also, make sure "unsafe code" is allowed in the build in your C# code. Note, this API is a little large, as LLVM was configured to generate code for all available targets. If you want to configure and build a subset, see https://github.com/kaby76/swigged-llvm. After installing the package, select the platform then save, close, and re-open your project/solution.
-    4.0.1.2-alpha, adding in NET Standard build with net461, netstandard1.6, net45 target/implementation frameworks.
+    <releaseNotes>4.0.1.2-alpha, using LLVM version 4.0.1. In this release, NET Standard target with net461, netstandard1.6, net45 target implementation frameworks.
+
+See http://138.197.39.133:9000/index.html for details of the API.
+
+Make sure to enable unmanaged debugging (true), and unsafe code (true).
+
+Note, this API is a little large, as LLVM was configured to generate code for all available targets. If you want to configure and build a subset, see https://github.com/kaby76/swigged-llvm. After installing the package, select the platform then save, close, and re-open your project/solution.
     </releaseNotes>
 
     <!-- Copyright information -->
@@ -37,26 +42,41 @@
   </metadata>
   
   <files>
-    <file src="x86\Release\swigged.llvm.native.dll" target="lib\x86" />
-    <file src="x86\Release\swigged.llvm.native.pdb" target="lib\x86" />
-    <file src="x64\Release\swigged.llvm.native.dll" target="lib\x64" />
-    <file src="x64\Release\swigged.llvm.native.pdb" target="lib\x64" />
+    <!-- There are two possible native dll's, for
+     Release configuration, and x86 or x64 platform targets. As Nuget
+     does not understand "x86" or "x64" platform targets, place these
+     in an non-Nuget directory (i.e., not "build", "lib", etc.).
+     -->
+    <file src="x86\Release\swigged.llvm.native.dll" target="x86" />
+    <file src="x86\Release\swigged.llvm.native.pdb" target="x86" />
+    <file src="x64\Release\swigged.llvm.native.dll" target="x64" />
+    <file src="x64\Release\swigged.llvm.native.pdb" target="x64" />
 
-    <file src="std.swigged.llvm\bin\x64\Release\net45\swigged.llvm.native.dll" target="lib\x64\net45" />
-    <file src="std.swigged.llvm\bin\x64\Release\net45\swigged.llvm.native.pdb" target="lib\x64\net45" />
-    <file src="std.swigged.llvm\bin\x64\Release\net461\swigged.llvm.native.dll" target="lib\x64\net461" />
-    <file src="std.swigged.llvm\bin\x64\Release\net461\swigged.llvm.native.pdb" target="lib\x64\net461" />
-    <file src="std.swigged.llvm\bin\x64\Release\netstandard1.6\swigged.llvm.native.dll" target="lib\x64\netstandard1.6" />
-    <file src="std.swigged.llvm\bin\x64\Release\netstandard1.6\swigged.llvm.native.pdb" target="lib\x64\netstandard1.6" />
+    <!-- There are three possible dll's for std.swigged.llvm,
+    corresponding to Release configuration, and the three
+    target frameworks, net45, net461, and netstandard1.6. Platform
+    targets do not matter for the code as the MSIL is the same
+    regardless. 
+    -->
+    <file src="std.swigged.llvm\bin\Release\net45\std.swigged.llvm.dll" target="lib\net45" />
+    <file src="std.swigged.llvm\bin\Release\net45\std.swigged.llvm.pdb" target="lib\net45" />
+    <file src="std.swigged.llvm\bin\Release\net461\std.swigged.llvm.dll" target="lib\net461" />
+    <file src="std.swigged.llvm\bin\Release\net461\std.swigged.llvm.pdb" target="lib\net461" />
+    <file src="std.swigged.llvm\bin\Release\netstandard1.6\std.swigged.llvm.dll" target="lib\netstandard1.6" />
+    <file src="std.swigged.llvm\bin\Release\netstandard1.6\std.swigged.llvm.pdb" target="lib\netstandard1.6" />
     
-    <file src="std.swigged.llvm\bin\x86\Release\net45\swigged.llvm.native.dll" target="lib\x86\net45" />
-    <file src="std.swigged.llvm\bin\x86\Release\net45\swigged.llvm.native.pdb" target="lib\x86\net45" />
-    <file src="std.swigged.llvm\bin\x86\Release\net461\swigged.llvm.native.dll" target="lib\x86\net461" />
-    <file src="std.swigged.llvm\bin\x86\Release\net461\swigged.llvm.native.pdb" target="lib\x86\net461" />
-    <file src="std.swigged.llvm\bin\x86\Release\netstandard1.6\swigged.llvm.native.dll" target="lib\x86\netstandard1.6" />
-    <file src="std.swigged.llvm\bin\x86\Release\netstandard1.6\swigged.llvm.native.pdb" target="lib\x86\netstandard1.6" />
-    
-<!--    <file src="swigged.llvm.targets"
-    target="build\swigged.llvm.targets" /> -->
+    <!-- There are 2 possible dll's for swigged.llvm,
+    corresponding to Release configuration, and the
+    target framework net461. Platform
+    targets do not matter for the code as the MSIL is the same
+    regardless.
+
+    Note: We don't include because std.swigged.llvm works.
+
+    <file src="swigged.llvm\bin\Release\swigged.llvm.dll" target="lib\net461" />
+    <file src="swigged.llvm\bin\Release\swigged.llvm.pdb" target="lib\net461" />
+    -->
+    <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" />
+
   </files>
 </package>

@@ -9,6 +9,12 @@ additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the
 fixed in SharpLang, and adds numerous unit tests (whereas SharpLang had only one test, calling only
 LLVM.ModuleCreateWithName("Module Name"), i.e., https://github.com/xen2/SharpLang/blob/coreclr/src/SharpLLVM.Tests/TestLLVM.cs).
 
+## Building application with Swigged.llvm:
+
+1) You will need to build your C# application in either x64 or x86 platform, or if built with AnyCPU platform,
+set the executable properties with:
+a) 
+
 ## Build Instructions:
 
 Swigged.llvm requires a build of LLVM, described below.
@@ -42,9 +48,13 @@ Test>Test Settings>Default Processor Architecture>X64
 Make sure to enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>),
 and unsafe code (<AllowUnsafeBlocks>true</AllowUnsafeBlocks>).
 
-## Doxygen Documentation:
+## Doxygen Documentation of LLVM-C:
 
 http://llvm.org/docs/doxygen/html/modules.html
+
+## The API
+
+Swigged.llvm wraps all LLVM-C functions in the namespace Swigged.LLVM. 
 
 ## Alternative LLVM Framework for C#
 

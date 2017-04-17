@@ -43,7 +43,6 @@ namespace core.sanity_test
             LLVM.DumpModule(mod);
             LLVM.DisposeBuilder(builder);
             LLVM.DisposeExecutionEngine(engine);
-            Console.ReadKey();
         }
     }
 }

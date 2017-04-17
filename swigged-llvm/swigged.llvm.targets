@@ -17,12 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="swigged.llvm" Condition="'$(Platform)' == 'x86'">
-      <HintPath>$(MSBuildThisFileDirectory)..\x86\swigged.llvm.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="swigged.llvm" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(MSBuildThisFileDirectory)..\x64\swigged.llvm.dll</HintPath>
+    <Reference Include="std.swigged.llvm">
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -31,27 +26,12 @@
     <CsllvmTargetDir Condition=" '$(CsllvmTargetDir)' == '' ">$(TargetDir)</CsllvmTargetDir>
   </PropertyGroup>
 
-  <Target Name="CsllvmCopyLibs86" BeforeTargets="AfterBuild" Condition="'$(Platform)' == 'x86'">
+  <Target Name="CsllvmCopyLibs32" BeforeTargets="AfterBuild" Condition="'$(Platform)' == 'x86'">
     <ItemGroup>
       <CsllvmBinaries Include="$(MSBuildThisFileDirectory)..\x86\*.*" />
     </ItemGroup>
-
     <Message Importance="high" Text="Copying swigged.llvm x86 binaries" />
     <Copy SourceFiles="@(CsllvmBinaries32)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-
-    <Message Importance="high" Text="-- swigged.llvm.targets: Copying files from $(MSBuildThisFileDirectory)..\x86 to $(CsllvmTargetDir)" />
-    <Copy SourceFiles="@(CsllvmBinaries)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-  </Target>
-
-  <Target Name="CsllvmCopyLibsWin32" BeforeTargets="AfterBuild" Condition="'$(Platform)' == 'Win32'">
-    <ItemGroup>
-      <CsllvmBinaries Include="$(MSBuildThisFileDirectory)..\x86\*.*" />
-    </ItemGroup>
-    <Message Importance="high" Text="Copying cef.redist x86 binaries" />
-    <Copy SourceFiles="@(CefBinaries32)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-
-    <Message Importance="high" Text="-- swigged.llvm.targets: Copying files from $(MSBuildThisFileDirectory)..\x86 to $(CsllvmTargetDir)" />
-    <Copy SourceFiles="@(CsllvmBinaries)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
   </Target>
 
   <Target Name="CsllvmCopyLibs64" BeforeTargets="AfterBuild" Condition="'$(Platform)' == 'x64'">
@@ -59,26 +39,6 @@
       <CsllvmBinaries Include="$(MSBuildThisFileDirectory)..\x64\*.*" />
     </ItemGroup>
     <Message Importance="high" Text="Copying swigged.llvm x64 binaries" />
-    <Copy SourceFiles="@(CefBinaries64)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-
-    <Message Importance="high" Text="-- swigged.llvm: Copying files from $(MSBuildThisFileDirectory)..\x64 to $(CsllvmTargetDir)" />
-    <Copy SourceFiles="@(CsllvmBinaries)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-  </Target>
-
-  <Target Name="CsllvmCopyLibsAnyCPU" BeforeTargets="AfterBuild" Condition="'$(Platform)' == 'AnyCPU'">
-    <ItemGroup>
-      <CsllvmBinaries32 Include="$(MSBuildThisFileDirectory)..\x86\*.*" />
-      <CsllvmBinaries64 Include="$(MSBuildThisFileDirectory)..\x64\*.*" />
-    </ItemGroup>
-
-    <Copy SourceFiles="@(CefBinaries32)" DestinationFolder="$(CsllvmTargetDir)\x86" SkipUnchangedFiles="true" />
-
-    <Message Importance="high" Text="Copying swigged.llvm x64 binaries" />
-    <Copy SourceFiles="@(CsllvmBinaries64)" DestinationFolder="$(CsllvmTargetDir)\x64" SkipUnchangedFiles="true" />
-
-    <Message Importance="high" Text="-- swigged.llvm.targets: Copying files from $(MSBuildThisFileDirectory)..\x86 to $(CsllvmTargetDir)\x86" />
-    <Copy SourceFiles="@(CsllvmBinaries32)" DestinationFolder="$(CsllvmTargetDir)\x86" SkipUnchangedFiles="true" />
-    <Message Importance="high" Text="-- swigged.llvm.targets: Copying files from $(MSBuildThisFileDirectory)..\x64 to $(CsllvmTargetDir)\x64" />
-    <Copy SourceFiles="@(CsllvmBinaries64)" DestinationFolder="$(CsllvmTargetDir)\x64" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(CsllvmBinaries64)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
   </Target>
 </Project>

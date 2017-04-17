@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>x86\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>2</WarningLevel>
@@ -65,6 +65,29 @@
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <WarningLevel>2</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -90,7 +113,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if "Debug|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.dll"
+    <PostBuildEvent>if "Debug|AnyCPU" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.dll"
+if "Debug|AnyCPU" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.pdb"
+if "Debug|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.dll"
 if "Debug|x64" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.pdb"
 if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.dll"
 if "Debug|Win32" == "$(Configuration)|$(Platform)"  copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.pdb"
