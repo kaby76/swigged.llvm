@@ -9,19 +9,33 @@ additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the
 fixed in SharpLang, and adds numerous unit tests (whereas SharpLang had only one test, calling only
 LLVM.ModuleCreateWithName("Module Name"), i.e., https://github.com/xen2/SharpLang/blob/coreclr/src/SharpLLVM.Tests/TestLLVM.cs).
 
-## Building application with Swigged.llvm:
+## Linking and building with Swigged.llvm from NuGet:
 
-1) You will need to build your C# application in either x64 or x86 platform, or if built with AnyCPU platform,
-set the executable properties with:
-a) 
+1) Download the package from NuGet (currently https://www.nuget.org/packages/swigged.llvm/4.0.1.2-alpha), or in Visual Studio,
+add the package "swigged.llvm".
+2) Set up the build of your C# application with Platform = "AnyCPU", Configuration = "Debug" or "Release". In the Properties for the
+application, either un-check "Prefer 32-bit" if you want to run as 64-bit app, or checked if you want to run as a 32-bit app. Swigged-llvm
+should copy swigged.llvm.native.dll of the appropriate type to the executable directory.
+3) If you want to debug Swigged.llvm code, set "Enable native code debugging." Note: this option is unavailable in
+Net Core apps in Visual Studio 2017 version 15.1 April 15 2017.
+4) Run. There are several potential problems:
+a) "Bad image format" error--the swigged.llvm.native.dll in your target directory is the wrong version (32-bit vs 64-bit).
+b) "Missing DLL" error--make sure swigged.llvm.native.dll and std.swigged.llvm.dll are in your executable directory.
+c) Crash in VerifyModule() call--the translation of "char **" is incorrect. Comment out the call for now.
 
-## Build Instructions:
+## Building Swigged.llvm:
 
-Swigged.llvm requires a build of LLVM, described below.
+Swigged.llvm requires a build of LLVM, described below. Building LLVM is a very time consuming process. Also, thw SWIG translation spec file is
+highly tuned to the particular version of LLVM, so it may not work (currently, it works for version 4.0.1).
+
+#### grab sources from git
 
 1) git clone https://github.com/kaby76/swigged-llvm.git
 2) cd swigged-llvm
 3) git clone -b release_40 https://github.com/llvm-mirror/llvm.git
+
+#### build llvm
+
 4) mkdir build-win64 build-win32
 5) cd build-win64
 6) "%VS150BASE%\VC\Auxiliary\Build\vcvarsall.bat" x64
@@ -32,29 +46,28 @@ Swigged.llvm requires a build of LLVM, described below.
 11) "%VS150BASE%\VC\Auxiliary\Build\vcvarsall.bat" x86
 12) cmake -G "Visual Studio 15 2017" ..\llvm
 13) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=Win32
+
+#### build swigged.llvm
+
 14) cd ../swigged-llvm
-15) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform=x86
+15) (optional, depending on which version of LLVM you used) bash -c generate.sh
+15) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform="AnyCPU"
 
 ## Testing
 
-Make sure to set the Default Processor Architecture to x86 or x64, then
-recompile in Visual Studio 2017. If you don't set the DPA, then
-no tests will be discovered, and so cannot be run.
-
-Test>Test Settings>Default Processor Architecture>X64
+... (incomplete)
 
 ## Debugging
 
-Make sure to enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>),
-and unsafe code (<AllowUnsafeBlocks>true</AllowUnsafeBlocks>).
+Enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>).
 
-## Doxygen Documentation of LLVM-C:
+## Documentation of Swigged.llvm (Docfx):
+
+http://domemtech.com/swigged-llvm
+
+## Documentation of LLVM-C (Doxygen):
 
 http://llvm.org/docs/doxygen/html/modules.html
-
-## The API
-
-Swigged.llvm wraps all LLVM-C functions in the namespace Swigged.LLVM. 
 
 ## Alternative LLVM Framework for C#
 
