@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.4.3)
-project (llvm-wrap)
+project (swigged.llvm.native)
 
 find_package(LLVM REQUIRED CONFIG)
 
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+
 
 # Set your project compile flags.
 # E.g. if using the C++ header files
@@ -18,11 +19,13 @@ add_definitions(${LLVM_DEFINITIONS})
 
 # Now build our tools
 # add_library(llvm-wrap STATIC LLVM_wrap.cpp)
-add_library(llvm-wrap SHARED LLVM_wrap.cpp)
+add_library(swigged.llvm.native MODULE LLVM_wrap.cpp)
 
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
-llvm_map_components_to_libnames(llvm_libs support core irreader)
+llvm_map_components_to_libnames(llvm_libs support core irreader mcparser bitreader mc option mcjit native linker ipo executionengine runtimedyld)
+
 
 # Link against LLVM libraries
-target_link_libraries(llvm-wrap ${llvm_libs})
+target_link_libraries(swigged.llvm.native ${llvm_libs})
+set_target_properties(swigged.llvm.native PROPERTIES PREFIX "")
