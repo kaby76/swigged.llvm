@@ -9,6 +9,8 @@ additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the
 fixed in SharpLang, and adds numerous unit tests (whereas SharpLang had only one test, calling only
 LLVM.ModuleCreateWithName("Module Name"), i.e., https://github.com/xen2/SharpLang/blob/coreclr/src/SharpLLVM.Tests/TestLLVM.cs).
 
+Swigged.llvm can be built and run in the Linux environment. Details to do that are described below.
+
 ## Linking and building with Swigged.llvm from NuGet:
 
 1) Download the package from NuGet (currently https://www.nuget.org/packages/swigged.llvm/4.0.1.2-alpha), or in Visual Studio,
@@ -24,6 +26,8 @@ b) "Missing DLL" error--make sure swigged.llvm.native.dll and std.swigged.llvm.d
 c) Crash in VerifyModule() call--the translation of "char **" is incorrect. Comment out the call for now.
 
 ## Building Swigged.llvm:
+
+### Windows ###
 
 Swigged.llvm requires a build of LLVM, described below. Building LLVM is a very time consuming process. Also, thw SWIG translation spec file is
 highly tuned to the particular version of LLVM, so it may not work (currently, it works for version 4.0.1).
@@ -52,6 +56,40 @@ highly tuned to the particular version of LLVM, so it may not work (currently, i
 14) cd ../swigged-llvm
 15) (optional, depending on which version of LLVM you used) bash -c generate.sh
 15) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform="AnyCPU"
+
+### Ubuntu/Linux ###
+
+Make sure to install ("sudo apt-get install ...") gcc, make, 'g++', cmake,
+git, build-essential, xz-utils. For Net Core, follow the instructions at
+https://www.microsoft.com/net/core#linuxubuntu 
+
+#### grab sources from git
+
+1) git clone https://github.com/kaby76/swigged-llvm.git
+2) cd swigged-llvm
+3) git clone -b release_40 https://github.com/llvm-mirror/llvm.git
+
+#### build llvm ####
+
+4) cd llvm; mkdir build
+5) cd build
+6) cmake ..\llvm
+7) make
+8) cd lib/cmake/llvm; export=`pwd`
+9) cd ../../../..
+
+#### build swigged.llvm ####
+
+10) cd swigged-llvm
+11) dotnet restore
+12) cd std.swigged.llvm; dotnet restore; dotnet build; cd ..
+13) cd core.sanity-test; dotnet restore; dotnet build; cd ..
+14) mkdir build; cd build; cmake ../swigged.llvm.native; make; cd ..
+
+#### run ####
+
+15) cd core.sanity-test; cp ../build/swigged.llvm.native.so bin/Debug/netcoreapp1.1/
+16) dotnet run
 
 ## Testing
 
