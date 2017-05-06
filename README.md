@@ -28,21 +28,27 @@ c) Crash in VerifyModule() call--the translation of "char **" is incorrect. Comm
 ## Building Swigged.llvm:
 
 Swigged.llvm requires a build of LLVM, described below. Building LLVM is a very time consuming process. Also, the SWIG translation spec file is
-highly tuned to the particular version of LLVM, currently for Release_40, so it may not work.
+highly tuned to the particular version of LLVM, currently for Release_40, so it may not work with other releases.
 
 Also note that LLVM does not use tags in its repository! Therefore, if you want a particular version of finer granularity than the latest on a branch, you
 will need to grab the sources directly from the LLVM download area and unpack them.
 
-### grab sources from git or LLVM download area.
+### Requirements to build
 
-In a directory of your choice, clone LLVM and swigged.llvm.
+* Cmake
+* Git
+* VS 2017 or 2015, with C++ installed
+* Python
+
+### Grab sources from git or LLVM download area.
+
+In a directory of your choice, clone LLVM and swigged.llvm. If you
+downloaded LLVM sources, place them here.
 
 1) git clone https://github.com/kaby76/swigged-llvm.git
 2) git clone -b release_40 https://github.com/llvm-mirror/llvm.git
 
-The build of swigged.llvm will assume this directory structure. For example,
-when I use SourceTree, all repositories are placed in the "Documents" directory
-by default.
+The build of swigged.llvm will assume this directory structure.
 
 ### Windows ###
 
