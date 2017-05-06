@@ -29,11 +29,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.6|Win32'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <OutputPath>x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6;_WINDOWS</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.6|x64'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <OutputPath>x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6;_WINDOWS</DefineConstants>
   </PropertyGroup>
 
   <!-- Release/net45 -->
