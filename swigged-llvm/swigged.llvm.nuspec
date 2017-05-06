@@ -4,7 +4,7 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
 
-    <version>4.0.1.2-alpha</version>
+    <version>4.0.3-alpha</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -22,13 +22,13 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of the C API of LLVM.</description>
     <releaseNotes>
-Uses LLVM version 4.0.1. When building, select Platform = "AnyCPU", config = "Debug" or "Release" (the Dll's are a Release build). In the properties for the executable, un-check "Prefer 32-bit" in Build properties, and check "Enable native code debugging" (note, unavailable in NetCore apps). The targets file for the package will copy the appropriate "swigged.llvm.native.dll" to your build directory. Targets currently built are net45, net461, and netstandard1.6, which should work with NetCore apps.
+Uses LLVM version 4.0+ branch. Note: LLVM does not tag the branch, so what files will vary. When building, select Platform = "AnyCPU", config = "Debug" or "Release" (the Dll's are a Release build). In the properties for the executable, un-check "Prefer 32-bit" in Build properties, and check "Enable native code debugging" (note, unavailable in NetCore apps). The targets file for the package will copy the appropriate "swigged.llvm.native.dll" to your build directory. Targets currently built are net45, net461, and netstandard1.6, which should work with NetCore apps.
 
 For further information, see https://github.com/kaby76/swigged-llvm.
     </releaseNotes>
 
     <!-- Copyright information -->
-    <copyright>Copyright © 2017</copyright>
+    <copyright>Copyright Â© 2017</copyright>
 
     <!-- Tags appear in the gallery and can be used for tag searches -->
     <tags>LLVM SWIG native</tags>
