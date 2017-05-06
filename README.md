@@ -27,29 +27,40 @@ c) Crash in VerifyModule() call--the translation of "char **" is incorrect. Comm
 
 ## Building Swigged.llvm:
 
-### Windows ###
+Swigged.llvm requires a build of LLVM, described below. Building LLVM is a very time consuming process. Also, the SWIG translation spec file is
+highly tuned to the particular version of LLVM, currently for Release_40, so it may not work.
 
-Swigged.llvm requires a build of LLVM, described below. Building LLVM is a very time consuming process. Also, thw SWIG translation spec file is
-highly tuned to the particular version of LLVM, so it may not work (currently, it works for version 4.0.1).
+Also note that LLVM does not use tags in its repository! Therefore, if you want a particular version of finer granularity than the latest on a branch, you
+will need to grab the sources directly from the LLVM download area and unpack them.
 
-#### grab sources from git
+### grab sources from git or LLVM download area.
+
+In a directory of your choice, clone LLVM and swigged.llvm.
 
 1) git clone https://github.com/kaby76/swigged-llvm.git
-2) cd swigged-llvm
-3) git clone -b release_40 https://github.com/llvm-mirror/llvm.git
+2) git clone -b release_40 https://github.com/llvm-mirror/llvm.git
+
+The build of swigged.llvm will assume this directory structure. For example,
+when I use SourceTree, all repositories are placed in the "Documents" directory
+by default.
+
+### Windows ###
 
 #### build llvm
 
-4) mkdir build-win64 build-win32
-5) cd build-win64
-6) "%VS150BASE%\VC\Auxiliary\Build\vcvarsall.bat" x64
-7) cmake -G "Visual Studio 15 2017 Win64" ..\llvm
-8) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x64
-9) cd ..
-10) cd build-win32
-11) "%VS150BASE%\VC\Auxiliary\Build\vcvarsall.bat" x86
-12) cmake -G "Visual Studio 15 2017" ..\llvm
-13) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=Win32
+Depending on what you want, you should build both 32-bit and 64-bit libraries. But,
+you can skip one target if you aren't interested.
+
+1) mkdir build-win64 build-win32
+2) cd build-win64
+3) "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
+4) cmake -G "Visual Studio 15 2017 Win64" ..\llvm
+5) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x64
+6) cd ..
+7) cd build-win32
+8) "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x86
+9) cmake -G "Visual Studio 15 2017" ..\llvm
+10) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=Win32
 
 #### build swigged.llvm
 
