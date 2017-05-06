@@ -37,8 +37,10 @@ will need to grab the sources directly from the LLVM download area and unpack th
 
 * Cmake
 * Git
-* VS 2017 or 2015, with C++ installed
+* VS 2017 or 2015, with C++ installed (Windows)
 * Python
+* WSL Bash (Windows)
+* These tools in path variable.
 
 ### Grab sources from git or LLVM download area.
 
@@ -57,6 +59,9 @@ The build of swigged.llvm will assume this directory structure.
 Depending on what you want, you should build both 32-bit and 64-bit libraries. But,
 you can skip one target if you aren't interested.
 
+Note, use Cmd or Powershell to execute the following.
+Make sure WSL bash is used, and not Cygwin or Mingw.
+
 1) mkdir build-win64 build-win32
 2) cd build-win64
 3) "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
@@ -70,9 +75,11 @@ you can skip one target if you aren't interested.
 
 #### build swigged.llvm
 
-14) cd ../swigged-llvm
-15) (optional, depending on which version of LLVM you used) bash -c generate.sh
-15) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform="AnyCPU"
+1) cd ../swigged-llvm
+2) (optional)
+  a) bash -c ./generate.sh
+  b) bash -c ./fix.sh
+3) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform="AnyCPU"
 
 ### Ubuntu/Linux ###
 
@@ -80,39 +87,33 @@ Make sure to install ("sudo apt-get install ...") gcc, make, 'g++', cmake,
 git, build-essential, xz-utils. For Net Core, follow the instructions at
 https://www.microsoft.com/net/core#linuxubuntu 
 
-#### grab sources from git
-
-1) git clone https://github.com/kaby76/swigged-llvm.git
-2) cd swigged-llvm
-3) git clone -b release_40 https://github.com/llvm-mirror/llvm.git
-
 #### build llvm ####
 
-4) cd llvm; mkdir build
-5) cd build
-6) cmake ..\llvm
-7) make
-8) cd lib/cmake/llvm; export=`pwd`
-9) cd ../../../..
+1) pushd .; cd llvm; mkdir build
+2) cd build
+3) cmake ..\llvm
+4) make
+5) cd lib/cmake/llvm; export=`pwd`
+6) popd
 
 #### build swigged.llvm ####
 
-10) cd swigged-llvm
-11) dotnet restore
-12) cd std.swigged.llvm; dotnet restore; dotnet build; cd ..
-13) cd core.sanity-test; dotnet restore; dotnet build; cd ..
-14) mkdir build; cd build; cmake ../swigged.llvm.native; make; cd ..
+1) cd swigged-llvm
+2) dotnet restore
+3) cd std.swigged.llvm; dotnet restore; dotnet build; cd ..
+4) cd core.sanity-test; dotnet restore; dotnet build; cd ..
+5) mkdir build; cd build; cmake ../swigged.llvm.native; make; cd ..
 
 #### run ####
 
-15) cd core.sanity-test; cp ../build/swigged.llvm.native.so bin/Debug/netcoreapp1.1/
-16) dotnet run
+1) cd core.sanity-test; cp ../build/swigged.llvm.native.so bin/Debug/netcoreapp1.1/
+2) dotnet run
 
 ## Testing
 
 ... (incomplete)
 
-## Debugging
+## Debugging on Windows
 
 Enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>).
 
