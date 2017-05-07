@@ -17,6 +17,11 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
+# Set specific targets.
+set(LLVM_BUILD_TARGETS
+    MSIL
+	X86)
+
 # Now build our tools
 # add_library(llvm-wrap STATIC LLVM_wrap.cpp)
 add_library(swigged.llvm.native MODULE LLVM_wrap.cpp)
