@@ -67,12 +67,12 @@ Make sure WSL bash is used, and not Cygwin or Mingw.
 1) mkdir build-win64 build-win32
 2) cd build-win64
 3) "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
-4) cmake -G "Visual Studio 15 2017 Win64" ..\llvm
+4) cmake -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017 Win64" ..\llvm
 5) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x64
 6) cd ..
 7) cd build-win32
 8) "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x86
-9) cmake -G "Visual Studio 15 2017" ..\llvm
+9) cmake -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017" ..\llvm
 10) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=Win32
 
 #### build swigged.llvm
