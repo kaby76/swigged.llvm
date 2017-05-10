@@ -7,16 +7,19 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <OutputPath>any\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_6;_WINDOWS</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|Win32'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <OutputPath>x86\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_6;_WINDOWS</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|x64'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <OutputPath>x64\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_6;_WINDOWS</DefineConstants>
   </PropertyGroup>
 
   <!-- Debug/netstandard1.6 -->

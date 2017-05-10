@@ -4,7 +4,7 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
 
-    <version>4.0.3-alpha</version>
+    <version>4.0.4-alpha</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -22,6 +22,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of LLVM-C.</description>
     <releaseNotes>
+This version corrects a problem with version 4.0.3-alpha. Sorry folks!
+      
 This API links statically with LLVM version 4.0+ branch. You do not need to install LLVM. As LLVM does not tag the branch, the sources used in the build may vary.
 
 The DLL and SO files provided in this package are a Release build.
@@ -32,7 +34,7 @@ On Windows, in the properties for the executable, un-check "Prefer 32-bit" in Bu
 
 On Ubuntu, use Net Core to build your C# program.
 
-Targets currently built for std.swigged.llvm are net45, net461, netstandard1.6. Targets for swigged.llvm.native (the native wrapper library for LLVM-C) is built for win10-x86, win10-x64, and ubuntu.16.04-x64. The appropriate swigged.llvm.native.dll/so file should be to your build directory in order to run.
+Targets currently built for std.swigged.llvm are net45, net461, netstandard1.6. Targets for swigged-llvm-native (the native wrapper library for LLVM-C) is built for win10-x86, win10-x64, and ubuntu.16.04-x64. The appropriate swigged-llvm-native.dll/so file should be to your build directory in order to run.
       
 For further information, see https://github.com/kaby76/swigged-llvm.
     </releaseNotes>
@@ -54,11 +56,11 @@ For further information, see https://github.com/kaby76/swigged-llvm.
      does not understand "x86" or "x64" platform targets, place these
      in an non-Nuget directory (i.e., not "build", "lib", etc.).
      -->
-    <file src="win10-x86\Release\swigged.llvm.native.dll" target="win10-x86" />
-    <file src="win10-x86\Release\swigged.llvm.native.pdb" target="win10-x86" />
-    <file src="win10-x64\Release\swigged.llvm.native.dll" target="win10-x64" />
-    <file src="win10-x64\Release\swigged.llvm.native.pdb" target="win10-x64" />
-    <file src="ubuntu.16.04-x64\Release\swigged.llvm.native.so" target="ubuntu.16.04-x64" />
+    <file src="win10-x86\Release\swigged-llvm-native.dll" target="win10-x86" />
+    <file src="win10-x86\Release\swigged-llvm-native.pdb" target="win10-x86" />
+    <file src="win10-x64\Release\swigged-llvm-native.dll" target="win10-x64" />
+    <file src="win10-x64\Release\swigged-llvm-native.pdb" target="win10-x64" />
+    <file src="ubuntu.16.04-x64\Release\swigged-llvm-native.so" target="ubuntu.16.04-x64" />
 
     <!-- There are three possible dll's for std.swigged.llvm,
     corresponding to Release configuration, and the three

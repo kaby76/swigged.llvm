@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.4.3)
-project (swigged.llvm.native)
+project (swigged-llvm-native)
 
 find_package(LLVM REQUIRED CONFIG)
 
@@ -24,7 +24,7 @@ set(LLVM_BUILD_TARGETS
 
 # Now build our tools
 # add_library(llvm-wrap STATIC LLVM_wrap.cpp)
-add_library(swigged.llvm.native MODULE LLVM_wrap.cpp)
+add_library(swigged-llvm-native MODULE LLVM_wrap.cpp)
 
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
@@ -32,5 +32,5 @@ llvm_map_components_to_libnames(llvm_libs support core irreader mcparser bitread
 
 
 # Link against LLVM libraries
-target_link_libraries(swigged.llvm.native ${llvm_libs})
-set_target_properties(swigged.llvm.native PROPERTIES PREFIX "")
+target_link_libraries(swigged-llvm-native ${llvm_libs})
+set_target_properties(swigged-llvm-native PROPERTIES PREFIX "")
