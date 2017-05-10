@@ -44,13 +44,23 @@ will need to grab the sources directly from the LLVM download area and unpack th
 * WSL Bash (Windows)
 * These tools in path variable.
 
+~~~~
+# Optimized for DigitalOcean.com
+sudo apt-get install git
+sudo apt-get update
+sudo apt-get install cmake
+sudo apt-get install build-essential
+~~~~
+
 ### Grab sources from git or LLVM download area.
 
 In a directory of your choice, clone LLVM and swigged.llvm. If you
 downloaded LLVM sources, place them here.
 
-1) git clone https://github.com/kaby76/swigged-llvm.git
-2) git clone -b release_40 https://github.com/llvm-mirror/llvm.git
+~~~~
+git clone https://github.com/kaby76/swigged-llvm.git
+git clone -b release_40 https://github.com/llvm-mirror/llvm.git
+~~~~
 
 The build of swigged.llvm will assume this directory structure.
 
@@ -64,16 +74,18 @@ you can skip one target if you aren't interested.
 Note, use Cmd or Powershell to execute the following.
 Make sure WSL bash is used, and not Cygwin or Mingw.
 
-1) mkdir build-win64 build-win32
-2) cd build-win64
-3) "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
-4) cmake -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017 Win64" ..\llvm
-5) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x64
-6) cd ..
-7) cd build-win32
-8) "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x86
-9) cmake -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017" ..\llvm
-10) msbuild LLVM.sln /p:Configuration=Debug /p:Platform=Win32
+~~~~
+mkdir build-win64 build-win32
+cd build-win64
+"%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
+cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017 Win64" ..\llvm
+msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x64
+cd ..
+cd build-win32
+"%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x86
+cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017" ..\llvm
+msbuild LLVM.sln /p:Configuration=Debug /p:Platform=Win32
+~~~~
 
 #### build swigged.llvm
 
@@ -91,12 +103,14 @@ https://www.microsoft.com/net/core#linuxubuntu
 
 #### build llvm ####
 
-1) pushd .; cd llvm; mkdir build
-2) cd build
-3) cmake ..\llvm
-4) make
-5) cd lib/cmake/llvm; export=`pwd`
-6) popd
+~~~~
+pushd .; cd llvm; mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 ../llvm/
+make
+cd lib/cmake/llvm; export=`pwd`
+popd
+~~~~
 
 #### build swigged.llvm ####
 
@@ -104,7 +118,9 @@ https://www.microsoft.com/net/core#linuxubuntu
 2) dotnet restore
 3) cd std.swigged.llvm; dotnet restore; dotnet build; cd ..
 4) cd core.sanity-test; dotnet restore; dotnet build; cd ..
-5) mkdir build; cd build; cmake ../swigged.llvm.native; make; cd ..
+5) mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 ../llvm/
+
+make; cd ..
 
 #### run ####
 
