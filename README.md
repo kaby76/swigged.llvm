@@ -62,7 +62,25 @@ git clone https://github.com/kaby76/swigged-llvm.git
 git clone -b release_40 https://github.com/llvm-mirror/llvm.git
 ~~~~
 
-The build of swigged.llvm will assume this directory structure.
+The build of swigged.llvm will assume a directory structure thus, so you will need to create
+directories for LLVM build output (x64/, x86/, ubuntu/, ...)
+
+~~~~
+|---- llvm
+|---- swigged.llvm
+      }---- swigged.llvm
+            |---- std.swigged.llvm
+            |---- swigged-llvm-native
+|---- x64
+      |---- Release
+      |---- Debug
+|---- x86
+      |---- Debug
+      |---- Release
+|---- ubuntu
+      |---- Debug
+      |---- Release
+~~~~
 
 ### Windows ###
 
@@ -145,9 +163,15 @@ http://llvm.org/docs/doxygen/html/modules.html
 
 ## Alternative LLVM Framework for C#
 
-LLVMSharp (https://www.nuget.org/packages/LLVMSharp/3.9.1-rc3)
+##### LLVMSharp (https://www.nuget.org/packages/LLVMSharp/3.9.1-rc3)
 
 Note: LLVMSharp is a NET Core API. It appears it cannot be used with NET Framework applications,
 at least I have had no luck in doing so. In theory, NET Framework assemblies can be used in
 NET Core applications but not the other way around. However, although swigged.llvm 
 is a NET Framework API, it does not seem to work with NET Core apps.
+
+##### Mono Mini (https://github.com/mono/mono/tree/master/mono/mini)
+
+This is the LLVM compiler backend of CIL in the Mono Project. It is very well developed, written in C,
+and uses the LLVM-C API. I give a brief question-oriented overview of Mono Mini in my blog,
+http://codinggorilla.domemtech.com/?p=1572
