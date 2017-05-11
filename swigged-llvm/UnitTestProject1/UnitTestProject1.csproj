@@ -82,12 +82,6 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\swigged.llvm\swigged.llvm.csproj">
-      <Project>{1e7a06ee-8ae4-ba64-d322-6c0a3fcc98b9}</Project>
-      <Name>swigged.llvm</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

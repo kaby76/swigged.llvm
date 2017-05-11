@@ -4,7 +4,7 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
 
-    <version>4.0.4-alpha</version>
+    <version>4.0.5-alpha</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -22,11 +22,13 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of LLVM-C.</description>
     <releaseNotes>
-This version corrects a problem with version 4.0.3-alpha. Sorry folks!
+This version corrects a problems with versions 4.0.3 and 4.0.4. DllImport now works across Windows 10 and Ubuntu 16.04. Due to a problem with Net Core/Standard, I found out that one cannot name a DLL or SO file with dots in the file name other than the dot before the suffix. E.g., swigged.llvm.native.dll must be swigged-llvm-native.dll.
       
 This API links statically with LLVM version 4.0+ branch. You do not need to install LLVM. As LLVM does not tag the branch, the sources used in the build may vary.
 
 The DLL and SO files provided in this package are a Release build.
+
+This package is Net Standard 1.1 build, so it should work in Net Framework >=4.5.
 
 When building, either on Windows or Ubuntu, select Platform = "AnyCPU", config = "Debug" or "Release".
 
@@ -47,6 +49,30 @@ For further information, see https://github.com/kaby76/swigged-llvm.
 
     <!-- Dependencies are automatically installed when the package is installed -->
     <dependencies>
+      <group targetFramework="net45">
+	<dependency id="NetStandard" version="[1.6,)" />
+	<dependency id="System.Runtime" version="[4.1,)" />
+      </group>
+      <group targetFramework="net451">
+	<dependency id="NetStandard" version="[1.6,)" />
+	<dependency id="System.Runtime" version="[4.1,)" />
+      </group>
+      <group targetFramework="net46">
+	<dependency id="NetStandard" version="[1.6,)" />
+	<dependency id="System.Runtime" version="[4.1,)" />
+      </group>
+      <group targetFramework="net461">
+	<dependency id="NetStandard" version="[1.6,)" />
+	<dependency id="System.Runtime" version="[4.1,)" />
+      </group>
+      <group targetFramework="net462">
+	<dependency id="NetStandard" version="[1.6,)" />
+	<dependency id="System.Runtime" version="[4.1,)" />
+      </group>
+      <group targetFramework="net47">
+	<dependency id="NetStandard" version="[1.6,)" />
+	<dependency id="System.Runtime" version="[4.1,)" />
+      </group>
     </dependencies>
   </metadata>
   
@@ -68,12 +94,8 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     targets do not matter for the code as the MSIL is the same
     regardless. 
     -->
-    <file src="std.swigged.llvm\any\Release\net45\std.swigged.llvm.dll" target="lib\net45" />
-    <file src="std.swigged.llvm\any\Release\net45\std.swigged.llvm.pdb" target="lib\net45" />
-    <file src="std.swigged.llvm\any\Release\net461\std.swigged.llvm.dll" target="lib\net461" />
-    <file src="std.swigged.llvm\any\Release\net461\std.swigged.llvm.pdb" target="lib\net461" />
-    <file src="std.swigged.llvm\any\Release\netstandard1.6\std.swigged.llvm.dll" target="lib\netstandard1.6" />
-    <file src="std.swigged.llvm\any\Release\netstandard1.6\std.swigged.llvm.pdb" target="lib\netstandard1.6" />
+    <file src="std.swigged.llvm\any\Release\netstandard1.1\std.swigged.llvm.dll" target="lib\netstandard1.1" />
+    <file src="std.swigged.llvm\any\Release\netstandard1.1\std.swigged.llvm.pdb" target="lib\netstandard1.1" />
     
 <!--    <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" /> -->
 
