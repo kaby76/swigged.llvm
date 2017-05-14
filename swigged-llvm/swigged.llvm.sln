@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "std.swigged.llvm", "std.swigged.llvm\std.swigged.llvm.csproj", "{DCF9C0B3-961F-40E4-87BC-A2CC20E4B5A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject3", "UnitTestProject3\UnitTestProject3.csproj", "{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -112,6 +114,18 @@ Global
 		{DCF9C0B3-961F-40E4-87BC-A2CC20E4B5A1}.Release|Win32.Build.0 = Release|Any CPU
 		{DCF9C0B3-961F-40E4-87BC-A2CC20E4B5A1}.Release|x64.ActiveCfg = Release|Any CPU
 		{DCF9C0B3-961F-40E4-87BC-A2CC20E4B5A1}.Release|x64.Build.0 = Release|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Debug|Win32.Build.0 = Debug|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Debug|x64.Build.0 = Debug|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Release|Win32.ActiveCfg = Release|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Release|Win32.Build.0 = Release|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Release|x64.ActiveCfg = Release|Any CPU
+		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
