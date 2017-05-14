@@ -9,10 +9,10 @@ using System.Runtime.InteropServices;
 namespace UnitTestProject3
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest3
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Test3()
         {
             // Based on http://npcontemplation.blogspot.com/2008/06/secret-of-llvm-c-bindings.html
             ModuleRef mod = LLVM.ModuleCreateWithName("fac_module");

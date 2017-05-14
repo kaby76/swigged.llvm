@@ -22,7 +22,7 @@ namespace UnitTestProject1
             LLVM.PositionBuilderAtEnd(builder, entry);
             LLVM.BuildRet(builder, LLVM.ConstInt(LLVM.Int32Type(), 42, false));
             string msg = new string(new char[1000]);
-            LLVM.VerifyModule(Module, VerifierFailureAction.PrintMessageAction, out msg);
+            //LLVM.VerifyModule(Module, VerifierFailureAction.PrintMessageAction, out msg);
 
             LLVM.DisposeBuilder(builder);
         }
@@ -65,7 +65,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void Test1()
         {
             Swigged.LLVM.LLVM.EnablePrettyStackTrace();
             buildSimpleFunction();

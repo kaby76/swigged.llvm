@@ -8,7 +8,7 @@ namespace UnitTestProject2
     // See http://releases.llvm.org/2.6/docs/tutorial/JITTutorial2.html
 
     [TestClass]
-    public class UnitTest1
+    public class UnitTest2
     {
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate int Ack(int a, int b);
@@ -30,7 +30,7 @@ namespace UnitTestProject2
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void Test2()
         {
 
             Swigged.LLVM.ContextRef g = Swigged.LLVM.LLVM.GetGlobalContext();
@@ -80,7 +80,7 @@ namespace UnitTestProject2
             LLVM.BuildRet(builder, recur_2);
 
             string error;
-            LLVM.VerifyModule(Module, VerifierFailureAction.AbortProcessAction, out error);
+            //LLVM.VerifyModule(Module, VerifierFailureAction.AbortProcessAction, out error);
             //LLVM.DisposeMessage(error);
             ExecutionEngineRef engine;
             LLVM.LinkInMCJIT();
@@ -93,7 +93,6 @@ namespace UnitTestProject2
             var ptr = LLVM.GetPointerToGlobal(engine, gcd);
             IntPtr p = (IntPtr)ptr;
             Ack ackMethod = (Ack)Marshal.GetDelegateForFunctionPointer(p, typeof(Ack));
-
             for (int i = 1; i < 10; ++i)
                 for (int j = 1; j < 10; ++j)
                 {
