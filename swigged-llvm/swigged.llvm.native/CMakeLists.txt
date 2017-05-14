@@ -28,7 +28,7 @@ add_library(swigged-llvm-native MODULE LLVM_wrap.cpp)
 
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
-llvm_map_components_to_libnames(llvm_libs support core irreader mcparser bitreader mc option mcjit native linker ipo executionengine runtimedyld)
+llvm_map_components_to_libnames(llvm_libs support core irreader mcparser bitreader mc option mcjit native linker ipo executionengine runtimedyld orcjit interpreter ObjCARCOpts)
 
 
 # Link against LLVM libraries
