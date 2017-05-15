@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Swigged.LLVM;
 
@@ -8,6 +9,14 @@ namespace ConsoleApplication1
     {
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate int Add(int a, int b);
+
+        public static ulong Factorial(ulong i)
+        {
+            ulong result = 1;
+            if (i == 0) return 1;
+            if (i == 1) return 1;
+            return Factorial(i - 1) * i;
+        }
 
         static void Main(string[] args)
         {
@@ -112,9 +121,12 @@ namespace ConsoleApplication1
             LLVM.RunPassManager(pass, mod);
             LLVM.DumpModule(mod);
 
-            GenericValueRef exec_args = LLVM.CreateGenericValueOfInt(LLVM.Int32Type(), 10, false);
+            ulong input = 10;
+            GenericValueRef exec_args = LLVM.CreateGenericValueOfInt(LLVM.Int32Type(), input, false);
             GenericValueRef exec_res = LLVM.RunFunction(engine, fac, 1, out exec_args);
-            LLVM.GenericValueToInt(exec_res, false);
+            var result_of_function = LLVM.GenericValueToInt(exec_res, false);
+            var result_of_csharp_function = Factorial(input);
+            Debug.Assert(result_of_csharp_function == result_of_function);
 
             LLVM.DisposePassManager(pass);
             LLVM.DisposeBuilder(builder);
