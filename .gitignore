@@ -256,3 +256,4 @@ build-win32/
 swigged-llvm/ubuntu.16.04-x64/swigged-llvm-native.so
 swigged-llvm/b/
 swigged-llvm/swigged.llvm.native/x64-Debug/
+swigged-llvm/llvm/x64-Debug/
