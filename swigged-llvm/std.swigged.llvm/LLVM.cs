@@ -2846,8 +2846,8 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static bool VerifyModule(ModuleRef M, VerifierFailureAction Action, out string OutMessage) {
-    bool ret = LLVMPINVOKE.VerifyModule(M.Value, (int)Action, out OutMessage);
+  public unsafe static bool VerifyModule(ModuleRef M, VerifierFailureAction Action, MyString OutMessage) {
+    bool ret = LLVMPINVOKE.VerifyModule(M.Value, (int)Action, out OutMessage.Value);
     return ret;
   }
 

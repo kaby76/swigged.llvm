@@ -36,7 +36,8 @@ namespace ConsoleApplication1
             ValueRef tmp = LLVM.BuildAdd(builder, LLVM.GetParam(sum, 0), LLVM.GetParam(sum, 1), "tmp");
             LLVM.BuildRet(builder, tmp);
             string error = null;
-            //LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, out error);
+            MyString the_error = new MyString((IntPtr)0);
+            LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, the_error);
             //LLVM.DisposeMessage(error);
             ExecutionEngineRef engine;
             LLVM.LinkInMCJIT();

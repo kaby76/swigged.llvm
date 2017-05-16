@@ -8628,20 +8628,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CreateJITCompilerForModu
   arg1 = (LLVMExecutionEngineRef *)jarg1; 
   arg2 = (LLVMModuleRef)jarg2; 
   arg3 = (unsigned int)jarg3; 
-
-	// Here we assign a place to stuff the char * string.
-	arg4 = &targ4;
-
+  arg4 = (char **)0;
+  arg4 = (char **)jarg4;
 	result = (LLVMBool)LLVMCreateJITCompilerForModule(arg1,arg2,arg3,arg4);
-
-	// Note, LLVMCreateJITCompilerForModule performs:
-	// *OutError = strdup(Error.c_str());
-
-	// We need to convert the char * one of the following:
-	// stringbuffer, char[], string.
-
 	jresult = result; 
-
 	return jresult;
 }
 

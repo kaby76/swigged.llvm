@@ -1908,7 +1908,7 @@ class LLVMPINVOKE {
   public static extern bool IsMultithreaded();
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_VerifyModule___")]
-  public static extern bool VerifyModule(System.IntPtr jarg1, int jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
+  public static extern bool VerifyModule(System.IntPtr jarg1, int jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_VerifyFunction___")]
   public static extern bool VerifyFunction(System.IntPtr jarg1, int jarg2);
