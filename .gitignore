@@ -260,3 +260,6 @@ swigged-llvm/llvm/x64-Debug/
 swigged-llvm/llvm/x64-Release/
 swigged-llvm/llvm/x86-Debug/
 swigged-llvm/llvm/x86-Release/
+swigged-llvm/swigged.llvm.native/x64-Release/
+swigged-llvm/swigged.llvm.native/x86-Debug/
+swigged-llvm/swigged.llvm.native/x86-Release/

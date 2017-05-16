@@ -6,7 +6,7 @@
         "generator": "Visual Studio 15 2017",
         "configurationType": "Debug",
         "buildRoot": "${projectDir}\\${name}",
-        "cmakeCommandArgs": " -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86",
+        "cmakeCommandArgs": "-DLLVM_DIR=${projectDir}\\..\\llvm\\x86-Debug\\lib\\cmake\\llvm -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86",
         "buildCommandArgs": "-m -v:minimal",
         "ctestCommandArgs": ""
       },
@@ -15,7 +15,7 @@
         "generator": "Visual Studio 15 2017",
         "configurationType": "Release",
         "buildRoot": "${projectDir}\\${name}",
-        "cmakeCommandArgs": "-DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86",
+        "cmakeCommandArgs": "-DLLVM_DIR=${projectDir}\\..\\llvm\\x86-Release\\lib\\cmake\\llvm -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86",
         "buildCommandArgs": "-m -v:minimal",
         "ctestCommandArgs": ""
       },
@@ -25,7 +25,7 @@
         "configurationType": "Debug",
         //"buildRoot": "C:\\Users\\Kenne\\Documents\\sw-llvm\\swigged-llvm\\swigged-llvm\\swigged.llvm.native\\${name}",
         "buildRoot": "${projectDir}\\${name}",
-        "cmakeCommandArgs": "-DCMAKE_BUILD_TYPE=Debug -DLLVM_TARGETS_TO_BUILD=X86",
+        "cmakeCommandArgs": "-DLLVM_DIR=${projectDir}\\..\\llvm\\x64-Debug\\lib\\cmake\\llvm -DCMAKE_BUILD_TYPE=Debug -DLLVM_TARGETS_TO_BUILD=X86",
         "buildCommandArgs": "-m -v:minimal",
         "ctestCommandArgs": ""
       },
@@ -34,7 +34,7 @@
         "generator": "Visual Studio 15 2017 Win64",
         "configurationType": "Release",
         "buildRoot": "${projectDir}\\${name}",
-        "cmakeCommandArgs": "-DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86",
+        "cmakeCommandArgs": "-DLLVM_DIR=${projectDir}\\..\\llvm\\x64-Release\\lib\\cmake\\llvm -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86",
         "buildCommandArgs": "-m -v:minimal",
         "ctestCommandArgs": ""
       }
