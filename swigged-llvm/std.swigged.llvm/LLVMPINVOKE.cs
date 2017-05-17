@@ -297,7 +297,7 @@ class LLVMPINVOKE {
   public static extern void DumpModule(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_PrintModuleToFile___")]
-  public static extern bool PrintModuleToFile(System.IntPtr jarg1, string jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
+  public static extern bool PrintModuleToFile(System.IntPtr jarg1, string jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_PrintModuleToString___")]
   public static extern string PrintModuleToString(System.IntPtr jarg1);
@@ -1851,10 +1851,10 @@ class LLVMPINVOKE {
   public static extern void DisposeModuleProvider(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateMemoryBufferWithContentsOfFile___")]
-  public static extern bool CreateMemoryBufferWithContentsOfFile(string jarg1, out System.IntPtr jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
+  public static extern bool CreateMemoryBufferWithContentsOfFile(string jarg1, out System.IntPtr jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateMemoryBufferWithSTDIN___")]
-  public static extern bool CreateMemoryBufferWithSTDIN(out System.IntPtr jarg1, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg2);
+  public static extern bool CreateMemoryBufferWithSTDIN(out System.IntPtr jarg1, out System.IntPtr jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateMemoryBufferWithMemoryRange___")]
   public static extern System.IntPtr CreateMemoryBufferWithMemoryRange(string jarg1, uint jarg2, string jarg3, bool jarg4);
@@ -1914,25 +1914,25 @@ class LLVMPINVOKE {
   public static extern bool VerifyFunction(System.IntPtr jarg1, int jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ParseBitcode___")]
-  public static extern bool ParseBitcode(System.IntPtr jarg1, out System.IntPtr jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
+  public static extern bool ParseBitcode(System.IntPtr jarg1, out System.IntPtr jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ParseBitcode2___")]
   public static extern bool ParseBitcode2(System.IntPtr jarg1, out System.IntPtr jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ParseBitcodeInContext___")]
-  public static extern bool ParseBitcodeInContext(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4);
+  public static extern bool ParseBitcodeInContext(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, out System.IntPtr jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ParseBitcodeInContext2___")]
   public static extern bool ParseBitcodeInContext2(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetBitcodeModuleInContext___")]
-  public static extern bool GetBitcodeModuleInContext(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4);
+  public static extern bool GetBitcodeModuleInContext(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, out System.IntPtr jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetBitcodeModuleInContext2___")]
   public static extern bool GetBitcodeModuleInContext2(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetBitcodeModule___")]
-  public static extern bool GetBitcodeModule(System.IntPtr jarg1, out System.IntPtr jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
+  public static extern bool GetBitcodeModule(System.IntPtr jarg1, out System.IntPtr jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetBitcodeModule2___")]
   public static extern bool GetBitcodeModule2(System.IntPtr jarg1, out System.IntPtr jarg2);
@@ -2085,19 +2085,19 @@ class LLVMPINVOKE {
   public static extern void DisposeGenericValue(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateExecutionEngineForModule___")]
-  public static extern bool CreateExecutionEngineForModule(out System.IntPtr jarg1, System.IntPtr jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
+  public static extern bool CreateExecutionEngineForModule(out System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateInterpreterForModule___")]
-  public static extern bool CreateInterpreterForModule(out System.IntPtr jarg1, System.IntPtr jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
+  public static extern bool CreateInterpreterForModule(out System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateJITCompilerForModule___")]
-  public static extern bool CreateJITCompilerForModule(out System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4);
+  public static extern bool CreateJITCompilerForModule(out System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, out System.IntPtr jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_InitializeMCJITCompilerOptions___")]
   public static extern void InitializeMCJITCompilerOptions(out System.IntPtr jarg1, uint jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateMCJITCompilerForModule___")]
-  public static extern bool CreateMCJITCompilerForModule(out System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, uint jarg4, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg5);
+  public static extern bool CreateMCJITCompilerForModule(out System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, uint jarg4, out System.IntPtr jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DisposeExecutionEngine___")]
   public static extern void DisposeExecutionEngine(System.IntPtr jarg1);
@@ -2109,7 +2109,7 @@ class LLVMPINVOKE {
   public static extern void RunStaticDestructors(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_RunFunctionAsMain___")]
-  public static extern int RunFunctionAsMain(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg5);
+  public static extern int RunFunctionAsMain(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, out System.IntPtr jarg4, out System.IntPtr jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_RunFunction___")]
   public static extern System.IntPtr RunFunction(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, out System.IntPtr jarg4);
@@ -2121,7 +2121,7 @@ class LLVMPINVOKE {
   public static extern void AddModule(System.IntPtr jarg1, System.IntPtr jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_RemoveModule___")]
-  public static extern bool RemoveModule(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4);
+  public static extern bool RemoveModule(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, out System.IntPtr jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_FindFunction___")]
   public static extern bool FindFunction(System.IntPtr jarg1, string jarg2, out System.IntPtr jarg3);
@@ -2184,7 +2184,7 @@ class LLVMPINVOKE {
   public static extern void InitializeTarget(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ParseIRInContext___")]
-  public static extern bool ParseIRInContext(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4);
+  public static extern bool ParseIRInContext(System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, out System.IntPtr jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_LinkModules2___")]
   public static extern bool LinkModules2(System.IntPtr jarg1, System.IntPtr jarg2);
@@ -2196,7 +2196,7 @@ class LLVMPINVOKE {
   public static extern string OrcGetErrorMsg(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcGetMangledSymbol___")]
-  public static extern void OrcGetMangledSymbol(System.IntPtr jarg1, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg2, string jarg3);
+  public static extern void OrcGetMangledSymbol(System.IntPtr jarg1, out System.IntPtr jarg2, string jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcDisposeMangledSymbol___")]
   public static extern void OrcDisposeMangledSymbol(string jarg1);
@@ -2220,7 +2220,7 @@ class LLVMPINVOKE {
   public static extern bool LoadLibraryPermanently(string jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ParseCommandLineOptions___")]
-  public static extern void ParseCommandLineOptions(int jarg1, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg2, string jarg3);
+  public static extern void ParseCommandLineOptions(int jarg1, out System.IntPtr jarg2, string jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SearchForAddressOfSymbol___")]
   public static extern System.IntPtr SearchForAddressOfSymbol(string jarg1);
@@ -2334,7 +2334,7 @@ class LLVMPINVOKE {
   public static extern System.IntPtr GetTargetFromName(string jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetTargetFromTriple___")]
-  public static extern bool GetTargetFromTriple(string jarg1, out System.IntPtr jarg2, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg3);
+  public static extern bool GetTargetFromTriple(string jarg1, out System.IntPtr jarg2, out System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetTargetName___")]
   public static extern string GetTargetName(System.IntPtr jarg1);
@@ -2376,10 +2376,10 @@ class LLVMPINVOKE {
   public static extern void SetTargetMachineAsmVerbosity(System.IntPtr jarg1, bool jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_TargetMachineEmitToFile___")]
-  public static extern bool TargetMachineEmitToFile(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, int jarg4, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg5);
+  public static extern bool TargetMachineEmitToFile(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, int jarg4, out System.IntPtr jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_TargetMachineEmitToMemoryBuffer___")]
-  public static extern bool TargetMachineEmitToMemoryBuffer(System.IntPtr jarg1, System.IntPtr jarg2, int jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4, out System.IntPtr jarg5);
+  public static extern bool TargetMachineEmitToMemoryBuffer(System.IntPtr jarg1, System.IntPtr jarg2, int jarg3, out System.IntPtr jarg4, out System.IntPtr jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetDefaultTargetTriple___")]
   public static extern string GetDefaultTargetTriple();

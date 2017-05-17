@@ -35,8 +35,7 @@ namespace ConsoleApplication1
             LLVM.PositionBuilderAtEnd(builder, entry);
             ValueRef tmp = LLVM.BuildAdd(builder, LLVM.GetParam(sum, 0), LLVM.GetParam(sum, 1), "tmp");
             LLVM.BuildRet(builder, tmp);
-            string error = null;
-            MyString the_error = new MyString((IntPtr)0);
+            MyString the_error = new MyString();
             LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, the_error);
             //LLVM.DisposeMessage(error);
             ExecutionEngineRef engine;
@@ -46,7 +45,7 @@ namespace ConsoleApplication1
             MCJITCompilerOptions options;
             var optionsSize = (4 * sizeof(int)) + IntPtr.Size; // LLVMMCJITCompilerOptions has 4 ints and a pointer
             LLVM.InitializeMCJITCompilerOptions(out options, (uint) optionsSize);
-            LLVM.CreateMCJITCompilerForModule(out engine, mod, out options, (uint) optionsSize, out error);
+            LLVM.CreateMCJITCompilerForModule(out engine, mod, out options, (uint) optionsSize, the_error);
             var ptr = LLVM.GetPointerToGlobal(engine, sum);
             IntPtr p = (IntPtr) ptr;
             Add addMethod = (Add) Marshal.GetDelegateForFunctionPointer(p, typeof(Add));
@@ -104,10 +103,10 @@ namespace ConsoleApplication1
             //LLVM.VerifyModule(mod, AbortProcessAction, &error);
             //LLVM.DisposeMessage(error); // Handler == LLVMAbortProcessAction -> No need to check errors
 
-            string error;
+            MyString error = new MyString();
             ExecutionEngineRef engine;
             ModuleProviderRef provider = LLVM.CreateModuleProviderForExistingModule(mod);
-            LLVM.CreateJITCompilerForModule(out engine, mod, 0, out error);
+            LLVM.CreateJITCompilerForModule(out engine, mod, 0, error);
 
             PassManagerRef pass = LLVM.CreatePassManager();
 

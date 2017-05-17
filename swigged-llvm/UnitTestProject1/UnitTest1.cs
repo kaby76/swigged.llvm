@@ -31,8 +31,8 @@ namespace UnitTestProject1
         {
             Swigged.LLVM.MemoryBufferRef MB;
             Swigged.LLVM.ModuleRef M;
-            string msg = null;
-            if (LLVM.CreateMemoryBufferWithSTDIN(out MB, out msg))
+            MyString msg = new MyString();
+            if (LLVM.CreateMemoryBufferWithSTDIN(out MB, msg))
             {
                 System.Console.WriteLine("Error reading file: " + msg);
                 return default(ModuleRef);
@@ -50,9 +50,9 @@ namespace UnitTestProject1
             else
             {
                 if (Lazy)
-                    Ret = Swigged.LLVM.LLVM.GetBitcodeModule(MB, out M, out msg);
+                    Ret = Swigged.LLVM.LLVM.GetBitcodeModule(MB, out M, msg);
                 else
-                    Ret = Swigged.LLVM.LLVM.ParseBitcode(MB, out M, out msg);
+                    Ret = Swigged.LLVM.LLVM.ParseBitcode(MB, out M, msg);
             }
             if (Ret)
             {

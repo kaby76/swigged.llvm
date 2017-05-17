@@ -1,10 +1,10 @@
 
 namespace Swigged.LLVM {
 
-public partial struct MyString : System.IEquatable<MyString> {
-	public MyString(global::System.IntPtr cPtr)
+public partial class MyString : System.IEquatable<MyString> {
+	public MyString()
 	{
-		Value = cPtr;
+		Value = (global::System.IntPtr)0;
 	}
 
 	public System.IntPtr Value;
@@ -35,6 +35,10 @@ public partial struct MyString : System.IEquatable<MyString> {
 		return !left.Equals(right);
 	}
 
+    public override string ToString()
+    {
+        return System.Runtime.InteropServices.Marshal.PtrToStringAnsi(this.Value);
+    }
 }
 
 }

@@ -20,8 +20,8 @@ namespace core.sanity_test
             LLVM.PositionBuilderAtEnd(builder, entry);
             ValueRef tmp = LLVM.BuildAdd(builder, LLVM.GetParam(sum, 0), LLVM.GetParam(sum, 1), "tmp");
             LLVM.BuildRet(builder, tmp);
-            string error;
-            //LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, out error);
+            MyString error= new MyString();
+            LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, error);
             //LLVM.DisposeMessage(error);
             ExecutionEngineRef engine;
             LLVM.LinkInMCJIT();
@@ -30,7 +30,7 @@ namespace core.sanity_test
             MCJITCompilerOptions options;
             var optionsSize = (4 * sizeof(int)) + IntPtr.Size; // LLVMMCJITCompilerOptions has 4 ints and a pointer
             LLVM.InitializeMCJITCompilerOptions(out options, (uint)optionsSize);
-            LLVM.CreateMCJITCompilerForModule(out engine, mod, out options, (uint)optionsSize, out error);
+            LLVM.CreateMCJITCompilerForModule(out engine, mod, out options, (uint)optionsSize, error);
             var ptr = LLVM.GetPointerToGlobal(engine, sum);
             IntPtr p = (IntPtr)ptr;
             Add addMethod = (Add)Marshal.GetDelegateForFunctionPointer(p, typeof(Add));

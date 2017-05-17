@@ -52,10 +52,10 @@ namespace UnitTestProject3
             //LLVM.VerifyModule(mod, AbortProcessAction, &error);
             //LLVM.DisposeMessage(error); // Handler == LLVMAbortProcessAction -> No need to check errors
 
-            string error;
+            MyString error = new MyString();
             ExecutionEngineRef engine;
             ModuleProviderRef provider = LLVM.CreateModuleProviderForExistingModule(mod);
-            LLVM.CreateJITCompilerForModule(out engine, mod, 0, out error);
+            LLVM.CreateJITCompilerForModule(out engine, mod, 0, error);
 
             PassManagerRef pass = LLVM.CreatePassManager();
            // LLVM.AddTargetData(LLVM.GetExecutionEngineTargetData(engine), pass);

@@ -79,7 +79,7 @@ namespace UnitTestProject2
             var recur_2 = LLVM.BuildCall(builder, gcd, args2, "tmp");
             LLVM.BuildRet(builder, recur_2);
 
-            string error;
+            MyString error = new MyString();
             //LLVM.VerifyModule(Module, VerifierFailureAction.AbortProcessAction, out error);
             //LLVM.DisposeMessage(error);
             ExecutionEngineRef engine;
@@ -89,7 +89,7 @@ namespace UnitTestProject2
             MCJITCompilerOptions options;
             var optionsSize = (4 * sizeof(int)) + IntPtr.Size; // LLVMMCJITCompilerOptions has 4 ints and a pointer
             LLVM.InitializeMCJITCompilerOptions(out options, (uint)optionsSize);
-            LLVM.CreateMCJITCompilerForModule(out engine, Module, out options, (uint)optionsSize, out error);
+            LLVM.CreateMCJITCompilerForModule(out engine, Module, out options, (uint)optionsSize, error);
             var ptr = LLVM.GetPointerToGlobal(engine, gcd);
             IntPtr p = (IntPtr)ptr;
             Ack ackMethod = (Ack)Marshal.GetDelegateForFunctionPointer(p, typeof(Ack));

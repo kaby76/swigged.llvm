@@ -169,8 +169,8 @@ public class LLVM {
     LLVMPINVOKE.DumpModule(M.Value);
   }
 
-  public unsafe static bool PrintModuleToFile(ModuleRef M, string Filename, out string ErrorMessage) {
-    bool ret = LLVMPINVOKE.PrintModuleToFile(M.Value, Filename, out ErrorMessage);
+  public unsafe static bool PrintModuleToFile(ModuleRef M, string Filename, MyString ErrorMessage) {
+    bool ret = LLVMPINVOKE.PrintModuleToFile(M.Value, Filename, out ErrorMessage.Value);
     return ret;
   }
 
@@ -2754,13 +2754,13 @@ public class LLVM {
     LLVMPINVOKE.DisposeModuleProvider(M.Value);
   }
 
-  public unsafe static bool CreateMemoryBufferWithContentsOfFile(string Path, out MemoryBufferRef OutMemBuf, out string OutMessage) {
-    bool ret = LLVMPINVOKE.CreateMemoryBufferWithContentsOfFile(Path, out OutMemBuf.Value, out OutMessage);
+  public unsafe static bool CreateMemoryBufferWithContentsOfFile(string Path, out MemoryBufferRef OutMemBuf, MyString OutMessage) {
+    bool ret = LLVMPINVOKE.CreateMemoryBufferWithContentsOfFile(Path, out OutMemBuf.Value, out OutMessage.Value);
     return ret;
   }
 
-  public unsafe static bool CreateMemoryBufferWithSTDIN(out MemoryBufferRef OutMemBuf, out string OutMessage) {
-    bool ret = LLVMPINVOKE.CreateMemoryBufferWithSTDIN(out OutMemBuf.Value, out OutMessage);
+  public unsafe static bool CreateMemoryBufferWithSTDIN(out MemoryBufferRef OutMemBuf, MyString OutMessage) {
+    bool ret = LLVMPINVOKE.CreateMemoryBufferWithSTDIN(out OutMemBuf.Value, out OutMessage.Value);
     return ret;
   }
 
@@ -2856,8 +2856,8 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static bool ParseBitcode(MemoryBufferRef MemBuf, out ModuleRef OutModule, out string OutMessage) {
-    bool ret = LLVMPINVOKE.ParseBitcode(MemBuf.Value, out OutModule.Value, out OutMessage);
+  public unsafe static bool ParseBitcode(MemoryBufferRef MemBuf, out ModuleRef OutModule, MyString OutMessage) {
+    bool ret = LLVMPINVOKE.ParseBitcode(MemBuf.Value, out OutModule.Value, out OutMessage.Value);
     return ret;
   }
 
@@ -2866,8 +2866,8 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static bool ParseBitcodeInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutModule, out string OutMessage) {
-    bool ret = LLVMPINVOKE.ParseBitcodeInContext(ContextRef.Value, MemBuf.Value, out OutModule.Value, out OutMessage);
+  public unsafe static bool ParseBitcodeInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutModule, MyString OutMessage) {
+    bool ret = LLVMPINVOKE.ParseBitcodeInContext(ContextRef.Value, MemBuf.Value, out OutModule.Value, out OutMessage.Value);
     return ret;
   }
 
@@ -2876,8 +2876,8 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static bool GetBitcodeModuleInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutM, out string OutMessage) {
-    bool ret = LLVMPINVOKE.GetBitcodeModuleInContext(ContextRef.Value, MemBuf.Value, out OutM.Value, out OutMessage);
+  public unsafe static bool GetBitcodeModuleInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutM, MyString OutMessage) {
+    bool ret = LLVMPINVOKE.GetBitcodeModuleInContext(ContextRef.Value, MemBuf.Value, out OutM.Value, out OutMessage.Value);
     return ret;
   }
 
@@ -2886,8 +2886,8 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static bool GetBitcodeModule(MemoryBufferRef MemBuf, out ModuleRef OutM, out string OutMessage) {
-    bool ret = LLVMPINVOKE.GetBitcodeModule(MemBuf.Value, out OutM.Value, out OutMessage);
+  public unsafe static bool GetBitcodeModule(MemoryBufferRef MemBuf, out ModuleRef OutM, MyString OutMessage) {
+    bool ret = LLVMPINVOKE.GetBitcodeModule(MemBuf.Value, out OutM.Value, out OutMessage.Value);
     return ret;
   }
 
@@ -2977,18 +2977,18 @@ public class LLVM {
     LLVMPINVOKE.DisposeGenericValue(GenVal.Value);
   }
 
-  public unsafe static bool CreateExecutionEngineForModule(out ExecutionEngineRef OutEE, ModuleRef M, out string OutError) {
-    bool ret = LLVMPINVOKE.CreateExecutionEngineForModule(out OutEE.Value, M.Value, out OutError);
+  public unsafe static bool CreateExecutionEngineForModule(out ExecutionEngineRef OutEE, ModuleRef M, MyString OutError) {
+    bool ret = LLVMPINVOKE.CreateExecutionEngineForModule(out OutEE.Value, M.Value, out OutError.Value);
     return ret;
   }
 
-  public unsafe static bool CreateInterpreterForModule(out ExecutionEngineRef OutInterp, ModuleRef M, out string OutError) {
-    bool ret = LLVMPINVOKE.CreateInterpreterForModule(out OutInterp.Value, M.Value, out OutError);
+  public unsafe static bool CreateInterpreterForModule(out ExecutionEngineRef OutInterp, ModuleRef M, MyString OutError) {
+    bool ret = LLVMPINVOKE.CreateInterpreterForModule(out OutInterp.Value, M.Value, out OutError.Value);
     return ret;
   }
 
-  public unsafe static bool CreateJITCompilerForModule(out ExecutionEngineRef OutJIT, ModuleRef M, uint OptLevel, out string OutError) {
-    bool ret = LLVMPINVOKE.CreateJITCompilerForModule(out OutJIT.Value, M.Value, OptLevel, out OutError);
+  public unsafe static bool CreateJITCompilerForModule(out ExecutionEngineRef OutJIT, ModuleRef M, uint OptLevel, MyString OutError) {
+    bool ret = LLVMPINVOKE.CreateJITCompilerForModule(out OutJIT.Value, M.Value, OptLevel, out OutError.Value);
     return ret;
   }
 
@@ -2996,8 +2996,8 @@ public class LLVM {
     LLVMPINVOKE.InitializeMCJITCompilerOptions(out Options.Value, SizeOfOptions);
   }
 
-  public unsafe static bool CreateMCJITCompilerForModule(out ExecutionEngineRef OutJIT, ModuleRef M, out MCJITCompilerOptions Options, uint SizeOfOptions, out string OutError) {
-    bool ret = LLVMPINVOKE.CreateMCJITCompilerForModule(out OutJIT.Value, M.Value, out Options.Value, SizeOfOptions, out OutError);
+  public unsafe static bool CreateMCJITCompilerForModule(out ExecutionEngineRef OutJIT, ModuleRef M, out MCJITCompilerOptions Options, uint SizeOfOptions, MyString OutError) {
+    bool ret = LLVMPINVOKE.CreateMCJITCompilerForModule(out OutJIT.Value, M.Value, out Options.Value, SizeOfOptions, out OutError.Value);
     return ret;
   }
 
@@ -3013,8 +3013,8 @@ public class LLVM {
     LLVMPINVOKE.RunStaticDestructors(EE.Value);
   }
 
-  public unsafe static int RunFunctionAsMain(ExecutionEngineRef EE, ValueRef F, uint ArgC, out string ArgV, out string EnvP) {
-    int ret = LLVMPINVOKE.RunFunctionAsMain(EE.Value, F.Value, ArgC, out ArgV, out EnvP);
+  public unsafe static int RunFunctionAsMain(ExecutionEngineRef EE, ValueRef F, uint ArgC, MyString ArgV, MyString EnvP) {
+    int ret = LLVMPINVOKE.RunFunctionAsMain(EE.Value, F.Value, ArgC, out ArgV.Value, out EnvP.Value);
     return ret;
   }
 
@@ -3031,8 +3031,8 @@ public class LLVM {
     LLVMPINVOKE.AddModule(EE.Value, M.Value);
   }
 
-  public unsafe static bool RemoveModule(ExecutionEngineRef EE, ModuleRef M, out ModuleRef OutMod, out string OutError) {
-    bool ret = LLVMPINVOKE.RemoveModule(EE.Value, M.Value, out OutMod.Value, out OutError);
+  public unsafe static bool RemoveModule(ExecutionEngineRef EE, ModuleRef M, out ModuleRef OutMod, MyString OutError) {
+    bool ret = LLVMPINVOKE.RemoveModule(EE.Value, M.Value, out OutMod.Value, out OutError.Value);
     return ret;
   }
 
@@ -3117,8 +3117,8 @@ public class LLVM {
     LLVMPINVOKE.InitializeTarget(R.Value);
   }
 
-  public unsafe static bool ParseIRInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutM, out string OutMessage) {
-    bool ret = LLVMPINVOKE.ParseIRInContext(ContextRef.Value, MemBuf.Value, out OutM.Value, out OutMessage);
+  public unsafe static bool ParseIRInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutM, MyString OutMessage) {
+    bool ret = LLVMPINVOKE.ParseIRInContext(ContextRef.Value, MemBuf.Value, out OutM.Value, out OutMessage.Value);
     return ret;
   }
 
@@ -3137,8 +3137,8 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static void OrcGetMangledSymbol(OrcJITStackRef JITStack, out string MangledSymbol, string Symbol) {
-    LLVMPINVOKE.OrcGetMangledSymbol(JITStack.Value, out MangledSymbol, Symbol);
+  public unsafe static void OrcGetMangledSymbol(OrcJITStackRef JITStack, MyString MangledSymbol, string Symbol) {
+    LLVMPINVOKE.OrcGetMangledSymbol(JITStack.Value, out MangledSymbol.Value, Symbol);
   }
 
   public unsafe static void OrcDisposeMangledSymbol(string MangledSymbol) {
@@ -3173,8 +3173,8 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static void ParseCommandLineOptions(int argc, out string argv, string Overview) {
-    LLVMPINVOKE.ParseCommandLineOptions(argc, out argv, Overview);
+  public unsafe static void ParseCommandLineOptions(int argc, MyString argv, string Overview) {
+    LLVMPINVOKE.ParseCommandLineOptions(argc, out argv.Value, Overview);
   }
 
   public unsafe static System.IntPtr SearchForAddressOfSymbol(string symbolName) { return LLVMPINVOKE.SearchForAddressOfSymbol(symbolName); }
@@ -3349,8 +3349,8 @@ public class LLVM {
         return ret;
     }
 
-  public unsafe static bool GetTargetFromTriple(string Triple, out TargetRef T, out string ErrorMessage) {
-    bool ret = LLVMPINVOKE.GetTargetFromTriple(Triple, out T.Value, out ErrorMessage);
+  public unsafe static bool GetTargetFromTriple(string Triple, out TargetRef T, MyString ErrorMessage) {
+    bool ret = LLVMPINVOKE.GetTargetFromTriple(Triple, out T.Value, out ErrorMessage.Value);
     return ret;
   }
 
@@ -3417,13 +3417,13 @@ public class LLVM {
     LLVMPINVOKE.SetTargetMachineAsmVerbosity(T.Value, VerboseAsm);
   }
 
-  public unsafe static bool TargetMachineEmitToFile(TargetMachineRef T, ModuleRef M, string Filename, CodeGenFileType codegen, out string ErrorMessage) {
-    bool ret = LLVMPINVOKE.TargetMachineEmitToFile(T.Value, M.Value, Filename, (int)codegen, out ErrorMessage);
+  public unsafe static bool TargetMachineEmitToFile(TargetMachineRef T, ModuleRef M, string Filename, CodeGenFileType codegen, MyString ErrorMessage) {
+    bool ret = LLVMPINVOKE.TargetMachineEmitToFile(T.Value, M.Value, Filename, (int)codegen, out ErrorMessage.Value);
     return ret;
   }
 
-  public unsafe static bool TargetMachineEmitToMemoryBuffer(TargetMachineRef T, ModuleRef M, CodeGenFileType codegen, out string ErrorMessage, out MemoryBufferRef OutMemBuf) {
-    bool ret = LLVMPINVOKE.TargetMachineEmitToMemoryBuffer(T.Value, M.Value, (int)codegen, out ErrorMessage, out OutMemBuf.Value);
+  public unsafe static bool TargetMachineEmitToMemoryBuffer(TargetMachineRef T, ModuleRef M, CodeGenFileType codegen, MyString ErrorMessage, out MemoryBufferRef OutMemBuf) {
+    bool ret = LLVMPINVOKE.TargetMachineEmitToMemoryBuffer(T.Value, M.Value, (int)codegen, out ErrorMessage.Value, out OutMemBuf.Value);
     return ret;
   }
 

@@ -94,18 +94,9 @@
 %typemap(out) SWIGTYPE %{ $result = $1; %}
 %typemap(in) SWIGTYPE %{ $1 = ($1_ltype)$input; %}
 
-%typemap(cstype) char** ErrorMessage "out string"
-%typemap(cstype) char** OutMessage "out string"
-%typemap(cstype) char** OutError "out string"
-%typemap(cstype) char** ArgV "out string"
-%typemap(cstype) char** EnvP "out string"
-%typemap(cstype) char** arg1 "out string"
-%typemap(cstype) char** MangledSymbol "out string"
-%typemap(cstype) char** argv "out string"
-// Output garbage for other cases not checked.
-%typemap(cstype) char**  "outasdfadfs string"
-%typemap(csin) char** "out $csinput"
-%typemap(imtype, inattributes="[System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]") char** "out string"
+%typemap(cstype) char** "MyString"
+%typemap(csin) char** "out $csinput.Value"
+%typemap(imtype) char** "out System.IntPtr"
 %typemap(in) char** {
     // Used in generating wrap.cpp:
     // Converts input parameter of target type to C.

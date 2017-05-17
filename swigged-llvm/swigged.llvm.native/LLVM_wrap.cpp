@@ -8618,21 +8618,20 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_CreateJITCompilerForModu
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
   LLVMModuleRef arg2 ;
   unsigned int arg3 ;
-
-  // Note, we cannot assign to arg4, jarg4. a stack corruption exception will occur.
-  char * targ4 ;
-  char **arg4;
-
+  char **arg4 = (char **) 0 ;
   LLVMBool result;
   
   arg1 = (LLVMExecutionEngineRef *)jarg1; 
   arg2 = (LLVMModuleRef)jarg2; 
   arg3 = (unsigned int)jarg3; 
-  arg4 = (char **)0;
-  arg4 = (char **)jarg4;
-	result = (LLVMBool)LLVMCreateJITCompilerForModule(arg1,arg2,arg3,arg4);
-	jresult = result; 
-	return jresult;
+  {
+    // Used in generating wrap.cpp:
+    // Converts input parameter of target type to C.
+    arg4 = (char**)jarg4;
+  }
+  result = (LLVMBool)LLVMCreateJITCompilerForModule(arg1,arg2,arg3,arg4);
+  jresult = result; 
+  return jresult;
 }
 
 
