@@ -1,6 +1,6 @@
 # Swigged-LLVM
 
-This project is a [SWIG](http://swig.org)-generated C# wrapper API for LLVM-C. This code
+This project is a C# wrapper API for LLVM-C, generated using [SWIG](http://swig.org). This code
 based upon [SharpLang](https://github.com/xen2/SharpLang), which is defunct. The purpose of that project
 was to compile MS IL, and was abandoned when Microsoft open sourced much of the .NET runtime, including
 RyuJIT. But, SharpLang contained a SWIG-generated C# wrappar for LLVM-C, useful in it's own right.
@@ -9,8 +9,7 @@ additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the
 fixed in SharpLang, and adds several full-featured tests (whereas SharpLang had only one test, calling only
 LLVM.ModuleCreateWithName("Module Name"), i.e., https://github.com/xen2/SharpLang/blob/coreclr/src/SharpLLVM.Tests/TestLLVM.cs).
 
-Swigged.llvm can be built and run in the Linux environment. Most of Swigged.llvm is Net Standard 1.6 code, and runs on any platform 
-where Net Core runs. Swigged.llvm.native is platform specific. Several targets for Linux are included in the NuGet package.
+Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 1.1 code. It is compatible with Net Core and Net Framework. Swigged.llvm.native is a platform specific library. Several targets for Linux are included in the NuGet package.
 Details to build in Linux are described below.
 
 ## Linking and building with Swigged.llvm from NuGet:
@@ -59,32 +58,13 @@ downloaded LLVM sources, place them here.
 
 ~~~~
 git clone https://github.com/kaby76/swigged-llvm.git
+cd swigged-llvm/swigged-llvm/llvm
 git clone -b release_40 https://github.com/llvm-mirror/llvm.git
-~~~~
-
-The build of swigged.llvm will assume a directory structure thus, so you will need to create
-directories for LLVM build output (x64/, x86/, ubuntu/, ...)
-
-~~~~
-|---- llvm
-|---- swigged.llvm
-      }---- swigged.llvm
-            |---- std.swigged.llvm
-            |---- swigged-llvm-native
-|---- x64
-      |---- Release
-      |---- Debug
-|---- x86
-      |---- Debug
-      |---- Release
-|---- ubuntu
-      |---- Debug
-      |---- Release
 ~~~~
 
 ### Windows ###
 
-#### build llvm
+#### Build llvm
 
 Depending on what you want, you should build both 32-bit and 64-bit libraries. But,
 you can skip one target if you aren't interested.
@@ -93,19 +73,11 @@ Note, use Cmd or Powershell to execute the following.
 Make sure WSL bash is used, and not Cygwin or Mingw.
 
 ~~~~
-mkdir build-win64 build-win32
-cd build-win64
-"%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
-cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017 Win64" ..\llvm
-msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x64
-cd ..
-cd build-win32
-"%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x86
-cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017" ..\llvm
-msbuild LLVM.sln /p:Configuration=Debug /p:Platform=Win32
+cd llvm
+call .\build.bat
 ~~~~
 
-#### build swigged.llvm
+#### Build swigged.llvm
 
 1) cd ../swigged-llvm
 2) (optional)
@@ -113,24 +85,20 @@ msbuild LLVM.sln /p:Configuration=Debug /p:Platform=Win32
   b) bash -c ./fix.sh
 3) msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform="AnyCPU"
 
-### Ubuntu/Linux ###
+### Ubuntu ###
 
 Make sure to install ("sudo apt-get install ...") gcc, make, 'g++', cmake,
 git, build-essential, xz-utils. For Net Core, follow the instructions at
 https://www.microsoft.com/net/core#linuxubuntu 
 
-#### build llvm ####
+#### Build llvm ####
 
 ~~~~
-pushd .; cd llvm; mkdir build
-cd build
-cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 ../llvm/
-make
-cd lib/cmake/llvm; export=`pwd`
-popd
+cd llvm
+./build.sh
 ~~~~
 
-#### build swigged.llvm ####
+#### Build swigged.llvm ####
 
 1) cd swigged-llvm
 2) dotnet restore
@@ -138,16 +106,11 @@ popd
 4) cd core.sanity-test; dotnet restore; dotnet build; cd ..
 5) mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 ../llvm/
 
-make; cd ..
 
-#### run ####
+#### Run on Windows ####
 
-1) cd core.sanity-test; cp ../build/swigged.llvm.native.so bin/Debug/netcoreapp1.1/
+1) cd core.sanity-test; cp ../swigged.llvm.native/x64-Debug/Debug/swigged.llvm.native.dll bin/Debug/netcoreapp1.1/
 2) dotnet run
-
-## Testing
-
-... (incomplete)
 
 ## Debugging on Window
 
