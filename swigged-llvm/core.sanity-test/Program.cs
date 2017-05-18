@@ -22,7 +22,7 @@ namespace core.sanity_test
             LLVM.BuildRet(builder, tmp);
             MyString error= new MyString();
             LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, error);
-            //LLVM.DisposeMessage(error);
+            System.Console.WriteLine(error);
             ExecutionEngineRef engine;
             LLVM.LinkInMCJIT();
             LLVM.InitializeNativeTarget();
