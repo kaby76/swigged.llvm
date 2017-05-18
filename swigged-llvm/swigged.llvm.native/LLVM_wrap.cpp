@@ -8471,6 +8471,116 @@ SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_LinkInInterpreter___() {
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_OptLevel_set___(void * jarg1, unsigned int jarg2) {
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  unsigned int arg2 ;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  if (arg1) (arg1)->OptLevel = arg2;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_OptLevel_get___(void * jarg1) {
+  unsigned int jresult ;
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  unsigned int result;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  result = (unsigned int) ((arg1)->OptLevel);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_CodeModel_set___(void * jarg1, int jarg2) {
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  LLVMCodeModel arg2 ;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  arg2 = (LLVMCodeModel)jarg2; 
+  if (arg1) (arg1)->CodeModel = arg2;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_CodeModel_get___(void * jarg1) {
+  int jresult ;
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  LLVMCodeModel result;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  result = (LLVMCodeModel) ((arg1)->CodeModel);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_NoFramePointerElim_set___(void * jarg1, unsigned int jarg2) {
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  LLVMBool arg2 ;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  if (arg1) (arg1)->NoFramePointerElim = arg2;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_NoFramePointerElim_get___(void * jarg1) {
+  unsigned int jresult ;
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  LLVMBool result;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  result = (LLVMBool) ((arg1)->NoFramePointerElim);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_EnableFastISel_set___(void * jarg1, unsigned int jarg2) {
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  LLVMBool arg2 ;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  if (arg1) (arg1)->EnableFastISel = arg2;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_EnableFastISel_get___(void * jarg1) {
+  unsigned int jresult ;
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  LLVMBool result;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  result = (LLVMBool) ((arg1)->EnableFastISel);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_MCJMM_set___(void * jarg1, void * jarg2) {
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  LLVMMCJITMemoryManagerRef *arg2 = (LLVMMCJITMemoryManagerRef *) 0 ;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  arg2 = (LLVMMCJITMemoryManagerRef *)jarg2; 
+  if (arg1) (arg1)->MCJMM = *arg2;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MCJITCompilerOptions_MCJMM_get___(void * jarg1) {
+  void * jresult ;
+  LLVMMCJITCompilerOptions *arg1 = (LLVMMCJITCompilerOptions *) 0 ;
+  LLVMMCJITMemoryManagerRef *result = 0 ;
+  
+  arg1 = (LLVMMCJITCompilerOptions *)jarg1; 
+  result = (LLVMMCJITMemoryManagerRef *)& ((arg1)->MCJMM);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_CreateGenericValueOfInt___(void * jarg1, unsigned long long jarg2, unsigned int jarg3) {
   void * jresult ;
   LLVMTypeRef arg1 ;

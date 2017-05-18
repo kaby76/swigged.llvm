@@ -62,7 +62,6 @@ REF_ARRAY(int64_t, long)
 REF_ARRAY(uint8_t, byte)
 
 
-REF_CLASS(LLVMMCJITCompilerOptions, MCJITCompilerOptions)
 REF_CLASS(LLVMMCJITMemoryManagerRef, MCJITMemoryManagerRef)
 REF_CLASS(LLVMAttributeRef, AttributeRef)
 REF_CLASS(LLVMBasicBlockRef, BasicBlockRef)
@@ -89,7 +88,10 @@ REF_CLASS(LLVMValueRef, ValueRef)
 
 REF_CLASS(LLVMOpInfoSymbol1,OpInfoSymbol1)
 REF_CLASS(LLVMOpInfo1,OpInfo1)
-   
+
+%include "MCJITCompilerOptions.i"
+
+
 %apply (LLVMTypeRef *ARRAY) {(LLVMTypeRef *Dest)};
 %apply (LLVMTypeRef *ARRAY, unsigned ARRAYSIZE) {(LLVMTypeRef *ElementTypes, unsigned ElementCount)};
 %apply (LLVMTypeRef *ARRAY, unsigned ARRAYSIZE) {(LLVMTypeRef *ParamTypes, unsigned ParamCount)};

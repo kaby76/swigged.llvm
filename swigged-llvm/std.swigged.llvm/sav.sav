@@ -2094,7 +2094,7 @@ class LLVMPINVOKE {
   public static extern bool CreateJITCompilerForModule(out System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged.llvm.native.so", EntryPoint="CSharp_SwiggedfLLVM_InitializeMCJITCompilerOptions___")]
-  public static extern void InitializeMCJITCompilerOptions(out System.IntPtr jarg1, uint jarg2);
+  public static extern void InitializeMCJITCompilerOptions(System.IntPtr jarg1, uint jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged.llvm.native.so", EntryPoint="CSharp_SwiggedfLLVM_CreateMCJITCompilerForModule___")]
   public static extern bool CreateMCJITCompilerForModule(out System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, uint jarg4, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPStr)]out string jarg5);

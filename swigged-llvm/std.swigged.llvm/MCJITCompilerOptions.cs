@@ -10,40 +10,129 @@
 
 namespace Swigged.LLVM {
 
-public partial struct MCJITCompilerOptions : System.IEquatable<MCJITCompilerOptions> {
-        public MCJITCompilerOptions(global::System.IntPtr cPtr)
-        {
-            Value = cPtr;
-        }
+public partial class MCJITCompilerOptions : System.IEquatable<MCJITCompilerOptions> {
+    public System.IntPtr Value;
 
-        public System.IntPtr Value;
+    public MCJITCompilerOptions()
+    {
+        System.IntPtr pointer = System.Runtime.InteropServices.Marshal.AllocHGlobal(1024);
+        Value = pointer;
+    }
 
-        public bool Equals(MCJITCompilerOptions other)
-        {
-            return Value.Equals(other.Value);
-        }
+    public bool Equals(MCJITCompilerOptions other)
+    {
+        return Value.Equals(other.Value);
+    }
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            return obj is MCJITCompilerOptions && Equals((MCJITCompilerOptions)obj);
-        }
+    public override bool Equals(object obj)
+    {
+        if (ReferenceEquals(null, obj)) return false;
+        return obj is MCJITCompilerOptions && Equals((MCJITCompilerOptions)obj);
+    }
 
-        public override int GetHashCode()
-        {
-            return Value.GetHashCode();
-        }
+    public override int GetHashCode()
+    {
+        return Value.GetHashCode();
+    }
 
-        public static bool operator ==(MCJITCompilerOptions left, MCJITCompilerOptions right)
-        {
-            return left.Equals(right);
-        }
+    public static bool operator ==(MCJITCompilerOptions left, MCJITCompilerOptions right)
+    {
+        return left.Equals(right);
+    }
 
-        public static bool operator !=(MCJITCompilerOptions left, MCJITCompilerOptions right)
-        {
-            return !left.Equals(right);
-        }
+    public static bool operator !=(MCJITCompilerOptions left, MCJITCompilerOptions right)
+    {
+        return !left.Equals(right);
+    }
     
+  public unsafe uint OptLevel {
+    set {
+        // Unfortunately, Swig hardwires the value of the
+        // string LLVMPINVOKE.MCJITCompilerOptions_OptLevel_set(swigCPtr, value). So, create necessary crap to get it
+        // to work.
+        System.IntPtr swigCPtr = Value;
+        LLVMPINVOKE.MCJITCompilerOptions_OptLevel_set(swigCPtr, value);
+    } 
+    get {
+        // Unfortunately, Swig hardwires the value of the
+        // string LLVMPINVOKE.MCJITCompilerOptions_OptLevel_get(swigCPtr). So, create necessary crap to get it
+        // to work.
+        System.IntPtr swigCPtr = Value;
+        uint ret = LLVMPINVOKE.MCJITCompilerOptions_OptLevel_get(swigCPtr);
+               return ret;
+    } 
+  }
+
+  public unsafe CodeModel CodeModel {
+    set {
+        // Unfortunately, Swig hardwires the value of the
+        // string LLVMPINVOKE.MCJITCompilerOptions_CodeModel_set(swigCPtr, (int)value). So, create necessary crap to get it
+        // to work.
+        System.IntPtr swigCPtr = Value;
+        LLVMPINVOKE.MCJITCompilerOptions_CodeModel_set(swigCPtr, (int)value);
+    } 
+    get {
+        System.IntPtr swigCPtr = Value;
+      CodeModel ret = (CodeModel)LLVMPINVOKE.MCJITCompilerOptions_CodeModel_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public unsafe bool NoFramePointerElim {
+    set {
+        // Unfortunately, Swig hardwires the value of the
+        // string LLVMPINVOKE.MCJITCompilerOptions_NoFramePointerElim_set(swigCPtr, value). So, create necessary crap to get it
+        // to work.
+        System.IntPtr swigCPtr = Value;
+        LLVMPINVOKE.MCJITCompilerOptions_NoFramePointerElim_set(swigCPtr, value);
+    } 
+    get {
+        // Unfortunately, Swig hardwires the value of the
+        // string LLVMPINVOKE.MCJITCompilerOptions_NoFramePointerElim_get(swigCPtr). So, create necessary crap to get it
+        // to work.
+        System.IntPtr swigCPtr = Value;
+        bool ret = LLVMPINVOKE.MCJITCompilerOptions_NoFramePointerElim_get(swigCPtr);
+               return ret;
+    } 
+  }
+
+  public unsafe bool EnableFastISel {
+    set {
+        // Unfortunately, Swig hardwires the value of the
+        // string LLVMPINVOKE.MCJITCompilerOptions_EnableFastISel_set(swigCPtr, value). So, create necessary crap to get it
+        // to work.
+        System.IntPtr swigCPtr = Value;
+        LLVMPINVOKE.MCJITCompilerOptions_EnableFastISel_set(swigCPtr, value);
+    } 
+    get {
+        // Unfortunately, Swig hardwires the value of the
+        // string LLVMPINVOKE.MCJITCompilerOptions_EnableFastISel_get(swigCPtr). So, create necessary crap to get it
+        // to work.
+        System.IntPtr swigCPtr = Value;
+        bool ret = LLVMPINVOKE.MCJITCompilerOptions_EnableFastISel_get(swigCPtr);
+               return ret;
+    } 
+  }
+
+  public unsafe MCJITMemoryManagerRef MCJMM {
+    set {
+        // Unfortunately, Swig hardwires the value of the
+        // string LLVMPINVOKE.MCJITCompilerOptions_MCJMM_set(swigCPtr, out value.Value). So, create necessary crap to get it
+        // to work.
+        System.IntPtr swigCPtr = Value;
+        LLVMPINVOKE.MCJITCompilerOptions_MCJMM_set(swigCPtr, out value.Value);
+    } 
+    get {
+        // Unfortunately, Swig hardwires the value of the
+        // string LLVMPINVOKE.MCJITCompilerOptions_MCJMM_get(swigCPtr). So, create necessary crap to get it
+        // to work.
+        System.IntPtr swigCPtr = Value;
+        global::System.IntPtr cPtr = LLVMPINVOKE.MCJITCompilerOptions_MCJMM_get(swigCPtr);
+        return new MCJITMemoryManagerRef(cPtr);
+        
+    } 
+  }
+
 }
 
 }

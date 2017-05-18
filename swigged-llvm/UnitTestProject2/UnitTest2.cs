@@ -86,10 +86,10 @@ namespace UnitTestProject2
             LLVM.LinkInMCJIT();
             LLVM.InitializeNativeTarget();
             LLVM.InitializeNativeAsmPrinter();
-            MCJITCompilerOptions options;
+            MCJITCompilerOptions options = new MCJITCompilerOptions();
             var optionsSize = (4 * sizeof(int)) + IntPtr.Size; // LLVMMCJITCompilerOptions has 4 ints and a pointer
-            LLVM.InitializeMCJITCompilerOptions(out options, (uint)optionsSize);
-            LLVM.CreateMCJITCompilerForModule(out engine, Module, out options, (uint)optionsSize, error);
+            LLVM.InitializeMCJITCompilerOptions(options, (uint)optionsSize);
+            LLVM.CreateMCJITCompilerForModule(out engine, Module, options, (uint)optionsSize, error);
             var ptr = LLVM.GetPointerToGlobal(engine, gcd);
             IntPtr p = (IntPtr)ptr;
             Ack ackMethod = (Ack)Marshal.GetDelegateForFunctionPointer(p, typeof(Ack));

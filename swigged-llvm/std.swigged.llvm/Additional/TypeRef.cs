@@ -10,10 +10,10 @@
         }
     }
 
-    public partial struct MCJITCompilerOptions : global::System.IDisposable
-    {
-        public void Dispose()
-        {
-        }
-    }
+    //public partial class MCJITCompilerOptions : global::System.IDisposable
+    //{
+    //    public void Dispose()
+    //    {
+    //    }
+    //}
 }

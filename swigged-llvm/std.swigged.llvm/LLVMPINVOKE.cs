@@ -2060,6 +2060,36 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_LinkInInterpreter___")]
   public static extern void LinkInInterpreter();
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_OptLevel_set___")]
+  public static extern void MCJITCompilerOptions_OptLevel_set(System.IntPtr jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_OptLevel_get___")]
+  public static extern uint MCJITCompilerOptions_OptLevel_get(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_CodeModel_set___")]
+  public static extern void MCJITCompilerOptions_CodeModel_set(System.IntPtr jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_CodeModel_get___")]
+  public static extern int MCJITCompilerOptions_CodeModel_get(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_NoFramePointerElim_set___")]
+  public static extern void MCJITCompilerOptions_NoFramePointerElim_set(System.IntPtr jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_NoFramePointerElim_get___")]
+  public static extern bool MCJITCompilerOptions_NoFramePointerElim_get(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_EnableFastISel_set___")]
+  public static extern void MCJITCompilerOptions_EnableFastISel_set(System.IntPtr jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_EnableFastISel_get___")]
+  public static extern bool MCJITCompilerOptions_EnableFastISel_get(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_MCJMM_set___")]
+  public static extern void MCJITCompilerOptions_MCJMM_set(System.IntPtr jarg1, out System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MCJITCompilerOptions_MCJMM_get___")]
+  public static extern System.IntPtr MCJITCompilerOptions_MCJMM_get(System.IntPtr jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateGenericValueOfInt___")]
   public static extern System.IntPtr CreateGenericValueOfInt(System.IntPtr jarg1, ulong jarg2, bool jarg3);
 
@@ -2094,10 +2124,10 @@ class LLVMPINVOKE {
   public static extern bool CreateJITCompilerForModule(out System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, out System.IntPtr jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_InitializeMCJITCompilerOptions___")]
-  public static extern void InitializeMCJITCompilerOptions(out System.IntPtr jarg1, uint jarg2);
+  public static extern void InitializeMCJITCompilerOptions(System.IntPtr jarg1, uint jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateMCJITCompilerForModule___")]
-  public static extern bool CreateMCJITCompilerForModule(out System.IntPtr jarg1, System.IntPtr jarg2, out System.IntPtr jarg3, uint jarg4, out System.IntPtr jarg5);
+  public static extern bool CreateMCJITCompilerForModule(out System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4, out System.IntPtr jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DisposeExecutionEngine___")]
   public static extern void DisposeExecutionEngine(System.IntPtr jarg1);

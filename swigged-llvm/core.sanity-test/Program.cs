@@ -27,10 +27,10 @@ namespace core.sanity_test
             LLVM.LinkInMCJIT();
             LLVM.InitializeNativeTarget();
             LLVM.InitializeNativeAsmPrinter();
-            MCJITCompilerOptions options;
+            MCJITCompilerOptions options = new MCJITCompilerOptions();
             var optionsSize = (4 * sizeof(int)) + IntPtr.Size; // LLVMMCJITCompilerOptions has 4 ints and a pointer
-            LLVM.InitializeMCJITCompilerOptions(out options, (uint)optionsSize);
-            LLVM.CreateMCJITCompilerForModule(out engine, mod, out options, (uint)optionsSize, error);
+            LLVM.InitializeMCJITCompilerOptions(options, (uint)optionsSize);
+            LLVM.CreateMCJITCompilerForModule(out engine, mod, options, (uint)optionsSize, error);
             var ptr = LLVM.GetPointerToGlobal(engine, sum);
             IntPtr p = (IntPtr)ptr;
             Add addMethod = (Add)Marshal.GetDelegateForFunctionPointer(p, typeof(Add));

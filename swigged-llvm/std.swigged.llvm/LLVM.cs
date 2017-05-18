@@ -2992,12 +2992,12 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static void InitializeMCJITCompilerOptions(out MCJITCompilerOptions Options, uint SizeOfOptions) {
-    LLVMPINVOKE.InitializeMCJITCompilerOptions(out Options.Value, SizeOfOptions);
+  public unsafe static void InitializeMCJITCompilerOptions(MCJITCompilerOptions Options, uint SizeOfOptions) {
+    LLVMPINVOKE.InitializeMCJITCompilerOptions(Options.Value, SizeOfOptions);
   }
 
-  public unsafe static bool CreateMCJITCompilerForModule(out ExecutionEngineRef OutJIT, ModuleRef M, out MCJITCompilerOptions Options, uint SizeOfOptions, MyString OutError) {
-    bool ret = LLVMPINVOKE.CreateMCJITCompilerForModule(out OutJIT.Value, M.Value, out Options.Value, SizeOfOptions, out OutError.Value);
+  public unsafe static bool CreateMCJITCompilerForModule(out ExecutionEngineRef OutJIT, ModuleRef M, MCJITCompilerOptions Options, uint SizeOfOptions, MyString OutError) {
+    bool ret = LLVMPINVOKE.CreateMCJITCompilerForModule(out OutJIT.Value, M.Value, Options.Value, SizeOfOptions, out OutError.Value);
     return ret;
   }
 
