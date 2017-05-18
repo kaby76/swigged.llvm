@@ -22,13 +22,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of LLVM-C.</description>
     <releaseNotes>
-This version corrects a problems with versions 4.0.3 and 4.0.4. DllImport now works across Windows 10 and Ubuntu 16.04. Due to a problem with Net Core/Standard, I found out that one cannot name a DLL or SO file with dots in the file name other than the dot before the suffix. E.g., swigged.llvm.native.dll must be swigged-llvm-native.dll.
+This version corrects problems with LLVM.VerifyModule, LLVM.CreateMCJITCompilerForModule, MCJITCompilerOptions, InitializeMCJITCompilerOptions. String output is wrapped with new class MyString.
       
-This API links statically with LLVM version 4.0+ branch. You do not need to install LLVM. As LLVM does not tag the branch, the sources used in the build may vary.
-
 The DLL and SO files provided in this package are a Release build.
-
-This package is Net Standard 1.1 build, so it should work in Net Framework >=4.5.
 
 When building, either on Windows or Ubuntu, select Platform = "AnyCPU", config = "Debug" or "Release".
 
