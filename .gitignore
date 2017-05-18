@@ -263,3 +263,5 @@ swigged-llvm/llvm/x86-Release/
 swigged-llvm/swigged.llvm.native/x64-Release/
 swigged-llvm/swigged.llvm.native/x86-Debug/
 swigged-llvm/swigged.llvm.native/x86-Release/
+swigged-llvm/swigged.llvm.native/ubuntu.16.04-Debug/
+swigged-llvm/swigged.llvm.native/ubuntu.16.04-Release/
