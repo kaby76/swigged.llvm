@@ -190,8 +190,6 @@ at least I have had no luck in doing so. In theory, NET Framework assemblies can
 NET Core applications but not the other way around. However, although swigged.llvm 
 is a NET Framework API, it does not seem to work with NET Core apps.
 
-##### Mono Mini (https://github.com/mono/mono/tree/master/mono/mini)
+##### LLVM.NET (https://github.com/NETMF/Llvm.NET)
 
-This is the LLVM compiler backend of CIL in the Mono Project. It is very well developed, written in C,
-and uses the LLVM-C API. I give a brief question-oriented overview of Mono Mini in my blog,
-http://codinggorilla.domemtech.com/?p=1572
+This project is an LLVM bindings library for Windows. 
