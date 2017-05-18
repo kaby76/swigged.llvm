@@ -4,31 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <NoWin32Manifest>true</NoWin32Manifest>
-<!--    <PostBuildEvent>if "Debug|x64" == "$(Configuration)|$(Platform)" (
-        copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.dll"
-    )
-    if "Debug|x64" == "$(Configuration)|$(Platform)" (
-        copy /y "$(SolutionDir)x64\Debug\swigged.llvm.native.pdb"
-    )
-    if "Debug|Win32" == "$(Configuration)|$(Platform)" (
-        copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.dll"
-    )
-    if "Debug|Win32" == "$(Configuration)|$(Platform)" (
-        copy /y "$(SolutionDir)x86\Debug\swigged.llvm.native.pdb"
-    )
-    if "Release|x64" == "$(Configuration)|$(Platform)" (
-        copy /y "$(SolutionDir)x64\Release\swigged.llvm.native.dll"
-    )
-    if "Release|x64" == "$(Configuration)|$(Platform)" (
-        copy /y "$(SolutionDir)x64\Release\swigged.llvm.native.pdb"
-    )
-    if "Release|Win32" == "$(Configuration)|$(Platform)" (
-        copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.dll"
-    )
-    if "Release|Win32" == "$(Configuration)|$(Platform)" (
-        copy /y "$(SolutionDir)x86\Release\swigged.llvm.native.pdb"
-    )
-</PostBuildEvent> -->
+    <RuntimeIdentifiers>ubuntu.16.04-x64;win10-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <!-- Release/netstandard1.6 -->
@@ -39,115 +15,11 @@
     <OutputPath>any\Release\</OutputPath>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|Win32'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>True</Prefer32Bit>
-    <OutputPath>x86\Release\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|x64'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>x64\Release\</OutputPath>
-  </PropertyGroup>
-
   <!-- Debug/netstandard1.6 -->
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.6|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <OutputPath>any\Debug\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.6|Win32'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>True</Prefer32Bit>
-    <OutputPath>x86\Debug\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.6|x64'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>x64\Debug\</OutputPath>
-  </PropertyGroup>
-
-  <!-- Release/net45 -->
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>any\Release\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|Win32'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>True</Prefer32Bit>
-    <OutputPath>x86\Release\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|x64'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>x64\Release\</OutputPath>
-  </PropertyGroup>
-
-  <!-- Debug/net45 -->
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>any\Debug\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|Win32'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>True</Prefer32Bit>
-    <OutputPath>x86\Debug\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|x64'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>x64\Debug\</OutputPath>
-  </PropertyGroup>
-
-  <!-- Release/net461 -->
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>any\Release\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|Win32'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>True</Prefer32Bit>
-    <OutputPath>x86\Release\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|x64'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>x64\Release\</OutputPath>
-  </PropertyGroup>
-
-  <!-- Debug/net461 -->
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>any\Debug\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|Win32'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>True</Prefer32Bit>
-    <OutputPath>x86\Debug\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|x64'">
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
-    <OutputPath>x64\Debug\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
