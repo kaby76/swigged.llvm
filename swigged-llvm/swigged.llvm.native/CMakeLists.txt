@@ -18,9 +18,7 @@ include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
 # Set specific targets.
-set(LLVM_BUILD_TARGETS
-    MSIL
-	X86)
+# set(LLVM_BUILD_TARGETS X86)
 
 # Now build our tools
 # add_library(llvm-wrap STATIC LLVM_wrap.cpp)
@@ -28,7 +26,7 @@ add_library(swigged-llvm-native MODULE LLVM_wrap.cpp)
 
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
-llvm_map_components_to_libnames(llvm_libs support core irreader mcparser bitreader mc option mcjit native linker ipo executionengine runtimedyld orcjit interpreter ObjCARCOpts)
+llvm_map_components_to_libnames(llvm_libs support core irreader mcparser bitreader mc option mcjit native linker ipo executionengine runtimedyld orcjit interpreter ObjCARCOpts ${MORELIBS} )
 
 
 # Link against LLVM libraries
