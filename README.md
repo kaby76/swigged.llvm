@@ -6,8 +6,13 @@ was to compile MS IL, and was abandoned when Microsoft open sourced much of the 
 RyuJIT. But, SharpLang contained a SWIG-generated C# wrappar for LLVM-C, useful in it's own right.
 Swigged-LLVM takes up the C# API for LLVM, drops the MS IL reader, and extends the API to contain
 additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the problems that were never
-fixed in SharpLang, and adds several full-featured tests (whereas SharpLang had only one test, calling only
-LLVM.ModuleCreateWithName("Module Name"), i.e., https://github.com/xen2/SharpLang/blob/coreclr/src/SharpLLVM.Tests/TestLLVM.cs).
+fixed in SharpLang, and adds several full-featured tests.
+
+# Targets
+
+* Windows 10
+* Ubuntu.16.04
+* Android
 
 Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 1.1 code. It is compatible with Net Core and Net Framework. Swigged.llvm.native is a platform specific library. Several targets for Linux are included in the NuGet package.
 Details to build in Linux are described below.

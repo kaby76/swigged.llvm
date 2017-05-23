@@ -267,3 +267,6 @@ swigged-llvm/swigged.llvm.native/ubuntu.16.04-Debug/
 swigged-llvm/swigged.llvm.native/ubuntu.16.04-Release/
 swigged-llvm/llvm/arm-linux-androidabi-4.8/
 swigged-llvm/llvm/android-arm-Release/
+swigged-llvm/swigged.llvm.native/android-arm64-Release/
+swigged-llvm/swigged.llvm.native/ubuntu-16.04-Debug/
+swigged-llvm/swigged.llvm.native/ubuntu-16.04-Release/
