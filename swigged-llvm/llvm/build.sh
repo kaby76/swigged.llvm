@@ -38,20 +38,24 @@ mkdir android-armeabi-Release
 # include NDK, cmake, ....
 cd  android-armeabi-Release
 export PATH="/home/ken/Android/Sdk/cmake/3.6.3155560/bin:$OLDPATH"
-cmake --version
 # ? not version ? 3.6.0-rc2...... cmake ../llvm -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON   -DCMAKE_ANDROID_ARCH_ABI=armeabi   -DANDROID_NDK=/home/ken/Android/Sdk/ndk-bundle -DCMAKE_ASM_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" -DCMAKE_C_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" -DCMAKE_CXX_FLAGS_DEBUG=""  -DCMAKE_BUILD_TYPE=Release     -DCMAKE_TOOLCHAIN_FILE=/home/ken/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake   -DANDROID_NATIVE_API_LEVEL=23   -DANDROID_TOOLCHAIN=clang   -DLLVM_TARGETS_TO_BUILD=ARM
-cmake ../llvm -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON  \
-  -DCMAKE_ANDROID_ARCH_ABI=x86 \
-  -DANDROID_NDK=/home/ken/Android/Sdk/ndk-bundle \
-  -DCMAKE_ASM_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" \
-  -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" \
-  -DCMAKE_C_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" \
-  -DCMAKE_CXX_FLAGS_DEBUG="" \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_TOOLCHAIN_FILE=/home/ken/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake \
-  -DANDROID_NATIVE_API_LEVEL=23 \
-  -DANDROID_TOOLCHAIN=clang \
-  -DLLVM_TARGETS_TO_BUILD=ARM
+cmake --version
+cmake ../llvm \
+   -DANDROID_NDK=/home/ken/Android/Sdk/ndk-bundle \
+   -DANDROID_NATIVE_API_LEVEL=23 \
+   -DANDROID_TOOLCHAIN=clang  \
+   -DANDROID_ABI=armeabi \
+   -DCMAKE_CXX_FLAGS_RELEASE="-g0" \
+   -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+   -DCMAKE_ANDROID_ARCH_ABI=armeabi \
+   -DCMAKE_ANDROID_ARCH=armeabi \
+   -DCMAKE_ASM_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" \
+   -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" \
+   -DCMAKE_C_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" \
+   -DCMAKE_CXX_FLAGS_DEBUG=""  \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_TOOLCHAIN_FILE=/home/ken/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake \
+   -DLLVM_TARGETS_TO_BUILD=ARM
 # Note, there is a bug in the make of LLVM. Make everything regardless of errors.
 make VERBOSE=1 -k
 cd ..
@@ -66,20 +70,24 @@ mkdir android-x86-Release
 # include NDK, cmake, ....
 cd  android-x86-Release
 export PATH="/home/ken/Android/Sdk/cmake/3.6.3155560/bin:$OLDPATH"
+cmake --version
 cmake ../llvm \
+   -DANDROID_NDK=/home/ken/Android/Sdk/ndk-bundle \
+   -DANDROID_NATIVE_API_LEVEL=23 \
+   -DANDROID_TOOLCHAIN=clang  \
+   -DANDROID_ABI=x86 \
    -DCMAKE_CXX_FLAGS_RELEASE="-g0" \
    -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
    -DCMAKE_ANDROID_ARCH_ABI=x86 \
-   -DANDROID_NDK=/home/ken/Android/Sdk/ndk-bundle \
+   -DCMAKE_ANDROID_ARCH=x86 \
    -DCMAKE_ASM_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" \
    -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" \
    -DCMAKE_C_FLAGS_RELWITHDEBINFO="-O2 -g0 -DNDEBUG" \
    -DCMAKE_CXX_FLAGS_DEBUG=""  \
    -DCMAKE_BUILD_TYPE=Release \
    -DCMAKE_TOOLCHAIN_FILE=/home/ken/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake \
-   -DANDROID_NATIVE_API_LEVEL=23 \
-   -DANDROID_TOOLCHAIN=clang  \
    -DLLVM_TARGETS_TO_BUILD=X86
 # Note, there is a bug in the make of LLVM. Make everything regardless of errors.
 make VERBOSE=1 -k
 cd ..
+
