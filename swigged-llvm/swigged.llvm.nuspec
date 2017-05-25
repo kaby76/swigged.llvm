@@ -22,6 +22,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of LLVM-C.</description>
     <releaseNotes>
+* Version 4.0.8-alpha
+  Use "Swigged.LLVM.Helper.Adjust.Path();" before 1st LLVM call to alter PATH variable within process so that it can find swigged-llvm-native.dll without having to copy the dll around. There is no equivalent fix for Ubuntu unfortunately. You must still "dotnet publish -r ubuntu.16.04-x64" and copy swigged-llvm-native.so to the build output directory.
+  
 * Version 4.0.7-alpha
   Added in Android builds for x86 and armeabi targets; cleaned up package directory structure.
 
@@ -55,16 +58,6 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     undocumented strings: ".NETFramework4.6.2", ".NETFramework4.5.2",
     ... Not sure if they work. --> 
     <dependencies>
-      <group targetFramework="net46">
-	<dependency id="NetStandard.Library" version="[1.6.0]" />
-	<dependency id="System.Runtime" version="[4.1.0]" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0]" />
-      </group>
-      <group targetFramework="net461">
-	<dependency id="NetStandard.Library" version="[1.6.0]" />
-	<dependency id="System.Runtime" version="[4.1.0]" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0]" />
-      </group>
       <group targetFramework="net462">
 	<dependency id="NetStandard.Library" version="[1.6.0]" />
 	<dependency id="System.Runtime" version="[4.1.0]" />
@@ -78,8 +71,6 @@ For further information, see https://github.com/kaby76/swigged-llvm.
 
       <group targetFramework="netcore1.0" />
       <group targetFramework="netcore1.1" />
-      <group targetFramework="netstandard1.3" />
-      <group targetFramework="netstandard1.4" />
       <group targetFramework="netstandard1.5" />
       <group targetFramework="netstandard1.6" />
       <group targetFramework="netstandard2.0" />
@@ -110,8 +101,8 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     targets do not matter for the code as the MSIL is the same
     regardless. 
     -->
-    <file src="swigged.llvm\bin\Release\netstandard1.3\swigged.llvm.dll" target="lib\netstandard1.3" />
-    <file src="swigged.llvm.helper\bin\Release\netstandard1.3\swigged.llvm.helper.dll" target="lib\netstandard1.3" />
+    <file src="swigged.llvm\bin\Release\netstandard1.5\swigged.llvm.dll" target="lib\netstandard1.5" />
+    <file src="swigged.llvm.helper\bin\Release\netstandard1.5\swigged.llvm.helper.dll" target="lib\netstandard1.5" />
     
 <!--    <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" /> -->
 

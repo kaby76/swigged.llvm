@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Runtime.Loader;
 
 namespace Swigged.LLVM.Helper
 {
@@ -62,6 +64,11 @@ namespace Swigged.LLVM.Helper
                 // Note: "HOME" will be dependent on the parent process, which could be Cygwin or Mingw.
                 home = home_drive + home_path;
             }
+            if (isUbuntu)
+            {
+                var home_path = Environment.GetEnvironmentVariable("HOME");
+                home = home_path;
+            }
 
             // Start with various Windows paths.
             if (isWindows)
@@ -109,13 +116,30 @@ namespace Swigged.LLVM.Helper
                 // Try adding dotnet package cache.
                 additional_paths.Add(home + "/.nuget/packages/swigged.llvm/" + Version + "/win10/lib/" + (is64bitProcess ? "x64" : "x86"));
             }
+
+            if (isUbuntu)
+            {
+                // Nothing can be done. You must "dotnet restore -r ubuntu.16.04-x64",
+                // "dotnet build -r ubuntu.16.04-x64"
+                // "dotnet publish -r ubuntu.16.04-x64"
+                // cp /home/{user}/.nuget/packages/swigged.llvm/{version}/ubuntu-16.04/lib/x64/swigged-llvm-native.so
+                //     bin/Debug/netcoreapp1.1/ubuntu.16.04-x64/publish
+                // cd !$
+                // "dotnet {executable}.dll"
+                return;
+            }
+
             foreach (string dir in additional_paths)
             {
+                System.Console.WriteLine("looking in " + dir);
                 if (! Directory.Exists(dir))
                     continue;
-                path += ";" + dir;
+                path = dir + ":" + path;
             }
-            Environment.SetEnvironmentVariable("PATH", path);
+            if (isWindows)
+            {
+                Environment.SetEnvironmentVariable("PATH", path);
+            }
         }
 
         public static string Adjustment
