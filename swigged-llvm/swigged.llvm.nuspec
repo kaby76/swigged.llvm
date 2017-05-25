@@ -4,7 +4,7 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
 
-    <version>4.0.7-alpha</version>
+    <version>4.0.8-alpha</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -45,7 +45,7 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     <copyright>Copyright © 2017</copyright>
 
     <!-- Tags appear in the gallery and can be used for tag searches -->
-    <tags>LLVM SWIG native</tags>
+    <tags>LLVM SWIG native c# compilers bindings pinvoke Windows Ubuntu Android</tags>
 
     <!-- Dependencies are automatically installed when the package is
     installed -->
@@ -80,7 +80,8 @@ For further information, see https://github.com/kaby76/swigged-llvm.
 	<dependency id="System.Runtime" version="[4.1,)" />
       </group>
 
-      <group targetFramework="netcore" />
+      <group targetFramework="netcore1.0" />
+      <group targetFramework="netcore1.1" />
       <group targetFramework="netstandard1.1" />
       <group targetFramework="netstandard1.2" />
       <group targetFramework="netstandard1.3" />

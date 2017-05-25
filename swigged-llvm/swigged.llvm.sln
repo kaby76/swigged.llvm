@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "std.swigged.llvm", "std.swi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject3", "UnitTestProject3\UnitTestProject3.csproj", "{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{15B88743-739C-4347-8C3B-8DE7B9A722FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,18 @@ Global
 		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Release|Win32.Build.0 = Release|Any CPU
 		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Release|x64.ActiveCfg = Release|Any CPU
 		{5B8D1CAF-A559-4C8B-9349-AF646B9CF958}.Release|x64.Build.0 = Release|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Debug|Win32.Build.0 = Debug|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Debug|x64.Build.0 = Debug|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Release|Win32.ActiveCfg = Release|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Release|Win32.Build.0 = Release|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Release|x64.ActiveCfg = Release|Any CPU
+		{15B88743-739C-4347-8C3B-8DE7B9A722FA}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

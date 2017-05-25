@@ -20,6 +20,7 @@ namespace ConsoleApplication1
 
         static void Main(string[] args)
         {
+            ClassLibrary1.DynamicLibraryPath.FixPath();
             Test1();
             Test2();
         }
