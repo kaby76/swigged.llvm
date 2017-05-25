@@ -11,6 +11,7 @@ namespace core.sanity_test
 
         static void Main(string[] args)
         {
+            Swigged.LLVM.Helper.Adjust.Path();
             ModuleRef mod = LLVM.ModuleCreateWithName("LLVMSharpIntro");
             TypeRef[] param_types = { LLVM.Int32Type(), LLVM.Int32Type() };
             TypeRef ret_type = LLVM.FunctionType(LLVM.Int32Type(), param_types, false);

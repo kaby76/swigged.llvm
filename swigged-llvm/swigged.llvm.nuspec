@@ -55,35 +55,29 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     undocumented strings: ".NETFramework4.6.2", ".NETFramework4.5.2",
     ... Not sure if they work. --> 
     <dependencies>
-      <group targetFramework="net45">
-	<dependency id="NetStandard.Library" version="[1.6,)" />
-	<dependency id="System.Runtime" version="[4.1,)" />
-      </group>
-      <group targetFramework="net451">
-	<dependency id="NetStandard.Library" version="[1.6,)" />
-	<dependency id="System.Runtime" version="[4.1,)" />
-      </group>
       <group targetFramework="net46">
-	<dependency id="NetStandard.Library" version="[1.6,)" />
-	<dependency id="System.Runtime" version="[4.1,)" />
+	<dependency id="NetStandard.Library" version="[1.6.0]" />
+	<dependency id="System.Runtime" version="[4.1.0]" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0]" />
       </group>
       <group targetFramework="net461">
-	<dependency id="NetStandard.Library" version="[1.6,)" />
-	<dependency id="System.Runtime" version="[4.1,)" />
+	<dependency id="NetStandard.Library" version="[1.6.0]" />
+	<dependency id="System.Runtime" version="[4.1.0]" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0]" />
       </group>
       <group targetFramework="net462">
-	<dependency id="NetStandard.Library" version="[1.6,)" />
-	<dependency id="System.Runtime" version="[4.1,)" />
+	<dependency id="NetStandard.Library" version="[1.6.0]" />
+	<dependency id="System.Runtime" version="[4.1.0]" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0]" />
       </group>
       <group targetFramework="net47">
-	<dependency id="NetStandard.Library" version="[1.6,)" />
-	<dependency id="System.Runtime" version="[4.1,)" />
+	<dependency id="NetStandard.Library" version="[1.6.0]" />
+	<dependency id="System.Runtime" version="[4.1.0]" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0]" />
       </group>
 
       <group targetFramework="netcore1.0" />
       <group targetFramework="netcore1.1" />
-      <group targetFramework="netstandard1.1" />
-      <group targetFramework="netstandard1.2" />
       <group targetFramework="netstandard1.3" />
       <group targetFramework="netstandard1.4" />
       <group targetFramework="netstandard1.5" />
@@ -116,8 +110,8 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     targets do not matter for the code as the MSIL is the same
     regardless. 
     -->
-    <file src="std.swigged.llvm\bin\Release\netstandard1.1\std.swigged.llvm.dll" target="lib\netstandard1.1" />
-    <file src="std.swigged.llvm\bin\Release\netstandard1.1\std.swigged.llvm.pdb" target="lib\netstandard1.1" />
+    <file src="swigged.llvm\bin\Release\netstandard1.3\swigged.llvm.dll" target="lib\netstandard1.3" />
+    <file src="swigged.llvm.helper\bin\Release\netstandard1.3\swigged.llvm.helper.dll" target="lib\netstandard1.3" />
     
 <!--    <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" /> -->
 

@@ -61,9 +61,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\std.swigged.llvm\std.swigged.llvm.csproj">
+    <ProjectReference Include="..\swigged.llvm.helper\swigged.llvm.helper.csproj">
+      <Project>{15b88743-739c-4347-8c3b-8de7b9a722fa}</Project>
+      <Name>swigged.llvm.helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\swigged.llvm\swigged.llvm.csproj">
       <Project>{dcf9c0b3-961f-40e4-87bc-a2cc20e4b5a1}</Project>
-      <Name>std.swigged.llvm</Name>
+      <Name>swigged.llvm</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

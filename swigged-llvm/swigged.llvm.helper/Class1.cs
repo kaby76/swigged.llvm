@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ClassLibrary1
+namespace Swigged.LLVM.Helper
 {
-    public static class DynamicLibraryPath
+    public static class Adjust
     {
         /// <summary>
         /// Adjust the search path for DLL's and SO's to depend on the environment to
@@ -20,8 +20,10 @@ namespace ClassLibrary1
         /// Some OSes limit the size of the search path. Therefore, we need to actually
         /// look for the directories specified.
         /// </summary>
-        public static void FixPath()
+        public static void Path()
         {
+            string Version = "4.0.8-alpha";
+
             List<string> additional_paths = new List<string>();
 
             // First, let's gather some basic information.
@@ -50,20 +52,41 @@ namespace ClassLibrary1
 
             bool isAndroid = false;
             if (the_os != null && the_os.IndexOf("android", StringComparison.OrdinalIgnoreCase) >= 0) isAndroid = true;
-            
+
+            // Get "home"---platform specific.
+            string home = "";
+            if (isWindows)
+            {
+                var home_drive = Environment.GetEnvironmentVariable("HOMEDRIVE");
+                var home_path = Environment.GetEnvironmentVariable("HOMEPATH");
+                // Note: "HOME" will be dependent on the parent process, which could be Cygwin or Mingw.
+                home = home_drive + home_path;
+            }
+
             // Start with various Windows paths.
             if (isWindows)
             {
-                // Add in local build paths.
-                if (is64bitProcess)
+                for (int levels = 1; levels < 5; ++levels)
                 {
-                    if (isDebug) additional_paths.Add("../../../swigged.llvm.native/x64-Debug/Debug");
-                    else additional_paths.Add("../../../swigged.llvm.native/x64-Release/Release");
-                }
-                else
-                {
-                    if (isDebug) additional_paths.Add("../../../swigged.llvm.native/x86-Debug/Debug");
-                    else additional_paths.Add("../../../swigged.llvm.native/x86-Release/Release");
+                    var d = Enumerable.Repeat("../", levels)
+                                .Aggregate(
+                                    new StringBuilder(),
+                                    (sb, s) => sb.Append(s))
+                                .ToString() + "swigged.llvm.native/";
+                    if (!Directory.Exists(d))
+                        continue;
+
+                    // Add in local build paths.
+                    if (is64bitProcess)
+                    {
+                        if (isDebug) additional_paths.Add(d + "/x64-Debug/Debug");
+                        else additional_paths.Add(d + "/x64-Release/Release");
+                    }
+                    else
+                    {
+                        if (isDebug) additional_paths.Add(d + "/x86-Debug/Debug");
+                        else additional_paths.Add(d + "/x86-Release/Release");
+                    }
                 }
                 // Package install.
                 for (int levels = 1; levels < 5; ++levels)
@@ -82,10 +105,15 @@ namespace ClassLibrary1
                     d += "/win10/lib/" + (is64bitProcess ? "x64" : "x86");
                     additional_paths.Add(d);
                 }
+
+                // Try adding dotnet package cache.
+                additional_paths.Add(home + "/.nuget/packages/swigged.llvm/" + Version + "/win10/lib/" + (is64bitProcess ? "x64" : "x86"));
             }
-            foreach (string dirs in additional_paths)
+            foreach (string dir in additional_paths)
             {
-                path += ";" + dirs;
+                if (! Directory.Exists(dir))
+                    continue;
+                path += ";" + dir;
             }
             Environment.SetEnvironmentVariable("PATH", path);
         }

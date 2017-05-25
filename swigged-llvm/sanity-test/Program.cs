@@ -20,7 +20,7 @@ namespace ConsoleApplication1
 
         static void Main(string[] args)
         {
-            ClassLibrary1.DynamicLibraryPath.FixPath();
+            Swigged.LLVM.Helper.Adjust.Path();
             Test1();
             Test2();
         }
