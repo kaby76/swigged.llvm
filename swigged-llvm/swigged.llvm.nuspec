@@ -60,13 +60,15 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     <dependencies>
       <group targetFramework="net462">
 	<dependency id="NetStandard.Library" version="[1.6.0]" />
-	<dependency id="System.Runtime" version="[4.1.0]" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0]" />
+	<dependency id="System.Runtime" version="[4.3.0]" />
+	<dependency id="System.Runtime.Extensions" version="[4.3.0]" />
+	<dependency id="System.Runtime.Loader" version="[4.3.0]" />
       </group>
       <group targetFramework="net47">
 	<dependency id="NetStandard.Library" version="[1.6.0]" />
-	<dependency id="System.Runtime" version="[4.1.0]" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0]" />
+	<dependency id="System.Runtime" version="[4.3.0]" />
+	<dependency id="System.Runtime.Extensions" version="[4.3.0]" />
+	<dependency id="System.Runtime.Loader" version="[4.3.0]" />
       </group>
 
       <group targetFramework="netcore1.0" />
