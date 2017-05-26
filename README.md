@@ -4,20 +4,20 @@ This project is a C# wrapper API for LLVM-C, generated using [SWIG](http://swig.
 based upon [SharpLang](https://github.com/xen2/SharpLang), which is defunct. The purpose of that project
 was to compile CIL, and was abandoned when Microsoft open sourced much of the .NET runtime, including
 RyuJIT. But, SharpLang contained a SWIG-generated C# wrappar for LLVM-C, useful in it's own right.
-Swigged-LLVM takes up the C# API for LLVM, drops the MS IL reader, and extends the API to contain
-additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the problems that were never
-fixed in SharpLang, and adds several full-featured tests.
+Swigged-LLVM takes up the C# API for LLVM, drops the CIL reader, and extends the API to contain
+additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the problems is
+SharpLang, and adds several full-featured tests and examples.
 
 # Targets
 
-* Windows 10 (only x64)
-* Ubuntu.16.04 (only x64)
-* Android (only x86 and armeabi ABIs)
+* Windows 10 (x86 and x64)
+* Ubuntu.16.04 (x64)
+* Android (x86 and armeabi ABIs)
 
-Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 1.1 code. It is compatible with Net Core and Net Framework. Swigged.llvm.native is a platform specific library. Several targets for Linux are included in the NuGet package.
-Details to build in Linux are described below.
+Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 1.5 code. It is compatible with Net Core and Net Framework. Swigged.llvm.native is a platform specific library. Several targets for Linux are included in the NuGet package.
+Details to build are described below.
 
-## Linking and building with Swigged.llvm from NuGet:
+## Using Swigged.llvm (from NuGet):
 
 #### Net Core App on Windows or Linux
 ````
@@ -30,8 +30,11 @@ dotnet publish -r <target>
 # If not found, or it's the wrong version, copy the file to the target output directory.
 # For Ubuntu, you must copy the swigged-llvm-native.so file to the target directory. There is
 # no way to search for the file.)
-cp {home}/bin/{Debug or Release}/netcoreapp1.1/ubuntu.16.04-x64/publish
+cp {home}/bin/{Debug or Release}/netcoreapp1.1/{target}/publish
 ````
+
+For an example, see .../Examples/NetcoreApp
+
 #### Net Framework App on Windows
 
 Use the Package Manager GUI in VS 2017 to add in the package "swigged.llvm". Or,
@@ -45,7 +48,11 @@ You *do not need* to copy swigged.llvm.native.dll to the executable directory. H
 dll, copy the swigged-llvm-native.dll from the appropriate target from the packages/ directory.
 
 If you want to debug Swigged.llvm code, set "Enable native code debugging." Note: this option is unavailable in
-Net Core apps in Visual Studio 2017 version 15.1 April 15 2017.
+Net Core apps in Visual Studio 2017 version 15.2.
+
+Swigged.llvm should work out of the box. However, there it does some dependencies to be fulfilled. I have tried
+to get this right, but you may need to adjust the versions of the runtimes, e.g., System.Runtime 4.1.0 vs. 4.3.0.
+
 
 #### Android/Xamarin Apps
 
@@ -57,6 +64,9 @@ that by editing the CSPROJ file for the Android project.
     <AndroidNativeLibrary Include="lib\x86\libswigged-llvm-native.so" />
   </ItemGroup>
 ````
+
+For an example, see .../Examples/AndroidApp
+
 #### Typical errors:
 a) "Bad image format" error--the swigged.llvm.native.dll in your target directory is the wrong version (32-bit vs 64-bit).
 b) "Missing DLL" error--make sure swigged.llvm.native.dll and std.swigged.llvm.dll are in your executable directory.
