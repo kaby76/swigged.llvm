@@ -10,29 +10,58 @@ fixed in SharpLang, and adds several full-featured tests.
 
 # Targets
 
-* Windows 10
-* Ubuntu.16.04
-* Android
+* Windows 10 (only x64)
+* Ubuntu.16.04 (only x64)
+* Android (only x86 and armeabi ABIs)
 
 Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 1.1 code. It is compatible with Net Core and Net Framework. Swigged.llvm.native is a platform specific library. Several targets for Linux are included in the NuGet package.
 Details to build in Linux are described below.
 
 ## Linking and building with Swigged.llvm from NuGet:
 
-Download the package from NuGet (https://www.nuget.org/packages/swigged.llvm), or in Visual Studio,
-add the package "swigged.llvm".
+#### Net Core App on Windows or Linux
+````
+dotnet add package swigged.llvm
+# Ideally, set up your project for a specific target in mind.
+dotnet restore -r <target>
+dotnet publish -r <target>
+# Copy the swigged-llvm-target file to target output directory.
+# (For Windows, the search path for the DLL will be adjusted to find the file.
+# If not found, or it's the wrong version, copy the file to the target output directory.
+# For Ubuntu, you must copy the swigged-llvm-native.so file to the target directory. There is
+# no way to search for the file.)
+cp {home}/bin/{Debug or Release}/netcoreapp1.1/ubuntu.16.04-x64/publish
+````
+#### Net Framework App on Windows
+
+Use the Package Manager GUI in VS 2017 to add in the package "swigged.llvm". Or,
+download the package from NuGet (https://www.nuget.org/packages/swigged.llvm) and
+add the package "swigged.llvm" from the nuget package manager console.
 
 Set up the build of your C# application with Platform = "AnyCPU", Configuration = "Debug" or "Release". In the Properties for the
 application, either un-check "Prefer 32-bit" if you want to run as 64-bit app, or checked if you want to run as a 32-bit app.
 
-You must manually copy swigged.llvm.native.dll/so to the executable directory. Select the appropriate target from the packages/ directory.
+You *do not need* to copy swigged.llvm.native.dll to the executable directory. However, if your program is having problems with finding the
+dll, copy the swigged-llvm-native.dll from the appropriate target from the packages/ directory.
 
 If you want to debug Swigged.llvm code, set "Enable native code debugging." Note: this option is unavailable in
 Net Core apps in Visual Studio 2017 version 15.1 April 15 2017.
 
-Typical errors:
+#### Android/Xamarin Apps
+
+You will need to manually copy the SO files and add each SO file to your project. You can do
+that by editing the CSPROJ file for the Android project.
+````
+  <ItemGroup>
+    <AndroidNativeLibrary Include="lib\armeabi\libswigged-llvm-native.so" />
+    <AndroidNativeLibrary Include="lib\x86\libswigged-llvm-native.so" />
+  </ItemGroup>
+````
+#### Typical errors:
 a) "Bad image format" error--the swigged.llvm.native.dll in your target directory is the wrong version (32-bit vs 64-bit).
 b) "Missing DLL" error--make sure swigged.llvm.native.dll and std.swigged.llvm.dll are in your executable directory.
+
+
 
 ## Example ##
 
