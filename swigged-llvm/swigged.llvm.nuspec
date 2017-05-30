@@ -4,7 +4,7 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
 
-    <version>4.0.8-alpha</version>
+    <version>4.0.9-alpha</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -22,6 +22,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of LLVM-C.</description>
     <releaseNotes>
+* Version 4.0.9-alpha
+  Working out dependencies and versions. Instead of hardwiring everything to fixed version, allow user to update to suit build.
+  
 * Version 4.0.8-alpha
   Use "Swigged.LLVM.Helper.Adjust.Path();" before 1st LLVM call to alter PATH variable within process so that it can find swigged-llvm-native.dll without having to copy the dll around. There is no equivalent fix for Ubuntu unfortunately. You must still "dotnet publish -r ubuntu.16.04-x64" and copy swigged-llvm-native.so to the build output directory.
   
@@ -59,16 +62,16 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     ... Not sure if they work. --> 
     <dependencies>
       <group targetFramework="net462">
-	<dependency id="NetStandard.Library" version="[1.6.0]" />
-	<dependency id="System.Runtime" version="[4.3.0]" />
-	<dependency id="System.Runtime.Extensions" version="[4.3.0]" />
-	<dependency id="System.Runtime.Loader" version="[4.3.0]" />
+	<dependency id="NetStandard.Library" version="[1.6.0,)" />
+	<dependency id="System.Runtime" version="[4.1.0,)" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
+	<dependency id="System.Runtime.Loader" version="[4.1.0,)" />
       </group>
       <group targetFramework="net47">
-	<dependency id="NetStandard.Library" version="[1.6.0]" />
-	<dependency id="System.Runtime" version="[4.3.0]" />
-	<dependency id="System.Runtime.Extensions" version="[4.3.0]" />
-	<dependency id="System.Runtime.Loader" version="[4.3.0]" />
+	<dependency id="NetStandard.Library" version="[1.6.0,)" />
+	<dependency id="System.Runtime" version="[4.1.0,)" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
+	<dependency id="System.Runtime.Loader" version="[4.1.0,)" />
       </group>
 
       <group targetFramework="netcore1.0" />
