@@ -225,15 +225,18 @@ sure to copy swigged.llvm.native.dll to your executable directory._
 
 Enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>).
 
-## Alternative LLVM Framework for C#
+## Alternative LLVM Frameworks for C#
 
-##### LLVMSharp (https://www.nuget.org/packages/LLVMSharp/3.9.1-rc3)
+##### LLVMSharp (https://www.nuget.org/packages/LLVMSharp/3.9.1-rc3   https://github.com/Microsoft/LLVMSharp )
 
-Note: LLVMSharp is a NET Core API. It appears it cannot be used with NET Framework applications,
-at least I have had no luck in doing so. In theory, NET Framework assemblies can be used in
-NET Core applications but not the other way around. However, although swigged.llvm 
-is a NET Framework API, it does not seem to work with NET Core apps.
+LLVMSharp is the "semi-official" C# LLVM bindings library. 
+While it is a NET Core API, it appears it cannot be used with NET Framework
+applications--at least I have had no luck in doing so. The bindings are generated
+from in program contained within the project, .
 
-##### LLVM.NET (https://github.com/NETMF/Llvm.NET)
+##### LLVM.NET (https://github.com/NETMF/Llvm.NET http://netmf.github.io/Llvm.NET/html/47ec5af0-5c1c-443e-b2b3-158a100dc594.htm )
 
-This project is an LLVM bindings library for Windows. 
+This project is another C# LLVM bindings librarys.
+
+Note, this project is not confuse this with another "LLVM.NET" library (aka "LLVM by Lost"),
+https://bitbucket.org/lost/llvm.net/wiki/Home , http://www.nuget.org/packages/LLVM.NativeLibrary/ , which seems to be a wrapper for some LLVM DLLs built within the project.
