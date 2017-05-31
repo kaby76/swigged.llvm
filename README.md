@@ -229,7 +229,7 @@ Enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebug
 
 ##### LLVMSharp (https://www.nuget.org/packages/LLVMSharp/3.9.1-rc3   https://github.com/Microsoft/LLVMSharp )
 
-LLVMSharp is the "semi-official" C# LLVM bindings library. 
+LLVMSharp is the "semi-official" C# LLVM bindings library from Microsoft. 
 While it is a NET Core API, it appears it cannot be used with NET Framework
 applications--at least I have had no luck in doing so. The bindings are generated
 from in program contained within the project, .
@@ -240,3 +240,4 @@ This project is another C# LLVM bindings librarys.
 
 Note, this project is not confuse this with another "LLVM.NET" library (aka "LLVM by Lost"),
 https://bitbucket.org/lost/llvm.net/wiki/Home , http://www.nuget.org/packages/LLVM.NativeLibrary/ , which seems to be a wrapper for some LLVM DLLs built within the project.
+It hasn't been updated in several years, so I don't think this project is active anymore.

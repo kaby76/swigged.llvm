@@ -62,16 +62,28 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     ... Not sure if they work. --> 
     <dependencies>
       <group targetFramework="net462">
-	<dependency id="NetStandard.Library" version="[1.6.0,)" />
-	<dependency id="System.Runtime" version="[4.1.0,)" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
-	<dependency id="System.Runtime.Loader" version="[4.1.0,)" />
+	<dependency id="System.Collections" version="[4.0.10,)" />
+	<dependency id="System.Console" version="[4.0.0,)" />
+	<dependency id="System.IO.FileSystem" version="[4.0.1.0,)" />
+	<dependency id="System.Linq" version="[4.0.0.0,)" />
+	<dependency id="System.Runtime" version="[4.1.0.0,)" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0.0,)" />
+	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.0.1.0,)" />
+	<dependency id="System.Runtime.InteropServices" version="[4.1.0.0,)" />
+	<dependency id="System.Threading" version ="[4.0.10.0,)" />
+	<dependency id="NetStandard.Library" version="[1.6.0.0,)" />
       </group>
       <group targetFramework="net47">
-	<dependency id="NetStandard.Library" version="[1.6.0,)" />
-	<dependency id="System.Runtime" version="[4.1.0,)" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
-	<dependency id="System.Runtime.Loader" version="[4.1.0,)" />
+	<dependency id="System.Collections" version="[4.0.10,)" />
+	<dependency id="System.Console" version="[4.0.0.0,)" />
+	<dependency id="System.IO.FileSystem" version="[4.0.1.0,)" />
+	<dependency id="System.Linq" version="[4.0.0.0,)" />
+	<dependency id="System.Runtime" version="[4.1.0.0,)" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0.0,)" />
+	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.0.1.0,)" />
+	<dependency id="System.Runtime.InteropServices" version="[4.1.0.0,)" />
+	<dependency id="System.Threading" version ="[4.0.10.0,)" />
+	<dependency id="NetStandard.Library" version="[1.6.0.0,)" />
       </group>
 
       <group targetFramework="netcore1.0" />
