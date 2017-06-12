@@ -39,7 +39,6 @@ cd android-armeabi-Release
 cmake --version
 cmake .. \
    -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils"  \
-   -DLLVM_BUILD_TARGETS=ARM \
    -DANDROID_NDK=/home/ken/Android/Sdk/ndk-bundle \
    -DANDROID_NATIVE_API_LEVEL=23 \
    -DANDROID_TOOLCHAIN=clang \
@@ -71,7 +70,6 @@ cd android-x86-Release
 cmake --version
 cmake .. \
    -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils"  \
-   -DLLVM_BUILD_TARGETS=x86 \
    -DANDROID_NDK=/home/ken/Android/Sdk/ndk-bundle \
    -DANDROID_NATIVE_API_LEVEL=23 \
    -DANDROID_TOOLCHAIN=clang \
