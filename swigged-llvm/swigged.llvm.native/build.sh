@@ -9,7 +9,7 @@ echo "Cmake/make of ubuntu-16.04-Debug"
 bash -c "rm -rf ubuntu-16.04-Debug"
 mkdir ubuntu-16.04-Debug
 cd ubuntu-16.04-Debug
-cmake -DCMAKE_BUILD_TYPE=Debug -DLLVM_DIR=`pwd`"/../../llvm/ubuntu-16.04-Debug/lib/cmake/llvm"  ..
+cmake  -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils" -DCMAKE_BUILD_TYPE=Debug -DLLVM_DIR=`pwd`"/../../llvm/ubuntu-16.04-Debug/lib/cmake/llvm"  ..
 make
 cd ..
 
@@ -18,7 +18,7 @@ echo "Cmake/make of ubuntu-16.04-Release"
 bash -c "rm -rf ubuntu-16.04-Release"
 mkdir ubuntu-16.04-Release
 cd ubuntu-16.04-Release
-cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_DIR=`pwd`"/../../llvm/ubuntu-16.04-Release/lib/cmake/llvm"  ..
+cmake  -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils" -DCMAKE_BUILD_TYPE=Release -DLLVM_DIR=`pwd`"/../../llvm/ubuntu-16.04-Release/lib/cmake/llvm"  ..
 make
 cd ..
 
@@ -38,7 +38,7 @@ mkdir android-armeabi-Release
 cd android-armeabi-Release
 cmake --version
 cmake .. \
-   -DMORELIBS=ARM \
+   -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils"  \
    -DLLVM_BUILD_TARGETS=ARM \
    -DANDROID_NDK=/home/ken/Android/Sdk/ndk-bundle \
    -DANDROID_NATIVE_API_LEVEL=23 \
@@ -70,7 +70,7 @@ mkdir android-x86-Release
 cd android-x86-Release
 cmake --version
 cmake .. \
-   -DMORELIBS="" \
+   -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils"  \
    -DLLVM_BUILD_TARGETS=x86 \
    -DANDROID_NDK=/home/ken/Android/Sdk/ndk-bundle \
    -DANDROID_NATIVE_API_LEVEL=23 \
