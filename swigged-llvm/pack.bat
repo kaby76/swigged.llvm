@@ -1,1 +1,1 @@
-nuget pack swigged.llvm.nuspec -Version 4.0.9-alpha -Properties 'Configuration=Release;Platform=x86;'
+nuget pack swigged.llvm.nuspec -Version 4.0.10-alpha -Properties 'Configuration=Release;Platform=x86;'

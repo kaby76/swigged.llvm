@@ -1,3 +1,4 @@
+# BUILD SCRIPT FOR WINDOWS TARGETS
 
 # Invokes a Cmd.exe shell script and updates the environment.
 function Invoke-CmdScript {
@@ -26,15 +27,15 @@ mkdir x64-Release
 
 cd x86-Debug
 Invoke-CmdScript "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x86
-cmake "-DLLVM_DIR=%CD%\..\..\llvm\x86-Debug\lib\cmake\llvm" -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017" ..
+cmake -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils"    "-DLLVM_DIR=%CD%\..\..\llvm\x86-Debug\lib\cmake\llvm"    -G "Visual Studio 15 2017" ..
 cd ..\x86-Release
-cmake "-DLLVM_DIR=%CD%\..\..\llvm\x86-Release\lib\cmake\llvm" -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017" ..
+cmake -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils"    "-DLLVM_DIR=%CD%\..\..\llvm\x86-Release\lib\cmake\llvm"    -G "Visual Studio 15 2017" ..
 
 Invoke-CmdScript "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
 cd ..\x64-Debug
-cmake "-DLLVM_DIR=%CD%\..\..\llvm\x64-Debug\lib\cmake\llvm" -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017 Win64" ..
+cmake -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils"    "-DLLVM_DIR=%CD%\..\..\llvm\x64-Debug\lib\cmake\llvm"    -G "Visual Studio 15 2017 Win64" ..
 cd ..\x64-Release
-cmake "-DLLVM_DIR=%CD%\..\..\llvm\x64-Release\lib\cmake\llvm" -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017 Win64" ..
+cmake -MORELIBS="AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils"    "-DLLVM_DIR=%CD%\..\..\llvm\x64-Release\lib\cmake\llvm"    -G "Visual Studio 15 2017 Win64" ..
 
 cd ..
 

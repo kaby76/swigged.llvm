@@ -1,3 +1,5 @@
+# BUILD SCRIPT FOR UBUNTU AND ANDROID TARGETS
+# RUN ON UBUNTU
 
 export OLDPATH="$PATH"
 export PATH="/home/ken/cmake-3.8.1-Linux-x86_64/bin:$OLDPATH"
@@ -7,7 +9,7 @@ echo "Cmake/make of ubuntu-16.04-Debug"
 bash -c "rm -rf ubuntu-16.04-Debug"
 mkdir ubuntu-16.04-Debug
 cd ubuntu-16.04-Debug
-cmake -DCMAKE_BUILD_TYPE=Debug -DLLVM_BUILD_TARGETS=X86 -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_DIR=`pwd`"/../../llvm/ubuntu-16.04-Debug/lib/cmake/llvm"  ..
+cmake -DCMAKE_BUILD_TYPE=Debug -DLLVM_DIR=`pwd`"/../../llvm/ubuntu-16.04-Debug/lib/cmake/llvm"  ..
 make
 cd ..
 
@@ -16,7 +18,7 @@ echo "Cmake/make of ubuntu-16.04-Release"
 bash -c "rm -rf ubuntu-16.04-Release"
 mkdir ubuntu-16.04-Release
 cd ubuntu-16.04-Release
-cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_BUILD_TARGETS=X86 -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_DIR=`pwd`"/../../llvm/ubuntu-16.04-Release/lib/cmake/llvm"  ..
+cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_DIR=`pwd`"/../../llvm/ubuntu-16.04-Release/lib/cmake/llvm"  ..
 make
 cd ..
 
@@ -52,7 +54,6 @@ cmake .. \
    -DCMAKE_CXX_FLAGS_DEBUG=""  \
    -DCMAKE_BUILD_TYPE=Release \
    -DCMAKE_TOOLCHAIN_FILE=/home/ken/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake \
-   -DLLVM_TARGETS_TO_BUILD=ARM \
    -DLLVM_DIR=`pwd`"/../../llvm/android-armeabi-Release/lib/cmake/llvm/"
 make -k
 # Note2: There is a bug in cmake for Android--the -g option is always specified.
@@ -85,7 +86,6 @@ cmake .. \
    -DCMAKE_CXX_FLAGS_DEBUG=""  \
    -DCMAKE_BUILD_TYPE=Release \
    -DCMAKE_TOOLCHAIN_FILE=/home/ken/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake \
-   -DLLVM_TARGETS_TO_BUILD=X86 \
    -DLLVM_DIR=`pwd`"/../../llvm/android-x86-Release/lib/cmake/llvm/"
 make -k
 # Note2: There is a bug in cmake for Android--the -g option is always specified.

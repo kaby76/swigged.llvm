@@ -11,15 +11,15 @@ mkdir x64-Release
 
 call "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x86
 cd x86-Debug
-cmake -DCMAKE_BUILD_TYPE=Debug -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017" ..\llvm
+cmake -DCMAKE_BUILD_TYPE=Debug -G "Visual Studio 15 2017" ..\llvm
 cd ..\x86-Release
-cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017" ..\llvm
+cmake -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 15 2017" ..\llvm
 
 call "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
 cd ..\x64-Debug
-cmake -DCMAKE_BUILD_TYPE=Debug -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017 Win64" ..\llvm
+cmake -DCMAKE_BUILD_TYPE=Debug -G "Visual Studio 15 2017 Win64" ..\llvm
 cd ..\x64-Release
-cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -G "Visual Studio 15 2017 Win64" ..\llvm
+cmake -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 15 2017 Win64" ..\llvm
 
 cd ..
 
