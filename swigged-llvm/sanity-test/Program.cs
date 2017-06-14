@@ -21,9 +21,16 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             Swigged.LLVM.Helper.Adjust.Path();
+
+            // As it turns out, we need to do this for all examples, including that using ORC,
+            // which will segv in GetTargetFromTriple.
+            LLVM.LinkInMCJIT();
+            LLVM.InitializeNativeTarget();
+            LLVM.InitializeNativeAsmPrinter();
+
             Test1();
             Test2();
-            //Test3();
+            Test3();
         }
 
         static void Test1()
@@ -41,9 +48,6 @@ namespace ConsoleApplication1
             LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, the_error);
             //LLVM.DisposeMessage(error);
             ExecutionEngineRef engine;
-            LLVM.LinkInMCJIT();
-            LLVM.InitializeNativeTarget();
-            LLVM.InitializeNativeAsmPrinter();
             MCJITCompilerOptions options = new MCJITCompilerOptions();
             var optionsSize = (4 * sizeof(int)) + IntPtr.Size; // LLVMMCJITCompilerOptions has 4 ints and a pointer
             LLVM.InitializeMCJITCompilerOptions(options, (uint) optionsSize);
@@ -148,24 +152,37 @@ namespace ConsoleApplication1
             LLVM.BuildRet(builder, tmp);
             MyString the_error = new MyString();
             LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, the_error);
-            //LLVM.DisposeMessage(error);
 
-            TargetRef tr = LLVM.GetTargetFromName("X86");
+            //LLVM.DisposeMessage(error);
+            TargetRef t2;
+            string tr2 = LLVM.GetDefaultTargetTriple();
+            var b = LLVM.GetTargetFromTriple(tr2, out t2, the_error);
             string triple = "";
             string cpu = "";
             string features = "";
-            CodeGenOptLevel level = CodeGenOptLevel.CodeGenLevelDefault;
-            RelocMode reloc_mode = RelocMode.RelocDefault;
-            CodeModel code_model = CodeModel.CodeModelDefault;
-            TargetMachineRef tmr = LLVM.CreateTargetMachine(tr, triple, cpu, features, level, reloc_mode, code_model);
+
+            TargetMachineRef tmr = LLVM.CreateTargetMachine(t2, tr2, cpu, features,
+                CodeGenOptLevel.CodeGenLevelDefault,
+                RelocMode.RelocDefault,
+                CodeModel.CodeModelDefault);
+
             OrcJITStackRef ojsr = LLVM.OrcCreateInstance(tmr);
-
-
-
-
+            MyString ms = new MyString();
+            LLVM.OrcGetMangledSymbol(ojsr, ms, "sum");
+            IntPtr ctx = IntPtr.Zero;
+            uint xx = LLVM.OrcAddLazilyCompiledIR(ojsr, mod, null, ctx);
+            ulong p = LLVM.OrcGetSymbolAddress(ojsr, "sum");
+            Add addMethod = (Add)Marshal.GetDelegateForFunctionPointer((System.IntPtr)p, typeof(Add));
+            int result = addMethod(10, 10);
+            Console.WriteLine("Result of sum is: " + result);
 
             LLVM.DumpModule(mod);
             LLVM.DisposeBuilder(builder);
+        }
+
+        static ulong Resolver(string str, IntPtr ptr)
+        {
+            return 0;
         }
     }
 
