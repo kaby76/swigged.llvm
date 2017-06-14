@@ -22,8 +22,8 @@ namespace ConsoleApplication1
         {
             Swigged.LLVM.Helper.Adjust.Path();
 
-            // As it turns out, we need to do this for all examples, including that using ORC,
-            // which will segv in GetTargetFromTriple.
+            // As it turns out, we need InitializeNativeTarget for ORC. Otherwise,
+            // GetTargetFromTriple fails.
             LLVM.LinkInMCJIT();
             LLVM.InitializeNativeTarget();
             LLVM.InitializeNativeAsmPrinter();
@@ -141,6 +141,7 @@ namespace ConsoleApplication1
 
         public static void Test3()
         {
+            // See http://www.doof.me.uk/2017/05/11/using-orc-with-llvms-c-api/
             ModuleRef mod = LLVM.ModuleCreateWithName("LLVMSharpIntro");
             TypeRef[] param_types = { LLVM.Int32Type(), LLVM.Int32Type() };
             TypeRef ret_type = LLVM.FunctionType(LLVM.Int32Type(), param_types, false);
