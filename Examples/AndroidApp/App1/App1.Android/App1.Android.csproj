@@ -53,8 +53,8 @@
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="std.swigged.llvm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\swigged.llvm.4.0.7-alpha\lib\netstandard1.1\std.swigged.llvm.dll</HintPath>
+    <Reference Include="swigged.llvm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\swigged.llvm.4.0.7-alpha\lib\netstandard1.1\swigged.llvm.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

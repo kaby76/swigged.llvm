@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\std.swigged.llvm\swigged.llvm.csproj" />
+    <ProjectReference Include="..\swigged.llvm\swigged.llvm.csproj" />
     <ProjectReference Include="..\swigged.llvm.helper\swigged.llvm.helper.csproj" />
     <ProjectReference Include="..\swigged.llvm\swigged.llvm.csproj" />
   </ItemGroup>

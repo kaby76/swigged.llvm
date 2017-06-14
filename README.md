@@ -69,7 +69,7 @@ For an example, see .../Examples/AndroidApp
 
 #### Typical errors:
 a) "Bad image format" error--the swigged.llvm.native.dll in your target directory is the wrong version (32-bit vs 64-bit).
-b) "Missing DLL" error--make sure swigged.llvm.native.dll and std.swigged.llvm.dll are in your executable directory.
+b) "Missing DLL" error--make sure swigged.llvm.native.dll and swigged.llvm.dll are in your executable directory.
 
 
 
@@ -210,15 +210,15 @@ cd llvm
 cd ..
 ~~~~
 
-#### Build std.swigged.llvm ####
+#### Build swigged.llvm ####
 
 ~~~~
-cd std.swigged.llvm
+cd swigged.llvm
 dotnet restore
 dotnet build
 ~~~~
 
-_You can reference the std.swigged.llvm.dll assembly in your project. However, make
+_You can reference the swigged.llvm.dll assembly in your project. However, make
 sure to copy swigged.llvm.native.dll to your executable directory._
 
 ## Debugging on Windows

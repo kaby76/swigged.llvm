@@ -2231,11 +2231,20 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcDisposeMangledSymbol___")]
   public static extern void OrcDisposeMangledSymbol(string jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcCreateLazyCompileCallback___")]
+  public static extern ulong OrcCreateLazyCompileCallback(System.IntPtr jarg1, cppLLVMOrcLazyCompileCallbackFn jarg2, System.IntPtr jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcCreateIndirectStub___")]
   public static extern int OrcCreateIndirectStub(System.IntPtr jarg1, string jarg2, ulong jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcSetIndirectStubPointer___")]
   public static extern int OrcSetIndirectStubPointer(System.IntPtr jarg1, string jarg2, ulong jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcAddEagerlyCompiledIR___")]
+  public static extern uint OrcAddEagerlyCompiledIR(System.IntPtr jarg1, System.IntPtr jarg2, cppLLVMOrcSymbolResolverFn jarg3, System.IntPtr jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcAddLazilyCompiledIR___")]
+  public static extern uint OrcAddLazilyCompiledIR(System.IntPtr jarg1, System.IntPtr jarg2, cppLLVMOrcSymbolResolverFn jarg3, System.IntPtr jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcRemoveModule___")]
   public static extern void OrcRemoveModule(System.IntPtr jarg1, uint jarg2);

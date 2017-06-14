@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="std.swigged.llvm">
+    <Reference Include="swigged.llvm">
       <Private>True</Private>
     </Reference>
   </ItemGroup>

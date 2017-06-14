@@ -32,7 +32,17 @@
 
 %include <stdint.i>
 %include "LLVMCommon.i"
+%include "callback.i"
 
+REF_CLASS(LLVMOrcJITStackRef, OrcJITStackRef)
+
+%cs_callback(LLVMOrcLazyCompileCallbackFn, cppLLVMOrcLazyCompileCallbackFn)
+typedef uint64_t (*LLVMOrcLazyCompileCallbackFn)(LLVMOrcJITStackRef JITStack, void *CallbackCtx);
+
+%cs_callback(LLVMOrcSymbolResolverFn, cppLLVMOrcSymbolResolverFn)
+typedef uint64_t (*LLVMOrcSymbolResolverFn)(const char *Name, void *LookupCtx);
+
+   
 %ignore LLVMContextSetDiagnosticHandler;
 %ignore LLVMContextSetYieldCallback;
 %ignore LLVMConstIntOfArbitraryPrecision;
@@ -48,10 +58,10 @@
 %ignore LLVMCreateDisasmCPU;
 %ignore LLVMCreateDisasmCPUFeatures;
 %ignore LLVMCreateSimpleMCJITMemoryManager;
-%ignore LLVMOrcAddEagerlyCompiledIR;
-%ignore LLVMOrcAddLazilyCompiledIR;
+//%ignore LLVMOrcAddEagerlyCompiledIR;
+//%ignore LLVMOrcAddLazilyCompiledIR;
 %ignore LLVMInstallFatalErrorHandler;
-%ignore LLVMOrcCreateLazyCompileCallback;
+//%ignore LLVMOrcCreateLazyCompileCallback;
 %ignore LLVMContextGetDiagnosticHandler;
 
 typedef bool LLVMBool;
@@ -76,7 +86,6 @@ REF_CLASS(LLVMGenericValueRef, GenericValueRef)
 REF_CLASS(LLVMPassManagerBuilderRef, PassManagerBuilderRef)
 REF_CLASS(LLVMPassManagerRef, PassManagerRef)
 REF_CLASS(LLVMObjectFileRef, ObjectFileRef)
-REF_CLASS(LLVMOrcJITStackRef, OrcJITStackRef)
 REF_CLASS(LLVMPassRegistryRef, PassRegistryRef)
 REF_CLASS(LLVMTargetDataRef, TargetDataRef)
 REF_CLASS(LLVMTargetLibraryInfoRef, TargetLibraryInfoRef)
@@ -85,9 +94,9 @@ REF_CLASS(LLVMTargetRef, TargetRef)
 REF_CLASS(LLVMTypeRef, TypeRef)
 REF_CLASS(LLVMUseRef, UseRef)
 REF_CLASS(LLVMValueRef, ValueRef)
-
 REF_CLASS(LLVMOpInfoSymbol1,OpInfoSymbol1)
 REF_CLASS(LLVMOpInfo1,OpInfo1)
+
 
 %include "MCJITCompilerOptions.i"
 

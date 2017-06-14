@@ -9179,6 +9179,22 @@ SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeMangledSymbol___(char 
 }
 
 
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_OrcCreateLazyCompileCallback___(void * jarg1, void* jarg2, void * jarg3) {
+  unsigned long long jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  LLVMOrcLazyCompileCallbackFn arg2 = (LLVMOrcLazyCompileCallbackFn) 0 ;
+  void *arg3 = (void *) 0 ;
+  LLVMOrcTargetAddress result;
+  
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (LLVMOrcLazyCompileCallbackFn)jarg2; 
+  arg3 = jarg3; 
+  result = (LLVMOrcTargetAddress)LLVMOrcCreateLazyCompileCallback(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcCreateIndirectStub___(void * jarg1, char * jarg2, unsigned long long jarg3) {
   int jresult ;
   LLVMOrcJITStackRef arg1 ;
@@ -9207,6 +9223,42 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcSetIndirectStubPointer___(void
   arg3 = (LLVMOrcTargetAddress)jarg3; 
   result = (LLVMOrcErrorCode)LLVMOrcSetIndirectStubPointer(arg1,(char const *)arg2,arg3);
   jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcAddEagerlyCompiledIR___(void * jarg1, void * jarg2, void* jarg3, void * jarg4) {
+  unsigned int jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  LLVMModuleRef arg2 ;
+  LLVMOrcSymbolResolverFn arg3 = (LLVMOrcSymbolResolverFn) 0 ;
+  void *arg4 = (void *) 0 ;
+  LLVMOrcModuleHandle result;
+  
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (LLVMModuleRef)jarg2; 
+  arg3 = (LLVMOrcSymbolResolverFn)jarg3; 
+  arg4 = jarg4; 
+  result = (LLVMOrcModuleHandle)LLVMOrcAddEagerlyCompiledIR(arg1,arg2,arg3,arg4);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcAddLazilyCompiledIR___(void * jarg1, void * jarg2, void* jarg3, void * jarg4) {
+  unsigned int jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  LLVMModuleRef arg2 ;
+  LLVMOrcSymbolResolverFn arg3 = (LLVMOrcSymbolResolverFn) 0 ;
+  void *arg4 = (void *) 0 ;
+  LLVMOrcModuleHandle result;
+  
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  arg2 = (LLVMModuleRef)jarg2; 
+  arg3 = (LLVMOrcSymbolResolverFn)jarg3; 
+  arg4 = jarg4; 
+  result = (LLVMOrcModuleHandle)LLVMOrcAddLazilyCompiledIR(arg1,arg2,arg3,arg4);
+  jresult = result; 
   return jresult;
 }
 

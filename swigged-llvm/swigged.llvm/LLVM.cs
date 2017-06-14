@@ -3145,6 +3145,11 @@ public class LLVM {
     LLVMPINVOKE.OrcDisposeMangledSymbol(MangledSymbol);
   }
 
+  public unsafe static ulong OrcCreateLazyCompileCallback(OrcJITStackRef JITStack, cppLLVMOrcLazyCompileCallbackFn Callback, System.IntPtr CallbackCtx) {
+    ulong ret = LLVMPINVOKE.OrcCreateLazyCompileCallback(JITStack.Value, Callback, CallbackCtx);
+    return ret;
+  }
+
   public unsafe static OrcErrorCode OrcCreateIndirectStub(OrcJITStackRef JITStack, string StubName, ulong InitAddr) {
     OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcCreateIndirectStub(JITStack.Value, StubName, InitAddr);
     return ret;
@@ -3152,6 +3157,16 @@ public class LLVM {
 
   public unsafe static OrcErrorCode OrcSetIndirectStubPointer(OrcJITStackRef JITStack, string StubName, ulong NewAddr) {
     OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcSetIndirectStubPointer(JITStack.Value, StubName, NewAddr);
+    return ret;
+  }
+
+  public unsafe static uint OrcAddEagerlyCompiledIR(OrcJITStackRef JITStack, ModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
+    uint ret = LLVMPINVOKE.OrcAddEagerlyCompiledIR(JITStack.Value, Mod.Value, SymbolResolver, SymbolResolverCtx);
+    return ret;
+  }
+
+  public unsafe static uint OrcAddLazilyCompiledIR(OrcJITStackRef JITStack, ModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
+    uint ret = LLVMPINVOKE.OrcAddLazilyCompiledIR(JITStack.Value, Mod.Value, SymbolResolver, SymbolResolverCtx);
     return ret;
   }
 

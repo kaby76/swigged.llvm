@@ -112,7 +112,7 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     <file src="swigged.llvm.native\android-armeabi-Release\swigged-llvm-native.so" target="android\lib\armeabi\libswigged-llvm-native.so" />
     <file src="swigged.llvm.native\android-x86-Release\swigged-llvm-native.so" target="android\lib\x86\libswigged-llvm-native.so" />
 
-    <!-- There are three possible dll's for std.swigged.llvm,
+    <!-- There are three possible dll's for swigged.llvm,
     corresponding to Release configuration, and the three
     target frameworks, net45, net461, and netstandard1.6. Platform
     targets do not matter for the code as the MSIL is the same

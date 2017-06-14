@@ -23,6 +23,7 @@ namespace ConsoleApplication1
             Swigged.LLVM.Helper.Adjust.Path();
             Test1();
             Test2();
+            //Test3();
         }
 
         static void Test1()
@@ -132,6 +133,39 @@ namespace ConsoleApplication1
             LLVM.DisposePassManager(pass);
             LLVM.DisposeBuilder(builder);
             LLVM.DisposeExecutionEngine(engine);
+        }
+
+        public static void Test3()
+        {
+            ModuleRef mod = LLVM.ModuleCreateWithName("LLVMSharpIntro");
+            TypeRef[] param_types = { LLVM.Int32Type(), LLVM.Int32Type() };
+            TypeRef ret_type = LLVM.FunctionType(LLVM.Int32Type(), param_types, false);
+            ValueRef sum = LLVM.AddFunction(mod, "sum", ret_type);
+            BasicBlockRef entry = LLVM.AppendBasicBlock(sum, "entry");
+            BuilderRef builder = LLVM.CreateBuilder();
+            LLVM.PositionBuilderAtEnd(builder, entry);
+            ValueRef tmp = LLVM.BuildAdd(builder, LLVM.GetParam(sum, 0), LLVM.GetParam(sum, 1), "tmp");
+            LLVM.BuildRet(builder, tmp);
+            MyString the_error = new MyString();
+            LLVM.VerifyModule(mod, VerifierFailureAction.AbortProcessAction, the_error);
+            //LLVM.DisposeMessage(error);
+
+            TargetRef tr = LLVM.GetTargetFromName("X86");
+            string triple = "";
+            string cpu = "";
+            string features = "";
+            CodeGenOptLevel level = CodeGenOptLevel.CodeGenLevelDefault;
+            RelocMode reloc_mode = RelocMode.RelocDefault;
+            CodeModel code_model = CodeModel.CodeModelDefault;
+            TargetMachineRef tmr = LLVM.CreateTargetMachine(tr, triple, cpu, features, level, reloc_mode, code_model);
+            OrcJITStackRef ojsr = LLVM.OrcCreateInstance(tmr);
+
+
+
+
+
+            LLVM.DumpModule(mod);
+            LLVM.DisposeBuilder(builder);
         }
     }
 
