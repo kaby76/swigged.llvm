@@ -24,13 +24,19 @@ namespace ConsoleApplication1
 
             // As it turns out, we need InitializeNativeTarget for ORC. Otherwise,
             // GetTargetFromTriple fails.
-            LLVM.LinkInMCJIT();
-            LLVM.InitializeNativeTarget();
-            LLVM.InitializeNativeAsmPrinter();
+            // LLVM.LinkInMCJIT();
+            //LLVM.InitializeNativeTarget();
+            // LLVM.InitializeNativeAsmPrinter();
+            LLVM.InitializeAllTargets();
+            LLVM.InitializeAllTargetMCs();
+            LLVM.InitializeAllTargetInfos();
+            LLVM.InitializeAllAsmPrinters();
 
             Test1();
             Test2();
             Test3();
+            Test4();
+            Test5();
         }
 
         static void Test1()
@@ -65,6 +71,7 @@ namespace ConsoleApplication1
             LLVM.DisposeBuilder(builder);
             LLVM.DisposeExecutionEngine(engine);
         }
+
         public static void Test2()
         {
             // Based on http://npcontemplation.blogspot.com/2008/06/secret-of-llvm-c-bindings.html
@@ -184,6 +191,118 @@ namespace ConsoleApplication1
         static ulong Resolver(string str, IntPtr ptr)
         {
             return 0;
+        }
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate void PAdd(IntPtr a);
+
+        static void Test4()
+        {
+            ModuleRef mod = LLVM.ModuleCreateWithName("llvmptx");
+            var pt = LLVM.PointerType(LLVM.Int64Type(), 1);
+            TypeRef[] param_types = { pt };
+            TypeRef ret_type = LLVM.FunctionType(LLVM.VoidType(), param_types, false);
+            ValueRef sum = LLVM.AddFunction(mod, "sum", ret_type);
+            BasicBlockRef entry = LLVM.AppendBasicBlock(sum, "entry");
+            BuilderRef builder = LLVM.CreateBuilder();
+            LLVM.PositionBuilderAtEnd(builder, entry);
+            var v = LLVM.BuildLoad(builder, LLVM.GetParam(sum, 0), "");
+            ValueRef tmp = LLVM.BuildAdd(builder, v, LLVM.ConstInt(LLVM.Int64Type(), 1, false), "tmp");
+            LLVM.BuildStore(builder, tmp, LLVM.GetParam(sum, 0));
+            LLVM.BuildRetVoid(builder);
+            MyString the_error = new MyString();
+            LLVM.VerifyModule(mod, VerifierFailureAction.PrintMessageAction, the_error);
+            //LLVM.DisposeMessage(error);
+            ExecutionEngineRef engine;
+            MCJITCompilerOptions options = new MCJITCompilerOptions();
+            var optionsSize = (4 * sizeof(int)) + IntPtr.Size; // LLVMMCJITCompilerOptions has 4 ints and a pointer
+            LLVM.InitializeMCJITCompilerOptions(options, (uint)optionsSize);
+            LLVM.CreateMCJITCompilerForModule(out engine, mod, options, (uint)optionsSize, the_error);
+            var ptr = LLVM.GetPointerToGlobal(engine, sum);
+            IntPtr p = (IntPtr)ptr;
+
+            var dataArray = new Int64[1];
+            dataArray[0] = 99;
+            var handle = GCHandle.Alloc(dataArray, GCHandleType.Pinned);
+            IntPtr a = handle.AddrOfPinnedObject();
+
+            PAdd addMethod = (PAdd)Marshal.GetDelegateForFunctionPointer(p, typeof(PAdd));
+
+            addMethod(a);
+
+            Console.WriteLine("Result of sum is: " + dataArray[0]);
+            if (LLVM.WriteBitcodeToFile(mod, "sum.bc") != 0)
+            {
+                Console.WriteLine("error writing bitcode to file, skipping");
+            }
+            LLVM.DumpModule(mod);
+            LLVM.DisposeBuilder(builder);
+            LLVM.DisposeExecutionEngine(engine);
+            handle.Free();
+
+        }
+
+        static void Test5()
+        {
+            ModuleRef mod = LLVM.ModuleCreateWithName("llvmptx");
+            var pt = LLVM.PointerType(LLVM.Int64Type(), 1);
+            TypeRef[] param_types = { pt };
+            TypeRef ret_type = LLVM.FunctionType(LLVM.VoidType(), param_types, false);
+            ValueRef sum = LLVM.AddFunction(mod, "sum", ret_type);
+            BasicBlockRef entry = LLVM.AppendBasicBlock(sum, "entry");
+            BuilderRef builder = LLVM.CreateBuilder();
+            LLVM.PositionBuilderAtEnd(builder, entry);
+            var v = LLVM.BuildLoad(builder, LLVM.GetParam(sum, 0), "");
+            ValueRef tmp = LLVM.BuildAdd(builder, v, LLVM.ConstInt(LLVM.Int64Type(), 1, false), "tmp");
+            LLVM.BuildStore(builder, tmp, LLVM.GetParam(sum, 0));
+            LLVM.BuildRetVoid(builder);
+            MyString the_error = new MyString();
+            LLVM.VerifyModule(mod, VerifierFailureAction.PrintMessageAction, the_error);
+
+            string triple = "nvptx64-nvidia-cuda";
+            TargetRef t2;
+            var b = LLVM.GetTargetFromTriple(triple, out t2, the_error);
+
+            string cpu = "";
+            string features = "";
+
+            TargetMachineRef tmr = LLVM.CreateTargetMachine(t2, triple, cpu, features,
+                CodeGenOptLevel.CodeGenLevelDefault,
+                RelocMode.RelocDefault,
+                CodeModel.CodeModelKernel);
+
+            var y1 = LLVM.TargetMachineEmitToMemoryBuffer(
+                    tmr,
+                    mod,
+                    Swigged.LLVM.CodeGenFileType.AssemblyFile,
+                    the_error,
+                    out MemoryBufferRef buffer);
+                    
+            try
+            {
+                string start = LLVM.GetBufferStart(buffer);
+                uint length = LLVM.GetBufferSize(buffer);
+                System.Console.WriteLine(start);
+            }
+            finally
+            {
+                LLVM.DisposeMemoryBuffer(buffer);
+            }
+
+
+            //OrcJITStackRef ojsr = LLVM.OrcCreateInstance(tmr);
+            //MyString ms = new MyString();
+            //LLVM.OrcGetMangledSymbol(ojsr, ms, "sum");
+            //IntPtr ctx = IntPtr.Zero;
+            //uint xx = LLVM.OrcAddLazilyCompiledIR(ojsr, mod, null, ctx);
+            //ulong p = LLVM.OrcGetSymbolAddress(ojsr, "sum");
+            //Add addMethod = (Add)Marshal.GetDelegateForFunctionPointer((System.IntPtr)p, typeof(Add));
+            //int result = addMethod(10, 10);
+            //Console.WriteLine("Result of sum is: " + result);
+
+            LLVM.DumpModule(mod);
+            LLVM.DisposeBuilder(builder);
+
         }
     }
 

@@ -6,7 +6,13 @@ was to compile CIL, and was abandoned when Microsoft open sourced much of the .N
 RyuJIT. But, SharpLang contained a SWIG-generated C# wrapper for LLVM-C, useful in its own right.
 Swigged-LLVM takes up the C# API for LLVM, drops the CIL reader, and extends the API to contain
 additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the problems with
-SharpLang, and adds several full-featured tests and examples.
+SharpLang, and adds several full-featured tests and examples. I found the documentation for LLVM-C woefully
+inadequate: there is in general only one example you can find (factorial), no examples with pointers, arrays,
+structs, or PTX.
+
+Note: IMHO, LLVM is a great example of a large system with purportedly a lot
+of documentation of which almost entirely useless. The build scripts and examples in
+this project were derived mostly by trial and error. As far as LLVM, you have been forewared.
 
 # Targets
 
@@ -232,7 +238,8 @@ Enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebug
 LLVMSharp is the "semi-official" C# LLVM bindings library from Microsoft. 
 While it is a NET Core API, it appears it cannot be used with NET Framework
 applications--at least I have had no luck in doing so. The bindings are generated
-from in program contained within the project, .
+from program contained within the project. I have had no luck in getting through a simple
+example using the ORC code generator. (Fortunately, I provide functioning examples in the swigged-llvm project!)
 
 ##### LLVM.NET (https://github.com/NETMF/Llvm.NET http://netmf.github.io/Llvm.NET/html/47ec5af0-5c1c-443e-b2b3-158a100dc594.htm )
 
