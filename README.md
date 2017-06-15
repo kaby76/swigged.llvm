@@ -12,7 +12,7 @@ structs, or PTX.
 
 Note: IMHO, LLVM is a great example of a large system with purportedly a lot
 of documentation of which almost entirely useless. The build scripts and examples in
-this project were derived mostly by trial and error. As far as LLVM, you have been forewared.
+this project were derived mostly by trial and error. As far as LLVM, you have been forewarned.
 
 # Targets
 
