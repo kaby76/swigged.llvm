@@ -32,6 +32,7 @@ namespace UnitTestProject2
         [TestMethod]
         public void Test2()
         {
+            Swigged.LLVM.Helper.Adjust.Path();
 
             Swigged.LLVM.ContextRef g = Swigged.LLVM.LLVM.GetGlobalContext();
             var Module = LLVM.ModuleCreateWithName("tut2");
@@ -80,7 +81,7 @@ namespace UnitTestProject2
             LLVM.BuildRet(builder, recur_2);
 
             MyString error = new MyString();
-            //LLVM.VerifyModule(Module, VerifierFailureAction.AbortProcessAction, out error);
+            LLVM.VerifyModule(Module, VerifierFailureAction.AbortProcessAction, error);
             //LLVM.DisposeMessage(error);
             ExecutionEngineRef engine;
             LLVM.LinkInMCJIT();
