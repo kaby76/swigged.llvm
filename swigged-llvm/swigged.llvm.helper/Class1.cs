@@ -30,10 +30,6 @@ namespace Swigged.LLVM.Helper
 
             // First, let's gather some basic information.
 
-            string path = Environment.GetEnvironmentVariable("PATH") ?? string.Empty;
-            if (path == null || path.Equals(""))
-                return;
-
             var is64bitProcess = IntPtr.Size == 8;
 
             bool isDebug;
@@ -54,6 +50,8 @@ namespace Swigged.LLVM.Helper
 
             bool isAndroid = false;
             if (the_os != null && the_os.IndexOf("android", StringComparison.OrdinalIgnoreCase) >= 0) isAndroid = true;
+
+            string path = Environment.GetEnvironmentVariable("PATH") ?? string.Empty;
 
             // Get "home"---platform specific.
             string home = "";
@@ -134,7 +132,9 @@ namespace Swigged.LLVM.Helper
                 System.Console.WriteLine("looking in " + dir);
                 if (! Directory.Exists(dir))
                     continue;
-                path = dir + ":" + path;
+                string path_sep = "" + System.IO.Path.PathSeparator;
+                path = dir + path_sep + path;
+                break;
             }
             if (isWindows)
             {
