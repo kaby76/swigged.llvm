@@ -22,6 +22,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of LLVM-C.</description>
     <releaseNotes>
+* Version 4.0.10-alpha
+  Worked out version and dependencies for Net Framework from 4.5 <= 'your app NF version' <= 4.7. Added ORC api's.
+  Added in all targets for LLVM. Example tests include PTX code generation and running using ManagedCUDA on a GPU.
+
 * Version 4.0.9-alpha
   Working out dependencies and versions. Instead of hardwiring everything to fixed version, allow user to update to suit build.
   
@@ -61,29 +65,27 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     undocumented strings: ".NETFramework4.6.2", ".NETFramework4.5.2",
     ... Not sure if they work. --> 
     <dependencies>
+      <group targetFramework="net45" />
+      <group targetFramework="net451" />
+      <group targetFramework="net452" />
+      <group targetFramework="net46" />
+      <group targetFramework="net461" />
       <group targetFramework="net462">
-	<dependency id="System.Collections" version="[4.0.10,)" />
 	<dependency id="System.Console" version="[4.0.0,)" />
-	<dependency id="System.IO.FileSystem" version="[4.0.1.0,)" />
-	<dependency id="System.Linq" version="[4.0.0.0,)" />
-	<dependency id="System.Runtime" version="[4.1.0.0,)" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0.0,)" />
-	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.0.1.0,)" />
-	<dependency id="System.Runtime.InteropServices" version="[4.1.0.0,)" />
-	<dependency id="System.Threading" version ="[4.0.10.0,)" />
-	<dependency id="NetStandard.Library" version="[1.6.0.0,)" />
+	<dependency id="System.IO.FileSystem" version="[4.0.1,)" />
+	<dependency id="System.IO.FileSystem.Primitives" version="[4.0.1,)" />
+	<dependency id="System.Runtime" version="[4.1.0,)" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
+	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.3.0,)" />
+	<dependency id="System.Runtime.InteropServices" version="[4.1.0,)" />
       </group>
       <group targetFramework="net47">
-	<dependency id="System.Collections" version="[4.0.10,)" />
-	<dependency id="System.Console" version="[4.0.0.0,)" />
-	<dependency id="System.IO.FileSystem" version="[4.0.1.0,)" />
-	<dependency id="System.Linq" version="[4.0.0.0,)" />
-	<dependency id="System.Runtime" version="[4.1.0.0,)" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0.0,)" />
-	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.0.1.0,)" />
-	<dependency id="System.Runtime.InteropServices" version="[4.1.0.0,)" />
-	<dependency id="System.Threading" version ="[4.0.10.0,)" />
-	<dependency id="NetStandard.Library" version="[1.6.0.0,)" />
+	<dependency id="System.Console" version="[4.0.0,)" />
+	<dependency id="System.IO.FileSystem" version="[4.0.1,)" />
+	<dependency id="System.IO.FileSystem.Primitives" version="[4.0.1,)" />
+	<dependency id="System.Runtime" version="[4.1.0,)" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
+	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.3.0,)" />
       </group>
 
       <group targetFramework="netcore1.0" />

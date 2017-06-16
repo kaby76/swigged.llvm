@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core.sanity-test", "core.sanity-test\core.sanity-test.csproj", "{81302AAD-08A4-4553-AC83-34FFE6FF2C3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppNF47", "sanity-test\AppNF47.csproj", "{BC04D06A-DB7F-4DED-91E2-EE82114ACDD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sanity-test", "sanity-test\sanity-test.csproj", "{BC04D06A-DB7F-4DED-91E2-EE82114ACDD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{A9DDFE84-68A8-4835-8D4B-196697F0DDB0}"
 EndProject
@@ -42,6 +42,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppNF452", "AppNF452\AppNF452.csproj", "{F1574216-2D75-44A0-9BCC-5956F27682E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppNF451", "AppNF451\AppNF451.csproj", "{D93E2BCA-26FC-480D-B2E3-8D49ACEF580C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppNF47", "AppNF47\AppNF47.csproj", "{1467FD30-04D7-457F-9A46-DE579947BD7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -209,6 +211,18 @@ Global
 		{D93E2BCA-26FC-480D-B2E3-8D49ACEF580C}.Release|Win32.Build.0 = Release|Any CPU
 		{D93E2BCA-26FC-480D-B2E3-8D49ACEF580C}.Release|x64.ActiveCfg = Release|Any CPU
 		{D93E2BCA-26FC-480D-B2E3-8D49ACEF580C}.Release|x64.Build.0 = Release|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Debug|Win32.Build.0 = Debug|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Debug|x64.Build.0 = Debug|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Release|Win32.ActiveCfg = Release|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Release|Win32.Build.0 = Release|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Release|x64.ActiveCfg = Release|Any CPU
+		{1467FD30-04D7-457F-9A46-DE579947BD7D}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
