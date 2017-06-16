@@ -18,7 +18,7 @@ this project were derived mostly by trial and error. As far as LLVM, you have be
 
 * Windows 10 (x86 and x64)
 * Ubuntu.16.04 (x64)
-* Android (x86 and armeabi ABIs)
+* Android (x86 ABI)
 
 Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 1.5 code. It is compatible with Net Core and Net Framework. Swigged.llvm.native is a platform specific library. Several targets for Linux are included in the NuGet package.
 Details to build are described below.
@@ -62,24 +62,49 @@ to get this right, but you may need to adjust the versions of the runtimes, e.g.
 
 #### Android/Xamarin Apps
 
-You will need to manually copy the SO files and add each SO file to your project. You can do
+You will need to manually copy the SO files and add SO file to your project. You can do
 that by editing the CSPROJ file for the Android project.
 ````
   <ItemGroup>
-    <AndroidNativeLibrary Include="lib\armeabi\libswigged-llvm-native.so" />
     <AndroidNativeLibrary Include="lib\x86\libswigged-llvm-native.so" />
   </ItemGroup>
 ````
 
 For an example, see .../Examples/AndroidApp
 
-#### Typical errors:
-a) "Bad image format" error--the swigged.llvm.native.dll in your target directory is the wrong version (32-bit vs 64-bit).
-b) "Missing DLL" error--make sure swigged.llvm.native.dll and swigged.llvm.dll are in your executable directory.
+# Typical errors when trying to run an application with Swigged.llvm:
+a) "Bad image format" error--the swigged.llvm.native.dll in your target directory is the wrong version (32-bit vs 64-bit). Make sure that you have
+set the build for your application to Debug or Release and target "Any CPU". If you build with "x86" or "x64", you will need to make sure you are
+using the correct swigged-llvm-native.dll/so file. Otherwise, set the "Prefer 32-bit" build option and choose the corresponding swigged-llvm-native.dll/so
+file, copying it to your application executable directory.
+
+b) "Missing DLL" error. This can happen for
+a number of reasons. Make sure you you have the swigged.llvm.dll in your application executable directory. Make sure you
+have all the required dependencies. I've tried hard to make sure this list is correct, but you may need to add in the appropriate
+dependencies using the NuGet console.
+
+If the error specifically mentions that it cannot find Swigged.llvm.native, copy the dll/so file to the application executable.
+However, you can also try adding in the path helper function:
+
+            Swigged.LLVM.Helper.Adjust.Path();
+
+This function, which you should call before any Swigged.llvm call, alters the
+path environmental variable for the program on the fly, so you don't need to copy
+swigged.llvm.native.dll/so to your application executable directory. However, it only works
+for Net Framework 4.6.2 or 4.7.
+c) Crash in Swigged.llvm. This can happen for any number of reasons. LLVM-C can be quite flaky. Make sure
+you have initialized LLVM with:
+
+            LLVM.InitializeAllTargets();
+            LLVM.InitializeAllTargetMCs();
+            LLVM.InitializeAllTargetInfos();
+            LLVM.InitializeAllAsmPrinters();
+
+If you suspect that Swigged.llvm is messed up, try the example in C++ or using LLVMSharp. Note,
+Swigged.llvm works on some examples that LLVMSharp does not work on (particularily ORC calls).
 
 
-
-## Example ##
+# Example #
 
 ~~~~
 using System;
