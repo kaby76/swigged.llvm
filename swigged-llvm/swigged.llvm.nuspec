@@ -114,7 +114,6 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     <file src="swigged.llvm.native\x86-Release\Release\swigged-llvm-native.dll" target="win10\lib\x86" />
     <file src="swigged.llvm.native\x64-Release\Release\swigged-llvm-native.dll" target="win10\lib\x64" />
     <file src="swigged.llvm.native\ubuntu-16.04-Release\swigged-llvm-native.so" target="ubuntu-16.04/lib/x64" />
-    <file src="swigged.llvm.native\android-armeabi-Release\swigged-llvm-native.so" target="android\lib\armeabi\libswigged-llvm-native.so" />
     <file src="swigged.llvm.native\android-x86-Release\swigged-llvm-native.so" target="android\lib\x86\libswigged-llvm-native.so" />
 
     <!-- There are three possible dll's for swigged.llvm,
@@ -123,7 +122,7 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     targets do not matter for the code as the MSIL is the same
     regardless. 
     -->
-    <file src="swigged.llvm\bin\Release\netstandard1.5\swigged.llvm.dll" target="lib\netstandard1.5" />
+    <file src="swigged.llvm\bin\Release\netstandard1.1\swigged.llvm.dll" target="lib\netstandard1.1" />
     <file src="swigged.llvm.helper\bin\Release\netstandard1.5\swigged.llvm.helper.dll" target="lib\netstandard1.5" />
     
 <!--    <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" /> -->
