@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 
 namespace UnitTestProject2
 {
-    // See http://releases.llvm.org/2.6/docs/tutorial/JITTutorial2.html
 
     [TestClass]
     public class UnitTest2
@@ -29,8 +28,13 @@ namespace UnitTestProject2
             }
         }
 
+        /// <summary>
+        /// A slightly more complicated LLVM example. This test is from the example
+        /// for GCD, from http://releases.llvm.org/2.6/docs/tutorial/JITTutorial2.html
+        /// It creates a function for computing GCD, compiles and runs the JIT code.
+        /// </summary>
         [TestMethod]
-        public void Test2()
+        public void TestGCD()
         {
             Swigged.LLVM.Helper.Adjust.Path();
 
@@ -81,8 +85,9 @@ namespace UnitTestProject2
             LLVM.BuildRet(builder, recur_2);
 
             MyString error = new MyString();
-            LLVM.VerifyModule(Module, VerifierFailureAction.AbortProcessAction, error);
-            //LLVM.DisposeMessage(error);
+            LLVM.VerifyModule(Module, VerifierFailureAction.PrintMessageAction, error);
+            if (error.ToString() != "") throw new Exception("Failed");
+
             ExecutionEngineRef engine;
             LLVM.LinkInMCJIT();
             LLVM.InitializeNativeTarget();
@@ -101,8 +106,7 @@ namespace UnitTestProject2
                     int result2 = CsAck(i, j);
                     if (result != result2)
                     {
-                        int xx = 0;
-                        int yy = 1 / xx;
+                        throw new Exception("Test failed, results between C# and LLVM are not the same.");
                     }
                 }
 

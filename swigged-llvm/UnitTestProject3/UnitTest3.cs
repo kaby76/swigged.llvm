@@ -11,13 +11,25 @@ namespace UnitTestProject3
     [TestClass]
     public class UnitTest3
     {
-        [TestMethod]
-        public void Test3()
+        public static ulong Factorial(ulong i)
         {
-            // Based on http://npcontemplation.blogspot.com/2008/06/secret-of-llvm-c-bindings.html
-            ModuleRef mod = LLVM.ModuleCreateWithName("fac_module");
+            ulong result = 1;
+            if (i == 0) return 1;
+            if (i == 1) return 1;
+            return Factorial(i - 1) * i;
+        }
+
+        /// <summary>
+        /// Test of LLVM with a factorial example.
+        /// Based on http://npcontemplation.blogspot.com/2008/06/secret-of-llvm-c-bindings.html
+        /// </summary>
+        [TestMethod]
+        public void TestFact()
+        {
+            Swigged.LLVM.Helper.Adjust.Path();
+            ModuleRef Module = LLVM.ModuleCreateWithName("fac_module");
             TypeRef[] fac_args = { LLVM.Int32Type() };
-            ValueRef fac = LLVM.AddFunction(mod, "fac", LLVM.FunctionType(LLVM.Int32Type(), fac_args, false));
+            ValueRef fac = LLVM.AddFunction(Module, "fac", LLVM.FunctionType(LLVM.Int32Type(), fac_args, false));
             LLVM.SetFunctionCallConv(fac, (uint)Swigged.LLVM.CallConv.CCallConv);
             ValueRef n = LLVM.GetParam(fac, 0);
 
@@ -49,13 +61,13 @@ namespace UnitTestProject3
             LLVM.AddIncoming(res, phi_vals, phi_blocks);
             LLVM.BuildRet(builder, res);
 
-            //LLVM.VerifyModule(mod, AbortProcessAction, &error);
-            //LLVM.DisposeMessage(error); // Handler == LLVMAbortProcessAction -> No need to check errors
-
             MyString error = new MyString();
+            LLVM.VerifyModule(Module, VerifierFailureAction.PrintMessageAction, error);
+            if (error.ToString() != "") throw new Exception("Failed");
+
             ExecutionEngineRef engine;
-            ModuleProviderRef provider = LLVM.CreateModuleProviderForExistingModule(mod);
-            LLVM.CreateJITCompilerForModule(out engine, mod, 0, error);
+            ModuleProviderRef provider = LLVM.CreateModuleProviderForExistingModule(Module);
+            LLVM.CreateJITCompilerForModule(out engine, Module, 0, error);
 
             PassManagerRef pass = LLVM.CreatePassManager();
            // LLVM.AddTargetData(LLVM.GetExecutionEngineTargetData(engine), pass);
@@ -65,12 +77,18 @@ namespace UnitTestProject3
             // LLVMAddDemoteMemoryToRegisterPass(pass); // Demotes every possible value to memory
             LLVM.AddGVNPass(pass);
             LLVM.AddCFGSimplificationPass(pass);
-            LLVM.RunPassManager(pass, mod);
-            LLVM.DumpModule(mod);
+            LLVM.RunPassManager(pass, Module);
+            LLVM.DumpModule(Module);
 
-            GenericValueRef exec_args = LLVM.CreateGenericValueOfInt(LLVM.Int32Type(), 10, false);
-            GenericValueRef exec_res = LLVM.RunFunction(engine, fac, 1, out exec_args);
-            LLVM.GenericValueToInt(exec_res, false);
+            ulong input = 10;
+            for (ulong i = 0; i < input; ++i)
+            {
+                GenericValueRef exec_args = LLVM.CreateGenericValueOfInt(LLVM.Int32Type(), input, false);
+                GenericValueRef exec_res = LLVM.RunFunction(engine, fac, 1, out exec_args);
+                var result_of_function = LLVM.GenericValueToInt(exec_res, false);
+                var result_of_csharp_function = Factorial(input);
+                if (result_of_csharp_function != result_of_function) throw new Exception("Results not the same.");
+            }
 
             LLVM.DisposePassManager(pass);
             LLVM.DisposeBuilder(builder);

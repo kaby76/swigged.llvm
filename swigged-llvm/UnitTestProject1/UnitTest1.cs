@@ -8,15 +8,19 @@ namespace UnitTestProject1
     public class UnitTest1
     {
 
-        void buildSimpleFunction()
+        /// <summary>
+        /// A simple test of Swigged.llvm, which tests the creation of module, basic block,
+        /// a function, a return instruction. No test of the JIT.
+        /// </summary>
+        [TestMethod]
+        public void Test42()
         {
-
+            Swigged.LLVM.Helper.Adjust.Path();
             LLVM.EnablePrettyStackTrace();
-            var Module = LLVM.ModuleCreateWithName("simple_module");
+            var Module = LLVM.ModuleCreateWithName("the_meaning_of_life");
             var triple = LLVM.GetDefaultTargetTriple();
             LLVM.SetTarget(Module, triple);
-
-            var Function = LLVM.AddFunction(Module, "simple_function",
+            var Function = LLVM.AddFunction(Module, "the_meaning_of_life",
                 LLVM.FunctionType(LLVM.Int32Type(), new TypeRef[0], false));
             LLVM.SetFunctionCallConv(Function, (uint)Swigged.LLVM.CallConv.CCallConv);
             var entry = LLVM.AppendBasicBlock(Function, "entry");
@@ -24,52 +28,10 @@ namespace UnitTestProject1
             LLVM.PositionBuilderAtEnd(builder, entry);
             LLVM.BuildRet(builder, LLVM.ConstInt(LLVM.Int32Type(), 42, false));
             string msg = new string(new char[1000]);
-            //LLVM.VerifyModule(Module, VerifierFailureAction.PrintMessageAction, out msg);
-
+            MyString error = new MyString();
+            LLVM.VerifyModule(Module, VerifierFailureAction.PrintMessageAction, error);
+            if (error.ToString() != "") throw new Exception("Failed");
             LLVM.DisposeBuilder(builder);
-        }
-
-        Swigged.LLVM.ModuleRef llvm_load_module(bool Lazy, bool New)
-        {
-            Swigged.LLVM.MemoryBufferRef MB;
-            Swigged.LLVM.ModuleRef M;
-            MyString msg = new MyString();
-            if (LLVM.CreateMemoryBufferWithSTDIN(out MB, msg))
-            {
-                System.Console.WriteLine("Error reading file: " + msg);
-                return default(ModuleRef);
-            }
-            bool Ret;
-            if (New)
-            {
-                ContextRef c = Swigged.LLVM.LLVM.GetGlobalContext();
-                // LLVMContextSetDiagnosticHandler(C, diagnosticHandler, NULL);
-                if (Lazy)
-                    Ret = Swigged.LLVM.LLVM.GetBitcodeModule2(MB, out M);
-                else
-                    Ret = Swigged.LLVM.LLVM.ParseBitcode2(MB, out M);
-            }
-            else
-            {
-                if (Lazy)
-                    Ret = Swigged.LLVM.LLVM.GetBitcodeModule(MB, out M, msg);
-                else
-                    Ret = Swigged.LLVM.LLVM.ParseBitcode(MB, out M, msg);
-            }
-            if (Ret)
-            {
-                System.Console.WriteLine("Error parsing bitcode: " + msg);
-                return default(Swigged.LLVM.ModuleRef);
-            }
-            if (!Lazy)
-                Swigged.LLVM.LLVM.DisposeMemoryBuffer(MB);
-            return M;
-        }
-
-        [TestMethod]
-        public void Test1()
-        {
-            buildSimpleFunction();
         }
     }
 }
