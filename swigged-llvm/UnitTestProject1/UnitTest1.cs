@@ -10,7 +10,6 @@ namespace UnitTestProject1
 
         void buildSimpleFunction()
         {
-            Swigged.LLVM.Helper.Adjust.Path();
 
             LLVM.EnablePrettyStackTrace();
             var Module = LLVM.ModuleCreateWithName("simple_module");
