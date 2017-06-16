@@ -4,7 +4,7 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
 
-    <version>4.0.10-alpha</version>
+    <version>4.0.10</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -22,8 +22,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A SWIG-generated C# API of LLVM-C.</description>
     <releaseNotes>
-* Version 4.0.10-alpha
-  Worked out version and dependencies for Net Framework from 4.5 <= 'your app NF version' <= 4.7. Added ORC api's.
+* Version 4.0.10
+  General availability. Worked out version and dependencies for Net Framework from 4.5 <= 'your app NF version' <= 4.7. Added ORC api's.
   Added in all targets for LLVM. Example tests include PTX code generation and running using ManagedCUDA on a GPU.
 
 * Version 4.0.9-alpha
