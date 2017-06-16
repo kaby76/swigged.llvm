@@ -23,7 +23,7 @@
     <description>A SWIG-generated C# API of LLVM-C.</description>
     <releaseNotes>
 * Version 4.0.10
-  General availability. Worked out version and dependencies for Net Framework from 4.5 <= 'your app NF version' <= 4.7. Added ORC api's.
+  General availability. Worked out version and dependencies for Net Framework from 4.5 less than or equal to 'your app NF version' less than or equal to 4.7. Added ORC api's.
   Added in all targets for LLVM. Example tests include PTX code generation and running using ManagedCUDA on a GPU.
 
 * Version 4.0.9-alpha
@@ -38,15 +38,18 @@
 * Version 4.0.6-alpha
   Added in fixes for VerifyModule, CreateMCJITCompilerForModule, MCJITCompilerOptions, InitializeMCJITCompilerOptions, MyString.
        
-Object files provided in this package are a Release build, Net Standard, and native runtimes.
+Object files provided in this package are a Release build in Net Standard 1.1 (swigged-llvm library) and 1.6 (Helper library).
 
 When building with Swigged.llvm, select Platform = "AnyCPU", config = "Debug" or "Release".
 
 On Windows, in the properties for the executable, un-check "Prefer 32-bit" in Build properties, and check "Enable native code debugging". If you are using Net Core or Standard, this option is unavailable--I'm not sure why it is.
+If you are building an app with Net Framework 4.5 through 4.6.1, you must manually copy the file swigged-llvm-native.dll to your executable directory. With 4.6.2 and beyond, it will find the library in your packages/ directory.
+If you are delivering your app, you will need to copy the dll to the directory containing your app.
 
-On Ubuntu, use Net Core to build your C# program.
+On Ubuntu, use Net Core to build your C# program. You may need to copy the swigged-llvm-native.so file to the directory containing your app executable.
 
 On Android, use Visual Studio and add a reference to the SO library files to your Xamarin Forms App. Make sure the directory structure is followed. See https://developer.xamarin.com/guides/android/advanced_topics/using_native_libraries/ for details. Other information can be found at https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/ https://developer.xamarin.com/guides/ios/advanced_topics/native_interop/ https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/ .
+Note, Android x86 is the only compatible target, as I haven't been able to get Android on ARM to build.
 
 For further information, see https://github.com/kaby76/swigged-llvm.
     </releaseNotes>
