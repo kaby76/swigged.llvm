@@ -92,6 +92,7 @@ This function, which you should call before any Swigged.llvm call, alters the
 path environmental variable for the program on the fly, so you don't need to copy
 swigged.llvm.native.dll/so to your application executable directory. However, it only works
 for Net Framework 4.6.2 or 4.7.
+
 c) Crash in Swigged.llvm. This can happen for any number of reasons. LLVM-C can be quite flaky. Make sure
 you have initialized LLVM with:
 
