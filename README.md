@@ -79,7 +79,7 @@ using the correct swigged-llvm-native.dll/so file. Otherwise, set the "Prefer 32
 file, copying it to your application executable directory.
 
 b) "Missing DLL" error. This can happen for
-a number of reasons. Make sure you you have the swigged.llvm.dll in your application executable directory. Make sure you
+a number of reasons. Make sure you you have the swigged.llvm.dll and swigged-llvm-natieve.dll/so files in your application executable directory. Make sure you
 have all the required dependencies. I've tried hard to make sure this list is correct, but you may need to add in the appropriate
 dependencies using the NuGet console.
 
