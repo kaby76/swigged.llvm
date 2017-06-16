@@ -36,11 +36,6 @@ namespace ConsoleApplication1
             LLVM.InitializeAllTargetInfos();
             LLVM.InitializeAllAsmPrinters();
 
-            Test1();
-        }
-
-        static void Test1()
-        {
             ModuleRef mod = LLVM.ModuleCreateWithName("LLVMSharpIntro");
             TypeRef[] param_types = {LLVM.Int32Type(), LLVM.Int32Type()};
             TypeRef ret_type = LLVM.FunctionType(LLVM.Int32Type(), param_types, false);

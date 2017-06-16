@@ -11,6 +11,13 @@ namespace UnitTestProject5
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate int Add(int a, int b);
 
+        /// <summary>
+        /// This test operates on the ORC functions of the LLVM-C API, using
+        /// the classic "sum" example.
+        /// https://stackoverflow.com/questions/42982070/llvm-simple-example-of-a-just-in-time-compilation
+        /// https://pauladamsmith.com/blog/2015/01/how-to-get-started-with-llvm-c-api.html
+        /// https://github.com/paulsmith/getting-started-llvm-c-api
+        /// </summary>
         [TestMethod]
         public void TestORC()
         {
