@@ -6,13 +6,13 @@ was to compile CIL, and was abandoned when Microsoft open sourced much of the .N
 RyuJIT. But, SharpLang contained a SWIG-generated C# wrapper for LLVM-C, useful in its own right.
 Swigged-LLVM takes up the C# API for LLVM, drops the CIL reader, and extends the API to contain
 additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the problems with
-SharpLang, and adds several full-featured tests and examples. I found the documentation for LLVM-C woefully
-inadequate: there is in general only one example you can find (factorial), no examples with pointers, arrays,
-structs, or PTX.
+the original wrapper in SharpLang, and adds several full-featured tests and examples.
 
-Note: IMHO, LLVM is a great example of a large system with purportedly a lot
-of documentation of which almost entirely useless. The build scripts and examples in
-this project were derived mostly by trial and error. As far as LLVM, you have been forewarned.
+Note: I found the documentation for LLVM-C and LLVM inadequate. The build scripts in
+this project were derived mostly by trial and error, from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
+Android cmake (https://developer.android.com/ndk/guides/cmake.html ). The examples here were culled and derived from a variety
+of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
+and little on the API itself.
 
 # Targets
 
