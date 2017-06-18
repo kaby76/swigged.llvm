@@ -3,8 +3,9 @@
   <metadata>
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
+    <title>swigged.llvm</title>
 
-    <version>4.0.10</version>
+    <version>4.0.11</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -20,23 +21,28 @@
     <licenseUrl>https://raw.github.com/kaby76/swigged-llvm/master/LICENSE</licenseUrl>
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A SWIG-generated C# API of LLVM-C.</description>
+    <description>A C# wrapper API of LLVM-C (v4.0) for Windows (x86, x64), Ubuntu (x64), Android (x64).</description>
     <releaseNotes>
+* Version 4.0.11
+Fixing problem with NuGet spec--apparently, a dll is referenced only with either the dlls in netstandard1.1 or netstandard1.5. A
+very bad rule because swigged.llvm.dll is strictly a netstandard1.1 file, but it will not add the reference any other way.
+Otherwise, the functionality is identical to 4.0.10.
+
 * Version 4.0.10
-  General availability. Worked out version and dependencies for Net Framework from 4.5 less than or equal to 'your app NF version' less than or equal to 4.7. Added ORC api's.
-  Added in all targets for LLVM. Example tests include PTX code generation and running using ManagedCUDA on a GPU.
+General availability. Worked out version and dependencies for Net Framework from 4.5 less than or equal to 'your app NF version' less than or equal to 4.7. Added ORC api's.
+Added in all targets for LLVM. Example tests include PTX code generation and running using ManagedCUDA on a GPU.
 
 * Version 4.0.9-alpha
-  Working out dependencies and versions. Instead of hardwiring everything to fixed version, allow user to update to suit build.
+Working out dependencies and versions. Instead of hardwiring everything to fixed version, allow user to update to suit build.
   
 * Version 4.0.8-alpha
-  Use "Swigged.LLVM.Helper.Adjust.Path();" before 1st LLVM call to alter PATH variable within process so that it can find swigged-llvm-native.dll without having to copy the dll around. There is no equivalent fix for Ubuntu unfortunately. You must still "dotnet publish -r ubuntu.16.04-x64" and copy swigged-llvm-native.so to the build output directory.
+Use "Swigged.LLVM.Helper.Adjust.Path();" before 1st LLVM call to alter PATH variable within process so that it can find swigged-llvm-native.dll without having to copy the dll around. There is no equivalent fix for Ubuntu unfortunately. You must still "dotnet publish -r ubuntu.16.04-x64" and copy swigged-llvm-native.so to the build output directory.
   
 * Version 4.0.7-alpha
-  Added in Android builds for x86 and armeabi targets; cleaned up package directory structure.
+Added in Android builds for x86 and armeabi targets; cleaned up package directory structure.
 
 * Version 4.0.6-alpha
-  Added in fixes for VerifyModule, CreateMCJITCompilerForModule, MCJITCompilerOptions, InitializeMCJITCompilerOptions, MyString.
+Added in fixes for VerifyModule, CreateMCJITCompilerForModule, MCJITCompilerOptions, InitializeMCJITCompilerOptions, MyString.
        
 Object files provided in this package are a Release build in Net Standard 1.1 (swigged-llvm library) and 1.6 (Helper library).
 
@@ -103,6 +109,7 @@ For further information, see https://github.com/kaby76/swigged-llvm.
 -->
       
     </dependencies>
+
   </metadata>
   
   <files>
@@ -122,7 +129,13 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     targets do not matter for the code as the MSIL is the same
     regardless. 
     -->
+    <!-- I don't know why but stupid NuGet only picks one or the other
+    netstandard directories, and the files contained only in that. So,
+    it does not link in swigged.llvm.dll if it is really just a
+    netstandard1.1 file, and only in that directory. Stupid NuGet
+    undocumented rule. -->
     <file src="swigged.llvm\bin\Release\netstandard1.1\swigged.llvm.dll" target="lib\netstandard1.1" />
+    <file src="swigged.llvm\bin\Release\netstandard1.1\swigged.llvm.dll" target="lib\netstandard1.5" />
     <file src="swigged.llvm.helper\bin\Release\netstandard1.5\swigged.llvm.helper.dll" target="lib\netstandard1.5" />
     
 <!--    <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" /> -->
