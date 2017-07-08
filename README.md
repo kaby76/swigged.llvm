@@ -10,11 +10,12 @@ reader, and extends the API to contain additional LLVM-C functionality. Swigged.
 up some of the problems with the original wrapper in SharpLang, adds more tests of the API,
 and adds several examples.
 
-Note: I found the documentation for LLVM-C and LLVM quite frustrating. The build scripts in
+Notes: I found the documentation for LLVM-C and LLVM quite frustrating. The build scripts in
 this project were derived mostly by trial and error, from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ). The examples here were culled and derived from a variety
 of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
-and little on the API itself.
+and little on the API itself. Swigged-llvm is used in another project I am writing, [Campy](http://campynet.com/),
+which compiles CIL into GPU code for parallel programming.
 
 # Targets
 
