@@ -1,14 +1,16 @@
 # Swigged-LLVM
 
-This project is a C# wrapper API for LLVM-C, generated using [SWIG](http://swig.org). This code
+This project is a [SWIG](http://swig.org)-generated wrapper of LLVM-C for C#. This code
 is based upon [SharpLang](https://github.com/xen2/SharpLang), which is now defunct. The purpose of that project
-was to compile CIL, and was abandoned when Microsoft open sourced much of the .NET runtime, including
-RyuJIT. But, SharpLang contained a SWIG-generated C# wrapper for LLVM-C, useful in its own right.
-Swigged-LLVM takes up the C# API for LLVM, drops the CIL reader, and extends the API to contain
-additional LLVM-C functionality. In addition, Swigged.llvm cleans up some of the problems with
-the original wrapper in SharpLang, and adds several full-featured tests and examples.
+was to compile Microsoft's [CIL](https://en.wikipedia.org/wiki/Common_Intermediate_Language), but was mothballed
+when Microsoft open sourced much of the .NET runtime, including RyuJIT.
 
-Note: I found the documentation for LLVM-C and LLVM inadequate. The build scripts in
+Swigged-LLVM recovers the SWIG wrapper for LLVM-C in Sharplang. Swigged-LLVM drops the CIL
+reader, and extends the API to contain additional LLVM-C functionality. Swigged.llvm cleans
+up some of the problems with the original wrapper in SharpLang, adds more tests of the API,
+and adds several examples.
+
+Note: I found the documentation for LLVM-C and LLVM quite frustrating. The build scripts in
 this project were derived mostly by trial and error, from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ). The examples here were culled and derived from a variety
 of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
