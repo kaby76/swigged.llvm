@@ -1,65 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
-  <ItemGroup Condition="Exists('$(MSBuildThisFileDirectory)..\x86')">
-    <CsllvmBinaries32 Include="$(MSBuildThisFileDirectory)..\x86\*.*" />
-  </ItemGroup>
-  
-  <ItemGroup Condition="Exists('$(MSBuildThisFileDirectory)..\x64')">
-    <CsllvmBinaries64 Include="$(MSBuildThisFileDirectory)..\x64\*.*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="swigged.llvm">
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-
-  <PropertyGroup>
-    <CsllvmTargetDir Condition=" '$(CsllvmTargetDir)' == '' ">$(TargetDir)</CsllvmTargetDir>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <PreBuildEvent Condition="'$(Prefer32Bit)' == 'true'">copy "..\..\..\packages\swigged.llvm.4.0.12\win10\lib\x86\*.* </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <PreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "..\..\..\packages\swigged.llvm.4.0.12\win10\lib\x64\*.* </PreBuildEvent>
   </PropertyGroup>
 
-  <!--
-
-  <Target Name="CsllvmCopyLibs32" BeforeTargets="AfterBuild" Condition="'$(Platform)' == 'x86'">
-    <ItemGroup>
-      <CsllvmBinaries Include="$(MSBuildThisFileDirectory)..\x86\*.*" />
-    </ItemGroup>
-    <Message Importance="high" Text="Copying swigged.llvm x86 binaries" />
-    <Copy SourceFiles="@(CsllvmBinaries32)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-  </Target>
-
-  <Target Name="CsllvmCopyLibs64" BeforeTargets="AfterBuild" Condition="'$(Platform)' == 'x64'">
-    <ItemGroup>
-      <CsllvmBinaries Include="$(MSBuildThisFileDirectory)..\x64\*.*" />
-    </ItemGroup>
-    <Message Importance="high" Text="Copying swigged.llvm x64 binaries" />
-    <Copy SourceFiles="@(CsllvmBinaries64)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-  </Target>
-
-  <Target Name="CsllvmCopyLibs64" BeforeTargets="AfterBuild" Condition="'$(Platform)' == 'AnyCPU'">
-    <ItemGroup>
-      <CsllvmBinaries Include="$(MSBuildThisFileDirectory)..\x64\*.*" />
-    </ItemGroup>
-    <Message Importance="high" Text="Copying swigged.llvm x64 binaries" />
-    <Copy SourceFiles="@(CsllvmBinaries64)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-  </Target>
-  -->
-
-  <Target Name="CsllvmCopyLibs32" BeforeTargets="AfterBuild" Condition="'$(Prefer32Bit)' == 'true'">
-    <ItemGroup>
-      <CsllvmBinaries Include="$(MSBuildThisFileDirectory)..\x86\*.*" />
-    </ItemGroup>
-    <Message Importance="high" Text="Copying swigged.llvm x86 binaries" />
-    <Copy SourceFiles="@(CsllvmBinaries32)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-  </Target>
-
-  <Target Name="CsllvmCopyLibs64" BeforeTargets="AfterBuild" Condition="'$(Prefer32Bit)' == 'false'">
-    <ItemGroup>
-      <CsllvmBinaries Include="$(MSBuildThisFileDirectory)..\x64\*.*" />
-    </ItemGroup>
-    <Message Importance="high" Text="Copying swigged.llvm x64 binaries" />
-    <Copy SourceFiles="@(CsllvmBinaries64)" DestinationFolder="$(CsllvmTargetDir)" SkipUnchangedFiles="true" />
-  </Target>
-
+  <PropertyGroup Condition="'$(OS)' == 'Unix'">
+    <PreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "..\..\..\packages\swigged.llvm.4.0.12\ubuntu-16.04\lib\x64\*.* </PreBuildEvent>
+  </PropertyGroup>
 </Project>

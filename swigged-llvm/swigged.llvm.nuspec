@@ -5,7 +5,7 @@
     <id>swigged.llvm</id>
     <title>swigged.llvm</title>
 
-    <version>4.0.11</version>
+    <version>4.0.12</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,6 +23,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of LLVM-C (v4.0) for Windows (x86, x64), Ubuntu (x64), Android (x64).</description>
     <releaseNotes>
+* Version 4.0.12
+Updated .targets file for builds on Windows.
+
 * Version 4.0.11
 Fixing problem with NuGet spec--apparently, a dll is referenced only with either the dlls in netstandard1.1 or netstandard1.5. A
 very bad rule because swigged.llvm.dll is strictly a netstandard1.1 file, but it will not add the reference any other way.
@@ -138,7 +141,7 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     <file src="swigged.llvm\bin\Release\netstandard1.1\swigged.llvm.dll" target="lib\netstandard1.5" />
     <file src="swigged.llvm.helper\bin\Release\netstandard1.5\swigged.llvm.helper.dll" target="lib\netstandard1.5" />
     
-<!--    <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" /> -->
+    <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" />
 
   </files>
 </package>
