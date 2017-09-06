@@ -13,9 +13,9 @@
     <Exec WorkingDirectory="$(OutDir)" Command="$(SwigLlvmPreBuildEvent)" />
   </Target>
   <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigLlvmPreBuildEvent Condition="'$(Prefer32Bit)' == 'true'">copy "..\..\..\packages\swigged.llvm.4.0.12\win10\lib\x86\*.* </SwigLlvmPreBuildEvent>
+    <SwigLlvmPreBuildEvent Condition="'$(Prefer32Bit)' == 'true'">copy "..\..\..\packages\swigged.llvm.4.0.14\win10\lib\x86\*.* </SwigLlvmPreBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigLlvmPreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "..\..\..\packages\swigged.llvm.4.0.12\win10\lib\x64\*.* </SwigLlvmPreBuildEvent>
+    <SwigLlvmPreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "..\..\..\packages\swigged.llvm.4.0.14\win10\lib\x64\*.* </SwigLlvmPreBuildEvent>
   </PropertyGroup>
 </Project>
