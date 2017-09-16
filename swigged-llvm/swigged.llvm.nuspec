@@ -21,7 +21,7 @@
     <licenseUrl>https://raw.github.com/kaby76/swigged-llvm/master/LICENSE</licenseUrl>
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A C# wrapper API of LLVM-C for Windows (x86, x64), Ubuntu (x64), Android (x64).</description>
+    <description>A C# wrapper API of LLVM-C for Windows (x86, x64), Ubuntu (x64).</description>
     <releaseNotes>
 * Version 5.0.1
 Updating to LLVM 5.0. Check out LLVM Release Notes for changes in the API. http://releases.llvm.org/5.0.0/docs/ReleaseNotes.html
@@ -66,9 +66,6 @@ If you are delivering your app, you will need to copy the dll to the directory c
 
 On Ubuntu, use Net Core to build your C# program. You may need to copy the swigged-llvm-native.so file to the directory containing your app executable.
 
-On Android, use Visual Studio and add a reference to the SO library files to your Xamarin Forms App. Make sure the directory structure is followed. See https://developer.xamarin.com/guides/android/advanced_topics/using_native_libraries/ for details. Other information can be found at https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/ https://developer.xamarin.com/guides/ios/advanced_topics/native_interop/ https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/ .
-Note, Android x86 is the only compatible target, as I haven't been able to get Android on ARM to build.
-
 For further information, see https://github.com/kaby76/swigged-llvm.
     </releaseNotes>
 
@@ -76,7 +73,7 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     <copyright>Copyright © 2017</copyright>
 
     <!-- Tags appear in the gallery and can be used for tag searches -->
-    <tags>LLVM SWIG native c# compilers bindings pinvoke Windows Ubuntu Android</tags>
+    <tags>LLVM SWIG native C# compilers bindings pinvoke Windows Ubuntu</tags>
 
     <!-- Dependencies are automatically installed when the package is
     installed -->
@@ -133,7 +130,6 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     <file src="swigged.llvm.native\x86-Release\Release\swigged-llvm-native.dll" target="win10\lib\x86" />
     <file src="swigged.llvm.native\x64-Release\Release\swigged-llvm-native.dll" target="win10\lib\x64" />
     <file src="swigged.llvm.native\ubuntu-16.04-Release\swigged-llvm-native.so" target="ubuntu-16.04/lib/x64" />
-    <file src="swigged.llvm.native\android-x86-Release\swigged-llvm-native.so" target="android\lib\x86\libswigged-llvm-native.so" />
 
     <!-- There are three possible dll's for swigged.llvm,
     corresponding to Release configuration, and the three
