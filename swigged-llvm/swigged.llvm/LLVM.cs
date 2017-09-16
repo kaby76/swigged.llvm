@@ -251,10 +251,6 @@ public class LLVM {
         return ret;
     }
 
-  public unsafe static void DumpType(TypeRef Val) {
-    LLVMPINVOKE.DumpType(Val.Value);
-  }
-
   public unsafe static string PrintTypeToString(TypeRef Val) {
     string ret = LLVMPINVOKE.PrintTypeToString(Val.Value);
     return ret;
@@ -489,6 +485,15 @@ public class LLVM {
         TypeRef ret = new TypeRef(LLVMPINVOKE.GetElementType(Ty.Value));
         return ret;
     }
+
+  public unsafe static void GetSubtypes(TypeRef Tp, out TypeRef Arr) {
+    LLVMPINVOKE.GetSubtypes(Tp.Value, out Arr.Value);
+  }
+
+  public unsafe static uint GetNumContainedTypes(TypeRef Tp) {
+    uint ret = LLVMPINVOKE.GetNumContainedTypes(Tp.Value);
+    return ret;
+  }
 
   public unsafe static TypeRef ArrayType(TypeRef ElementType, uint ElementCount) {
         TypeRef ret = new TypeRef(LLVMPINVOKE.ArrayType(ElementType.Value, ElementCount));
@@ -1800,6 +1805,16 @@ public class LLVM {
           return ret;
       }
   }
+
+  public unsafe static ValueRef MetadataAsValue(ContextRef C, MetadataRef MD) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.MetadataAsValue(C.Value, MD.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef ValueAsMetadata(ValueRef Val) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.ValueAsMetadata(Val.Value));
+        return ret;
+    }
 
   public unsafe static string GetMDString(ValueRef V, out uint Length) {
     string ret = LLVMPINVOKE.GetMDString(V.Value, out Length);
@@ -3127,6 +3142,24 @@ public class LLVM {
     return ret;
   }
 
+  public unsafe static SharedModuleRef OrcMakeSharedModule(ModuleRef Mod) {
+        SharedModuleRef ret = new SharedModuleRef(LLVMPINVOKE.OrcMakeSharedModule(Mod.Value));
+        return ret;
+    }
+
+  public unsafe static void OrcDisposeSharedModuleRef(SharedModuleRef SharedMod) {
+    LLVMPINVOKE.OrcDisposeSharedModuleRef(SharedMod.Value);
+  }
+
+  public unsafe static SharedObjectBufferRef OrcMakeSharedObjectBuffer(MemoryBufferRef ObjBuffer) {
+        SharedObjectBufferRef ret = new SharedObjectBufferRef(LLVMPINVOKE.OrcMakeSharedObjectBuffer(ObjBuffer.Value));
+        return ret;
+    }
+
+  public unsafe static void OrcDisposeSharedObjectBufferRef(SharedObjectBufferRef SharedObjBuffer) {
+    LLVMPINVOKE.OrcDisposeSharedObjectBufferRef(SharedObjBuffer.Value);
+  }
+
   public unsafe static OrcJITStackRef OrcCreateInstance(TargetMachineRef TM) {
         OrcJITStackRef ret = new OrcJITStackRef(LLVMPINVOKE.OrcCreateInstance(TM.Value));
         return ret;
@@ -3145,8 +3178,8 @@ public class LLVM {
     LLVMPINVOKE.OrcDisposeMangledSymbol(MangledSymbol);
   }
 
-  public unsafe static ulong OrcCreateLazyCompileCallback(OrcJITStackRef JITStack, cppLLVMOrcLazyCompileCallbackFn Callback, System.IntPtr CallbackCtx) {
-    ulong ret = LLVMPINVOKE.OrcCreateLazyCompileCallback(JITStack.Value, Callback, CallbackCtx);
+  public unsafe static OrcErrorCode OrcCreateLazyCompileCallback(OrcJITStackRef JITStack, out System.IntPtr RetAddr, cppLLVMOrcLazyCompileCallbackFn Callback, System.IntPtr CallbackCtx) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcCreateLazyCompileCallback(JITStack.Value, out RetAddr, Callback, CallbackCtx);
     return ret;
   }
 
@@ -3160,27 +3193,29 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static uint OrcAddEagerlyCompiledIR(OrcJITStackRef JITStack, ModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
-    uint ret = LLVMPINVOKE.OrcAddEagerlyCompiledIR(JITStack.Value, Mod.Value, SymbolResolver, SymbolResolverCtx);
+  public unsafe static OrcErrorCode OrcAddEagerlyCompiledIR(OrcJITStackRef JITStack, out OrcModuleHandle RetHandle, SharedModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcAddEagerlyCompiledIR(JITStack.Value, out RetHandle.Value, Mod.Value, SymbolResolver, SymbolResolverCtx);
     return ret;
   }
 
-  public unsafe static uint OrcAddLazilyCompiledIR(OrcJITStackRef JITStack, ModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
-    uint ret = LLVMPINVOKE.OrcAddLazilyCompiledIR(JITStack.Value, Mod.Value, SymbolResolver, SymbolResolverCtx);
+  public unsafe static OrcErrorCode OrcAddLazilyCompiledIR(OrcJITStackRef JITStack, out OrcModuleHandle RetHandle, SharedModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcAddLazilyCompiledIR(JITStack.Value, out RetHandle.Value, Mod.Value, SymbolResolver, SymbolResolverCtx);
     return ret;
   }
 
-  public unsafe static void OrcRemoveModule(OrcJITStackRef JITStack, uint H) {
-    LLVMPINVOKE.OrcRemoveModule(JITStack.Value, H);
-  }
-
-  public unsafe static ulong OrcGetSymbolAddress(OrcJITStackRef JITStack, string SymbolName) {
-    ulong ret = LLVMPINVOKE.OrcGetSymbolAddress(JITStack.Value, SymbolName);
+  public unsafe static OrcErrorCode OrcRemoveModule(OrcJITStackRef JITStack, OrcModuleHandle H) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcRemoveModule(JITStack.Value, H.Value);
     return ret;
   }
 
-  public unsafe static void OrcDisposeInstance(OrcJITStackRef JITStack) {
-    LLVMPINVOKE.OrcDisposeInstance(JITStack.Value);
+  public unsafe static OrcErrorCode OrcGetSymbolAddress(OrcJITStackRef JITStack, out System.IntPtr RetAddr, string SymbolName) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcGetSymbolAddress(JITStack.Value, out RetAddr, SymbolName);
+    return ret;
+  }
+
+  public unsafe static OrcErrorCode OrcDisposeInstance(OrcJITStackRef JITStack) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcDisposeInstance(JITStack.Value);
+    return ret;
   }
 
   public unsafe static bool LoadLibraryPermanently(string Filename) {
@@ -3566,6 +3601,10 @@ public class LLVM {
 
   public unsafe static void AddCFGSimplificationPass(PassManagerRef PM) {
     LLVMPINVOKE.AddCFGSimplificationPass(PM.Value);
+  }
+
+  public unsafe static void AddLateCFGSimplificationPass(PassManagerRef PM) {
+    LLVMPINVOKE.AddLateCFGSimplificationPass(PM.Value);
   }
 
   public unsafe static void AddDeadStoreEliminationPass(PassManagerRef PM) {

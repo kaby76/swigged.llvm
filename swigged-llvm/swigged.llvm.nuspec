@@ -5,7 +5,7 @@
     <id>swigged.llvm</id>
     <title>swigged.llvm</title>
 
-    <version>4.0.14</version>
+    <version>5.0.1</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -21,8 +21,11 @@
     <licenseUrl>https://raw.github.com/kaby76/swigged-llvm/master/LICENSE</licenseUrl>
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A C# wrapper API of LLVM-C (v4.0) for Windows (x86, x64), Ubuntu (x64), Android (x64).</description>
+    <description>A C# wrapper API of LLVM-C for Windows (x86, x64), Ubuntu (x64), Android (x64).</description>
     <releaseNotes>
+* Version 5.0.1
+Updating to LLVM 5.0. Check out LLVM Release Notes for changes in the API. http://releases.llvm.org/5.0.0/docs/ReleaseNotes.html
+
 * Version 4.0.14
 Fix of 4.0.13 (wrong path).
 

@@ -63,7 +63,8 @@ typedef uint64_t (*LLVMOrcSymbolResolverFn)(const char *Name, void *LookupCtx);
 %ignore LLVMInstallFatalErrorHandler;
 //%ignore LLVMOrcCreateLazyCompileCallback;
 %ignore LLVMContextGetDiagnosticHandler;
-
+%ignore LLVMDumpType; // LLVM 5.0 makes this conditional. Remove for now.
+   
 typedef bool LLVMBool;
 
 REF_ARRAY(unsigned, uint)
@@ -79,6 +80,7 @@ REF_CLASS(LLVMBuilderRef, BuilderRef)
 REF_CLASS(LLVMContextRef, ContextRef)
 REF_CLASS(LLVMDiagnosticInfoRef, DiagnosticInfoRef)
 REF_CLASS(LLVMMemoryBufferRef, MemoryBufferRef)
+REF_CLASS(LLVMMetadataRef, MetadataRef)
 REF_CLASS(LLVMModuleProviderRef, ModuleProviderRef)
 REF_CLASS(LLVMModuleRef, ModuleRef)
 REF_CLASS(LLVMExecutionEngineRef, ExecutionEngineRef)
@@ -86,6 +88,8 @@ REF_CLASS(LLVMGenericValueRef, GenericValueRef)
 REF_CLASS(LLVMPassManagerBuilderRef, PassManagerBuilderRef)
 REF_CLASS(LLVMPassManagerRef, PassManagerRef)
 REF_CLASS(LLVMObjectFileRef, ObjectFileRef)
+REF_CLASS(LLVMOrcModuleHandle, OrcModuleHandle)
+
 REF_CLASS(LLVMPassRegistryRef, PassRegistryRef)
 REF_CLASS(LLVMTargetDataRef, TargetDataRef)
 REF_CLASS(LLVMTargetLibraryInfoRef, TargetLibraryInfoRef)
@@ -97,6 +101,9 @@ REF_CLASS(LLVMValueRef, ValueRef)
 REF_CLASS(LLVMOpInfoSymbol1,OpInfoSymbol1)
 REF_CLASS(LLVMOpInfo1,OpInfo1)
 
+REF_CLASS(LLVMSharedModuleRef, SharedModuleRef)
+REF_CLASS(LLVMSharedObjectBufferRef, SharedObjectBufferRef)
+REF_CLASS(LLVMOrcJITStackRef, OrcJITStackRef)
 
 %include "MCJITCompilerOptions.i"
 

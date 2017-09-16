@@ -58,9 +58,11 @@ namespace UnitTestProject5
             MyString ms = new MyString();
             LLVM.OrcGetMangledSymbol(ojsr, ms, "sum");
             IntPtr ctx = IntPtr.Zero;
-            uint xx = LLVM.OrcAddLazilyCompiledIR(ojsr, mod, null, ctx);
-            ulong p = LLVM.OrcGetSymbolAddress(ojsr, "sum");
-            Add addMethod = (Add)Marshal.GetDelegateForFunctionPointer((System.IntPtr)p, typeof(Add));
+
+            SharedModuleRef smr = LLVM.OrcMakeSharedModule(mod);
+            OrcErrorCode xx = LLVM.OrcAddLazilyCompiledIR(ojsr, out OrcModuleHandle omh, smr, null, ctx);
+            OrcErrorCode p = LLVM.OrcGetSymbolAddress(ojsr, out IntPtr RetAddr, "sum");
+            Add addMethod = (Add)Marshal.GetDelegateForFunctionPointer(RetAddr, typeof(Add));
             int result = addMethod(10, 10);
             Console.WriteLine("Result of sum is: " + result);
             if (result != 20) throw new Exception("Failed.");

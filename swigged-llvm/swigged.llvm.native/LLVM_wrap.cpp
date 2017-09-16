@@ -968,14 +968,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetTypeContext___(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_DumpType___(void * jarg1) {
-  LLVMTypeRef arg1 ;
-  
-  arg1 = (LLVMTypeRef)jarg1; 
-  LLVMDumpType(arg1);
-}
-
-
 SWIGEXPORT char * SWIGSTDCALL CSharp_SwiggedfLLVM_PrintTypeToString___(void * jarg1) {
   char * jresult ;
   LLVMTypeRef arg1 ;
@@ -1491,6 +1483,28 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_GetElementType___(void * jarg1
   
   arg1 = (LLVMTypeRef)jarg1; 
   result = LLVMGetElementType(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_GetSubtypes___(void * jarg1, void * jarg2) {
+  LLVMTypeRef arg1 ;
+  LLVMTypeRef *arg2 = (LLVMTypeRef *) 0 ;
+  
+  arg1 = (LLVMTypeRef)jarg1; 
+  arg2 = (LLVMTypeRef *)jarg2; 
+  LLVMGetSubtypes(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_GetNumContainedTypes___(void * jarg1) {
+  unsigned int jresult ;
+  LLVMTypeRef arg1 ;
+  unsigned int result;
+  
+  arg1 = (LLVMTypeRef)jarg1; 
+  result = (unsigned int)LLVMGetNumContainedTypes(arg1);
   jresult = result; 
   return jresult;
 }
@@ -4815,6 +4829,32 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MDNode___(void* arg1_data, uns
   
   arg1 = (LLVMValueRef*)arg1_data; arg2 = jarg1;
   result = LLVMMDNode(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MetadataAsValue___(void * jarg1, void * jarg2) {
+  void * jresult ;
+  LLVMContextRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  LLVMValueRef result;
+  
+  arg1 = (LLVMContextRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  result = LLVMMetadataAsValue(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ValueAsMetadata___(void * jarg1) {
+  void * jresult ;
+  LLVMValueRef arg1 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMValueRef)jarg1; 
+  result = LLVMValueAsMetadata(arg1);
   jresult = result; 
   return jresult;
 }
@@ -9131,6 +9171,46 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_LinkModules2___(void * j
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_OrcMakeSharedModule___(void * jarg1) {
+  void * jresult ;
+  LLVMModuleRef arg1 ;
+  LLVMSharedModuleRef result;
+  
+  arg1 = (LLVMModuleRef)jarg1; 
+  result = LLVMOrcMakeSharedModule(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeSharedModuleRef___(void * jarg1) {
+  LLVMSharedModuleRef arg1 ;
+  
+  arg1 = (LLVMSharedModuleRef)jarg1; 
+  LLVMOrcDisposeSharedModuleRef(arg1);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_OrcMakeSharedObjectBuffer___(void * jarg1) {
+  void * jresult ;
+  LLVMMemoryBufferRef arg1 ;
+  LLVMSharedObjectBufferRef result;
+  
+  arg1 = (LLVMMemoryBufferRef)jarg1; 
+  result = LLVMOrcMakeSharedObjectBuffer(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeSharedObjectBufferRef___(void * jarg1) {
+  LLVMSharedObjectBufferRef arg1 ;
+  
+  arg1 = (LLVMSharedObjectBufferRef)jarg1; 
+  LLVMOrcDisposeSharedObjectBufferRef(arg1);
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_OrcCreateInstance___(void * jarg1) {
   void * jresult ;
   LLVMTargetMachineRef arg1 ;
@@ -9179,18 +9259,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeMangledSymbol___(char 
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_OrcCreateLazyCompileCallback___(void * jarg1, void* jarg2, void * jarg3) {
-  unsigned long long jresult ;
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcCreateLazyCompileCallback___(void * jarg1, void * jarg2, void* jarg3, void * jarg4) {
+  int jresult ;
   LLVMOrcJITStackRef arg1 ;
-  LLVMOrcLazyCompileCallbackFn arg2 = (LLVMOrcLazyCompileCallbackFn) 0 ;
-  void *arg3 = (void *) 0 ;
-  LLVMOrcTargetAddress result;
+  LLVMOrcTargetAddress *arg2 = (LLVMOrcTargetAddress *) 0 ;
+  LLVMOrcLazyCompileCallbackFn arg3 = (LLVMOrcLazyCompileCallbackFn) 0 ;
+  void *arg4 = (void *) 0 ;
+  LLVMOrcErrorCode result;
   
   arg1 = (LLVMOrcJITStackRef)jarg1; 
-  arg2 = (LLVMOrcLazyCompileCallbackFn)jarg2; 
-  arg3 = jarg3; 
-  result = (LLVMOrcTargetAddress)LLVMOrcCreateLazyCompileCallback(arg1,arg2,arg3);
-  jresult = result; 
+  arg2 = (LLVMOrcTargetAddress *)jarg2; 
+  arg3 = (LLVMOrcLazyCompileCallbackFn)jarg3; 
+  arg4 = jarg4; 
+  result = (LLVMOrcErrorCode)LLVMOrcCreateLazyCompileCallback(arg1,arg2,arg3,arg4);
+  jresult = (int)result; 
   return jresult;
 }
 
@@ -9227,71 +9309,85 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcSetIndirectStubPointer___(void
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcAddEagerlyCompiledIR___(void * jarg1, void * jarg2, void* jarg3, void * jarg4) {
-  unsigned int jresult ;
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcAddEagerlyCompiledIR___(void * jarg1, void * jarg2, void * jarg3, void* jarg4, void * jarg5) {
+  int jresult ;
   LLVMOrcJITStackRef arg1 ;
-  LLVMModuleRef arg2 ;
-  LLVMOrcSymbolResolverFn arg3 = (LLVMOrcSymbolResolverFn) 0 ;
-  void *arg4 = (void *) 0 ;
-  LLVMOrcModuleHandle result;
+  LLVMOrcModuleHandle *arg2 = (LLVMOrcModuleHandle *) 0 ;
+  LLVMSharedModuleRef arg3 ;
+  LLVMOrcSymbolResolverFn arg4 = (LLVMOrcSymbolResolverFn) 0 ;
+  void *arg5 = (void *) 0 ;
+  LLVMOrcErrorCode result;
   
   arg1 = (LLVMOrcJITStackRef)jarg1; 
-  arg2 = (LLVMModuleRef)jarg2; 
-  arg3 = (LLVMOrcSymbolResolverFn)jarg3; 
-  arg4 = jarg4; 
-  result = (LLVMOrcModuleHandle)LLVMOrcAddEagerlyCompiledIR(arg1,arg2,arg3,arg4);
-  jresult = result; 
+  arg2 = (LLVMOrcModuleHandle *)jarg2; 
+  arg3 = (LLVMSharedModuleRef)jarg3; 
+  arg4 = (LLVMOrcSymbolResolverFn)jarg4; 
+  arg5 = jarg5; 
+  result = (LLVMOrcErrorCode)LLVMOrcAddEagerlyCompiledIR(arg1,arg2,arg3,arg4,arg5);
+  jresult = (int)result; 
   return jresult;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcAddLazilyCompiledIR___(void * jarg1, void * jarg2, void* jarg3, void * jarg4) {
-  unsigned int jresult ;
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcAddLazilyCompiledIR___(void * jarg1, void * jarg2, void * jarg3, void* jarg4, void * jarg5) {
+  int jresult ;
   LLVMOrcJITStackRef arg1 ;
-  LLVMModuleRef arg2 ;
-  LLVMOrcSymbolResolverFn arg3 = (LLVMOrcSymbolResolverFn) 0 ;
-  void *arg4 = (void *) 0 ;
-  LLVMOrcModuleHandle result;
+  LLVMOrcModuleHandle *arg2 = (LLVMOrcModuleHandle *) 0 ;
+  LLVMSharedModuleRef arg3 ;
+  LLVMOrcSymbolResolverFn arg4 = (LLVMOrcSymbolResolverFn) 0 ;
+  void *arg5 = (void *) 0 ;
+  LLVMOrcErrorCode result;
   
   arg1 = (LLVMOrcJITStackRef)jarg1; 
-  arg2 = (LLVMModuleRef)jarg2; 
-  arg3 = (LLVMOrcSymbolResolverFn)jarg3; 
-  arg4 = jarg4; 
-  result = (LLVMOrcModuleHandle)LLVMOrcAddLazilyCompiledIR(arg1,arg2,arg3,arg4);
-  jresult = result; 
+  arg2 = (LLVMOrcModuleHandle *)jarg2; 
+  arg3 = (LLVMSharedModuleRef)jarg3; 
+  arg4 = (LLVMOrcSymbolResolverFn)jarg4; 
+  arg5 = jarg5; 
+  result = (LLVMOrcErrorCode)LLVMOrcAddLazilyCompiledIR(arg1,arg2,arg3,arg4,arg5);
+  jresult = (int)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcRemoveModule___(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcRemoveModule___(void * jarg1, void * jarg2) {
+  int jresult ;
   LLVMOrcJITStackRef arg1 ;
   LLVMOrcModuleHandle arg2 ;
+  LLVMOrcErrorCode result;
   
   arg1 = (LLVMOrcJITStackRef)jarg1; 
   arg2 = (LLVMOrcModuleHandle)jarg2; 
-  LLVMOrcRemoveModule(arg1,arg2);
-}
-
-
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_SwiggedfLLVM_OrcGetSymbolAddress___(void * jarg1, char * jarg2) {
-  unsigned long long jresult ;
-  LLVMOrcJITStackRef arg1 ;
-  char *arg2 = (char *) 0 ;
-  LLVMOrcTargetAddress result;
-  
-  arg1 = (LLVMOrcJITStackRef)jarg1; 
-  arg2 = (char *)jarg2; 
-  result = (LLVMOrcTargetAddress)LLVMOrcGetSymbolAddress(arg1,(char const *)arg2);
-  jresult = result; 
+  result = (LLVMOrcErrorCode)LLVMOrcRemoveModule(arg1,arg2);
+  jresult = (int)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeInstance___(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcGetSymbolAddress___(void * jarg1, void * jarg2, char * jarg3) {
+  int jresult ;
   LLVMOrcJITStackRef arg1 ;
+  LLVMOrcTargetAddress *arg2 = (LLVMOrcTargetAddress *) 0 ;
+  char *arg3 = (char *) 0 ;
+  LLVMOrcErrorCode result;
   
   arg1 = (LLVMOrcJITStackRef)jarg1; 
-  LLVMOrcDisposeInstance(arg1);
+  arg2 = (LLVMOrcTargetAddress *)jarg2; 
+  arg3 = (char *)jarg3; 
+  result = (LLVMOrcErrorCode)LLVMOrcGetSymbolAddress(arg1,arg2,(char const *)arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeInstance___(void * jarg1) {
+  int jresult ;
+  LLVMOrcJITStackRef arg1 ;
+  LLVMOrcErrorCode result;
+  
+  arg1 = (LLVMOrcJITStackRef)jarg1; 
+  result = (LLVMOrcErrorCode)LLVMOrcDisposeInstance(arg1);
+  jresult = (int)result; 
+  return jresult;
 }
 
 
@@ -10242,6 +10338,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddCFGSimplificationPass___(void
   
   arg1 = (LLVMPassManagerRef)jarg1; 
   LLVMAddCFGSimplificationPass(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLateCFGSimplificationPass___(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddLateCFGSimplificationPass(arg1);
 }
 
 

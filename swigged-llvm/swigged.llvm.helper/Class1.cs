@@ -24,7 +24,7 @@ namespace Swigged.LLVM.Helper
         /// </summary>
         public static void Path()
         {
-            string Version = "4.0.9-alpha";
+            string Version = "5.0.1";
 
             List<string> additional_paths = new List<string>();
 
