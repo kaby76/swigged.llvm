@@ -3193,18 +3193,18 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static OrcErrorCode OrcAddEagerlyCompiledIR(OrcJITStackRef JITStack, out OrcModuleHandle RetHandle, SharedModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
-    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcAddEagerlyCompiledIR(JITStack.Value, out RetHandle.Value, Mod.Value, SymbolResolver, SymbolResolverCtx);
+  public unsafe static OrcErrorCode OrcAddEagerlyCompiledIR(OrcJITStackRef JITStack, out uint RetHandle, SharedModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcAddEagerlyCompiledIR(JITStack.Value, out RetHandle, Mod.Value, SymbolResolver, SymbolResolverCtx);
     return ret;
   }
 
-  public unsafe static OrcErrorCode OrcAddLazilyCompiledIR(OrcJITStackRef JITStack, out OrcModuleHandle RetHandle, SharedModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
-    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcAddLazilyCompiledIR(JITStack.Value, out RetHandle.Value, Mod.Value, SymbolResolver, SymbolResolverCtx);
+  public unsafe static OrcErrorCode OrcAddLazilyCompiledIR(OrcJITStackRef JITStack, out uint RetHandle, SharedModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcAddLazilyCompiledIR(JITStack.Value, out RetHandle, Mod.Value, SymbolResolver, SymbolResolverCtx);
     return ret;
   }
 
-  public unsafe static OrcErrorCode OrcRemoveModule(OrcJITStackRef JITStack, OrcModuleHandle H) {
-    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcRemoveModule(JITStack.Value, H.Value);
+  public unsafe static OrcErrorCode OrcRemoveModule(OrcJITStackRef JITStack, uint H) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcRemoveModule(JITStack.Value, H);
     return ret;
   }
 

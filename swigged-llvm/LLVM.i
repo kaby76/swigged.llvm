@@ -88,7 +88,6 @@ REF_CLASS(LLVMGenericValueRef, GenericValueRef)
 REF_CLASS(LLVMPassManagerBuilderRef, PassManagerBuilderRef)
 REF_CLASS(LLVMPassManagerRef, PassManagerRef)
 REF_CLASS(LLVMObjectFileRef, ObjectFileRef)
-REF_CLASS(LLVMOrcModuleHandle, OrcModuleHandle)
 
 REF_CLASS(LLVMPassRegistryRef, PassRegistryRef)
 REF_CLASS(LLVMTargetDataRef, TargetDataRef)

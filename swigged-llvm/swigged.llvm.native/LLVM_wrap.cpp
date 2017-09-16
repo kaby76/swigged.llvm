@@ -9349,7 +9349,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcAddLazilyCompiledIR___(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcRemoveModule___(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfLLVM_OrcRemoveModule___(void * jarg1, unsigned int jarg2) {
   int jresult ;
   LLVMOrcJITStackRef arg1 ;
   LLVMOrcModuleHandle arg2 ;

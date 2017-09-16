@@ -122,6 +122,8 @@
 %typemap(csin) uint64_t* "out $csinput"
 
 
+%typemap(cstype) uint32_t*  "out uint"
+
 %typemap(cstype) unsigned * Length "out uint"
 // Output garbage to catch cases not handled.
 %typemap(cstype) unsigned * "outasdf uint"
