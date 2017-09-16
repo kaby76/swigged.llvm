@@ -72,6 +72,7 @@ public partial class MCJITCompilerOptions : System.IEquatable<MCJITCompilerOptio
         LLVMPINVOKE.MCJITCompilerOptions_CodeModel_set(swigCPtr, (int)value);
     } 
     get {
+        // Make sure to add the following line.
         System.IntPtr swigCPtr = Value;
       CodeModel ret = (CodeModel)LLVMPINVOKE.MCJITCompilerOptions_CodeModel_get(swigCPtr);
       return ret;
