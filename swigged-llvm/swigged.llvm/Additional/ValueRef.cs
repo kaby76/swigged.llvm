@@ -1,4 +1,5 @@
-﻿namespace Swigged.LLVM
+﻿using System;
+namespace Swigged.LLVM
 {
     public partial struct ValueRef
     {
@@ -6,7 +7,9 @@
 
         public override string ToString()
         {
-            return "unimplemented"; // LLVM.PrintValueToString(this);
+            string v = LLVM.PrintValueToString(this);
+            v = v.Substring(0);
+            return v;
         }
     }
 }

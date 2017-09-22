@@ -6,7 +6,9 @@
 
         public override string ToString()
         {
-            return "unimplemented"; //return LLVM.PrintTypeToString(this);
+            string v = LLVM.PrintTypeToString(this);
+            v = v.Substring(0);
+            return v;
         }
     }
 

@@ -5,7 +5,7 @@
     <id>swigged.llvm</id>
     <title>swigged.llvm</title>
 
-    <version>5.0.1</version>
+    <version>5.0.2</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,6 +23,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of LLVM-C for Windows (x86, x64), Ubuntu (x64).</description>
     <releaseNotes>
+* Version 5.0.2
+Adding in ToString() functions for ValueRef and TypeRef for easier debugging.
+
 * Version 5.0.1
 Updating to LLVM 5.0. Check out LLVM Release Notes for changes in the API. http://releases.llvm.org/5.0.0/docs/ReleaseNotes.html
 
