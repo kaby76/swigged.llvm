@@ -5,7 +5,7 @@
     <id>swigged.llvm</id>
     <title>swigged.llvm</title>
 
-    <version>5.0.2</version>
+    <version>5.0.3</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,6 +23,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of LLVM-C for Windows (x86, x64), Ubuntu (x64).</description>
     <releaseNotes>
+* Version 5.0.3
+Updating .targets file so that "copy" step of proper native library works regardless whether you "nuget"
+for a Net Framework, Standard, or Core project. Rest of package is essentially unchanged.
+
 * Version 5.0.2
 Adding in ToString() functions for ValueRef and TypeRef for easier debugging.
 
