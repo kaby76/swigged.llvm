@@ -15,7 +15,8 @@ this project were derived mostly by trial and error, from the documentation in L
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ). The examples here were culled and derived from a variety
 of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
 and little on the API itself. Swigged-llvm is used in another project I am writing, [Campy](http://campynet.com/),
-which compiles CIL into GPU code for parallel programming.
+which compiles CIL into GPU code for parallel programming. Note, Campy uses only the 64-bit target: NVIDIA dropped the building of 32-bit targets
+with version 9 of the CUDA GPU Toolkit.
 
 # Targets
 

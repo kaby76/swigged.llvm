@@ -1,0 +1,9 @@
+language: csharp
+solution: swigged.llvm/swigged.llvm.sln
+mono: none
+dotnet: 2.0.0
+dist: trusty
+script:
+ - cd swigged-llvm/swigged.llvm
+ - dotnet restore
+ - dotnet build
