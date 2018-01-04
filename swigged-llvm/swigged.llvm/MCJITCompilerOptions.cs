@@ -47,7 +47,7 @@ public partial class MCJITCompilerOptions : System.IEquatable<MCJITCompilerOptio
     
   public unsafe uint OptLevel {
     set {
-        // Unfortunately, Swig hardwires the value of the
+        // a Unfortunately, Swig hardwires the value of the
         // string LLVMPINVOKE.MCJITCompilerOptions_OptLevel_set(swigCPtr, value). So, create necessary crap to get it
         // to work.
         System.IntPtr swigCPtr = Value;
@@ -65,23 +65,25 @@ public partial class MCJITCompilerOptions : System.IEquatable<MCJITCompilerOptio
 
   public unsafe CodeModel CodeModel {
     set {
-        // Unfortunately, Swig hardwires the value of the
+        // a Unfortunately, Swig hardwires the value of the
         // string LLVMPINVOKE.MCJITCompilerOptions_CodeModel_set(swigCPtr, (int)value). So, create necessary crap to get it
         // to work.
         System.IntPtr swigCPtr = Value;
         LLVMPINVOKE.MCJITCompilerOptions_CodeModel_set(swigCPtr, (int)value);
     } 
-    get {
-        // Make sure to add the following line.
-        System.IntPtr swigCPtr = Value;
-      CodeModel ret = (CodeModel)LLVMPINVOKE.MCJITCompilerOptions_CodeModel_get(swigCPtr);
-      return ret;
-    } 
+	get {
+	// Unfortunately, Swig hardwires the value of the
+	// string LLVMPINVOKE.MCJITCompilerOptions_CodeModel_get(swigCPtr). So, create necessary crap to get it
+	// to work.
+		System.IntPtr swigCPtr = Value;
+		CodeModel ret = (CodeModel) LLVMPINVOKE.MCJITCompilerOptions_CodeModel_get(swigCPtr);
+		return ret;
+	} 
   }
 
   public unsafe bool NoFramePointerElim {
     set {
-        // Unfortunately, Swig hardwires the value of the
+        // a Unfortunately, Swig hardwires the value of the
         // string LLVMPINVOKE.MCJITCompilerOptions_NoFramePointerElim_set(swigCPtr, value). So, create necessary crap to get it
         // to work.
         System.IntPtr swigCPtr = Value;
@@ -99,7 +101,7 @@ public partial class MCJITCompilerOptions : System.IEquatable<MCJITCompilerOptio
 
   public unsafe bool EnableFastISel {
     set {
-        // Unfortunately, Swig hardwires the value of the
+        // a Unfortunately, Swig hardwires the value of the
         // string LLVMPINVOKE.MCJITCompilerOptions_EnableFastISel_set(swigCPtr, value). So, create necessary crap to get it
         // to work.
         System.IntPtr swigCPtr = Value;
@@ -117,7 +119,7 @@ public partial class MCJITCompilerOptions : System.IEquatable<MCJITCompilerOptio
 
   public unsafe MCJITMemoryManagerRef MCJMM {
     set {
-        // Unfortunately, Swig hardwires the value of the
+        // a Unfortunately, Swig hardwires the value of the
         // string LLVMPINVOKE.MCJITCompilerOptions_MCJMM_set(swigCPtr, out value.Value). So, create necessary crap to get it
         // to work.
         System.IntPtr swigCPtr = Value;

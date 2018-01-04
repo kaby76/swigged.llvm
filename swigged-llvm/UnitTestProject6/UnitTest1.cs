@@ -95,11 +95,11 @@ namespace UnitTestProject6
             LLVM.OrcGetMangledSymbol(ojsr, ms, "comb");
             IntPtr ctx = IntPtr.Zero;
             SharedModuleRef smr1 = LLVM.OrcMakeSharedModule(mod1);
-            var xx = LLVM.OrcAddLazilyCompiledIR(ojsr, out OrcModuleHandle omh1, smr1, null, ctx);
+            var xx = LLVM.OrcAddLazilyCompiledIR(ojsr, out uint omh1, smr1, null, ctx);
             SharedModuleRef smr2 = LLVM.OrcMakeSharedModule(mod2);
-            xx = LLVM.OrcAddLazilyCompiledIR(ojsr, out OrcModuleHandle omh2, smr2, null, ctx);
+            xx = LLVM.OrcAddLazilyCompiledIR(ojsr, out uint omh2, smr2, null, ctx);
             SharedModuleRef smr3 = LLVM.OrcMakeSharedModule(mod3);
-            xx = LLVM.OrcAddLazilyCompiledIR(ojsr, out OrcModuleHandle omh3, smr3, null, ctx);
+            xx = LLVM.OrcAddLazilyCompiledIR(ojsr, out uint omh3, smr3, null, ctx);
             var p = LLVM.OrcGetSymbolAddress(ojsr, out IntPtr RetAddr, "comb");
             Comb combMethod = (Comb)Marshal.GetDelegateForFunctionPointer(RetAddr, typeof(Comb));
             int result = combMethod();

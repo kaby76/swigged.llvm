@@ -54,8 +54,7 @@ class LLVMPINVOKE {
                                 ExceptionArgumentDelegate argumentOutOfRangeDelegate);
 
     static void SetPendingApplicationException(string message) {
-        // Make sure to use System.Exception here.
-      SWIGPendingException.Set(new global::System.Exception(message, SWIGPendingException.Retrieve()));
+      SWIGPendingException.Set(new global::System.ApplicationException(message, SWIGPendingException.Retrieve()));
     }
     static void SetPendingArithmeticException(string message) {
       SWIGPendingException.Set(new global::System.ArithmeticException(message, SWIGPendingException.Retrieve()));
@@ -85,8 +84,7 @@ class LLVMPINVOKE {
       SWIGPendingException.Set(new global::System.OverflowException(message, SWIGPendingException.Retrieve()));
     }
     static void SetPendingSystemException(string message) {
-                // Make sure to use System.Exception here.
-      SWIGPendingException.Set(new global::System.Exception(message, SWIGPendingException.Retrieve()));
+      SWIGPendingException.Set(new global::System.SystemException(message, SWIGPendingException.Retrieve()));
     }
 
     static void SetPendingArgumentException(string message, string paramName) {
@@ -143,8 +141,7 @@ class LLVMPINVOKE {
 
     public static void Set(global::System.Exception e) {
       if (pendingException != null)
-          // Make sure to use System.Exception here.
-        throw new global::System.Exception("FATAL: An earlier pending exception from unmanaged code was missed and thus not thrown (" + pendingException.ToString() + ")", e);
+        throw new global::System.ApplicationException("FATAL: An earlier pending exception from unmanaged code was missed and thus not thrown (" + pendingException.ToString() + ")", e);
       pendingException = e;
       lock(typeof(LLVMPINVOKE)) {
         numExceptionsPending++;

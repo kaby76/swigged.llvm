@@ -22,7 +22,7 @@
    /* Properties */
 %typemap(csvarin, excode=SWIGEXCODE2) SWIGTYPE, SWIGTYPE *, SWIGTYPE &, SWIGTYPE &&, SWIGTYPE [], SWIGTYPE (CLASS::*) %{
     set {
-        // Unfortunately, Swig hardwires the value of the
+        // a Unfortunately, Swig hardwires the value of the
         // string $imcall. So, create necessary crap to get it
         // to work.
         System.IntPtr swigCPtr = Value;
@@ -31,7 +31,7 @@
 
 %typemap(csvarin, excode=SWIGEXCODE2) TYPE, TYPE *, TYPE &, TYPE &&, TYPE [], TYPE (CLASS::*) %{
     set {
-        // Unfortunately, Swig hardwires the value of the
+        // b Unfortunately, Swig hardwires the value of the
         // string $imcall. So, create necessary crap to get it
         // to work.
         System.IntPtr swigCPtr = Value;
@@ -40,12 +40,37 @@
 
 %typemap(csvarin, excode=SWIGEXCODE2) char *, char *&, char[ANY], char[] %{
     set {
-        // Unfortunately, Swig hardwires the value of the
+        // c Unfortunately, Swig hardwires the value of the
         // string $imcall. So, create necessary crap to get it
         // to work.
         System.IntPtr swigCPtr = Value;
         $imcall;$excode
     } %}
+
+
+%typemap(csvarout, excode=SWIGEXCODE2) SWIGTYPE, SWIGTYPE *, SWIGTYPE &, SWIGTYPE &&, SWIGTYPE [], SWIGTYPE (CLASS::*),
+const SWIGTYPE, const SWIGTYPE *, const SWIGTYPE &, const SWIGTYPE &&, const SWIGTYPE [], const SWIGTYPE (CLASS::*)
+%{
+	get {
+	// Unfortunately, Swig hardwires the value of the
+	// string $imcall. So, create necessary crap to get it
+	// to work.
+		System.IntPtr swigCPtr = Value;
+		bool ret = $imcall;$excode
+			   return ret;
+	} %}
+
+%typemap(csvarout, excode=SWIGEXCODE2) CodeModel, LLVMCodeModel
+%{
+	get {
+	// Unfortunately, Swig hardwires the value of the
+	// string $imcall. So, create necessary crap to get it
+	// to work.
+		System.IntPtr swigCPtr = Value;
+		CodeModel ret = (CodeModel) $imcall;$excode
+		return ret;
+	} %}
+
 
 %typemap(csvarout, excode=SWIGEXCODE2) bool,               const bool &               %{
     get {
@@ -202,15 +227,7 @@
         $excode
         return ret;
     } %}
-%typemap(csvarout, excode=SWIGEXCODE2) CodeModel %{
-    get {
-        // Unfortunately, Swig hardwires the value of the
-        // string $imcall. So, create necessary crap to get it
-        // to work.
-        System.IntPtr swigCPtr = Value;
-        $imcall;$excode
-        return ret;
-    } %}
+
 %typemap(csvarout, excode=SWIGEXCODE2) SWIGTYPE & %{
     get {
         // Unfortunately, Swig hardwires the value of the

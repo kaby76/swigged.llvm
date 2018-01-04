@@ -60,7 +60,7 @@ namespace UnitTestProject5
             IntPtr ctx = IntPtr.Zero;
 
             SharedModuleRef smr = LLVM.OrcMakeSharedModule(mod);
-            OrcErrorCode xx = LLVM.OrcAddLazilyCompiledIR(ojsr, out OrcModuleHandle omh, smr, null, ctx);
+            OrcErrorCode xx = LLVM.OrcAddLazilyCompiledIR(ojsr, out uint omh, smr, null, ctx);
             OrcErrorCode p = LLVM.OrcGetSymbolAddress(ojsr, out IntPtr RetAddr, "sum");
             Add addMethod = (Add)Marshal.GetDelegateForFunctionPointer(RetAddr, typeof(Add));
             int result = addMethod(10, 10);
