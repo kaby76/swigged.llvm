@@ -21,8 +21,6 @@ namespace UnitTestProject5
         [TestMethod]
         public void TestORC()
         {
-            Swigged.LLVM.Helper.Adjust.Path();
-
             LLVM.InitializeAllTargets();
             LLVM.InitializeAllTargetMCs();
             LLVM.InitializeAllTargetInfos();

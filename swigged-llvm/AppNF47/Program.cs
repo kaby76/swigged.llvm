@@ -15,8 +15,6 @@ namespace AppNF47
 
         static void Main(string[] args)
         {
-            Swigged.LLVM.Helper.Adjust.Path();
-
             LLVM.InitializeAllTargets();
             LLVM.InitializeAllTargetMCs();
             LLVM.InitializeAllTargetInfos();

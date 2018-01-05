@@ -12,7 +12,6 @@ namespace UnitTestProject4
         [TestMethod]
         public void TestPTX()
         {
-            Swigged.LLVM.Helper.Adjust.Path();
             LLVM.InitializeAllTargets();
             LLVM.InitializeAllTargetMCs();
             LLVM.InitializeAllTargetInfos();

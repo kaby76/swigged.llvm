@@ -15,7 +15,6 @@ namespace UnitTestProject1
         [TestMethod]
         public void Test42()
         {
-            Swigged.LLVM.Helper.Adjust.Path();
             LLVM.EnablePrettyStackTrace();
             var Module = LLVM.ModuleCreateWithName("the_meaning_of_life");
             var triple = LLVM.GetDefaultTargetTriple();

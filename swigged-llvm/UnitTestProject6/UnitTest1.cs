@@ -23,8 +23,6 @@ namespace UnitTestProject6
         [TestMethod]
         public void TestMultiModules()
         {
-            Swigged.LLVM.Helper.Adjust.Path();
-
             LLVM.InitializeAllTargets();
             LLVM.InitializeAllTargetMCs();
             LLVM.InitializeAllTargetInfos();

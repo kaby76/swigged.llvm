@@ -36,8 +36,6 @@ namespace UnitTestProject2
         [TestMethod]
         public void TestGCD()
         {
-            Swigged.LLVM.Helper.Adjust.Path();
-
             Swigged.LLVM.ContextRef g = Swigged.LLVM.LLVM.GetGlobalContext();
             var Module = LLVM.ModuleCreateWithName("tut2");
             var triple = LLVM.GetDefaultTargetTriple();

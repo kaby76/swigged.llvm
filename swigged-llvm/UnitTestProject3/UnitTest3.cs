@@ -26,7 +26,6 @@ namespace UnitTestProject3
         [TestMethod]
         public void TestFact()
         {
-            Swigged.LLVM.Helper.Adjust.Path();
             ModuleRef Module = LLVM.ModuleCreateWithName("fac_module");
             TypeRef[] fac_args = { LLVM.Int32Type() };
             ValueRef fac = LLVM.AddFunction(Module, "fac", LLVM.FunctionType(LLVM.Int32Type(), fac_args, false));
