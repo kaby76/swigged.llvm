@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using Swigged.LLVM;
 
-namespace core.sanity_test
+namespace AppNC20
 {
     class Program
     {

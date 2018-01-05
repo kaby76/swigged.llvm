@@ -272,3 +272,5 @@ swigged-llvm/swigged.llvm.native/ubuntu-16.04-Debug/
 swigged-llvm/swigged.llvm.native/ubuntu-16.04-Release/
 swigged-llvm/swigged.llvm.native/android-armeabi-Release/
 swigged-llvm/swigged.llvm.native/android-x86-Release/
+swigged-llvm/llvm/ubuntu-16.04-Debug/
+swigged-llvm/llvm/ubuntu-16.04-Release/
