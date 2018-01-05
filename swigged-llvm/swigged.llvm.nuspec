@@ -101,6 +101,9 @@ For further information, see https://github.com/kaby76/swigged-llvm.
       <group targetFramework="netstandard2.0" >
 	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
+      <group targetFramework="netcoreapp2.0" >
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
+      </group>
 
       <!-- All other targets are not supported/allowed, so they are
       not listed here. -->
@@ -128,13 +131,6 @@ For further information, see https://github.com/kaby76/swigged-llvm.
     <file src="swigged.llvm\bin\Release\netstandard2.0\swigged.llvm.dll" target="lib/netcoreapp2.0" />
     <file src="swigged.llvm.native\x64-Release\Release\swigged-llvm-native.dll" target="lib/netstandard2.0" />
     <file src="swigged.llvm.native\x64-Release\Release\swigged-llvm-native.dll" target="lib/netcoreapp2.0" />
-
-    <file src="swigged.llvm.helper\bin\Release\netstandard2.0\swigged.llvm.helper.dll" target="lib/net461" />
-    <file src="swigged.llvm.helper\bin\Release\netstandard2.0\swigged.llvm.helper.dll" target="lib/net462" />
-    <file src="swigged.llvm.helper\bin\Release\netstandard2.0\swigged.llvm.helper.dll" target="lib/net47" />
-    <file src="swigged.llvm.helper\bin\Release\netstandard2.0\swigged.llvm.helper.dll" target="lib/net471" />
-    <file src="swigged.llvm.helper\bin\Release\netstandard2.0\swigged.llvm.helper.dll" target="lib/netstandard2.0" />
-    <file src="swigged.llvm.helper\bin\Release\netstandard2.0\swigged.llvm.helper.dll" target="lib/netcore2.0" />
 
     <file src="swigged.llvm.targets" target="build\swigged.llvm.targets" />
 
