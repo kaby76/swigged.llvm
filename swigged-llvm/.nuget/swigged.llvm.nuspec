@@ -4,25 +4,19 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
     <title>swigged.llvm</title>
-
-    <version>5.0.4</version>
-
-    <!-- Authors contain text that appears directly on the gallery -->
+    <version>5.0.1.1</version>
     <authors>Ken Domino</authors>
-    
-    <!-- Owners are typically nuget.org identities that allow gallery
-            users to easily find other packages by the same owners.
-    -->
     <owners>Ken Domino</owners>
-
-    <!-- License, project, icon links for the gallery -->
     <projectUrl>https://github.com/kaby76/swigged-llvm</projectUrl>
     <iconUrl>https://raw.github.com/kaby76/swigged-llvm/master/logo.png</iconUrl>
     <licenseUrl>https://raw.github.com/kaby76/swigged-llvm/master/LICENSE</licenseUrl>
-
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
     <description>A C# wrapper API of LLVM-C for Windows 10 (x64), Ubuntu 16.04 (x64).</description>
     <releaseNotes>
+* Version 5.0.1.1
+Adopting version numbering from LLVM, 5.0.1.
+
 * Version 5.0.4
 Removing support for 32-bit targets, upgrading to Net Standard 2.0. This means versions equal to and before Net Framework 4.6 and Net Core 1.1 are not supported.
 
@@ -105,8 +99,7 @@ For further information, see https://github.com/kaby76/swigged-llvm.
 	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
 
-      <!-- All other targets are not supported/allowed, so they are
-      not listed here. -->
+      <!-- All other targets are not supported/allowed, so they are not listed here. -->
 
     </dependencies>
 
