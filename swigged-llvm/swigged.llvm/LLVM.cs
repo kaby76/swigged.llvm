@@ -540,6 +540,16 @@ public class LLVM {
         return ret;
     }
 
+  public unsafe static TypeRef TokenTypeInContext(ContextRef C) {
+        TypeRef ret = new TypeRef(LLVMPINVOKE.TokenTypeInContext(C.Value));
+        return ret;
+    }
+
+  public unsafe static TypeRef MetadataTypeInContext(ContextRef C) {
+        TypeRef ret = new TypeRef(LLVMPINVOKE.MetadataTypeInContext(C.Value));
+        return ret;
+    }
+
   public unsafe static TypeRef VoidType() {
         TypeRef ret = new TypeRef(LLVMPINVOKE.VoidType());
         return ret;
@@ -3151,15 +3161,6 @@ public class LLVM {
     LLVMPINVOKE.OrcDisposeSharedModuleRef(SharedMod.Value);
   }
 
-  public unsafe static SharedObjectBufferRef OrcMakeSharedObjectBuffer(MemoryBufferRef ObjBuffer) {
-        SharedObjectBufferRef ret = new SharedObjectBufferRef(LLVMPINVOKE.OrcMakeSharedObjectBuffer(ObjBuffer.Value));
-        return ret;
-    }
-
-  public unsafe static void OrcDisposeSharedObjectBufferRef(SharedObjectBufferRef SharedObjBuffer) {
-    LLVMPINVOKE.OrcDisposeSharedObjectBufferRef(SharedObjBuffer.Value);
-  }
-
   public unsafe static OrcJITStackRef OrcCreateInstance(TargetMachineRef TM) {
         OrcJITStackRef ret = new OrcJITStackRef(LLVMPINVOKE.OrcCreateInstance(TM.Value));
         return ret;
@@ -3494,6 +3495,10 @@ public class LLVM {
     LLVMPINVOKE.AddConstantMergePass(PM.Value);
   }
 
+  public unsafe static void AddCalledValuePropagationPass(PassManagerRef PM) {
+    LLVMPINVOKE.AddCalledValuePropagationPass(PM.Value);
+  }
+
   public unsafe static void AddDeadArgEliminationPass(PassManagerRef PM) {
     LLVMPINVOKE.AddDeadArgEliminationPass(PM.Value);
   }
@@ -3601,10 +3606,6 @@ public class LLVM {
 
   public unsafe static void AddCFGSimplificationPass(PassManagerRef PM) {
     LLVMPINVOKE.AddCFGSimplificationPass(PM.Value);
-  }
-
-  public unsafe static void AddLateCFGSimplificationPass(PassManagerRef PM) {
-    LLVMPINVOKE.AddLateCFGSimplificationPass(PM.Value);
   }
 
   public unsafe static void AddDeadStoreEliminationPass(PassManagerRef PM) {

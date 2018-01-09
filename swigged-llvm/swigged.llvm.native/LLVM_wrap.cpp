@@ -1624,6 +1624,30 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_X86MMXTypeInContext___(void * 
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_TokenTypeInContext___(void * jarg1) {
+  void * jresult ;
+  LLVMContextRef arg1 ;
+  LLVMTypeRef result;
+  
+  arg1 = (LLVMContextRef)jarg1; 
+  result = LLVMTokenTypeInContext(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MetadataTypeInContext___(void * jarg1) {
+  void * jresult ;
+  LLVMContextRef arg1 ;
+  LLVMTypeRef result;
+  
+  arg1 = (LLVMContextRef)jarg1; 
+  result = LLVMMetadataTypeInContext(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_VoidType___() {
   void * jresult ;
   LLVMTypeRef result;
@@ -9191,26 +9215,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeSharedModuleRef___(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_OrcMakeSharedObjectBuffer___(void * jarg1) {
-  void * jresult ;
-  LLVMMemoryBufferRef arg1 ;
-  LLVMSharedObjectBufferRef result;
-  
-  arg1 = (LLVMMemoryBufferRef)jarg1; 
-  result = LLVMOrcMakeSharedObjectBuffer(arg1);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_OrcDisposeSharedObjectBufferRef___(void * jarg1) {
-  LLVMSharedObjectBufferRef arg1 ;
-  
-  arg1 = (LLVMSharedObjectBufferRef)jarg1; 
-  LLVMOrcDisposeSharedObjectBufferRef(arg1);
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_OrcCreateInstance___(void * jarg1) {
   void * jresult ;
   LLVMTargetMachineRef arg1 ;
@@ -10099,6 +10103,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddConstantMergePass___(void * j
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddCalledValuePropagationPass___(void * jarg1) {
+  LLVMPassManagerRef arg1 ;
+  
+  arg1 = (LLVMPassManagerRef)jarg1; 
+  LLVMAddCalledValuePropagationPass(arg1);
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddDeadArgEliminationPass___(void * jarg1) {
   LLVMPassManagerRef arg1 ;
   
@@ -10338,14 +10350,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddCFGSimplificationPass___(void
   
   arg1 = (LLVMPassManagerRef)jarg1; 
   LLVMAddCFGSimplificationPass(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddLateCFGSimplificationPass___(void * jarg1) {
-  LLVMPassManagerRef arg1 ;
-  
-  arg1 = (LLVMPassManagerRef)jarg1; 
-  LLVMAddLateCFGSimplificationPass(arg1);
 }
 
 
