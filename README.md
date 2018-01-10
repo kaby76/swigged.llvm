@@ -15,16 +15,14 @@ this project were derived mostly by trial and error, from the documentation in L
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ). The examples here were culled and derived from a variety
 of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
 and little on the API itself. Swigged-llvm is used in another project I am writing, [Campy](http://campynet.com/),
-which compiles CIL into GPU code for parallel programming. Note, Campy uses only the 64-bit target: NVIDIA dropped the building of 32-bit targets
-with version 9 of the CUDA GPU Toolkit.
+which compiles CIL into GPU code for parallel programming.
 
 # Targets
 
-* Windows 10 (x86 and x64)
+* Windows 10 (x64)
 * Ubuntu.16.04 (x64)
-* Android (x86 ABI)
 
-Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 1.5 code. It is compatible with Net Core and Net Framework. Swigged.llvm.native is a platform specific library. Several targets for Linux are included in the NuGet package.
+Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 2.0 assembly. It is compatible with Net Core 2.0 and Net Framework 4.6.1 and later versions. Swigged.llvm.native is a platform specific library.
 Details to build are described below.
 
 ## Using Swigged.llvm (from NuGet):
@@ -52,62 +50,10 @@ download the package from NuGet (https://www.nuget.org/packages/swigged.llvm) an
 add the package "swigged.llvm" from the nuget package manager console.
 
 Set up the build of your C# application with Platform = "AnyCPU", Configuration = "Debug" or "Release". In the Properties for the
-application, either un-check "Prefer 32-bit" if you want to run as 64-bit app, or checked if you want to run as a 32-bit app.
+application, un-check "Prefer 32-bit" to run as 64-bit app.
 
-You *do not need* to copy swigged.llvm.native.dll to the executable directory. However, if your program is having problems with finding the
+You should not have to copy swigged.llvm.native.dll to the executable directory. However, if your program is having problems with finding the
 dll, copy the swigged-llvm-native.dll from the appropriate target from the packages/ directory.
-
-If you want to debug Swigged.llvm code, set "Enable native code debugging." Note: this option is unavailable in
-Net Core apps in Visual Studio 2017 version 15.2.
-
-Swigged.llvm should work out of the box. However, there it does some dependencies to be fulfilled. I have tried
-to get this right, but you may need to adjust the versions of the runtimes, e.g., System.Runtime 4.1.0 vs. 4.3.0.
-
-
-#### Android/Xamarin Apps
-
-You will need to manually copy the SO files and add SO file to your project. You can do
-that by editing the CSPROJ file for the Android project.
-````
-  <ItemGroup>
-    <AndroidNativeLibrary Include="lib\x86\libswigged-llvm-native.so" />
-  </ItemGroup>
-````
-
-For an example, see .../Examples/AndroidApp
-
-# Typical errors when trying to run an application with Swigged.llvm:
-a) "Bad image format" error--the swigged.llvm.native.dll in your target directory is the wrong version (32-bit vs 64-bit). Make sure that you have
-set the build for your application to Debug or Release and target "Any CPU". If you build with "x86" or "x64", you will need to make sure you are
-using the correct swigged-llvm-native.dll/so file. Otherwise, set the "Prefer 32-bit" build option and choose the corresponding swigged-llvm-native.dll/so
-file, copying it to your application executable directory.
-
-b) "Missing DLL" error. This can happen for
-a number of reasons. Make sure you you have the swigged.llvm.dll and swigged-llvm-natieve.dll/so files in your application executable directory. Make sure you
-have all the required dependencies. I've tried hard to make sure this list is correct, but you may need to add in the appropriate
-dependencies using the NuGet console.
-
-If the error specifically mentions that it cannot find Swigged.llvm.native, copy the dll/so file to the application executable.
-However, you can also try adding in the path helper function:
-
-            Swigged.LLVM.Helper.Adjust.Path();
-
-This function, which you should call before any Swigged.llvm call, alters the
-path environmental variable for the program on the fly, so you don't need to copy
-swigged.llvm.native.dll/so to your application executable directory. However, it only works
-for Net Framework 4.6.2 or 4.7.
-
-c) Crash in Swigged.llvm. This can happen for any number of reasons. LLVM-C can be quite flaky. Make sure
-you have initialized LLVM with:
-
-            LLVM.InitializeAllTargets();
-            LLVM.InitializeAllTargetMCs();
-            LLVM.InitializeAllTargetInfos();
-            LLVM.InitializeAllAsmPrinters();
-
-If you suspect that Swigged.llvm is messed up, try the example in C++ or using LLVMSharp. Note,
-Swigged.llvm works on some examples that LLVMSharp does not work on (particularily ORC calls).
-
 
 # Example #
 
@@ -180,7 +126,7 @@ because Swig hardwires some things.
 
 * Cmake
 * Git
-* VS 2017 or 2015, with C++ installed (Windows)
+* VS 2017, with C++ installed (Windows)
 * Python
 * WSL Bash (Windows)
 * These tools in path variable.
@@ -195,20 +141,18 @@ sudo apt-get install build-essential
 
 ### Grab sources from git or LLVM download area.
 
-In a directory of your choice, clone LLVM and swigged.llvm. If you
-downloaded LLVM sources, place them here.
+In a directory of your choice, clone swigged.llvm, then clone llvm. Note, I've created
+a repository of llvm-mirror because there are build problems currently with LLVM. It also
+does not contain tags for particular releases, only branches, which is not sufficient to
+select particular sources for debugging.
 
 ~~~~
 git clone https://github.com/kaby76/swigged-llvm.git
 cd swigged-llvm/swigged-llvm/llvm
-git clone -b release_40 https://github.com/llvm-mirror/llvm.git
-cd ..
-# You should be in the directory .../swigged-llvm/swigged-llvm/. Following instructions assume this.
+git clone https://github.com/kaby76/llvm.git
 ~~~~
 
 ### Windows ###
-
-#### Build llvm
 
 Depending on what you want, you should build both 32-bit and 64-bit libraries. But,
 you can skip one target if you aren't interested.
@@ -216,18 +160,16 @@ you can skip one target if you aren't interested.
 Note, from Cmd or Powershell, execute the Cmd batch file. This will be four targets for Windows.
 
 ~~~~
+cd .swig
+cd ..
+bash -c ./generate.sh
 cd llvm
 call .\build.bat
 cd ..
-~~~~
-
-#### Build swigged.llvm
-
-~~~~
-(optional)
-a) bash -c ./generate.sh
-b) bash -c ./fix.sh
 msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform="AnyCPU"
+cd swigged.llvm.native
+powershell
+./build.ps1
 ~~~~
 
 ### Ubuntu ###
@@ -238,24 +180,21 @@ Make sure to install ("sudo apt-get install ...") gcc, make, 'g++', cmake,
 git, build-essential, xz-utils. For Net Core, follow the instructions at
 https://www.microsoft.com/net/core#linuxubuntu 
 
-#### Build llvm ####
-
 ~~~~
-cd llvm
-./build.sh
+cd .swig
 cd ..
-~~~~
-
-#### Build swigged.llvm ####
-
-~~~~
+bash -c ./generate.sh
+cd llvm
+.\build.sh
+cd ..
 cd swigged.llvm
 dotnet restore
 dotnet build
+cd ..
+cd swigged.llvm.native
+./build.sh
+cd ..
 ~~~~
-
-_You can reference the swigged.llvm.dll assembly in your project. However, make
-sure to copy swigged.llvm.native.dll to your executable directory._
 
 ## Debugging on Windows
 
