@@ -30,8 +30,9 @@ llvm_map_components_to_libnames(llvm_libs support Core irreader mcparser bitread
   AArch64AsmParser AArch64AsmPrinter AArch64CodeGen AArch64Desc AArch64Disassembler AArch64Info AArch64Utils 
   AMDGPUAsmParser AMDGPUAsmPrinter AMDGPUCodeGen AMDGPUDesc AMDGPUDisassembler AMDGPUInfo AMDGPUUtils 
   ARMAsmParser ARMAsmPrinter ARMCodeGen ARMDesc ARMDisassembler ARMInfo
-  BPFAsmPrinter BPFCodeGen BPFDesc BPFDisassembler BPFInfo
+  BPFAsmParser BPFAsmPrinter BPFCodeGen BPFDesc BPFDisassembler BPFInfo
   HexagonAsmParser HexagonCodeGen HexagonDesc HexagonDisassembler HexagonInfo
+  InstCombine
   LanaiAsmParser LanaiAsmPrinter LanaiCodeGen LanaiDesc LanaiDisassembler LanaiInfo 
   MipsAsmParser MipsAsmPrinter MipsCodeGen MipsDesc MipsDisassembler MipsInfo
   MIRParser

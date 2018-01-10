@@ -18,6 +18,6 @@
     </SwigLlvmPreBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigLlvmPreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "$(userprofile)\.nuget\packages\swigged.llvm\6.0.0.1\runtimes\win10-x64\native\*.* </SwigLlvmPreBuildEvent>
+    <SwigLlvmPreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "$(userprofile)\.nuget\packages\swigged.llvm\6.0.0.1-alpha\runtimes\win10-x64\native\*.* </SwigLlvmPreBuildEvent>
   </PropertyGroup>
 </Project>
