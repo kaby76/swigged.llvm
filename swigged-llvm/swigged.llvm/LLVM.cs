@@ -3114,10 +3114,6 @@ public class LLVM {
     LLVMPINVOKE.InitializeVectorization(R.Value);
   }
 
-  public unsafe static void InitializeInstCombine(PassRegistryRef R) {
-    LLVMPINVOKE.InitializeInstCombine(R.Value);
-  }
-
   public unsafe static void InitializeIPO(PassRegistryRef R) {
     LLVMPINVOKE.InitializeIPO(R.Value);
   }

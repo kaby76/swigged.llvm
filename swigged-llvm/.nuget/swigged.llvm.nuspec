@@ -4,7 +4,7 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
     <title>swigged.llvm</title>
-    <version>6.0.0.1-alpha</version>
+    <version>6.0.0.2-alpha</version>
     <authors>Ken Domino</authors>
     <owners>Ken Domino</owners>
     <projectUrl>https://github.com/kaby76/swigged-llvm</projectUrl>
@@ -12,8 +12,11 @@
     <licenseUrl>https://raw.github.com/kaby76/swigged-llvm/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
-    <description>A C# wrapper API of LLVM-C for Windows 10 (x64), Ubuntu 16.04 (x64).</description>
+    <description>A Swig-generated C#/NET wrapper of LLVM-C for Windows 10 (x64), Ubuntu 16.04 (x64).</description>
     <releaseNotes>
+* Version 6.0.0.2-alpha
+A cut of LLVM release_60 branch for 18/Jan/2018.
+
 * Version 6.0.0.1-alpha
 Adopting version numbering from LLVM, 6.0.0. This version is a preliminary version, as LLVM.org has not released version 6 yet.
 

@@ -2207,9 +2207,6 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_InitializeVectorization___")]
   public static extern void InitializeVectorization(System.IntPtr jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_InitializeInstCombine___")]
-  public static extern void InitializeInstCombine(System.IntPtr jarg1);
-
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_InitializeIPO___")]
   public static extern void InitializeIPO(System.IntPtr jarg1);
 

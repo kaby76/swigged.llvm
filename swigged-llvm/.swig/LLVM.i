@@ -64,7 +64,12 @@ typedef uint64_t (*LLVMOrcSymbolResolverFn)(const char *Name, void *LookupCtx);
 //%ignore LLVMOrcCreateLazyCompileCallback;
 %ignore LLVMContextGetDiagnosticHandler;
 %ignore LLVMDumpType; // LLVM 5.0 makes this conditional. Remove for now.
-   
+
+// Ignore for now-- LLVM writers do not care if it's declared wrong,
+// which it is, as it's extern "C" in header, but not in lib. So it
+// wont link.
+%ignore LLVMInitializeInstCombine;
+
 typedef bool LLVMBool;
 
 REF_ARRAY(unsigned, uint)

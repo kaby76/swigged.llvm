@@ -9103,14 +9103,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeVectorization___(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeInstCombine___(void * jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  
-  arg1 = (LLVMPassRegistryRef)jarg1; 
-  LLVMInitializeInstCombine(arg1);
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_InitializeIPO___(void * jarg1) {
   LLVMPassRegistryRef arg1 ;
   
