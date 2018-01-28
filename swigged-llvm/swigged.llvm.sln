@@ -5,16 +5,18 @@ VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{690AB4A2-DCCD-4643-86C3-4E43CA31530B}"
 	ProjectSection(SolutionItems) = preProject
-		generate.sh = generate.sh
-		LLVM.i = LLVM.i
-		LLVMCommon.i = LLVMCommon.i
-		MCJITCompilerOptions.i = MCJITCompilerOptions.i
-		nuget.exe = nuget.exe
-		pack.bat = pack.bat
+		.swig\callback.i = .swig\callback.i
+		.swig\generate.bat = .swig\generate.bat
+		.swig\generate.sh = .swig\generate.sh
+		.swig\LLVM.i = .swig\LLVM.i
+		.swig\LLVMCommon.i = .swig\LLVMCommon.i
+		.swig\MCJITCompilerOptions.i = .swig\MCJITCompilerOptions.i
+		.nuget\nuget.exe = .nuget\nuget.exe
+		.nuget\pack.bat = .nuget\pack.bat
 		..\README.md = ..\README.md
 		swigged.llvm.nuspec = swigged.llvm.nuspec
+		.nuget\swigged.llvm.nuspec = .nuget\swigged.llvm.nuspec
 		swigged.llvm.targets = swigged.llvm.targets
-		xxx.i = xxx.i
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "swigged.llvm", "swigged.llvm\swigged.llvm.csproj", "{DCF9C0B3-961F-40E4-87BC-A2CC20E4B5A1}"

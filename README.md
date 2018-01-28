@@ -10,9 +10,29 @@ reader, and extends the API to contain additional LLVM-C functionality. Swigged.
 up some of the problems with the original wrapper in SharpLang, adds more tests of the API,
 and adds several examples.
 
-Notes: I found the documentation for LLVM-C and LLVM quite frustrating. The build scripts in
-this project were derived mostly by trial and error, from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
-Android cmake (https://developer.android.com/ndk/guides/cmake.html ). The examples here were culled and derived from a variety
+Notes: I found the documentation for LLVM-C and LLVM quite frustrating, including:
+the building of LLVM; the identification
+of what is going to be in a release;
+bug reporting and fixing.
+
+The build scripts in
+this project were derived mostly by trial and error for Windows and Android,
+from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
+Android cmake (https://developer.android.com/ndk/guides/cmake.html ).
+
+A second important note is that there are no LLVM-C pre-built DLLs.
+All LLVM NET wrappers must chooses what to expose. Fortunately, there are not many changes
+to the LLVM-C .H include files. What is exported from LLVM-C for each release of Swigged.LLVM
+is completely derived by trail and error.
+
+Some changes are future features being accidentally
+added to a release. Unfortunately,
+LLVM authors do not check their work to see if even breaks a build--especially Windows:
+[33455](https://bugs.llvm.org/show_bug.cgi?id=33455),
+[34633](https://bugs.llvm.org/show_bug.cgi?id=34633),
+[35947](https://bugs.llvm.org/show_bug.cgi?id=35947).
+
+The examples here were culled and derived from a variety
 of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
 and little on the API itself. Swigged-llvm is used in another project I am writing, [Campy](http://campynet.com/),
 which compiles CIL into GPU code for parallel programming.
@@ -214,6 +234,6 @@ example using the ORC code generator. (Fortunately, I provide functioning exampl
 
 This project is another C# LLVM bindings librarys.
 
-Note, this project is not confuse this with another "LLVM.NET" library (aka "LLVM by Lost"),
+Note, this project should not be confuse with another "LLVM.NET" library (aka "LLVM by Lost"),
 https://bitbucket.org/lost/llvm.net/wiki/Home , http://www.nuget.org/packages/LLVM.NativeLibrary/ , which seems to be a wrapper for some LLVM DLLs built within the project.
 It hasn't been updated in several years, so I don't think this project is active anymore.
