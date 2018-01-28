@@ -10,27 +10,43 @@ reader, and extends the API to contain additional LLVM-C functionality. Swigged.
 up some of the problems with the original wrapper in SharpLang, adds more tests of the API,
 and adds several examples.
 
-Notes: I found the documentation for LLVM-C and LLVM quite frustrating, including:
-the building of LLVM; the identification
-of what is going to be in a release;
+Notes: I found the documentation for LLVM-C and LLVM quite frustrating,
+which include the following:
+the instructions on building LLVM on Windows;
+the identification of what is going to be in a release;
 bug reporting and fixing.
 
-The build scripts in
-this project were derived mostly by trial and error for Windows and Android,
+Swigged.LLVM is build directly from the sources of LLVM.
+While there may be downloadables from LLVM.org, I do not understand
+them. For example, when I use Dumpbin of the .LIB files that are
+installed in C:\Program Files\LLVM-x86\lib, I do not find any
+exported symbols for LLVM-C, e.g., LLVMBuildCall.
+Swigged.LLVM consists of a DLL which is statically linked to
+the raw libraries of an LLVM build.
+With this approach, it's then possible to substitute a 
+debug version of the library
+so one can debug the entire chain of calls
+into LLVM. I do not trust anything.
+
+The build scripts in this project were derived mostly
+by trial and error, for Windows and Android,
 from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ).
 
-A second important note is that there are no LLVM-C pre-built DLLs.
-All LLVM NET wrappers must chooses what to expose. Fortunately, there are not many changes
-to the LLVM-C .H include files. What is exported from LLVM-C for each release of Swigged.LLVM
-is completely derived by trail and error.
-
-Some changes are future features being accidentally
-added to a release. Unfortunately,
-LLVM authors do not check their work to see if even breaks a build--especially Windows:
+Using this approach, I have found that some changes are
+features creaping into an earlier release by accident.
+Unfortunately,
+LLVM authors check in all changes into the master branch.
+When a release is performed, a new branch is started from
+a point on the master, which contains partial changes for all
+sorts of future features. I have also noticed that LLVM authors
+do not check to see if even breaks a build, and often ignore
+bugs that I raise pointing out problems with builds.
 [33455](https://bugs.llvm.org/show_bug.cgi?id=33455),
 [34633](https://bugs.llvm.org/show_bug.cgi?id=34633),
-[35947](https://bugs.llvm.org/show_bug.cgi?id=35947).
+[35947](https://bugs.llvm.org/show_bug.cgi?id=35947). It's very
+aggrevating to see such sloppy work from people. (And I have bee
+unemployed in software for many years, but that is another story.)
 
 The examples here were culled and derived from a variety
 of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
@@ -225,10 +241,14 @@ Enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebug
 ##### LLVMSharp (https://www.nuget.org/packages/LLVMSharp/3.9.1-rc3   https://github.com/Microsoft/LLVMSharp )
 
 LLVMSharp is the "semi-official" C# LLVM bindings library from Microsoft. 
-While it is a NET Core API, it appears it cannot be used with NET Framework
-applications--at least I have had no luck in doing so. The bindings are generated
-from program contained within the project. I have had no luck in getting through a simple
-example using the ORC code generator. (Fortunately, I provide functioning examples in the swigged-llvm project!)
+I was originally considering using this API, but
+at the time I started Swigged.LLVM, LLVMSharp was over a year out of
+date, and had no idea if it was active anymore. Version 4 of LLVM was skipped entirely
+when a new version was released for LLVM version 5.0.0. I also had no
+luck linking against Net Framework applications.
+I have had no luck in getting through a simple
+example using the ORC code generator. (I provide
+functioning examples in the swigged-llvm project.)
 
 ##### LLVM.NET (https://github.com/NETMF/Llvm.NET http://netmf.github.io/Llvm.NET/html/47ec5af0-5c1c-443e-b2b3-158a100dc594.htm )
 
