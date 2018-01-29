@@ -14,7 +14,7 @@ function Invoke-CmdScript {
   }
 }
 
-bash -c "rm -rf x64-Release"
+rm x64-Release -Recurse -Force
 
 mkdir x64-Release
 Invoke-CmdScript "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
