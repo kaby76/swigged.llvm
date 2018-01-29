@@ -14,6 +14,8 @@ function Invoke-CmdScript {
   }
 }
 
+Get-Date
+Get-Location
 rm x64-Release -Recurse -Force
 
 mkdir x64-Release
