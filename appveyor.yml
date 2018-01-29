@@ -1,0 +1,7 @@
+
+branches:
+  only:
+  - master
+
+build_script:
+  - ps: .\BuildAll.ps1
