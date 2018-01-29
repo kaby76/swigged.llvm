@@ -17,36 +17,29 @@ the identification of what is going to be in a release;
 bug reporting and fixing.
 
 Swigged.LLVM is build directly from the sources of LLVM.
-While there may be downloadables from LLVM.org, I do not understand
-them. For example, when I use Dumpbin of the .LIB files that are
-installed in C:\Program Files\LLVM-x86\lib, I do not find any
-exported symbols for LLVM-C, e.g., LLVMBuildCall.
-Swigged.LLVM consists of a DLL which is statically linked to
+While there may be pre-built downloadables from LLVM.org (http://releases.llvm.org/download.html#5.0.1),
+I do not understand them. Dumpbin of the .LIB files in C:\Program Files\LLVM-x86\lib does not
+export any LLVM-C symbols, e.g., LLVMBuildCall.
+Therefore, Swigged.LLVM consists of a DLL which is statically linked to
 the raw libraries of an LLVM build.
-With this approach, it's then possible to substitute a 
-debug version of the library
-so one can debug the entire chain of calls
-into LLVM. I do not trust anything.
 
 The build scripts in this project were derived mostly
 by trial and error, for Windows and Android,
 from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ).
 
-Using this approach, I have found that some changes are
-features creaping into an earlier release by accident.
-Unfortunately,
-LLVM authors check in all changes into the master branch.
-When a release is performed, a new branch is started from
-a point on the master, which contains partial changes for all
-sorts of future features. I have also noticed that LLVM authors
-do not check to see if even breaks a build, and often ignore
-bugs that I raise pointing out problems with builds.
+Note, I have found that some features of future releases 
+creaping into an earlier release by accident. Unfortunately,
+LLVM authors check in all changes into the master branch, and
+branch with a new release of the current sources in master.
+LLVM authors do not check to see if their checkins break
+a build, and have completely ignored bugs that I raise pointing out problems
+with the builds.
 [33455](https://bugs.llvm.org/show_bug.cgi?id=33455),
 [34633](https://bugs.llvm.org/show_bug.cgi?id=34633),
-[35947](https://bugs.llvm.org/show_bug.cgi?id=35947). It's very
-aggrevating to see such sloppy work from people. (And I have bee
-unemployed in software for many years, but that is another story.)
+[35947](https://bugs.llvm.org/show_bug.cgi?id=35947).
+It's aggrevating to see such sloppy work from people but this is
+what it is.
 
 The examples here were culled and derived from a variety
 of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
