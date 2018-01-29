@@ -38,8 +38,7 @@ with the builds.
 [33455](https://bugs.llvm.org/show_bug.cgi?id=33455),
 [34633](https://bugs.llvm.org/show_bug.cgi?id=34633),
 [35947](https://bugs.llvm.org/show_bug.cgi?id=35947).
-It's aggrevating to see such sloppy work from people but this is
-what it is.
+It's aggrevating but this is what it is.
 
 The examples here were culled and derived from a variety
 of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
