@@ -10,35 +10,44 @@ reader, and extends the API to contain additional LLVM-C functionality. Swigged.
 up some of the problems with the original wrapper in SharpLang, adds more tests of the API,
 and adds several examples.
 
-Notes: I found the documentation for LLVM-C and LLVM quite frustrating,
-which include the following:
-the instructions on building LLVM on Windows;
-the identification of what is going to be in a release;
-bug reporting and fixing.
-
 Swigged.LLVM is build directly from the sources of LLVM.
 While there may be pre-built downloadables from LLVM.org (http://releases.llvm.org/download.html#5.0.1),
-I do not understand them. Dumpbin of the .LIB files in C:\Program Files\LLVM-x86\lib does not
-export any LLVM-C symbols, e.g., LLVMBuildCall.
-Therefore, Swigged.LLVM consists of a DLL which is statically linked to
-the raw libraries of an LLVM build.
+I do not understand them. Dumpbin of the .LIB files in C:\Program Files\LLVM-x86\lib and elsewhere
+that are created when running the installation program do not
+export any LLVM-C symbols, e.g., LLVMBuildCall. As far as I can tell,
+the pre-built binaries are only for the Clang toolchain, not the LLVM infrastructure.
+Thus, Swigged.LLVM references a Git repository that is a clone of https://github.com/llvm-mirror/llvm .
+The repository contains tags and pre-built binaries for LLVM-C. The repository address
+is https://github.com/kaby76/llvm .
+The build scripts in Swigged.LLVM reference the cloned LLVM repository for header files and
+binaries. NB, I specifically chose not to publish the native library swigged.llvm.native.dll (.so)
+itself in Nuget.org (unlike, for example, LLVMSharp). It makes no sense to use the native library
+by itself without the accompanying C# library Swigged.LLVM.dll. Further, Nuget.org is quite cluttered
+with dead and useless sub-projects.
 
 The build scripts in this project were derived mostly
-by trial and error, for Windows and Android,
+by trial and error, especially for Windows and Android,
 from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ).
 
 Note, I have found that some features of future releases 
 creaping into an earlier release by accident. Unfortunately,
-LLVM authors check in all changes into the master branch, and
-branch with a new release of the current sources in master.
-LLVM authors do not check to see if their checkins break
-a build, and have completely ignored bugs that I raise pointing out problems
-with the builds.
+LLVM authors check in all changes into the master branch regardless
+of when it is to be released. When a release is contemplated, LLVM
+authors create a branch for the new release off of the master branch.
+Thus, who knows what you get in a release.
+Further, LLVM authors do not check to see if their checkins break
+a build, and bugs that I filed have been completely ignored.
 [33455](https://bugs.llvm.org/show_bug.cgi?id=33455),
 [34633](https://bugs.llvm.org/show_bug.cgi?id=34633),
 [35947](https://bugs.llvm.org/show_bug.cgi?id=35947).
 It's aggrevating but this is what it is.
+
+Note, I found the documentation for LLVM-C and LLVM quite frustrating,
+specifically:
+the instructions on building LLVM on Windows and Android;
+the identification of what is going to be in a release;
+bug reporting and fixing.
 
 The examples here were culled and derived from a variety
 of sources. The equivalent of the Kaleidoscope example is not provided here because it focuses too much on compiler construction
@@ -50,8 +59,9 @@ which compiles CIL into GPU code for parallel programming.
 * Windows 10 (x64)
 * Ubuntu.16.04 (x64)
 
-Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 2.0 assembly. It is compatible with Net Core 2.0 and Net Framework 4.6.1 and later versions. Swigged.llvm.native is a platform specific library.
-Details to build are described below.
+Swigged.llvm can be built and run in the Linux environment. Swigged.llvm is Net Standard 2.0 assembly.
+It is compatible with Net Core 2.0 and Net Framework 4.6.1 and later versions.
+Note, Swigged.llvm.native is a platform specific library.
 
 ## Using Swigged.llvm (from NuGet):
 
@@ -77,11 +87,11 @@ Use the Package Manager GUI in VS 2017 to add in the package "swigged.llvm". Or,
 download the package from NuGet (https://www.nuget.org/packages/swigged.llvm) and
 add the package "swigged.llvm" from the nuget package manager console.
 
-Set up the build of your C# application with Platform = "AnyCPU", Configuration = "Debug" or "Release". In the Properties for the
-application, un-check "Prefer 32-bit" to run as 64-bit app.
+#### Further settings for all platforms
 
-You should not have to copy swigged.llvm.native.dll to the executable directory. However, if your program is having problems with finding the
-dll, copy the swigged-llvm-native.dll from the appropriate target from the packages/ directory.
+Set up the build of your C# application with Platform = "AnyCPU", Configuration = "Debug" or "Release".
+You can do this in VS 2017 in the Properties for the
+application: un-check "Prefer 32-bit" to run as 64-bit app.
 
 # Example #
 
