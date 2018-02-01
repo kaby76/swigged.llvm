@@ -19,7 +19,9 @@ Get-Date
 Get-Location
 cd ..\llvm
 rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
-# curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0.0.2-alpha/x64-Release.tar.gz
+rm x64-Release.tar -Recurse -Force -erroraction 'silentlycontinue'
+rm x64-Release.tar.gz -Recurse -Force -erroraction 'silentlycontinue'
+curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0.0.2-alpha/x64-Release.tar.gz
 bash -lc "pwd"
 bash -lc "gzip -d x64-Release.tar.gz"
 bash -lc "tar -xvf x64-Release.tar"
