@@ -14,8 +14,12 @@ function Invoke-CmdScript {
   }
 }
 
-Set-PSDebug -Trace 1
+# Set-PSDebug -Trace 1
 $ErrorActionPreference = "Stop"
+dir "C:\Program Files (x86)\"
+dir "C:\Program Files (x86)\Microsoft Visual Studio"
+dir "C:\Program Files (x86)\Microsoft Visual Studio\2017\"
+dir "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community"
 Invoke-CmdScript "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
 Get-Date
 Get-Location
