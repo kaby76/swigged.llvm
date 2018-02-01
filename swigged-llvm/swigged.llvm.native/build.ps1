@@ -1,4 +1,5 @@
 # BUILD SCRIPT FOR WINDOWS TARGETS
+$ErrorActionPreference = "Stop"
 
 # Invokes a Cmd.exe shell script and updates the environment.
 function Invoke-CmdScript {
@@ -16,8 +17,15 @@ function Invoke-CmdScript {
 
 Get-Date
 Get-Location
-rm x64-Release -Recurse -Force
-
+cd ..\llvm
+rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
+# curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0.0.2-alpha/x64-Release.tar.gz
+bash -lc "pwd"
+bash -lc "gzip -d x64-Release.tar.gz"
+bash -lc "tar -xvf x64-Release.tar"
+rm x64-Release.tar  -Force -erroraction 'silentlycontinue'
+cd ..\swigged.llvm.native
+rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
 mkdir x64-Release
 Invoke-CmdScript "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
 cd x64-Release
