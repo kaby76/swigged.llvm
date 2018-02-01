@@ -1,6 +1,4 @@
 # BUILD SCRIPT FOR WINDOWS TARGETS
-Set-PSDebug -Trace 1
-$ErrorActionPreference = "Stop"
 
 # Invokes a Cmd.exe shell script and updates the environment.
 function Invoke-CmdScript {
@@ -16,6 +14,9 @@ function Invoke-CmdScript {
   }
 }
 
+Set-PSDebug -Trace 1
+$ErrorActionPreference = "Stop"
+Invoke-CmdScript "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
 Get-Date
 Get-Location
 cd ..\llvm
@@ -30,7 +31,6 @@ rm x64-Release.tar  -Force -erroraction 'silentlycontinue'
 cd ..\swigged.llvm.native
 rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
 mkdir x64-Release
-Invoke-CmdScript "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
 cd x64-Release
 cmake "-DLLVM_DIR=%CD%\..\..\llvm\x64-Release\lib\cmake\llvm"    -G "Visual Studio 15 2017 Win64" ..
 msbuild swigged-llvm-native.sln /p:Configuration=Release /p:Platform=x64
