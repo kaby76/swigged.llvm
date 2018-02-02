@@ -7,20 +7,20 @@ is based upon [SharpLang](https://github.com/xen2/SharpLang), which is now defun
 was to compile Microsoft's [CIL](https://en.wikipedia.org/wiki/Common_Intermediate_Language), but was mothballed
 when Microsoft open sourced much of the .NET runtime, including RyuJIT.
 
-Swigged.LLVM recovers the SWIG wrapper for LLVM-C in Sharplang. Swigged.LLVM drops the CIL
+Swigged.LLVM recovers the SWIG wrapper for LLVM-C in Sharplang, drops the CIL
 reader, and extends the API to contain additional LLVM-C functionality. Swigged.llvm cleans
 up some of the problems with the original wrapper in SharpLang, adds more tests of the API,
 and adds several examples.
 
-Swigged.LLVM is built with binaries of a Git repository that is a clone of the LLVM git mirror.
 While there are downloadables from LLVM.org (http://releases.llvm.org/download.html#5.0.1),
 these binaries do not contain the LLVM infrastructure that Swigged.LLVM can use.
-The cloned repository contains tags and binaries for LLVM-C that Swigged.LLVM--or any program--can use.
+Swigged.LLVM is built with binaries built from a Git repository that is a clone of the LLVM git
+mirror. The cloned repository contains tags and binaries for LLVM-C.
 The repository address is https://github.com/kaby76/llvm .
 
 Note, I specifically chose not to publish the native library swigged-llvm-native.dll (.so)
 in Nuget.org as a separate sub-project. It makes no sense to use the native library
-by itself without the accompanying C# library Swigged.LLVM.dll. Further, Nuget.org is quite cluttered
+without the accompanying C# library Swigged.LLVM.dll. Further, Nuget.org is quite cluttered
 with dead and/or dubious sub-projects.
 
 The build scripts in this project were derived mostly
