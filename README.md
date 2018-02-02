@@ -1,4 +1,6 @@
-# Swigged-LLVM
+# Swigged.LLVM
+
+[![Build status](https://ci.appveyor.com/api/projects/status/7sb44ofy24qftk3j?svg=true)](https://ci.appveyor.com/project/kaby76/swigged-llvm)
 
 This project is a [SWIG](http://swig.org)-generated wrapper of LLVM-C for C#. This code
 is based upon [SharpLang](https://github.com/xen2/SharpLang), which is now defunct. The purpose of that project
@@ -23,7 +25,7 @@ The build scripts in Swigged.LLVM reference the cloned LLVM repository for heade
 binaries. NB, I specifically chose not to publish the native library swigged.llvm.native.dll (.so)
 itself in Nuget.org (unlike, for example, LLVMSharp). It makes no sense to use the native library
 by itself without the accompanying C# library Swigged.LLVM.dll. Further, Nuget.org is quite cluttered
-with dead and useless sub-projects.
+with dead and/or dubious sub-projects.
 
 The build scripts in this project were derived mostly
 by trial and error, especially for Windows and Android,
@@ -157,8 +159,7 @@ http://llvm.org/docs/doxygen/html/modules.html
 ## Building Swigged.llvm/swigged.llvm.native:
 
 Swigged.llvm requires a build of LLVM, described below. Building LLVM is a very time consuming process. Also, the SWIG translation spec file is
-highly tuned to the particular version of LLVM, currently for Release_40, so it may not work with other releases. Some editing is done post Swig
-because Swig hardwires some things.
+highly tuned to the particular version of LLVM, currently for Release_40, so it may not work with other releases.
 
 ### General requirements to build
 
@@ -168,14 +169,6 @@ because Swig hardwires some things.
 * Python
 * WSL Bash (Windows)
 * These tools in path variable.
-
-~~~~
-# Optimized for DigitalOcean.com
-sudo apt-get install git
-sudo apt-get update
-sudo apt-get install cmake
-sudo apt-get install build-essential
-~~~~
 
 ### Grab sources from git or LLVM download area.
 
@@ -190,27 +183,34 @@ cd swigged-llvm/swigged-llvm/llvm
 git clone https://github.com/kaby76/llvm.git
 ~~~~
 
+Note, after cloning LLVM, set the branch for the release you are interested in!
+
 ### Windows ###
 
-Depending on what you want, you should build both 32-bit and 64-bit libraries. But,
-you can skip one target if you aren't interested.
-
-Note, from Cmd or Powershell, execute the Cmd batch file. This will be four targets for Windows.
+From Powershell, execute BuildAll.ps1. If you want to generate for a version that is
+different than the sources that the master branch is currently targeting, you will
+need to run Swig. Further, the build is tuned for the VS2017/Release/x64 target. If you want,
+you can target something else using Cmake. But, Cmake generates .SLN files that contain
+full path names. This is why the build use Msbuild rather than Cmake on a daily basis. However,
+there are build scripts in the source for Swigged.LLVM to use Cmake.
 
 ~~~~
 cd .swig
 cd ..
 bash -c ./generate.sh
-cd llvm
-call .\build.bat
-cd ..
-msbuild swigged-llvm.sln /p:Configuration=Debug /p:Platform="AnyCPU"
-cd swigged.llvm.native
-powershell
-./build.ps1
 ~~~~
 
 ### Ubuntu ###
+
+Make sure to set up your evironment.
+
+~~~~
+# Optimized for DigitalOcean.com
+sudo apt-get install git
+sudo apt-get update
+sudo apt-get install cmake
+sudo apt-get install build-essential
+~~~~
 
 Currently, I only build for Ubuntu.16.04. I've had problems building LLVM for other targets.
 
@@ -219,19 +219,7 @@ git, build-essential, xz-utils. For Net Core, follow the instructions at
 https://www.microsoft.com/net/core#linuxubuntu 
 
 ~~~~
-cd .swig
-cd ..
-bash -c ./generate.sh
-cd llvm
 .\build.sh
-cd ..
-cd swigged.llvm
-dotnet restore
-dotnet build
-cd ..
-cd swigged.llvm.native
-./build.sh
-cd ..
 ~~~~
 
 ## Debugging on Windows
