@@ -1,0 +1,837 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/Kenne/Documents/swigged.llvm.2/swigged-llvm/xxx/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CSLLVM.DIDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CSLLVM.DIDescriptor.html",
+          "hash": "oJr2bq1Jlw6vCX4jmboWTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CSLLVM.Intrinsics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CSLLVM.Intrinsics.html",
+          "hash": "Mbj5FUK/mJ4mAmz6e2m3DA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CSLLVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CSLLVM.html",
+          "hash": "7C5laq67WNiiLcjuiPGPDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.AtomicOrdering.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.AtomicOrdering.html",
+          "hash": "ZB1MZR7QsBz9nbHkC2V4OQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.AtomicRMWBinOp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.AtomicRMWBinOp.html",
+          "hash": "65O7M3Y8fOPOrrhwsoYg+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.AttributeRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.AttributeRef.html",
+          "hash": "UYW9KC0JcH3mb7ewVXdRAg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.BasicBlockRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.BasicBlockRef.html",
+          "hash": "3kJhOHX3Pr116cIQyo4xAg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.BuilderRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.BuilderRef.html",
+          "hash": "zzqMKMUw4yYr5iK2PAtRJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.ByteOrdering.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.ByteOrdering.html",
+          "hash": "P3bWK937KsatLWkp1quTmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.CallConv.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.CallConv.html",
+          "hash": "UdNIGYyjnaDXTS0o6/3DiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.CodeGenFileType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.CodeGenFileType.html",
+          "hash": "oz/rSe8/sWTD0ogMG2TfmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.CodeGenOptLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.CodeGenOptLevel.html",
+          "hash": "stpTzv7/mTsDokcbkT7oLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.CodeModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.CodeModel.html",
+          "hash": "cvyzATNj7SON45kU7VsTxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.ContextRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.ContextRef.html",
+          "hash": "FNQ89QIJLUW0zJcV89kRSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.DLLStorageClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.DLLStorageClass.html",
+          "hash": "ROcnV+FgQduH8D9dmkdwpg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.DiagnosticInfoRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.DiagnosticInfoRef.html",
+          "hash": "gwJMTKDMl7IcM+9EtWQbyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.DiagnosticSeverity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.DiagnosticSeverity.html",
+          "hash": "yevCrY4yfQwrmybfpfo3Lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.ExecutionEngineRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.ExecutionEngineRef.html",
+          "hash": "1ATm2VQhA3gNw7mjABJr5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.GenericValueRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.GenericValueRef.html",
+          "hash": "/5uJ5NYqsr1ZChpBLBAQ/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.IntPredicate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.IntPredicate.html",
+          "hash": "tMPM4Y+7AB1yk3ip5IB6zA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.LLVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.LLVM.html",
+          "hash": "pemtju+jAizkM3435wFLdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.LandingPadClauseTy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.LandingPadClauseTy.html",
+          "hash": "pNaQL2DmCOCcwoVG1gDEDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.Linkage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.Linkage.html",
+          "hash": "QPU5NjslxqZKmOSh1CvAVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.LinkerMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.LinkerMode.html",
+          "hash": "imigLvdRGTuhCr2pZ3dbYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.MCJITCompilerOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.MCJITCompilerOptions.html",
+          "hash": "QdfTSIN0hKrCq4UwAHq2mw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.MCJITMemoryManagerRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.MCJITMemoryManagerRef.html",
+          "hash": "CsLzDJ78mGlxCWHsoSC/Xw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.MemoryBufferRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.MemoryBufferRef.html",
+          "hash": "vA3tdzAoTOtIPE1JYXZRFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.MetadataRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.MetadataRef.html",
+          "hash": "WfZZbNwm7hLCL2SgoQ559w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.ModuleProviderRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.ModuleProviderRef.html",
+          "hash": "lf963aj+8MLPTmCXhX5rFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.ModuleRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.ModuleRef.html",
+          "hash": "+Thi56grsHkW7u5nBZWzkw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.MyString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.MyString.html",
+          "hash": "37hS7p5sGRvk9RlpJH8/VQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.ObjectFileRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.ObjectFileRef.html",
+          "hash": "K6CVGT6FEuzrzkeI5kKaYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.OpInfo1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.OpInfo1.html",
+          "hash": "OZoAD8hzcFrW7Nlb5WyMDA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.OpInfoSymbol1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.OpInfoSymbol1.html",
+          "hash": "4tD8E1ZtqHb7mFuej1qazA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.Opcode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.Opcode.html",
+          "hash": "9atO5hpiJs7rif77HZ+iaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.OrcErrorCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.OrcErrorCode.html",
+          "hash": "+dHH+vXoRuz/ptI5n9hNBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.OrcJITStackRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.OrcJITStackRef.html",
+          "hash": "1fDl4sDzQb0skmZzu/YfrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.OrcModuleHandle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.OrcModuleHandle.html",
+          "hash": "KAg/5YekUBhN8dS2aPcgFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.PassManagerBuilderRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.PassManagerBuilderRef.html",
+          "hash": "VI0ibWRpyN38P6u1Yv3RAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.PassManagerRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.PassManagerRef.html",
+          "hash": "F2ZOu2ikjtDS6ythlC8eLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.PassRegistryRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.PassRegistryRef.html",
+          "hash": "SoucOaEeiPlU2f2VhAliQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.RealPredicate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.RealPredicate.html",
+          "hash": "fi1VygD0SzO4lZ9Fx9ugVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.RelocMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.RelocMode.html",
+          "hash": "g8Z8Sc6vVOMNUMxFUUFptQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.SharedModuleRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.SharedModuleRef.html",
+          "hash": "gW8mNaEmZI42wxbeuxwtWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.SharedObjectBufferRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.SharedObjectBufferRef.html",
+          "hash": "GTua5zA+NV4YSZFlCR+CBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.TargetDataRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.TargetDataRef.html",
+          "hash": "yrsBsPI0XdmNOkDYHAf7Qg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.TargetLibraryInfoRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.TargetLibraryInfoRef.html",
+          "hash": "Fxt7nQX+ZdryMSHCK3NgJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.TargetMachineRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.TargetMachineRef.html",
+          "hash": "ZKF3lXuBGAW0KRplRARibQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.TargetRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.TargetRef.html",
+          "hash": "/QfaohMf9Swu5pgLlegm7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.ThreadLocalMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.ThreadLocalMode.html",
+          "hash": "9gG/js3Ufm6SueDA1V7QMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.TypeKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.TypeKind.html",
+          "hash": "bRSTgYuC/hRPMrOWkuaXzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.TypeRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.TypeRef.html",
+          "hash": "jDzc63/bs4ERAbVjZMt1BA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.UseRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.UseRef.html",
+          "hash": "MoMzRGoiRQRUeWvZK4UiSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.ValueKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.ValueKind.html",
+          "hash": "u/mozKZ7wICgdfBEyZet2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.ValueRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.ValueRef.html",
+          "hash": "dKZK3MoVfkxKvlRTVQU53w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.VerifierFailureAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.VerifierFailureAction.html",
+          "hash": "DXbY9RwsmxAEQx6jvl8xzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.Visibility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.Visibility.html",
+          "hash": "WOe/gwEdKijb+9k3vECQNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.cppLLVMOrcLazyCompileCallbackFn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.cppLLVMOrcLazyCompileCallbackFn.html",
+          "hash": "elwpOSSWCL/GgW9NQnebzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.cppLLVMOrcSymbolResolverFn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.cppLLVMOrcSymbolResolverFn.html",
+          "hash": "mndhJ2K35i27Wp5hv6+0rg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Swigged.LLVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Swigged.LLVM.html",
+          "hash": "LhzZKpxf9ao7m29oNujzSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "9h510IHKwGahzX0xgLWQIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "oUZEu8NzhL70YwI/gU638Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "Vz/dfjyJtbfEFS+t4C0xZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "xVlQaX7Tk85omoiWv3O+Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "/7W7gAku4KKVpXcy15nq/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "ob7LqWp4kTNLz+9W4omdTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
