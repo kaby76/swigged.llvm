@@ -34,9 +34,7 @@ rm Release\bin\HowToUseJIT.exe -Force -erroraction 'silentlycontinue'
 rm Release\bin\Kaleidoscope-*.exe -Force -erroraction 'silentlycontinue'
 rm Release\bin\llvm-c-test.exe -Force -erroraction 'silentlycontinue'
 rm Release\bin\llvm-lto*.exe -Force -erroraction 'silentlycontinue'
-
 rm tools -Recurse -Force -erroraction 'silentlycontinue'
-
 rm lib\Analysis -Recurse -Force -erroraction 'silentlycontinue'
 rm lib\AsmParser -Recurse -Force -erroraction 'silentlycontinue'
 rm lib\BinaryFormat -Recurse -Force -erroraction 'silentlycontinue'
@@ -70,6 +68,7 @@ rm docs -Recurse -Force -erroraction 'silentlycontinue'
 rm test -Recurse -Force -erroraction 'silentlycontinue'
 rm unittests -Recurse -Force -erroraction 'silentlycontinue'
 rm utils -Recurse -Force -erroraction 'silentlycontinue'
+bash -lc "cp -r ../llvm/include ./llvm/include"
 cd ..
 bash -lc "pwd"
 bash -lc "ls -l x64-Release"

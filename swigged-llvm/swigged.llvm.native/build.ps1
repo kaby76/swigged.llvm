@@ -20,6 +20,7 @@ Invoke-CmdScript "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\
 Get-Date
 Get-Location
 cd ..\llvm
+rm llvm -Recurse -Force -erroraction 'silentlycontinue'
 rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
 rm x64-Release.tar -Force -erroraction 'silentlycontinue'
 rm x64-Release.tar.gz -Force -erroraction 'silentlycontinue'
@@ -27,11 +28,8 @@ curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0
 bash -lc "pwd"
 bash -lc "gzip -d x64-Release.tar.gz"
 bash -lc "tar -xvf x64-Release.tar"
-rm x64-Release.tar  -Force -erroraction 'silentlycontinue'
+rm x64-Release.tar -Force -erroraction 'silentlycontinue'
 cd ..\swigged.llvm.native
 rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
-mkdir x64-Release
-cd x64-Release
-cmake "-DLLVM_DIR=%CD%\..\..\llvm\x64-Release\lib\cmake\llvm"    -G "Visual Studio 15 2017 Win64" ..
-msbuild swigged-llvm-native.sln /p:Configuration=Release /p:Platform=x64
+msbuild swigged.llvm.native.sln /p:Configuration=Release /p:Platform=x64
 cd ..
