@@ -71,12 +71,8 @@ dotnet publish -r <target>
 # Copy the swigged-llvm-target file to target output directory.
 # (For Windows, the search path for the DLL will be adjusted to find the file.
 # If not found, or it's the wrong version, copy the file to the target output directory.
-# For Ubuntu, you must copy the swigged-llvm-native.so file to the target directory. There is
-# no way to search for the file.)
-cp {home}/bin/{Debug or Release}/netcoreapp1.1/{target}/publish
+# For Ubuntu, you must copy the swigged-llvm-native.so file to the target directory.
 ````
-
-For an example, see .../Examples/NetcoreApp
 
 #### Net Framework App on Windows
 
@@ -143,9 +139,11 @@ namespace core.sanity_test
 }
 ~~~~
 
+For more examples, see .../Examples/NetcoreApp
+
 ## Documentation of Swigged.llvm (Docfx):
 
-http://domemtech.com/swigged-llvm
+http://domemtech.com/swigged.llvm
 
 ## Documentation of LLVM-C (Doxygen):
 
@@ -225,15 +223,11 @@ Enable unmanaged debugging (<EnableUnmanagedDebugging>true</EnableUnmanagedDebug
 
 ##### LLVMSharp (https://www.nuget.org/packages/LLVMSharp/3.9.1-rc3   https://github.com/Microsoft/LLVMSharp )
 
-LLVMSharp is the "semi-official" C# LLVM bindings library from Microsoft. 
-I was originally considering using this API, but
-at the time I started Swigged.LLVM, LLVMSharp was over a year out of
+LLVMSharp is the C# LLVM bindings library from Microsoft. 
+I was originally considering using LLVMSharp, but it was over a year out of
 date, and had no idea if it was active anymore. Version 4 of LLVM was skipped entirely
-when a new version was released for LLVM version 5.0.0. I also had no
-luck linking against Net Framework applications.
-I have had no luck in getting through a simple
-example using the ORC code generator. (I provide
-functioning examples in the Swigged.LLVM project.)
+when a new version was released for LLVM version 5.0.0, and 
+I had no luck linking against a Net Framework application.
 
 ##### LLVM.NET (https://github.com/NETMF/Llvm.NET http://netmf.github.io/Llvm.NET/html/47ec5af0-5c1c-443e-b2b3-158a100dc594.htm )
 
