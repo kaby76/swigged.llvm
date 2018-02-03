@@ -16,7 +16,9 @@ While there are downloadables from LLVM.org (http://releases.llvm.org/download.h
 these binaries do not contain the LLVM infrastructure that Swigged.LLVM can use.
 Swigged.LLVM is built with binaries built from a Git repository that is a clone of the LLVM git
 mirror. The cloned repository contains tags and binaries for LLVM-C.
-The repository address is https://github.com/kaby76/llvm .
+The repository address is https://github.com/kaby76/llvm . The build scripts for LLVM itself are
+in Swigged.LLVM: https://github.com/kaby76/swigged.llvm/tree/master/swigged-llvm/llvm . It uses
+Cmake, and works on Windows and Ubuntu.
 
 Note, I specifically chose not to publish the native library swigged-llvm-native.dll (.so)
 in Nuget.org as a separate sub-project. It makes no sense to use the native library
@@ -28,20 +30,18 @@ by trial and error, especially for Windows and Android,
 from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ).
 
-Note, I have found that some features of future releases 
-creaping into an earlier release by accident. Unfortunately,
-LLVM authors check in all changes into the master branch regardless
-of when it is to be released. When a release is contemplated, LLVM
-authors create a branch for the new release off of the master branch.
-Thus, who knows what you get in a release.
-Further, LLVM authors do not check to see if their checkins break
-a build, and bugs that I filed have been completely ignored.
+Note, I have found that feature creep of future releases 
+going into an earlier release by accident. 
+The LLVM developers usually check in all changes into the master branch.
+When a release is prepared, the developers
+create a branch for the new release from the master branch.
+Further, the LLVM developers tend to not check fully
+builds for regressions.
 [33455](https://bugs.llvm.org/show_bug.cgi?id=33455),
 [34633](https://bugs.llvm.org/show_bug.cgi?id=34633),
 [35947](https://bugs.llvm.org/show_bug.cgi?id=35947).
-It's aggrevating but this is what it is.
 
-Note, I found the documentation for LLVM-C and LLVM quite frustrating,
+Note, I found the documentation for LLVM frustrating,
 specifically:
 the instructions on building LLVM on Windows and Android;
 the identification of what is going to be in a release;
