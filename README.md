@@ -30,10 +30,9 @@ by trial and error, especially for Windows and Android,
 from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ).
 
-Note, I have found that feature creep of future releases 
-going into an earlier release by accident. 
-The LLVM developers usually check in all changes into the master branch.
-When a release is prepared, the developers
+Note, I have found feature creep going across different
+releases. The LLVM developers usually check in all changes into
+the master branch. When a release is prepared, the developers
 create a branch for the new release from the master branch.
 Further, the LLVM developers tend to not check fully
 builds for regressions.

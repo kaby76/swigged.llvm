@@ -14,11 +14,9 @@ function Invoke-CmdScript {
   }
 }
 
-Set-PSDebug -Trace 1
 $ErrorActionPreference = "Stop"
 Invoke-CmdScript "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
 Get-Date
-Get-Location
 cd ..\llvm
 rm llvm -Recurse -Force -erroraction 'silentlycontinue'
 rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
