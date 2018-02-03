@@ -18,8 +18,11 @@ function Invoke-CmdScript {
 Get-Date
 $ErrorActionPreference = "Stop"
 Invoke-CmdScript "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
-msbuild swigged-llvm\swigged.llvm.sln /p:Configuration=Release /p:Platform="Any CPU"
+cd swigged-llvm
+dotnet restore
+dotnet build
+# msbuild swigged-llvm\swigged.llvm.sln /p:Configuration=Release /p:Platform="Any CPU"
 Get-Date
-cd swigged-llvm\swigged.llvm.native
+cd swigged.llvm.native
 .\build.ps1
 Get-Date
