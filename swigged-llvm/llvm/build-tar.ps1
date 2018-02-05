@@ -1,54 +1,53 @@
 # BUILD SCRIPT FOR WINDOWS TARGETS
 
-rm x64-Release.tar -Force
-rm x64-Release.tar.gz -Force
+rm x64-Release.tar -Force -erroraction 'silentlycontinue'
+rm x64-Release.tar.gz -Force -erroraction 'silentlycontinue'
 cd x64-Release
 
 # If all works, then clean up everything, and create .tar.gz file.
-rm Release\bin\BuildingAJIT*.exe -Force
-rm Release\bin\Fibonacci.exe -Force
-rm Release\bin\HowToUseJIT.exe -Force
-rm Release\bin\Kaleidoscope-*.exe -Force
-rm Release\bin\llvm-c-test.exe -Force
-rm Release\bin\llvm-lto*.exe -Force
-
-rm tools -Recurse -Force
-
-rm lib\Analysis -Recurse -Force
-rm lib\AsmParser -Recurse -Force
-rm lib\BinaryFormat -Recurse -Force
-rm lib\Bitcode -Recurse -Force
-rm lib\CodeGen -Recurse -Force
-rm lib\DebugInfo -Recurse -Force
-rm lib\Demangle -Recurse -Force
-rm lib\ExecutionEngine -Recurse -Force
-rm lib\Fuzzer -Recurse -Force
-rm lib\IR -Recurse -Force
-rm lib\IRReader -Recurse -Force
-rm lib\LineEditor -Recurse -Force
-rm lib\Linker -Recurse -Force
-rm lib\LTO -Recurse -Force
-rm lib\MC -Recurse -Force
-rm lib\Object -Recurse -Force
-rm lib\ObjectYAML -Recurse -Force
-rm lib\Option -Recurse -Force
-rm lib\Passes -Recurse -Force
-rm lib\ProfileData -Recurse -Force
-rm lib\Support -Recurse -Force
-rm lib\TableGen -Recurse -Force
-rm lib\Target -Recurse -Force
-rm lib\Testing -Recurse -Force
-rm lib\ToolDrivers -Recurse -Force
-rm lib\Transforms -Recurse -Force
-rm lib\XRay -Recurse -Force
-rm examples -Recurse -Force
-rm Debug -Recurse -Force
-rm docs -Recurse -Force
-rm test -Recurse -Force
-rm unittests -Recurse -Force
-rm utils -Recurse -Force
+rm Release\bin\BuildingAJIT*.exe -Force -erroraction 'silentlycontinue'
+rm Release\bin\Fibonacci.exe -Force -erroraction 'silentlycontinue'
+rm Release\bin\HowToUseJIT.exe -Force -erroraction 'silentlycontinue'
+rm Release\bin\Kaleidoscope-*.exe -Force -erroraction 'silentlycontinue'
+rm Release\bin\llvm-c-test.exe -Force -erroraction 'silentlycontinue'
+rm Release\bin\llvm-lto*.exe -Force -erroraction 'silentlycontinue'
+rm tools -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Analysis -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\AsmParser -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\BinaryFormat -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Bitcode -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\CodeGen -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\DebugInfo -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Demangle -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\ExecutionEngine -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Fuzzer -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\IR -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\IRReader -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\LineEditor -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Linker -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\LTO -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\MC -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Object -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\ObjectYAML -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Option -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Passes -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\ProfileData -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Support -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\TableGen -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Target -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Testing -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\ToolDrivers -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\Transforms -Recurse -Force -erroraction 'silentlycontinue'
+rm lib\XRay -Recurse -Force -erroraction 'silentlycontinue'
+rm examples -Recurse -Force -erroraction 'silentlycontinue'
+rm Debug -Recurse -Force -erroraction 'silentlycontinue'
+rm docs -Recurse -Force -erroraction 'silentlycontinue'
+rm test -Recurse -Force -erroraction 'silentlycontinue'
+rm unittests -Recurse -Force -erroraction 'silentlycontinue'
+rm utils -Recurse -Force -erroraction 'silentlycontinue'
 cd ..
-$ErrorActionPreference = "Stop"
+bash -lc "mkdir x64-Release/llvm"
+bash -lc "cp -r ./llvm/include x64-Release/llvm"
 bash -lc "pwd"
 bash -lc "ls -l x64-Release"
 bash -lc "tar cvf x64-Release.tar x64-Release"

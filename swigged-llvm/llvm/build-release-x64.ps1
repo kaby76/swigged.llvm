@@ -68,8 +68,9 @@ rm docs -Recurse -Force -erroraction 'silentlycontinue'
 rm test -Recurse -Force -erroraction 'silentlycontinue'
 rm unittests -Recurse -Force -erroraction 'silentlycontinue'
 rm utils -Recurse -Force -erroraction 'silentlycontinue'
-bash -lc "cp -r ../llvm/include ./llvm/include"
 cd ..
+bash -lc "mkdir x64-Release/llvm"
+bash -lc "cp -r ./llvm/include x64-Release/llvm"
 bash -lc "pwd"
 bash -lc "ls -l x64-Release"
 bash -lc "tar cvf x64-Release.tar x64-Release"

@@ -17,7 +17,8 @@ function Invoke-CmdScript {
 
 Get-Date
 $ErrorActionPreference = "Stop"
-Invoke-CmdScript "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
+$x = $(where.exe msbuild | select -first 1 | %{ $_ -replace ".*2017\\","" } | %{ $_ -replace "\\.*","" })
+Invoke-CmdScript "C:\Program Files (x86)\Microsoft Visual Studio\2017\$x\VC\Auxiliary\Build\vcvarsall.bat" x64
 cd swigged-llvm
 dotnet restore
 dotnet build

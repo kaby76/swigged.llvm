@@ -2,23 +2,23 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/7sb44ofy24qftk3j?svg=true)](https://ci.appveyor.com/project/kaby76/swigged-llvm)
 
-This project is a [SWIG](http://swig.org)-generated wrapper of LLVM-C for C#. This code
-is based upon [SharpLang](https://github.com/xen2/SharpLang), which is now defunct. The purpose of that project
-was to compile Microsoft's [CIL](https://en.wikipedia.org/wiki/Common_Intermediate_Language), but was mothballed
-when Microsoft open sourced much of the .NET runtime, including RyuJIT.
+This project is a [SWIG](http://swig.org)-generated wrapper of LLVM-C for C#.
+Swigged.LLVM is based upon [SharpLang](https://github.com/xen2/SharpLang), which is defunct, and was
+a compiler for Microsoft's [CIL](https://en.wikipedia.org/wiki/Common_Intermediate_Language).
 
 Swigged.LLVM recovers the SWIG wrapper for LLVM-C in Sharplang, drops the CIL
-reader, and extends the API to contain additional LLVM-C functionality. Swigged.llvm cleans
-up some of the problems with the original wrapper in SharpLang, adds more tests of the API,
+reader and compiler, and extends the API to contain additional LLVM-C functionality.
+Swigged.llvm cleans up some of the problems with the original wrapper in SharpLang, adds more tests of the API,
 and adds several examples.
 
 While there are downloadables from LLVM.org (http://releases.llvm.org/download.html#5.0.1),
 these binaries do not contain the LLVM infrastructure that Swigged.LLVM can use.
 Swigged.LLVM is built with binaries built from a Git repository that is a clone of the LLVM git
 mirror. The cloned repository contains tags and binaries for LLVM-C.
-The repository address is https://github.com/kaby76/llvm . The build scripts for LLVM itself are
-in Swigged.LLVM: https://github.com/kaby76/swigged.llvm/tree/master/swigged-llvm/llvm . It uses
-Cmake, and works on Windows and Ubuntu.
+The repository address is [https://github.com/kaby76/llvm](https://github.com/kaby76/llvm).
+The build scripts for LLVM itself are in Swigged.LLVM:
+[https://github.com/kaby76/swigged.llvm/tree/master/swigged-llvm/llvm](https://github.com/kaby76/swigged.llvm/tree/master/swigged-llvm/llvm).
+It uses Cmake, and works on Windows and Ubuntu.
 
 Note, I specifically chose not to publish the native library swigged-llvm-native.dll (.so)
 in Nuget.org as a separate sub-project. It makes no sense to use the native library
