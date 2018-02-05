@@ -7,73 +7,27 @@
     <version>6.0.0.2-alpha</version>
     <authors>Ken Domino</authors>
     <owners>Ken Domino</owners>
-    <projectUrl>https://github.com/kaby76/swigged-llvm</projectUrl>
-    <iconUrl>https://raw.github.com/kaby76/swigged-llvm/master/logo.png</iconUrl>
-    <licenseUrl>https://raw.github.com/kaby76/swigged-llvm/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/kaby76/swigged.llvm</projectUrl>
+    <iconUrl>https://raw.github.com/kaby76/swigged.llvm/master/logo.png</iconUrl>
+    <licenseUrl>https://raw.github.com/kaby76/swigged.llvm/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
     <description>A Swig-generated C#/NET wrapper of LLVM-C for Windows 10 (x64), Ubuntu 16.04 (x64).</description>
     <releaseNotes>
 * Version 6.0.0.2-alpha
-A cut of LLVM release_60 branch for 18/Jan/2018.
+Latest of LLVM release_60 branch.
 
 * Version 6.0.0.1-alpha
 Adopting version numbering from LLVM, 6.0.0. This version is a preliminary version, as LLVM.org has not released version 6 yet.
 
-* Version 5.0.4
-Removing support for 32-bit targets, upgrading to Net Standard 2.0. This means versions equal to and before Net Framework 4.6 and Net Core 1.1 are not supported.
-
-* Version 5.0.3
-Updating .targets file so that "copy" step of proper native library works regardless whether you "nuget"
-for a Net Framework, Standard, or Core project. Rest of package is essentially unchanged.
-
-* Version 5.0.2
-Adding in ToString() functions for ValueRef and TypeRef for easier debugging.
-
-* Version 5.0.1
-Updating to LLVM 5.0. Check out LLVM Release Notes for changes in the API. http://releases.llvm.org/5.0.0/docs/ReleaseNotes.html
-
-* Version 4.0.14
-Fix of 4.0.13 (wrong path).
-
-* Version 4.0.13
-Updated .targets file for builds on Windows, fixing override of PreBuildEvent.
-
-* Version 4.0.12
-Updated .targets file for builds on Windows.
-
-* Version 4.0.11
-Fixing problem with NuGet spec--apparently, a dll is referenced only with either the dlls in netstandard1.1 or netstandard1.5. A
-very bad rule because swigged.llvm.dll is strictly a netstandard1.1 file, but it will not add the reference any other way.
-Otherwise, the functionality is identical to 4.0.10.
-
-* Version 4.0.10
-General availability. Worked out version and dependencies for Net Framework from 4.5 less than or equal to 'your app NF version' less than or equal to 4.7. Added ORC api's.
-Added in all targets for LLVM. Example tests include PTX code generation and running using ManagedCUDA on a GPU.
-
-* Version 4.0.9-alpha
-Working out dependencies and versions. Instead of hardwiring everything to fixed version, allow user to update to suit build.
-  
-* Version 4.0.8-alpha
-Use "Swigged.LLVM.Helper.Adjust.Path();" before 1st LLVM call to alter PATH variable within process so that it can find swigged-llvm-native.dll without having to copy the dll around. There is no equivalent fix for Ubuntu unfortunately. You must still "dotnet publish -r ubuntu.16.04-x64" and copy swigged-llvm-native.so to the build output directory.
-  
-* Version 4.0.7-alpha
-Added in Android builds for x86 and armeabi targets; cleaned up package directory structure.
-
-* Version 4.0.6-alpha
-Added in fixes for VerifyModule, CreateMCJITCompilerForModule, MCJITCompilerOptions, InitializeMCJITCompilerOptions, MyString.
-       
-Object files provided in this package are a Release build in Net Standard 1.1 (swigged-llvm library) and 1.6 (Helper library).
-
 When building with Swigged.llvm, select Platform = "AnyCPU", config = "Debug" or "Release".
 
 On Windows, in the properties for the executable, un-check "Prefer 32-bit" in Build properties, and check "Enable native code debugging". If you are using Net Core or Standard, this option is unavailable--I'm not sure why it is.
-If you are building an app with Net Framework 4.5 through 4.6.1, you must manually copy the file swigged-llvm-native.dll to your executable directory. With 4.6.2 and beyond, it will find the library in your packages/ directory.
 If you are delivering your app, you will need to copy the dll to the directory containing your app.
 
 On Ubuntu, use Net Core to build your C# program. You may need to copy the swigged-llvm-native.so file to the directory containing your app executable.
 
-For further information, see https://github.com/kaby76/swigged-llvm.
+For further information, see https://github.com/kaby76/swigged.llvm.
     </releaseNotes>
 
     <!-- Copyright information -->
@@ -114,7 +68,7 @@ For further information, see https://github.com/kaby76/swigged-llvm.
      if it is in just /lib.
      -->
      
-    <file src="..\swigged.llvm.native\x64-Release\Release\swigged-llvm-native.dll" target="runtimes/win10-x64/native" />
+    <file src="..\swigged.llvm.native\x64-Release\swigged-llvm-native.dll" target="runtimes/win10-x64/native" />
 
     <file src="..\swigged.llvm.native\ubuntu-16.04-Release\swigged-llvm-native.so" target="runtimes/ubuntu-16.04-x64/native" />
     <file src="..\swigged.llvm.native\x64-Release\Release\swigged-llvm-native.dll"  target="lib/netstandard2.0" />
