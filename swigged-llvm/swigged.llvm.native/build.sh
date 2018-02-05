@@ -1,6 +1,6 @@
 # BUILD SCRIPT FOR UBUNTU AND ANDROID TARGETS
 # RUN ON UBUNTU
-
+set -e
 date
 cd ../llvm
 rm -rf llvm
