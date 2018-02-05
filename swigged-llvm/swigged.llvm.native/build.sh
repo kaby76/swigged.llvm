@@ -12,7 +12,7 @@ pwd
 gzip -d ubuntu-16.04-Release.tar.gz
 tar -xvf ubuntu-16.04-Release.tar
 rm -rf ubuntu-16.04-Release.tar
-cd ..\swigged.llvm.native
+cd ../swigged.llvm.native
 echo "Cmake/make of ubuntu-16.04-Release"
 rm -rf ubuntu-16.04-Release
 mkdir ubuntu-16.04-Release
