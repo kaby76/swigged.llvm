@@ -3,9 +3,9 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/7sb44ofy24qftk3j?svg=true)](https://ci.appveyor.com/project/kaby76/swigged-llvm)
 
 This project is a [SWIG](http://swig.org)-generated wrapper of LLVM-C for C#.
-Swigged.LLVM is based upon [SharpLang](https://github.com/xen2/SharpLang), which is defunct,
+Swigged.LLVM is based upon [SharpLang](https://github.com/xen2/SharpLang), 
 a compiler for Microsoft's [CIL](https://en.wikipedia.org/wiki/Common_Intermediate_Language).
-Swigged.LLVM recovers the SWIG wrapper for LLVM-C in Sharplang, drops the CIL
+Swigged.LLVM recovers the SWIG wrapper for LLVM-C in Sharplang (now defunct), drops the CIL
 reader and compiler, extends the API to contain additional LLVM-C functionality,
 cleans up the problems with the original wrapper from SharpLang,
 and adds more tests and examples of the API.
@@ -149,11 +149,9 @@ http://llvm.org/docs/doxygen/html/modules.html
 
 ## Building Swigged.llvm/swigged.llvm.native:
 
-Swigged.llvm requires a build of LLVM, described below. Building LLVM is a very time consuming process. Also, the SWIG translation spec file is
-highly tuned to the particular version of LLVM, currently for Release_40, so it may not work with other releases.
-
 ### General requirements to build
 
+* Swig
 * Cmake
 * Git
 * VS 2017, with C++ installed (Windows)
@@ -161,12 +159,18 @@ highly tuned to the particular version of LLVM, currently for Release_40, so it 
 * WSL Bash (Windows)
 * These tools in path variable.
 
-### Grab sources from git or LLVM download area.
+~~~~
+# Optimized for DigitalOcean.com
+sudo apt-get install git
+sudo apt-get update
+sudo apt-get install cmake
+sudo apt-get install build-essential
+~~~~
+Make sure to install ("sudo apt-get install ...") gcc, make, 'g++', cmake,
+git, build-essential, xz-utils. For Net Core, follow the instructions at
+https://www.microsoft.com/net/core#linuxubuntu 
 
-In a directory of your choice, clone swigged.llvm, then clone llvm. Note, I've created
-a repository of llvm-mirror because there are build problems currently with LLVM. It also
-does not contain tags for particular releases, only branches, which is not sufficient to
-select particular sources for debugging.
+### Instructions
 
 ~~~~
 git clone https://github.com/kaby76/swigged.llvm.git
@@ -193,25 +197,7 @@ bash -c ./generate.sh
 
 ### Ubuntu ###
 
-Make sure to set up your evironment.
-
-~~~~
-# Optimized for DigitalOcean.com
-sudo apt-get install git
-sudo apt-get update
-sudo apt-get install cmake
-sudo apt-get install build-essential
-~~~~
-
-Currently, I only build for Ubuntu.16.04. I've had problems building LLVM for other targets.
-
-Make sure to install ("sudo apt-get install ...") gcc, make, 'g++', cmake,
-git, build-essential, xz-utils. For Net Core, follow the instructions at
-https://www.microsoft.com/net/core#linuxubuntu 
-
-~~~~
-.\build.sh
-~~~~
+From Bash, execute ./build.sh in swigged.llvm/.
 
 ## Debugging on Windows
 
