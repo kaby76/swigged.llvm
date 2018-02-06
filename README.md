@@ -12,9 +12,8 @@ and adds more tests and examples of the API.
 
 While there are downloadables from LLVM.org (http://releases.llvm.org/download.html#5.0.1),
 these binaries do not contain the LLVM infrastructure that Swigged.LLVM can use.
-Swigged.LLVM is built with binaries built from a Git repository that is a clone of the LLVM git
-mirror. The cloned repository, located at [https://github.com/kaby76/llvm](https://github.com/kaby76/llvm),
-contains tags and binaries for LLVM-C.
+Swigged.LLVM is built with binaries built from [https://github.com/kaby76/llvm](https://github.com/kaby76/llvm),
+a clone of the LLVM repository, and contains tags, releases, and binaries for LLVM-C.
 The build scripts for LLVM itself are in Swigged.LLVM:
 [https://github.com/kaby76/swigged.llvm/tree/master/swigged-llvm/llvm](https://github.com/kaby76/swigged.llvm/tree/master/swigged-llvm/llvm).
 Cmake is used to create a release, and works on Windows and Ubuntu. What is delivered in Swigged.LLVM is a complete,
@@ -25,7 +24,7 @@ without the accompanying C# library Swigged.LLVM.dll. Further, Nuget.org is quit
 with dead and/or dubious sub-projects.
 
 The build scripts in this project were derived mostly
-by trial and error, especially for Windows and Android,
+by trial and error, especially for Windows,
 from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ).
 
@@ -63,14 +62,11 @@ Note, Swigged.llvm.native is a platform specific library.
 #### Net Core App on Windows or Linux
 ````
 dotnet add package swigged.llvm
-# Ideally, set up your project for a specific target in mind.
-dotnet restore -r <target>
-dotnet publish -r <target>
-# Copy the swigged-llvm-target file to target output directory.
-# (For Windows, the search path for the DLL will be adjusted to find the file.
-# If not found, or it's the wrong version, copy the file to the target output directory.
-# For Ubuntu, you must copy the swigged-llvm-native.so file to the target directory.
+dotnet restore
+dotnet build
 ````
+On Linux, you will need to copy swigged-llvm-native.so to the directory containing
+your application executable. On Windows, msbuild will perform the copy step automatically.
 
 #### Net Framework App on Windows
 
@@ -141,7 +137,7 @@ For more examples, see .../Examples/NetcoreApp
 
 ## Documentation of Swigged.llvm (Docfx):
 
-http://domemtech.com/swigged.llvm
+http://domemtech.com/_site/api/Swigged.LLVM.html
 
 ## Documentation of LLVM-C (Doxygen):
 
