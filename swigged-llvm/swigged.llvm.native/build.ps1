@@ -23,7 +23,11 @@ rm llvm -Recurse -Force -erroraction 'silentlycontinue'
 rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
 rm x64-Release.tar -Force -erroraction 'silentlycontinue'
 rm x64-Release.tar.gz -Force -erroraction 'silentlycontinue'
-curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0.0.2-alpha/x64-Release.tar.gz
+[Net.ServicePointManager]::SecurityProtocol = 
+  [Net.SecurityProtocolType]::Tls12 -bor `
+  [Net.SecurityProtocolType]::Tls11 -bor `
+  [Net.SecurityProtocolType]::Tls
+curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0.0.3/x64-Release.tar.gz
 bash -lc "pwd"
 bash -lc "gzip -d x64-Release.tar.gz"
 bash -lc "tar -xvf x64-Release.tar"
@@ -31,4 +35,3 @@ rm x64-Release.tar -Force -erroraction 'silentlycontinue'
 cd ..\swigged.llvm.native
 rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
 msbuild swigged.llvm.native.sln /p:Configuration=Release /p:Platform=x64
-cd ..
