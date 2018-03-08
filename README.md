@@ -3,18 +3,17 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/7sb44ofy24qftk3j?svg=true)](https://ci.appveyor.com/project/kaby76/swigged-llvm)
 
 This project is a [SWIG](http://swig.org)-generated wrapper of LLVM-C for C#.
-Swigged.LLVM is based upon [SharpLang](https://github.com/xen2/SharpLang), which is defunct,
+Swigged.LLVM is based upon [SharpLang](https://github.com/xen2/SharpLang), 
 a compiler for Microsoft's [CIL](https://en.wikipedia.org/wiki/Common_Intermediate_Language).
-Swigged.LLVM recovers the SWIG wrapper for LLVM-C in Sharplang, drops the CIL
+Swigged.LLVM recovers the SWIG wrapper for LLVM-C in Sharplang (now defunct), drops the CIL
 reader and compiler, extends the API to contain additional LLVM-C functionality,
 cleans up the problems with the original wrapper from SharpLang,
 and adds more tests and examples of the API.
 
 While there are downloadables from LLVM.org (http://releases.llvm.org/download.html#5.0.1),
 these binaries do not contain the LLVM infrastructure that Swigged.LLVM can use.
-Swigged.LLVM is built with binaries built from a Git repository that is a clone of the LLVM git
-mirror. The cloned repository, located at [https://github.com/kaby76/llvm](https://github.com/kaby76/llvm),
-contains tags and binaries for LLVM-C.
+Swigged.LLVM is built with binaries built from [https://github.com/kaby76/llvm](https://github.com/kaby76/llvm),
+a clone of the LLVM repository, and contains tags, releases, and binaries for LLVM-C.
 The build scripts for LLVM itself are in Swigged.LLVM:
 [https://github.com/kaby76/swigged.llvm/tree/master/swigged-llvm/llvm](https://github.com/kaby76/swigged.llvm/tree/master/swigged-llvm/llvm).
 Cmake is used to create a release, and works on Windows and Ubuntu. What is delivered in Swigged.LLVM is a complete,
@@ -25,7 +24,7 @@ without the accompanying C# library Swigged.LLVM.dll. Further, Nuget.org is quit
 with dead and/or dubious sub-projects.
 
 The build scripts in this project were derived mostly
-by trial and error, especially for Windows and Android,
+by trial and error, especially for Windows,
 from the documentation in LLVM (http://llvm.org/docs/CMake.html ) and
 Android cmake (https://developer.android.com/ndk/guides/cmake.html ).
 
@@ -63,14 +62,11 @@ Note, Swigged.llvm.native is a platform specific library.
 #### Net Core App on Windows or Linux
 ````
 dotnet add package swigged.llvm
-# Ideally, set up your project for a specific target in mind.
-dotnet restore -r <target>
-dotnet publish -r <target>
-# Copy the swigged-llvm-target file to target output directory.
-# (For Windows, the search path for the DLL will be adjusted to find the file.
-# If not found, or it's the wrong version, copy the file to the target output directory.
-# For Ubuntu, you must copy the swigged-llvm-native.so file to the target directory.
+dotnet restore
+dotnet build
 ````
+On Linux, you will need to copy swigged-llvm-native.so to the directory containing
+your application executable. On Windows, msbuild will perform the copy step automatically.
 
 #### Net Framework App on Windows
 
@@ -141,7 +137,7 @@ For more examples, see .../Examples/NetcoreApp
 
 ## Documentation of Swigged.llvm (Docfx):
 
-http://domemtech.com/swigged.llvm
+http://domemtech.com/_site/api/Swigged.LLVM.html
 
 ## Documentation of LLVM-C (Doxygen):
 
@@ -149,11 +145,9 @@ http://llvm.org/docs/doxygen/html/modules.html
 
 ## Building Swigged.llvm/swigged.llvm.native:
 
-Swigged.llvm requires a build of LLVM, described below. Building LLVM is a very time consuming process. Also, the SWIG translation spec file is
-highly tuned to the particular version of LLVM, currently for Release_40, so it may not work with other releases.
-
 ### General requirements to build
 
+* Swig
 * Cmake
 * Git
 * VS 2017, with C++ installed (Windows)
@@ -161,12 +155,18 @@ highly tuned to the particular version of LLVM, currently for Release_40, so it 
 * WSL Bash (Windows)
 * These tools in path variable.
 
-### Grab sources from git or LLVM download area.
+~~~~
+# Optimized for DigitalOcean.com
+sudo apt-get install git
+sudo apt-get update
+sudo apt-get install cmake
+sudo apt-get install build-essential
+~~~~
+Make sure to install ("sudo apt-get install ...") gcc, make, 'g++', cmake,
+git, build-essential, xz-utils. For Net Core, follow the instructions at
+https://www.microsoft.com/net/core#linuxubuntu 
 
-In a directory of your choice, clone swigged.llvm, then clone llvm. Note, I've created
-a repository of llvm-mirror because there are build problems currently with LLVM. It also
-does not contain tags for particular releases, only branches, which is not sufficient to
-select particular sources for debugging.
+### Instructions
 
 ~~~~
 git clone https://github.com/kaby76/swigged.llvm.git
@@ -193,25 +193,7 @@ bash -c ./generate.sh
 
 ### Ubuntu ###
 
-Make sure to set up your evironment.
-
-~~~~
-# Optimized for DigitalOcean.com
-sudo apt-get install git
-sudo apt-get update
-sudo apt-get install cmake
-sudo apt-get install build-essential
-~~~~
-
-Currently, I only build for Ubuntu.16.04. I've had problems building LLVM for other targets.
-
-Make sure to install ("sudo apt-get install ...") gcc, make, 'g++', cmake,
-git, build-essential, xz-utils. For Net Core, follow the instructions at
-https://www.microsoft.com/net/core#linuxubuntu 
-
-~~~~
-.\build.sh
-~~~~
+From Bash, execute ./build.sh in swigged.llvm/.
 
 ## Debugging on Windows
 
