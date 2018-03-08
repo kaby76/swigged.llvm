@@ -49,7 +49,7 @@ rm -rf test
 rm -rf unittests
 rm -rf utils
 cd ..
-mkdir x64-Release/llvm
+mkdir ubuntu-16.04-Release/llvm
 cp -r ./llvm/include ubuntu-16.04-Release/llvm
 pwd
 ls -l ubuntu-16.04-Release

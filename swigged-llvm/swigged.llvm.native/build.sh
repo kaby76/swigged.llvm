@@ -7,7 +7,7 @@ rm -rf llvm
 rm -rf ubuntu-16.04-Release
 rm -rf ubuntu-16.04-Release.tar
 rm -rf ubuntu-16.04-Release.tar.gz
-wget https://github.com/kaby76/llvm/releases/download/v6.0.0.2-alpha/ubuntu-16.04-Release.tar.gz
+wget https://github.com/kaby76/llvm/releases/download/v6.0.0.3/ubuntu-16.04-Release.tar.gz
 pwd
 gzip -d ubuntu-16.04-Release.tar.gz
 tar -xvf ubuntu-16.04-Release.tar
