@@ -23,12 +23,14 @@
 #include <llvm-c/Transforms/Scalar.h>
 #include <llvm-c/Transforms/Vectorize.h>
 //#include "Additional.h"
-//#include "DebugInfo.h"
+#include "llvm-c/DebugInfo.h"
 %}
 
 %csmethodmodifiers "public unsafe"
 
 %rename("%(strip:[LLVM])s") "";
+%rename("DIFlagPrivate") LLVMDIFlagPrivate;
+
 
 %include <stdint.i>
 %include "LLVMCommon.i"
@@ -107,7 +109,8 @@ REF_CLASS(LLVMOpInfo1,OpInfo1)
 
 REF_CLASS(LLVMSharedModuleRef, SharedModuleRef)
 REF_CLASS(LLVMSharedObjectBufferRef, SharedObjectBufferRef)
-REF_CLASS(LLVMOrcJITStackRef, OrcJITStackRef)
+
+REF_CLASS(LLVMDIBuilderRef, DIBuilderRef)
 
 %include "MCJITCompilerOptions.i"
 
@@ -153,4 +156,4 @@ REF_CLASS(LLVMOrcJITStackRef, OrcJITStackRef)
 %include "llvm-c/Transforms/Scalar.h"
 %include "llvm-c/Transforms/Vectorize.h"
 //%include "Additional.h"
-//%include "DebugInfo.h"
+%include "llvm-c/DebugInfo.h"

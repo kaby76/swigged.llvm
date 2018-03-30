@@ -114,7 +114,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SHARPLLVMNATIVE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>false</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\x64\Debug\include;..\..\..\llvm\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\llvm\llvm\include;..\llvm\x64-Release\llvm\include;..\llvm\x64-Release\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -2650,6 +2650,36 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddSLPVectorizePass___")]
   public static extern void AddSLPVectorizePass(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DebugMetadataVersion___")]
+  public static extern uint DebugMetadataVersion();
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetModuleDebugMetadataVersion___")]
+  public static extern uint GetModuleDebugMetadataVersion(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_StripModuleDebugInfo___")]
+  public static extern bool StripModuleDebugInfo(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateDIBuilderDisallowUnresolved___")]
+  public static extern System.IntPtr CreateDIBuilderDisallowUnresolved(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateDIBuilder___")]
+  public static extern System.IntPtr CreateDIBuilder(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DisposeDIBuilder___")]
+  public static extern void DisposeDIBuilder(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderFinalize___")]
+  public static extern void DIBuilderFinalize(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateCompileUnit___")]
+  public static extern System.IntPtr DIBuilderCreateCompileUnit(System.IntPtr jarg1, int jarg2, System.IntPtr jarg3, string jarg4, uint jarg5, bool jarg6, string jarg7, uint jarg8, uint jarg9, string jarg10, uint jarg11, int jarg12, uint jarg13, bool jarg14, bool jarg15);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateFile___")]
+  public static extern System.IntPtr DIBuilderCreateFile(System.IntPtr jarg1, string jarg2, uint jarg3, string jarg4, uint jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateDebugLocation___")]
+  public static extern System.IntPtr DIBuilderCreateDebugLocation(System.IntPtr jarg1, uint jarg2, uint jarg3, System.IntPtr jarg4, System.IntPtr jarg5);
 }
 
 }

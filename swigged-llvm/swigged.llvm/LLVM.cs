@@ -3760,6 +3760,54 @@ public class LLVM {
     LLVMPINVOKE.AddSLPVectorizePass(PM.Value);
   }
 
+  public unsafe static uint DebugMetadataVersion() {
+    uint ret = LLVMPINVOKE.DebugMetadataVersion();
+    return ret;
+  }
+
+  public unsafe static uint GetModuleDebugMetadataVersion(ModuleRef Module) {
+    uint ret = LLVMPINVOKE.GetModuleDebugMetadataVersion(Module.Value);
+    return ret;
+  }
+
+  public unsafe static bool StripModuleDebugInfo(ModuleRef Module) {
+    bool ret = LLVMPINVOKE.StripModuleDebugInfo(Module.Value);
+    return ret;
+  }
+
+  public unsafe static DIBuilderRef CreateDIBuilderDisallowUnresolved(ModuleRef M) {
+        DIBuilderRef ret = new DIBuilderRef(LLVMPINVOKE.CreateDIBuilderDisallowUnresolved(M.Value));
+        return ret;
+    }
+
+  public unsafe static DIBuilderRef CreateDIBuilder(ModuleRef M) {
+        DIBuilderRef ret = new DIBuilderRef(LLVMPINVOKE.CreateDIBuilder(M.Value));
+        return ret;
+    }
+
+  public unsafe static void DisposeDIBuilder(DIBuilderRef Builder) {
+    LLVMPINVOKE.DisposeDIBuilder(Builder.Value);
+  }
+
+  public unsafe static void DIBuilderFinalize(DIBuilderRef Builder) {
+    LLVMPINVOKE.DIBuilderFinalize(Builder.Value);
+  }
+
+  public unsafe static MetadataRef DIBuilderCreateCompileUnit(DIBuilderRef Builder, DWARFSourceLanguage Lang, MetadataRef FileRef, string Producer, uint ProducerLen, bool isOptimized, string Flags, uint FlagsLen, uint RuntimeVer, string SplitName, uint SplitNameLen, DWARFEmissionKind Kind, uint DWOId, bool SplitDebugInlining, bool DebugInfoForProfiling) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateCompileUnit(Builder.Value, (int)Lang, FileRef.Value, Producer, ProducerLen, isOptimized, Flags, FlagsLen, RuntimeVer, SplitName, SplitNameLen, (int)Kind, DWOId, SplitDebugInlining, DebugInfoForProfiling));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateFile(DIBuilderRef Builder, string Filename, uint FilenameLen, string Directory, uint DirectoryLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateFile(Builder.Value, Filename, FilenameLen, Directory, DirectoryLen));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateDebugLocation(ContextRef Ctx, uint Line, uint Column, MetadataRef Scope, MetadataRef InlinedAt) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateDebugLocation(Ctx.Value, Line, Column, Scope.Value, InlinedAt.Value));
+        return ret;
+    }
+
   public unsafe static readonly int AttributeReturnIndex = LLVMPINVOKE.AttributeReturnIndex_get();
   public unsafe static readonly int AttributeFunctionIndex = LLVMPINVOKE.AttributeFunctionIndex_get();
 
