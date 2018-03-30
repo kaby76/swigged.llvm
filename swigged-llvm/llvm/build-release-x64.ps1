@@ -24,9 +24,8 @@ rm x64-Release.tar.gz -Force -erroraction 'silentlycontinue'
 mkdir x64-Release
 Invoke-CmdScript "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
 cd x64-Release
-cmake -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 15 2017 Win64" ..\llvm
+cmake -Thost=x64 -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 15 2017 Win64" ..\llvm
 msbuild LLVM.sln /p:Configuration=Release /p:Platform=x64
-
 # If all works, then clean up everything, and create .tar.gz file.
 rm Release\bin\BuildingAJIT*.exe -Force -erroraction 'silentlycontinue'
 rm Release\bin\Fibonacci.exe -Force -erroraction 'silentlycontinue'
@@ -69,9 +68,11 @@ rm test -Recurse -Force -erroraction 'silentlycontinue'
 rm unittests -Recurse -Force -erroraction 'silentlycontinue'
 rm utils -Recurse -Force -erroraction 'silentlycontinue'
 cd ..
+
 bash -lc "mkdir x64-Release/llvm"
 bash -lc "cp -r ./llvm/include x64-Release/llvm"
 bash -lc "pwd"
 bash -lc "ls -l x64-Release"
 bash -lc "tar cvf x64-Release.tar x64-Release"
 bash -lc "gzip -9 x64-Release.tar"
+
