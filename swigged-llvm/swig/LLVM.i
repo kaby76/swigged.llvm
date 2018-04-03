@@ -24,6 +24,8 @@
 #include <llvm-c/Transforms/Vectorize.h>
 //#include "Additional.h"
 #include "llvm-c/DebugInfo.h"
+#include "llvm-c/DIBuilderBindings.h"
+#include "llvm-c/IRBindings.h"
 %}
 
 %csmethodmodifiers "public unsafe"
@@ -72,6 +74,13 @@ typedef uint64_t (*LLVMOrcSymbolResolverFn)(const char *Name, void *LookupCtx);
 // wont link.
 %ignore LLVMInitializeInstCombine;
 
+%ignore LLVMGetCurrentDebugLocation2;
+%ignore LLVMDebugLocMetadata;
+
+%ignore LLVMDIBuilderCreateBitFieldMemberType;
+%ignore LLVMDIBuilderCreateClassType;
+
+   
 typedef bool LLVMBool;
 
 REF_ARRAY(unsigned, uint)
@@ -109,7 +118,7 @@ REF_CLASS(LLVMOpInfo1,OpInfo1)
 
 REF_CLASS(LLVMSharedModuleRef, SharedModuleRef)
 REF_CLASS(LLVMSharedObjectBufferRef, SharedObjectBufferRef)
-
+//REF_CLASS(LLVMOrcJITStackRef, OrcJITStackRef)
 REF_CLASS(LLVMDIBuilderRef, DIBuilderRef)
 
 %include "MCJITCompilerOptions.i"
@@ -157,3 +166,6 @@ REF_CLASS(LLVMDIBuilderRef, DIBuilderRef)
 %include "llvm-c/Transforms/Vectorize.h"
 //%include "Additional.h"
 %include "llvm-c/DebugInfo.h"
+%include "llvm-c/DIBuilderBindings.h"
+%include "llvm-c/IRBindings.h"
+   

@@ -3808,6 +3808,199 @@ public class LLVM {
         return ret;
     }
 
+  public unsafe static MetadataRef DIBuilderCreateSubroutineType(DIBuilderRef Builder, MetadataRef File, MetadataRef[] ParameterTypes, uint NumParameterTypes, DIFlags Flags) {
+    fixed (MetadataRef * swig_ptrTo_ParameterTypes = ParameterTypes)
+    {
+          MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateSubroutineType(Builder.Value, File.Value, (System.IntPtr)swig_ptrTo_ParameterTypes, NumParameterTypes, (int)Flags));
+          return ret;
+      }
+  }
+
+  public unsafe static MetadataRef DIBuilderCreateEnumerationType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, uint SizeInBits, uint AlignInBits, out MetadataRef Elements, uint NumElements, MetadataRef ClassTy) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateEnumerationType(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNumber, SizeInBits, AlignInBits, out Elements.Value, NumElements, ClassTy.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateUnionType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, uint SizeInBits, uint AlignInBits, DIFlags Flags, out MetadataRef Elements, uint NumElements, uint RunTimeLang, string UniqueId, uint UniqueIdLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateUnionType(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNumber, SizeInBits, AlignInBits, (int)Flags, out Elements.Value, NumElements, RunTimeLang, UniqueId, UniqueIdLen));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateArrayType(DIBuilderRef Builder, uint Size, uint AlignInBits, MetadataRef Ty, out MetadataRef Subscripts, uint NumSubscripts) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateArrayType(Builder.Value, Size, AlignInBits, Ty.Value, out Subscripts.Value, NumSubscripts));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateVectorType(DIBuilderRef Builder, uint Size, uint AlignInBits, MetadataRef Ty, out MetadataRef Subscripts, uint NumSubscripts) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateVectorType(Builder.Value, Size, AlignInBits, Ty.Value, out Subscripts.Value, NumSubscripts));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateUnspecifiedType(DIBuilderRef Builder, string Name, uint NameLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateUnspecifiedType(Builder.Value, Name, NameLen));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateBasicType(DIBuilderRef Builder, string Name, uint NameLen, uint SizeInBits, uint Encoding) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateBasicType(Builder.Value, Name, NameLen, SizeInBits, Encoding));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreatePointerType(DIBuilderRef Builder, MetadataRef PointeeTy, uint SizeInBits, uint AlignInBits, uint AddressSpace, string Name, uint NameLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreatePointerType(Builder.Value, PointeeTy.Value, SizeInBits, AlignInBits, AddressSpace, Name, NameLen));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateStructType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, uint SizeInBits, uint AlignInBits, DIFlags Flags, MetadataRef DerivedFrom, out MetadataRef Elements, uint NumElements, uint RunTimeLang, MetadataRef VTableHolder, string UniqueId, uint UniqueIdLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateStructType(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNumber, SizeInBits, AlignInBits, (int)Flags, DerivedFrom.Value, out Elements.Value, NumElements, RunTimeLang, VTableHolder.Value, UniqueId, UniqueIdLen));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateMemberType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNo, uint SizeInBits, uint AlignInBits, uint OffsetInBits, DIFlags Flags, MetadataRef Ty) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateMemberType(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNo, SizeInBits, AlignInBits, OffsetInBits, (int)Flags, Ty.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateStaticMemberType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, MetadataRef Type, DIFlags Flags, ValueRef ConstantVal, uint AlignInBits) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateStaticMemberType(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNumber, Type.Value, (int)Flags, ConstantVal.Value, AlignInBits));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateMemberPointerType(DIBuilderRef Builder, MetadataRef PointeeType, MetadataRef ClassType, uint SizeInBits, uint AlignInBits, DIFlags Flags) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateMemberPointerType(Builder.Value, PointeeType.Value, ClassType.Value, SizeInBits, AlignInBits, (int)Flags));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateObjectPointerType(DIBuilderRef Builder, MetadataRef Type) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateObjectPointerType(Builder.Value, Type.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateQualifiedType(DIBuilderRef Builder, uint Tag, MetadataRef Type) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateQualifiedType(Builder.Value, Tag, Type.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateReferenceType(DIBuilderRef Builder, uint Tag, MetadataRef Type) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateReferenceType(Builder.Value, Tag, Type.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateNullPtrType(DIBuilderRef Builder) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateNullPtrType(Builder.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateReplaceableCompositeType(DIBuilderRef Builder, uint Tag, string Name, uint NameLen, MetadataRef Scope, MetadataRef File, uint Line, uint RuntimeLang, uint SizeInBits, uint AlignInBits, DIFlags Flags, string UniqueIdentifier, uint UniqueIdentifierLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateReplaceableCompositeType(Builder.Value, Tag, Name, NameLen, Scope.Value, File.Value, Line, RuntimeLang, SizeInBits, AlignInBits, (int)Flags, UniqueIdentifier, UniqueIdentifierLen));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateArtificialType(DIBuilderRef Builder, MetadataRef Type) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateArtificialType(Builder.Value, Type.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateLexicalBlock(DIBuilderRef D, MetadataRef Scope, MetadataRef File, uint Line, uint Column) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateLexicalBlock(D.Value, Scope.Value, File.Value, Line, Column));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateLexicalBlockFile(DIBuilderRef D, MetadataRef Scope, MetadataRef File, uint Discriminator) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateLexicalBlockFile(D.Value, Scope.Value, File.Value, Discriminator));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateFunction(DIBuilderRef D, MetadataRef Scope, string Name, string LinkageName, MetadataRef File, uint Line, MetadataRef CompositeType, int IsLocalToUnit, int IsDefinition, uint ScopeLine, uint Flags, int IsOptimized) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateFunction(D.Value, Scope.Value, Name, LinkageName, File.Value, Line, CompositeType.Value, IsLocalToUnit, IsDefinition, ScopeLine, Flags, IsOptimized));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateAutoVariable(DIBuilderRef D, MetadataRef Scope, string Name, MetadataRef File, uint Line, MetadataRef Ty, int AlwaysPreserve, uint Flags, uint AlignInBits) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateAutoVariable(D.Value, Scope.Value, Name, File.Value, Line, Ty.Value, AlwaysPreserve, Flags, AlignInBits));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateParameterVariable(DIBuilderRef D, MetadataRef Scope, string Name, uint ArgNo, MetadataRef File, uint Line, MetadataRef Ty, int AlwaysPreserve, uint Flags) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateParameterVariable(D.Value, Scope.Value, Name, ArgNo, File.Value, Line, Ty.Value, AlwaysPreserve, Flags));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateTypedef(DIBuilderRef D, MetadataRef Ty, string Name, MetadataRef File, uint Line, MetadataRef Context) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateTypedef(D.Value, Ty.Value, Name, File.Value, Line, Context.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderGetOrCreateSubrange(DIBuilderRef D, long Lo, long Count) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderGetOrCreateSubrange(D.Value, Lo, Count));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderGetOrCreateArray(DIBuilderRef D, out MetadataRef Data, uint Length) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderGetOrCreateArray(D.Value, out Data.Value, Length));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderGetOrCreateTypeArray(DIBuilderRef D, out MetadataRef Data, uint Length) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderGetOrCreateTypeArray(D.Value, out Data.Value, Length));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateExpression(DIBuilderRef Dref, System.Int64[] Addr, uint Length) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateExpression(Dref.Value, Addr, Length));
+        return ret;
+    }
+
+  public unsafe static ValueRef DIBuilderInsertDeclareAtEnd(DIBuilderRef D, ValueRef Storage, MetadataRef VarInfo, MetadataRef Expr, BasicBlockRef Block) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.DIBuilderInsertDeclareAtEnd(D.Value, Storage.Value, VarInfo.Value, Expr.Value, Block.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef DIBuilderInsertValueAtEnd(DIBuilderRef D, ValueRef Val, MetadataRef VarInfo, MetadataRef Expr, BasicBlockRef Block) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.DIBuilderInsertValueAtEnd(D.Value, Val.Value, VarInfo.Value, Expr.Value, Block.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef ConstantAsMetadata(ValueRef Val) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.ConstantAsMetadata(Val.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef MDString2(ContextRef C, string Str, uint SLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.MDString2(C.Value, Str, SLen));
+        return ret;
+    }
+
+  public unsafe static MetadataRef MDNode2(ContextRef C, out MetadataRef MDs, uint Count) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.MDNode2(C.Value, out MDs.Value, Count));
+        return ret;
+    }
+
+  public unsafe static MetadataRef TemporaryMDNode(ContextRef C, out MetadataRef MDs, uint Count) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.TemporaryMDNode(C.Value, out MDs.Value, Count));
+        return ret;
+    }
+
+  public unsafe static void AddNamedMetadataOperand2(ModuleRef M, string name, MetadataRef Val) {
+    LLVMPINVOKE.AddNamedMetadataOperand2(M.Value, name, Val.Value);
+  }
+
+  public unsafe static void SetMetadata2(ValueRef Inst, uint KindID, MetadataRef MD) {
+    LLVMPINVOKE.SetMetadata2(Inst.Value, KindID, MD.Value);
+  }
+
+  public unsafe static void MetadataReplaceAllUsesWith(MetadataRef MD, MetadataRef New) {
+    LLVMPINVOKE.MetadataReplaceAllUsesWith(MD.Value, New.Value);
+  }
+
+  public unsafe static void SetCurrentDebugLocation2(BuilderRef Bref, uint Line, uint Col, MetadataRef Scope, MetadataRef InlinedAt) {
+    LLVMPINVOKE.SetCurrentDebugLocation2(Bref.Value, Line, Col, Scope.Value, InlinedAt.Value);
+  }
+
+  public unsafe static void SetSubprogram(ValueRef Fn, MetadataRef SP) {
+    LLVMPINVOKE.SetSubprogram(Fn.Value, SP.Value);
+  }
+
   public unsafe static readonly int AttributeReturnIndex = LLVMPINVOKE.AttributeReturnIndex_get();
   public unsafe static readonly int AttributeFunctionIndex = LLVMPINVOKE.AttributeFunctionIndex_get();
 

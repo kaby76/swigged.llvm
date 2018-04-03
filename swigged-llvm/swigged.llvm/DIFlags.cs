@@ -36,6 +36,8 @@ public enum DIFlags {
   DIFlagBitField = 1 << 19,
   DIFlagNoReturn = 1 << 20,
   DIFlagMainSubprogram = 1 << 21,
+  DIFlagTypePassByValue = 1 << 22,
+  DIFlagTypePassByReference = 1 << 23,
   DIFlagIndirectVirtualBase = (1 << 2)|(1 << 5),
   DIFlagAccessibility = DIFlagPrivate|DIFlagProtected|DIFlagPublic,
   DIFlagPtrToMemberRep = DIFlagSingleInheritance|DIFlagMultipleInheritance|DIFlagVirtualInheritance

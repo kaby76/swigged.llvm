@@ -320,6 +320,8 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_LLVM(SWIG_CSharpStringHel
 #include <llvm-c/Transforms/Vectorize.h>
 //#include "Additional.h"
 #include "llvm-c/DebugInfo.h"
+#include "llvm-c/DIBuilderBindings.h"
+#include "llvm-c/IRBindings.h"
 
 
 #include <stdint.h>		// Use the C99 official header
@@ -10810,6 +10812,808 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateDebugLocation__
   result = LLVMDIBuilderCreateDebugLocation(arg1,arg2,arg3,arg4,arg5);
   jresult = result; 
   return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateSubroutineType___(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4, int jarg5) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  LLVMMetadataRef *arg3 = (LLVMMetadataRef *) 0 ;
+  unsigned int arg4 ;
+  LLVMDIFlags arg5 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (LLVMMetadataRef *)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  arg5 = (LLVMDIFlags)jarg5; 
+  result = LLVMDIBuilderCreateSubroutineType(arg1,arg2,arg3,arg4,arg5);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateEnumerationType___(void * jarg1, void * jarg2, char * jarg3, unsigned long jarg4, void * jarg5, unsigned int jarg6, unsigned int jarg7, unsigned int jarg8, void * jarg9, unsigned int jarg10, void * jarg11) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  char *arg3 = (char *) 0 ;
+  size_t arg4 ;
+  LLVMMetadataRef arg5 ;
+  unsigned int arg6 ;
+  unsigned int arg7 ;
+  unsigned int arg8 ;
+  LLVMMetadataRef *arg9 = (LLVMMetadataRef *) 0 ;
+  unsigned int arg10 ;
+  LLVMMetadataRef arg11 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (LLVMMetadataRef)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  arg7 = (unsigned int)jarg7; 
+  arg8 = (unsigned int)jarg8; 
+  arg9 = (LLVMMetadataRef *)jarg9; 
+  arg10 = (unsigned int)jarg10; 
+  arg11 = (LLVMMetadataRef)jarg11; 
+  result = LLVMDIBuilderCreateEnumerationType(arg1,arg2,(char const *)arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateUnionType___(void * jarg1, void * jarg2, char * jarg3, unsigned long jarg4, void * jarg5, unsigned int jarg6, unsigned int jarg7, unsigned int jarg8, int jarg9, void * jarg10, unsigned int jarg11, unsigned int jarg12, char * jarg13, unsigned long jarg14) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  char *arg3 = (char *) 0 ;
+  size_t arg4 ;
+  LLVMMetadataRef arg5 ;
+  unsigned int arg6 ;
+  unsigned int arg7 ;
+  unsigned int arg8 ;
+  LLVMDIFlags arg9 ;
+  LLVMMetadataRef *arg10 = (LLVMMetadataRef *) 0 ;
+  unsigned int arg11 ;
+  unsigned int arg12 ;
+  char *arg13 = (char *) 0 ;
+  size_t arg14 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (LLVMMetadataRef)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  arg7 = (unsigned int)jarg7; 
+  arg8 = (unsigned int)jarg8; 
+  arg9 = (LLVMDIFlags)jarg9; 
+  arg10 = (LLVMMetadataRef *)jarg10; 
+  arg11 = (unsigned int)jarg11; 
+  arg12 = (unsigned int)jarg12; 
+  arg13 = (char *)jarg13; 
+  arg14 = (size_t)jarg14; 
+  result = LLVMDIBuilderCreateUnionType(arg1,arg2,(char const *)arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11,arg12,(char const *)arg13,arg14);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateArrayType___(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4, void * jarg5, unsigned int jarg6) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  unsigned int arg2 ;
+  unsigned int arg3 ;
+  LLVMMetadataRef arg4 ;
+  LLVMMetadataRef *arg5 = (LLVMMetadataRef *) 0 ;
+  unsigned int arg6 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  arg4 = (LLVMMetadataRef)jarg4; 
+  arg5 = (LLVMMetadataRef *)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  result = LLVMDIBuilderCreateArrayType(arg1,arg2,arg3,arg4,arg5,arg6);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateVectorType___(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4, void * jarg5, unsigned int jarg6) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  unsigned int arg2 ;
+  unsigned int arg3 ;
+  LLVMMetadataRef arg4 ;
+  LLVMMetadataRef *arg5 = (LLVMMetadataRef *) 0 ;
+  unsigned int arg6 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  arg4 = (LLVMMetadataRef)jarg4; 
+  arg5 = (LLVMMetadataRef *)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  result = LLVMDIBuilderCreateVectorType(arg1,arg2,arg3,arg4,arg5,arg6);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateUnspecifiedType___(void * jarg1, char * jarg2, unsigned long jarg3) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  char *arg2 = (char *) 0 ;
+  size_t arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = (size_t)jarg3; 
+  result = LLVMDIBuilderCreateUnspecifiedType(arg1,(char const *)arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateBasicType___(void * jarg1, char * jarg2, unsigned long jarg3, unsigned int jarg4, unsigned int jarg5) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  char *arg2 = (char *) 0 ;
+  size_t arg3 ;
+  unsigned int arg4 ;
+  LLVMDWARFTypeEncoding arg5 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = (size_t)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  arg5 = (LLVMDWARFTypeEncoding)jarg5; 
+  result = LLVMDIBuilderCreateBasicType(arg1,(char const *)arg2,arg3,arg4,arg5);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreatePointerType___(void * jarg1, void * jarg2, unsigned int jarg3, unsigned int jarg4, unsigned int jarg5, char * jarg6, unsigned long jarg7) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  unsigned int arg3 ;
+  unsigned int arg4 ;
+  unsigned int arg5 ;
+  char *arg6 = (char *) 0 ;
+  size_t arg7 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  arg5 = (unsigned int)jarg5; 
+  arg6 = (char *)jarg6; 
+  arg7 = (size_t)jarg7; 
+  result = LLVMDIBuilderCreatePointerType(arg1,arg2,arg3,arg4,arg5,(char const *)arg6,arg7);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateStructType___(void * jarg1, void * jarg2, char * jarg3, unsigned long jarg4, void * jarg5, unsigned int jarg6, unsigned int jarg7, unsigned int jarg8, int jarg9, void * jarg10, void * jarg11, unsigned int jarg12, unsigned int jarg13, void * jarg14, char * jarg15, unsigned long jarg16) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  char *arg3 = (char *) 0 ;
+  size_t arg4 ;
+  LLVMMetadataRef arg5 ;
+  unsigned int arg6 ;
+  unsigned int arg7 ;
+  unsigned int arg8 ;
+  LLVMDIFlags arg9 ;
+  LLVMMetadataRef arg10 ;
+  LLVMMetadataRef *arg11 = (LLVMMetadataRef *) 0 ;
+  unsigned int arg12 ;
+  unsigned int arg13 ;
+  LLVMMetadataRef arg14 ;
+  char *arg15 = (char *) 0 ;
+  size_t arg16 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (LLVMMetadataRef)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  arg7 = (unsigned int)jarg7; 
+  arg8 = (unsigned int)jarg8; 
+  arg9 = (LLVMDIFlags)jarg9; 
+  arg10 = (LLVMMetadataRef)jarg10; 
+  arg11 = (LLVMMetadataRef *)jarg11; 
+  arg12 = (unsigned int)jarg12; 
+  arg13 = (unsigned int)jarg13; 
+  arg14 = (LLVMMetadataRef)jarg14; 
+  arg15 = (char *)jarg15; 
+  arg16 = (size_t)jarg16; 
+  result = LLVMDIBuilderCreateStructType(arg1,arg2,(char const *)arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14,(char const *)arg15,arg16);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateMemberType___(void * jarg1, void * jarg2, char * jarg3, unsigned long jarg4, void * jarg5, unsigned int jarg6, unsigned int jarg7, unsigned int jarg8, unsigned int jarg9, int jarg10, void * jarg11) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  char *arg3 = (char *) 0 ;
+  size_t arg4 ;
+  LLVMMetadataRef arg5 ;
+  unsigned int arg6 ;
+  unsigned int arg7 ;
+  unsigned int arg8 ;
+  unsigned int arg9 ;
+  LLVMDIFlags arg10 ;
+  LLVMMetadataRef arg11 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (LLVMMetadataRef)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  arg7 = (unsigned int)jarg7; 
+  arg8 = (unsigned int)jarg8; 
+  arg9 = (unsigned int)jarg9; 
+  arg10 = (LLVMDIFlags)jarg10; 
+  arg11 = (LLVMMetadataRef)jarg11; 
+  result = LLVMDIBuilderCreateMemberType(arg1,arg2,(char const *)arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateStaticMemberType___(void * jarg1, void * jarg2, char * jarg3, unsigned long jarg4, void * jarg5, unsigned int jarg6, void * jarg7, int jarg8, void * jarg9, unsigned int jarg10) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  char *arg3 = (char *) 0 ;
+  size_t arg4 ;
+  LLVMMetadataRef arg5 ;
+  unsigned int arg6 ;
+  LLVMMetadataRef arg7 ;
+  LLVMDIFlags arg8 ;
+  LLVMValueRef arg9 ;
+  unsigned int arg10 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (LLVMMetadataRef)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  arg7 = (LLVMMetadataRef)jarg7; 
+  arg8 = (LLVMDIFlags)jarg8; 
+  arg9 = (LLVMValueRef)jarg9; 
+  arg10 = (unsigned int)jarg10; 
+  result = LLVMDIBuilderCreateStaticMemberType(arg1,arg2,(char const *)arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateMemberPointerType___(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4, unsigned int jarg5, int jarg6) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  LLVMMetadataRef arg3 ;
+  unsigned int arg4 ;
+  unsigned int arg5 ;
+  LLVMDIFlags arg6 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (LLVMMetadataRef)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  arg5 = (unsigned int)jarg5; 
+  arg6 = (LLVMDIFlags)jarg6; 
+  result = LLVMDIBuilderCreateMemberPointerType(arg1,arg2,arg3,arg4,arg5,arg6);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateObjectPointerType___(void * jarg1, void * jarg2) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  result = LLVMDIBuilderCreateObjectPointerType(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateQualifiedType___(void * jarg1, unsigned int jarg2, void * jarg3) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  unsigned int arg2 ;
+  LLVMMetadataRef arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (LLVMMetadataRef)jarg3; 
+  result = LLVMDIBuilderCreateQualifiedType(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateReferenceType___(void * jarg1, unsigned int jarg2, void * jarg3) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  unsigned int arg2 ;
+  LLVMMetadataRef arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (LLVMMetadataRef)jarg3; 
+  result = LLVMDIBuilderCreateReferenceType(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateNullPtrType___(void * jarg1) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  result = LLVMDIBuilderCreateNullPtrType(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateReplaceableCompositeType___(void * jarg1, unsigned int jarg2, char * jarg3, unsigned long jarg4, void * jarg5, void * jarg6, unsigned int jarg7, unsigned int jarg8, unsigned int jarg9, unsigned int jarg10, int jarg11, char * jarg12, unsigned long jarg13) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  unsigned int arg2 ;
+  char *arg3 = (char *) 0 ;
+  size_t arg4 ;
+  LLVMMetadataRef arg5 ;
+  LLVMMetadataRef arg6 ;
+  unsigned int arg7 ;
+  unsigned int arg8 ;
+  unsigned int arg9 ;
+  unsigned int arg10 ;
+  LLVMDIFlags arg11 ;
+  char *arg12 = (char *) 0 ;
+  size_t arg13 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (LLVMMetadataRef)jarg5; 
+  arg6 = (LLVMMetadataRef)jarg6; 
+  arg7 = (unsigned int)jarg7; 
+  arg8 = (unsigned int)jarg8; 
+  arg9 = (unsigned int)jarg9; 
+  arg10 = (unsigned int)jarg10; 
+  arg11 = (LLVMDIFlags)jarg11; 
+  arg12 = (char *)jarg12; 
+  arg13 = (size_t)jarg13; 
+  result = LLVMDIBuilderCreateReplaceableCompositeType(arg1,arg2,(char const *)arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11,(char const *)arg12,arg13);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateArtificialType___(void * jarg1, void * jarg2) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  result = LLVMDIBuilderCreateArtificialType(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateLexicalBlock___(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4, unsigned int jarg5) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  LLVMMetadataRef arg3 ;
+  unsigned int arg4 ;
+  unsigned int arg5 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (LLVMMetadataRef)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  arg5 = (unsigned int)jarg5; 
+  result = LLVMDIBuilderCreateLexicalBlock(arg1,arg2,arg3,arg4,arg5);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateLexicalBlockFile___(void * jarg1, void * jarg2, void * jarg3, unsigned int jarg4) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  LLVMMetadataRef arg3 ;
+  unsigned int arg4 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (LLVMMetadataRef)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  result = LLVMDIBuilderCreateLexicalBlockFile(arg1,arg2,arg3,arg4);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateFunction___(void * jarg1, void * jarg2, char * jarg3, char * jarg4, void * jarg5, unsigned int jarg6, void * jarg7, int jarg8, int jarg9, unsigned int jarg10, unsigned int jarg11, int jarg12) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  char *arg3 = (char *) 0 ;
+  char *arg4 = (char *) 0 ;
+  LLVMMetadataRef arg5 ;
+  unsigned int arg6 ;
+  LLVMMetadataRef arg7 ;
+  int arg8 ;
+  int arg9 ;
+  unsigned int arg10 ;
+  unsigned int arg11 ;
+  int arg12 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (char *)jarg4; 
+  arg5 = (LLVMMetadataRef)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  arg7 = (LLVMMetadataRef)jarg7; 
+  arg8 = (int)jarg8; 
+  arg9 = (int)jarg9; 
+  arg10 = (unsigned int)jarg10; 
+  arg11 = (unsigned int)jarg11; 
+  arg12 = (int)jarg12; 
+  result = LLVMDIBuilderCreateFunction(arg1,arg2,(char const *)arg3,(char const *)arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11,arg12);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateAutoVariable___(void * jarg1, void * jarg2, char * jarg3, void * jarg4, unsigned int jarg5, void * jarg6, int jarg7, unsigned int jarg8, unsigned int jarg9) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  char *arg3 = (char *) 0 ;
+  LLVMMetadataRef arg4 ;
+  unsigned int arg5 ;
+  LLVMMetadataRef arg6 ;
+  int arg7 ;
+  unsigned int arg8 ;
+  uint32_t arg9 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (LLVMMetadataRef)jarg4; 
+  arg5 = (unsigned int)jarg5; 
+  arg6 = (LLVMMetadataRef)jarg6; 
+  arg7 = (int)jarg7; 
+  arg8 = (unsigned int)jarg8; 
+  arg9 = (uint32_t)jarg9; 
+  result = LLVMDIBuilderCreateAutoVariable(arg1,arg2,(char const *)arg3,arg4,arg5,arg6,arg7,arg8,arg9);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateParameterVariable___(void * jarg1, void * jarg2, char * jarg3, unsigned int jarg4, void * jarg5, unsigned int jarg6, void * jarg7, int jarg8, unsigned int jarg9) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  char *arg3 = (char *) 0 ;
+  unsigned int arg4 ;
+  LLVMMetadataRef arg5 ;
+  unsigned int arg6 ;
+  LLVMMetadataRef arg7 ;
+  int arg8 ;
+  unsigned int arg9 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  arg5 = (LLVMMetadataRef)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  arg7 = (LLVMMetadataRef)jarg7; 
+  arg8 = (int)jarg8; 
+  arg9 = (unsigned int)jarg9; 
+  result = LLVMDIBuilderCreateParameterVariable(arg1,arg2,(char const *)arg3,arg4,arg5,arg6,arg7,arg8,arg9);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateTypedef___(void * jarg1, void * jarg2, char * jarg3, void * jarg4, unsigned int jarg5, void * jarg6) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  char *arg3 = (char *) 0 ;
+  LLVMMetadataRef arg4 ;
+  unsigned int arg5 ;
+  LLVMMetadataRef arg6 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (LLVMMetadataRef)jarg4; 
+  arg5 = (unsigned int)jarg5; 
+  arg6 = (LLVMMetadataRef)jarg6; 
+  result = LLVMDIBuilderCreateTypedef(arg1,arg2,(char const *)arg3,arg4,arg5,arg6);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderGetOrCreateSubrange___(void * jarg1, long long jarg2, long long jarg3) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  int64_t arg2 ;
+  int64_t arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (int64_t)jarg2; 
+  arg3 = (int64_t)jarg3; 
+  result = LLVMDIBuilderGetOrCreateSubrange(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderGetOrCreateArray___(void * jarg1, void * jarg2, unsigned long jarg3) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef *arg2 = (LLVMMetadataRef *) 0 ;
+  size_t arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef *)jarg2; 
+  arg3 = (size_t)jarg3; 
+  result = LLVMDIBuilderGetOrCreateArray(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderGetOrCreateTypeArray___(void * jarg1, void * jarg2, unsigned long jarg3) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMMetadataRef *arg2 = (LLVMMetadataRef *) 0 ;
+  size_t arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMMetadataRef *)jarg2; 
+  arg3 = (size_t)jarg3; 
+  result = LLVMDIBuilderGetOrCreateTypeArray(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderCreateExpression___(void * jarg1, void * jarg2, unsigned long jarg3) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  int64_t *arg2 = (int64_t *) 0 ;
+  size_t arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (int64_t *)jarg2; 
+  arg3 = (size_t)jarg3; 
+  result = LLVMDIBuilderCreateExpression(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderInsertDeclareAtEnd___(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMValueRef arg2 ;
+  LLVMMetadataRef arg3 ;
+  LLVMMetadataRef arg4 ;
+  LLVMBasicBlockRef arg5 ;
+  LLVMValueRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMValueRef)jarg2; 
+  arg3 = (LLVMMetadataRef)jarg3; 
+  arg4 = (LLVMMetadataRef)jarg4; 
+  arg5 = (LLVMBasicBlockRef)jarg5; 
+  result = LLVMDIBuilderInsertDeclareAtEnd(arg1,arg2,arg3,arg4,arg5);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_DIBuilderInsertValueAtEnd___(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
+  void * jresult ;
+  LLVMDIBuilderRef arg1 ;
+  LLVMValueRef arg2 ;
+  LLVMMetadataRef arg3 ;
+  LLVMMetadataRef arg4 ;
+  LLVMBasicBlockRef arg5 ;
+  LLVMValueRef result;
+  
+  arg1 = (LLVMDIBuilderRef)jarg1; 
+  arg2 = (LLVMValueRef)jarg2; 
+  arg3 = (LLVMMetadataRef)jarg3; 
+  arg4 = (LLVMMetadataRef)jarg4; 
+  arg5 = (LLVMBasicBlockRef)jarg5; 
+  result = LLVMDIBuilderInsertValueAtEnd(arg1,arg2,arg3,arg4,arg5);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_ConstantAsMetadata___(void * jarg1) {
+  void * jresult ;
+  LLVMValueRef arg1 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMValueRef)jarg1; 
+  result = LLVMConstantAsMetadata(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MDString2___(void * jarg1, char * jarg2, unsigned int jarg3) {
+  void * jresult ;
+  LLVMContextRef arg1 ;
+  char *arg2 = (char *) 0 ;
+  unsigned int arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMContextRef)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  result = LLVMMDString2(arg1,(char const *)arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_MDNode2___(void * jarg1, void * jarg2, unsigned int jarg3) {
+  void * jresult ;
+  LLVMContextRef arg1 ;
+  LLVMMetadataRef *arg2 = (LLVMMetadataRef *) 0 ;
+  unsigned int arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMContextRef)jarg1; 
+  arg2 = (LLVMMetadataRef *)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  result = LLVMMDNode2(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_SwiggedfLLVM_TemporaryMDNode___(void * jarg1, void * jarg2, unsigned int jarg3) {
+  void * jresult ;
+  LLVMContextRef arg1 ;
+  LLVMMetadataRef *arg2 = (LLVMMetadataRef *) 0 ;
+  unsigned int arg3 ;
+  LLVMMetadataRef result;
+  
+  arg1 = (LLVMContextRef)jarg1; 
+  arg2 = (LLVMMetadataRef *)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  result = LLVMTemporaryMDNode(arg1,arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_AddNamedMetadataOperand2___(void * jarg1, char * jarg2, void * jarg3) {
+  LLVMModuleRef arg1 ;
+  char *arg2 = (char *) 0 ;
+  LLVMMetadataRef arg3 ;
+  
+  arg1 = (LLVMModuleRef)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = (LLVMMetadataRef)jarg3; 
+  LLVMAddNamedMetadataOperand2(arg1,(char const *)arg2,arg3);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetMetadata2___(void * jarg1, unsigned int jarg2, void * jarg3) {
+  LLVMValueRef arg1 ;
+  unsigned int arg2 ;
+  LLVMMetadataRef arg3 ;
+  
+  arg1 = (LLVMValueRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (LLVMMetadataRef)jarg3; 
+  LLVMSetMetadata2(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_MetadataReplaceAllUsesWith___(void * jarg1, void * jarg2) {
+  LLVMMetadataRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  
+  arg1 = (LLVMMetadataRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  LLVMMetadataReplaceAllUsesWith(arg1,arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetCurrentDebugLocation2___(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4, void * jarg5) {
+  LLVMBuilderRef arg1 ;
+  unsigned int arg2 ;
+  unsigned int arg3 ;
+  LLVMMetadataRef arg4 ;
+  LLVMMetadataRef arg5 ;
+  
+  arg1 = (LLVMBuilderRef)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  arg4 = (LLVMMetadataRef)jarg4; 
+  arg5 = (LLVMMetadataRef)jarg5; 
+  LLVMSetCurrentDebugLocation2(arg1,arg2,arg3,arg4,arg5);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_SwiggedfLLVM_SetSubprogram___(void * jarg1, void * jarg2) {
+  LLVMValueRef arg1 ;
+  LLVMMetadataRef arg2 ;
+  
+  arg1 = (LLVMValueRef)jarg1; 
+  arg2 = (LLVMMetadataRef)jarg2; 
+  LLVMSetSubprogram(arg1,arg2);
 }
 
 

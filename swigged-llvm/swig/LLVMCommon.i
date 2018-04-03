@@ -121,6 +121,10 @@
 %typemap(cstype) uint64_t* "out System.IntPtr"
 %typemap(csin) uint64_t* "out $csinput"
 
+%typemap(cstype) int64_t* arg1 "System.Int64[]"
+%typemap(imtype) int64_t* "System.Int64[]"
+%typemap(cstype) int64_t* "System.Int64[]"
+%typemap(csin) int64_t* "$csinput"
 
 %typemap(cstype) uint32_t*  "out uint"
 
@@ -140,4 +144,9 @@
 %typemap(csin)   void * "$csinput"
 %typemap(in)     void * %{ $1 = $input; %}
 %typemap(out)    void * %{ $result = $1; %}
-%typemap(csout)  void * { return $imcall; }   
+%typemap(csout)  void * { return $imcall; }
+
+%typemap(cstype) LLVMMetadataRef * ParameterTypes "MetadataRef[]"
+%typemap(csin, pre="    fixed (MetadataRef * swig_ptrTo_$csinput = $csinput)")
+   LLVMMetadataRef * ParameterTypes "(System.IntPtr)swig_ptrTo_$csinput"
+%typemap(imtype) LLVMMetadataRef * ParameterTypes "System.IntPtr"
