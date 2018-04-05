@@ -836,6 +836,9 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ConstInt___")]
   public static extern System.IntPtr ConstInt(System.IntPtr jarg1, ulong jarg2, bool jarg3);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ConstIntOfArbitraryPrecision___")]
+  public static extern System.IntPtr ConstIntOfArbitraryPrecision(System.IntPtr jarg1, uint arg2_count, System.IntPtr jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ConstIntOfString___")]
   public static extern System.IntPtr ConstIntOfString(System.IntPtr jarg1, string jarg2, byte jarg3);
 

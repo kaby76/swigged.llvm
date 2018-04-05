@@ -49,7 +49,6 @@ typedef uint64_t (*LLVMOrcSymbolResolverFn)(const char *Name, void *LookupCtx);
    
 %ignore LLVMContextSetDiagnosticHandler;
 %ignore LLVMContextSetYieldCallback;
-%ignore LLVMConstIntOfArbitraryPrecision;
 %ignore LLVMOrcAddObjectFile;
 // No GUI, so ignore these functions.
 %ignore LLVMViewFunctionCFG;
