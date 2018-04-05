@@ -275,3 +275,5 @@ swigged-llvm/swigged.llvm.native/android-x86-Release/
 swigged-llvm/llvm/ubuntu-16.04-Debug/
 swigged-llvm/llvm/ubuntu-16.04-Release/
 swigged-llvm/llvm/x64-Release.tar.gz
+swigged.llvm.native/ubuntu-16.04-Release/
+swigged.llvm.native/x64-Release/
