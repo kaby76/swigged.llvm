@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>  
-        <BuildDependsOn>
-        SwigLlvmPostBuildEvent;
-        $(BuildDependsOn);  
-        </BuildDependsOn>  
-    </PropertyGroup>
-  <Target
-      Name="SwigLlvmPostBuildEvent"
-      Condition="'$(SwigLlvmPostBuildEvent)'!=''"
-      DependsOnTargets="$(PostBuildEventDependsOn)">
-    <Exec WorkingDirectory="$(OutDir)" Command="$(SwigLlvmPostBuildEvent)" />
-  </Target>
-  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigLlvmPostBuildEvent Condition="'$(Prefer32Bit)' == 'true'">
-      <ErrorText>This project requires 'Prefer 32-bit' to be unset/unchecked (i.e., 64-bit target) for NET Framework, or x64 target selected for NET Core.</ErrorText>
-    </SwigLlvmPostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigLlvmPostBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "$(userprofile)\.nuget\packages\swigged.llvm\6.0.5\content\*.* </SwigLlvmPostBuildEvent>
-  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\..\lib\native\swigged-llvm-native.dll">
+      <Link>swigged-llvm-native.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
