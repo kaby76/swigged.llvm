@@ -27,7 +27,7 @@ rm x64-Release.tar.gz -Force -erroraction 'silentlycontinue'
   [Net.SecurityProtocolType]::Tls12 -bor `
   [Net.SecurityProtocolType]::Tls11 -bor `
   [Net.SecurityProtocolType]::Tls
-curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0.0.3/x64-Release.tar.gz
+curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0.4/x64-Release.tar.gz
 bash -lc "pwd"
 bash -lc "gzip -d x64-Release.tar.gz"
 bash -lc "tar -xvf x64-Release.tar"
