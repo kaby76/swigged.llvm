@@ -1,1 +1,1 @@
-nuget pack swigged.llvm.nuspec -Version 6.0.5
+nuget pack swigged.llvm.nuspec -Version 6.0.6
