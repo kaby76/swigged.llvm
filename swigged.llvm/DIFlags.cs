@@ -38,6 +38,9 @@ public enum DIFlags {
   DIFlagMainSubprogram = 1 << 21,
   DIFlagTypePassByValue = 1 << 22,
   DIFlagTypePassByReference = 1 << 23,
+  DIFlagFixedEnum = 1 << 24,
+  DIFlagThunk = 1 << 25,
+  DIFlagTrivial = 1 << 26,
   DIFlagIndirectVirtualBase = (1 << 2)|(1 << 5),
   DIFlagAccessibility = DIFlagPrivate|DIFlagProtected|DIFlagPublic,
   DIFlagPtrToMemberRep = DIFlagSingleInheritance|DIFlagMultipleInheritance|DIFlagVirtualInheritance

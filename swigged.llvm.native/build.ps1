@@ -18,16 +18,19 @@ $ErrorActionPreference = "Stop"
 $x = $(where.exe msbuild | select -first 1 | %{ $_ -replace ".*2017\\","" } | %{ $_ -replace "\\.*","" })
 Invoke-CmdScript "C:\Program Files (x86)\Microsoft Visual Studio\2017\$x\VC\Auxiliary\Build\vcvarsall.bat" x64
 Get-Date
+echo "Removing old llvm binaries..."
 cd ..\llvm
 rm llvm -Recurse -Force -erroraction 'silentlycontinue'
 rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
 rm x64-Release.tar -Force -erroraction 'silentlycontinue'
 rm x64-Release.tar.gz -Force -erroraction 'silentlycontinue'
+echo "Downloading LLVM binaries from github.com/kaby76/llvm/..."
 [Net.ServicePointManager]::SecurityProtocol = 
   [Net.SecurityProtocolType]::Tls12 -bor `
   [Net.SecurityProtocolType]::Tls11 -bor `
   [Net.SecurityProtocolType]::Tls
 curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0.4/x64-Release.tar.gz
+echo "Unpacking binaries..."
 bash -lc "pwd"
 bash -lc "gzip -d x64-Release.tar.gz"
 bash -lc "tar -xvf x64-Release.tar"

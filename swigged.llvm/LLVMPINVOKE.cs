@@ -278,6 +278,12 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetModuleIdentifier___")]
   public static extern void SetModuleIdentifier(System.IntPtr jarg1, string jarg2, uint jarg3);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetSourceFileName___")]
+  public static extern string GetSourceFileName(System.IntPtr jarg1, out System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetSourceFileName___")]
+  public static extern void SetSourceFileName(System.IntPtr jarg1, string jarg2, uint jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetDataLayoutStr___")]
   public static extern string GetDataLayoutStr(System.IntPtr jarg1);
 
@@ -293,6 +299,12 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetTarget___")]
   public static extern void SetTarget(System.IntPtr jarg1, string jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetModuleFlag___")]
+  public static extern System.IntPtr GetModuleFlag(System.IntPtr jarg1, string jarg2, uint jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddModuleFlag___")]
+  public static extern void AddModuleFlag(System.IntPtr jarg1, int jarg2, string jarg3, uint jarg4, System.IntPtr jarg5);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DumpModule___")]
   public static extern void DumpModule(System.IntPtr jarg1);
 
@@ -302,8 +314,17 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_PrintModuleToString___")]
   public static extern string PrintModuleToString(System.IntPtr jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetModuleInlineAsm___")]
-  public static extern void SetModuleInlineAsm(System.IntPtr jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetModuleInlineAsm___")]
+  public static extern string GetModuleInlineAsm(System.IntPtr jarg1, out System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetModuleInlineAsm2___")]
+  public static extern void SetModuleInlineAsm2(System.IntPtr jarg1, string jarg2, uint jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AppendModuleInlineAsm___")]
+  public static extern void AppendModuleInlineAsm(System.IntPtr jarg1, string jarg2, uint jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetInlineAsm___")]
+  public static extern System.IntPtr GetInlineAsm(System.IntPtr jarg1, string jarg2, uint jarg3, string jarg4, uint jarg5, bool jarg6, bool jarg7, int jarg8);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetModuleContext___")]
   public static extern System.IntPtr GetModuleContext(System.IntPtr jarg1);
@@ -337,6 +358,9 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetPreviousFunction___")]
   public static extern System.IntPtr GetPreviousFunction(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetModuleInlineAsm___")]
+  public static extern void SetModuleInlineAsm(System.IntPtr jarg1, string jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetTypeKind___")]
   public static extern int GetTypeKind(System.IntPtr jarg1);
@@ -533,11 +557,11 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetValueKind___")]
   public static extern int GetValueKind(System.IntPtr jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetValueName___")]
-  public static extern string GetValueName(System.IntPtr jarg1);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetValueName2___")]
+  public static extern string GetValueName2(System.IntPtr jarg1, out System.IntPtr jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetValueName___")]
-  public static extern void SetValueName(System.IntPtr jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetValueName2___")]
+  public static extern void SetValueName2(System.IntPtr jarg1, string jarg2, uint jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DumpValue___")]
   public static extern void DumpValue(System.IntPtr jarg1);
@@ -793,6 +817,12 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_IsAMDString___")]
   public static extern System.IntPtr IsAMDString(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetValueName___")]
+  public static extern string GetValueName(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetValueName___")]
+  public static extern void SetValueName(System.IntPtr jarg1, string jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetFirstUse___")]
   public static extern System.IntPtr GetFirstUse(System.IntPtr jarg1);
@@ -1082,11 +1112,11 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ConstInsertValue___")]
   public static extern System.IntPtr ConstInsertValue(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr arg3_data, uint jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ConstInlineAsm___")]
-  public static extern System.IntPtr ConstInlineAsm(System.IntPtr jarg1, string jarg2, string jarg3, bool jarg4, bool jarg5);
-
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BlockAddress___")]
   public static extern System.IntPtr BlockAddress(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ConstInlineAsm___")]
+  public static extern System.IntPtr ConstInlineAsm(System.IntPtr jarg1, string jarg2, string jarg3, bool jarg4, bool jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetGlobalParent___")]
   public static extern System.IntPtr GetGlobalParent(System.IntPtr jarg1);
@@ -1117,6 +1147,12 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetDLLStorageClass___")]
   public static extern void SetDLLStorageClass(System.IntPtr jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetUnnamedAddress___")]
+  public static extern int GetUnnamedAddress(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetUnnamedAddress___")]
+  public static extern void SetUnnamedAddress(System.IntPtr jarg1, int jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_HasUnnamedAddr___")]
   public static extern bool HasUnnamedAddr(System.IntPtr jarg1);
@@ -1186,6 +1222,27 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddAlias___")]
   public static extern System.IntPtr AddAlias(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, string jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetNamedGlobalAlias___")]
+  public static extern System.IntPtr GetNamedGlobalAlias(System.IntPtr jarg1, string jarg2, uint jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetFirstGlobalAlias___")]
+  public static extern System.IntPtr GetFirstGlobalAlias(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetLastGlobalAlias___")]
+  public static extern System.IntPtr GetLastGlobalAlias(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetNextGlobalAlias___")]
+  public static extern System.IntPtr GetNextGlobalAlias(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetPreviousGlobalAlias___")]
+  public static extern System.IntPtr GetPreviousGlobalAlias(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AliasGetAliasee___")]
+  public static extern System.IntPtr AliasGetAliasee(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AliasSetAliasee___")]
+  public static extern void AliasSetAliasee(System.IntPtr jarg1, System.IntPtr jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DeleteFunction___")]
   public static extern void DeleteFunction(System.IntPtr jarg1);
@@ -1559,14 +1616,29 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildInvoke___")]
   public static extern System.IntPtr BuildInvoke(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr arg3_data, uint jarg3, System.IntPtr jarg5, System.IntPtr jarg6, string jarg7);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildLandingPad___")]
-  public static extern System.IntPtr BuildLandingPad(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4, string jarg5);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildUnreachable___")]
+  public static extern System.IntPtr BuildUnreachable(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildResume___")]
   public static extern System.IntPtr BuildResume(System.IntPtr jarg1, System.IntPtr jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildUnreachable___")]
-  public static extern System.IntPtr BuildUnreachable(System.IntPtr jarg1);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildLandingPad___")]
+  public static extern System.IntPtr BuildLandingPad(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4, string jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildCleanupRet___")]
+  public static extern System.IntPtr BuildCleanupRet(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildCatchRet___")]
+  public static extern System.IntPtr BuildCatchRet(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildCatchPad___")]
+  public static extern System.IntPtr BuildCatchPad(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr arg3_data, uint jarg3, string jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildCleanupPad___")]
+  public static extern System.IntPtr BuildCleanupPad(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr arg3_data, uint jarg3, string jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildCatchSwitch___")]
+  public static extern System.IntPtr BuildCatchSwitch(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4, string jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddCase___")]
   public static extern void AddCase(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3);
@@ -1588,6 +1660,27 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetCleanup___")]
   public static extern void SetCleanup(System.IntPtr jarg1, bool jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddHandler___")]
+  public static extern void AddHandler(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetNumHandlers___")]
+  public static extern uint GetNumHandlers(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetHandlers___")]
+  public static extern void GetHandlers(System.IntPtr jarg1, out System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetArgOperand___")]
+  public static extern System.IntPtr GetArgOperand(System.IntPtr jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetArgOperand___")]
+  public static extern void SetArgOperand(System.IntPtr jarg1, uint jarg2, System.IntPtr jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetParentCatchSwitch___")]
+  public static extern System.IntPtr GetParentCatchSwitch(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetParentCatchSwitch___")]
+  public static extern void SetParentCatchSwitch(System.IntPtr jarg1, System.IntPtr jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_BuildAdd___")]
   public static extern System.IntPtr BuildAdd(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, string jarg4);
@@ -1967,84 +2060,6 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_WriteBitcodeToMemoryBuffer___")]
   public static extern System.IntPtr WriteBitcodeToMemoryBuffer(System.IntPtr jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_VariantKind_None_get___")]
-  public static extern int Disassembler_VariantKind_None_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM_HI16_get___")]
-  public static extern int Disassembler_VariantKind_ARM_HI16_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM_LO16_get___")]
-  public static extern int Disassembler_VariantKind_ARM_LO16_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_PAGE_get___")]
-  public static extern int Disassembler_VariantKind_ARM64_PAGE_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_PAGEOFF_get___")]
-  public static extern int Disassembler_VariantKind_ARM64_PAGEOFF_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_GOTPAGE_get___")]
-  public static extern int Disassembler_VariantKind_ARM64_GOTPAGE_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_GOTPAGEOFF_get___")]
-  public static extern int Disassembler_VariantKind_ARM64_GOTPAGEOFF_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_TLVP_get___")]
-  public static extern int Disassembler_VariantKind_ARM64_TLVP_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_VariantKind_ARM64_TLVOFF_get___")]
-  public static extern int Disassembler_VariantKind_ARM64_TLVOFF_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_InOut_None_get___")]
-  public static extern int Disassembler_ReferenceType_InOut_None_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_Branch_get___")]
-  public static extern int Disassembler_ReferenceType_In_Branch_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_PCrel_Load_get___")]
-  public static extern int Disassembler_ReferenceType_In_PCrel_Load_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_ADRP_get___")]
-  public static extern int Disassembler_ReferenceType_In_ARM64_ADRP_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_ADDXri_get___")]
-  public static extern int Disassembler_ReferenceType_In_ARM64_ADDXri_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_LDRXui_get___")]
-  public static extern int Disassembler_ReferenceType_In_ARM64_LDRXui_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_LDRXl_get___")]
-  public static extern int Disassembler_ReferenceType_In_ARM64_LDRXl_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_In_ARM64_ADR_get___")]
-  public static extern int Disassembler_ReferenceType_In_ARM64_ADR_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_SymbolStub_get___")]
-  public static extern int Disassembler_ReferenceType_Out_SymbolStub_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_LitPool_SymAddr_get___")]
-  public static extern int Disassembler_ReferenceType_Out_LitPool_SymAddr_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_LitPool_CstrAddr_get___")]
-  public static extern int Disassembler_ReferenceType_Out_LitPool_CstrAddr_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_CFString_Ref_get___")]
-  public static extern int Disassembler_ReferenceType_Out_Objc_CFString_Ref_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_Message_get___")]
-  public static extern int Disassembler_ReferenceType_Out_Objc_Message_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_Message_Ref_get___")]
-  public static extern int Disassembler_ReferenceType_Out_Objc_Message_Ref_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_Selector_Ref_get___")]
-  public static extern int Disassembler_ReferenceType_Out_Objc_Selector_Ref_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_Out_Objc_Class_Ref_get___")]
-  public static extern int Disassembler_ReferenceType_Out_Objc_Class_Ref_get();
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_Disassembler_ReferenceType_DeMangled_Name_get___")]
-  public static extern int Disassembler_ReferenceType_DeMangled_Name_get();
-
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetDisasmOptions___")]
   public static extern int SetDisasmOptions(System.IntPtr jarg1, ulong jarg2);
 
@@ -2198,6 +2213,15 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DisposeMCJITMemoryManager___")]
   public static extern void DisposeMCJITMemoryManager(System.IntPtr jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateGDBRegistrationListener___")]
+  public static extern System.IntPtr CreateGDBRegistrationListener();
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreateIntelJITEventListener___")]
+  public static extern System.IntPtr CreateIntelJITEventListener();
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_CreatePerfJITEventListener___")]
+  public static extern System.IntPtr CreatePerfJITEventListener();
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_InitializeTransformUtils___")]
   public static extern void InitializeTransformUtils(System.IntPtr jarg1);
 
@@ -2234,12 +2258,6 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_LinkModules2___")]
   public static extern bool LinkModules2(System.IntPtr jarg1, System.IntPtr jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcMakeSharedModule___")]
-  public static extern System.IntPtr OrcMakeSharedModule(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcDisposeSharedModuleRef___")]
-  public static extern void OrcDisposeSharedModuleRef(System.IntPtr jarg1);
-
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcCreateInstance___")]
   public static extern System.IntPtr OrcCreateInstance(System.IntPtr jarg1);
 
@@ -2262,19 +2280,28 @@ class LLVMPINVOKE {
   public static extern int OrcSetIndirectStubPointer(System.IntPtr jarg1, string jarg2, ulong jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcAddEagerlyCompiledIR___")]
-  public static extern int OrcAddEagerlyCompiledIR(System.IntPtr jarg1, out uint jarg2, System.IntPtr jarg3, cppLLVMOrcSymbolResolverFn jarg4, System.IntPtr jarg5);
+  public static extern int OrcAddEagerlyCompiledIR(System.IntPtr jarg1, out System.IntPtr jarg2, System.IntPtr jarg3, cppLLVMOrcSymbolResolverFn jarg4, System.IntPtr jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcAddLazilyCompiledIR___")]
-  public static extern int OrcAddLazilyCompiledIR(System.IntPtr jarg1, out uint jarg2, System.IntPtr jarg3, cppLLVMOrcSymbolResolverFn jarg4, System.IntPtr jarg5);
+  public static extern int OrcAddLazilyCompiledIR(System.IntPtr jarg1, out System.IntPtr jarg2, System.IntPtr jarg3, cppLLVMOrcSymbolResolverFn jarg4, System.IntPtr jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcRemoveModule___")]
-  public static extern int OrcRemoveModule(System.IntPtr jarg1, uint jarg2);
+  public static extern int OrcRemoveModule(System.IntPtr jarg1, ulong jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcGetSymbolAddress___")]
   public static extern int OrcGetSymbolAddress(System.IntPtr jarg1, out System.IntPtr jarg2, string jarg3);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcGetSymbolAddressIn___")]
+  public static extern int OrcGetSymbolAddressIn(System.IntPtr jarg1, out System.IntPtr jarg2, ulong jarg3, string jarg4);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcDisposeInstance___")]
   public static extern int OrcDisposeInstance(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcRegisterJITEventListener___")]
+  public static extern void OrcRegisterJITEventListener(System.IntPtr jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_OrcUnregisterJITEventListener___")]
+  public static extern void OrcUnregisterJITEventListener(System.IntPtr jarg1, System.IntPtr jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_LoadLibraryPermanently___")]
   public static extern bool LoadLibraryPermanently(string jarg1);
@@ -2444,6 +2471,15 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetDefaultTargetTriple___")]
   public static extern string GetDefaultTargetTriple();
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_NormalizeTargetTriple___")]
+  public static extern string NormalizeTargetTriple(string jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetHostCPUName___")]
+  public static extern string GetHostCPUName();
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetHostCPUFeatures___")]
+  public static extern string GetHostCPUFeatures();
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddAnalysisPasses___")]
   public static extern void AddAnalysisPasses(System.IntPtr jarg1, System.IntPtr jarg2);
 
@@ -2579,6 +2615,9 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddLoopUnrollPass___")]
   public static extern void AddLoopUnrollPass(System.IntPtr jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddLoopUnrollAndJamPass___")]
+  public static extern void AddLoopUnrollAndJamPass(System.IntPtr jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddLoopUnswitchPass___")]
   public static extern void AddLoopUnswitchPass(System.IntPtr jarg1);
 
@@ -2587,12 +2626,6 @@ class LLVMPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddPartiallyInlineLibCallsPass___")]
   public static extern void AddPartiallyInlineLibCallsPass(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddLowerSwitchPass___")]
-  public static extern void AddLowerSwitchPass(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddPromoteMemoryToRegisterPass___")]
-  public static extern void AddPromoteMemoryToRegisterPass(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddReassociatePass___")]
   public static extern void AddReassociatePass(System.IntPtr jarg1);
@@ -2645,9 +2678,6 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddBasicAliasAnalysisPass___")]
   public static extern void AddBasicAliasAnalysisPass(System.IntPtr jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddBBVectorizePass___")]
-  public static extern void AddBBVectorizePass(System.IntPtr jarg1);
-
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddLoopVectorizePass___")]
   public static extern void AddLoopVectorizePass(System.IntPtr jarg1);
 
@@ -2681,44 +2711,89 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateFile___")]
   public static extern System.IntPtr DIBuilderCreateFile(System.IntPtr jarg1, string jarg2, uint jarg3, string jarg4, uint jarg5);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateModule___")]
+  public static extern System.IntPtr DIBuilderCreateModule(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, string jarg5, uint jarg6, string jarg7, uint jarg8, string jarg9, uint jarg10);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateNameSpace___")]
+  public static extern System.IntPtr DIBuilderCreateNameSpace(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, bool jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateFunction___")]
+  public static extern System.IntPtr DIBuilderCreateFunction(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, string jarg5, uint jarg6, System.IntPtr jarg7, uint jarg8, System.IntPtr jarg9, bool jarg10, bool jarg11, uint jarg12, int jarg13, bool jarg14);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateLexicalBlock___")]
+  public static extern System.IntPtr DIBuilderCreateLexicalBlock(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4, uint jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateLexicalBlockFile___")]
+  public static extern System.IntPtr DIBuilderCreateLexicalBlockFile(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateImportedModuleFromNamespace___")]
+  public static extern System.IntPtr DIBuilderCreateImportedModuleFromNamespace(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, uint jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateImportedModuleFromAlias___")]
+  public static extern System.IntPtr DIBuilderCreateImportedModuleFromAlias(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, uint jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateImportedModuleFromModule___")]
+  public static extern System.IntPtr DIBuilderCreateImportedModuleFromModule(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, uint jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateImportedDeclaration___")]
+  public static extern System.IntPtr DIBuilderCreateImportedDeclaration(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, uint jarg5, string jarg6, uint jarg7);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateDebugLocation___")]
   public static extern System.IntPtr DIBuilderCreateDebugLocation(System.IntPtr jarg1, uint jarg2, uint jarg3, System.IntPtr jarg4, System.IntPtr jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DILocationGetLine___")]
+  public static extern uint DILocationGetLine(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DILocationGetColumn___")]
+  public static extern uint DILocationGetColumn(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DILocationGetScope___")]
+  public static extern System.IntPtr DILocationGetScope(System.IntPtr jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderGetOrCreateTypeArray___")]
+  public static extern System.IntPtr DIBuilderGetOrCreateTypeArray(System.IntPtr jarg1, out System.IntPtr jarg2, uint jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateSubroutineType___")]
   public static extern System.IntPtr DIBuilderCreateSubroutineType(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4, int jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateEnumerationType___")]
-  public static extern System.IntPtr DIBuilderCreateEnumerationType(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, uint jarg7, uint jarg8, out System.IntPtr jarg9, uint jarg10, System.IntPtr jarg11);
+  public static extern System.IntPtr DIBuilderCreateEnumerationType(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, ulong jarg7, uint jarg8, out System.IntPtr jarg9, uint jarg10, System.IntPtr jarg11);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateUnionType___")]
-  public static extern System.IntPtr DIBuilderCreateUnionType(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, uint jarg7, uint jarg8, int jarg9, out System.IntPtr jarg10, uint jarg11, uint jarg12, string jarg13, uint jarg14);
+  public static extern System.IntPtr DIBuilderCreateUnionType(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, ulong jarg7, uint jarg8, int jarg9, out System.IntPtr jarg10, uint jarg11, uint jarg12, string jarg13, uint jarg14);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateArrayType___")]
-  public static extern System.IntPtr DIBuilderCreateArrayType(System.IntPtr jarg1, uint jarg2, uint jarg3, System.IntPtr jarg4, out System.IntPtr jarg5, uint jarg6);
+  public static extern System.IntPtr DIBuilderCreateArrayType(System.IntPtr jarg1, ulong jarg2, uint jarg3, System.IntPtr jarg4, out System.IntPtr jarg5, uint jarg6);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateVectorType___")]
-  public static extern System.IntPtr DIBuilderCreateVectorType(System.IntPtr jarg1, uint jarg2, uint jarg3, System.IntPtr jarg4, out System.IntPtr jarg5, uint jarg6);
+  public static extern System.IntPtr DIBuilderCreateVectorType(System.IntPtr jarg1, ulong jarg2, uint jarg3, System.IntPtr jarg4, out System.IntPtr jarg5, uint jarg6);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateUnspecifiedType___")]
   public static extern System.IntPtr DIBuilderCreateUnspecifiedType(System.IntPtr jarg1, string jarg2, uint jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateBasicType___")]
-  public static extern System.IntPtr DIBuilderCreateBasicType(System.IntPtr jarg1, string jarg2, uint jarg3, uint jarg4, uint jarg5);
+  public static extern System.IntPtr DIBuilderCreateBasicType(System.IntPtr jarg1, string jarg2, uint jarg3, ulong jarg4, uint jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreatePointerType___")]
-  public static extern System.IntPtr DIBuilderCreatePointerType(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, uint jarg4, uint jarg5, string jarg6, uint jarg7);
+  public static extern System.IntPtr DIBuilderCreatePointerType(System.IntPtr jarg1, System.IntPtr jarg2, ulong jarg3, uint jarg4, uint jarg5, string jarg6, uint jarg7);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateStructType___")]
-  public static extern System.IntPtr DIBuilderCreateStructType(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, uint jarg7, uint jarg8, int jarg9, System.IntPtr jarg10, out System.IntPtr jarg11, uint jarg12, uint jarg13, System.IntPtr jarg14, string jarg15, uint jarg16);
+  public static extern System.IntPtr DIBuilderCreateStructType(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, ulong jarg7, uint jarg8, int jarg9, System.IntPtr jarg10, out System.IntPtr jarg11, uint jarg12, uint jarg13, System.IntPtr jarg14, string jarg15, uint jarg16);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateMemberType___")]
-  public static extern System.IntPtr DIBuilderCreateMemberType(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, uint jarg7, uint jarg8, uint jarg9, int jarg10, System.IntPtr jarg11);
+  public static extern System.IntPtr DIBuilderCreateMemberType(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, ulong jarg7, uint jarg8, ulong jarg9, int jarg10, System.IntPtr jarg11);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateStaticMemberType___")]
   public static extern System.IntPtr DIBuilderCreateStaticMemberType(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, System.IntPtr jarg7, int jarg8, System.IntPtr jarg9, uint jarg10);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateMemberPointerType___")]
-  public static extern System.IntPtr DIBuilderCreateMemberPointerType(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4, uint jarg5, int jarg6);
+  public static extern System.IntPtr DIBuilderCreateMemberPointerType(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, ulong jarg4, uint jarg5, int jarg6);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateObjCIVar___")]
+  public static extern System.IntPtr DIBuilderCreateObjCIVar(System.IntPtr jarg1, string jarg2, uint jarg3, System.IntPtr jarg4, uint jarg5, ulong jarg6, uint jarg7, ulong jarg8, int jarg9, System.IntPtr jarg10, System.IntPtr jarg11);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateObjCProperty___")]
+  public static extern System.IntPtr DIBuilderCreateObjCProperty(System.IntPtr jarg1, string jarg2, uint jarg3, System.IntPtr jarg4, uint jarg5, string jarg6, uint jarg7, string jarg8, uint jarg9, uint jarg10, System.IntPtr jarg11);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateObjectPointerType___")]
   public static extern System.IntPtr DIBuilderCreateObjectPointerType(System.IntPtr jarg1, System.IntPtr jarg2);
@@ -2732,29 +2807,38 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateNullPtrType___")]
   public static extern System.IntPtr DIBuilderCreateNullPtrType(System.IntPtr jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateTypedef___")]
+  public static extern System.IntPtr DIBuilderCreateTypedef(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, System.IntPtr jarg7);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateInheritance___")]
+  public static extern System.IntPtr DIBuilderCreateInheritance(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, ulong jarg4, uint jarg5, int jarg6);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateForwardDecl___")]
+  public static extern System.IntPtr DIBuilderCreateForwardDecl(System.IntPtr jarg1, uint jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, System.IntPtr jarg6, uint jarg7, uint jarg8, ulong jarg9, uint jarg10, string jarg11, uint jarg12);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateReplaceableCompositeType___")]
-  public static extern System.IntPtr DIBuilderCreateReplaceableCompositeType(System.IntPtr jarg1, uint jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, System.IntPtr jarg6, uint jarg7, uint jarg8, uint jarg9, uint jarg10, int jarg11, string jarg12, uint jarg13);
+  public static extern System.IntPtr DIBuilderCreateReplaceableCompositeType(System.IntPtr jarg1, uint jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, System.IntPtr jarg6, uint jarg7, uint jarg8, ulong jarg9, uint jarg10, int jarg11, string jarg12, uint jarg13);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateArtificialType___")]
   public static extern System.IntPtr DIBuilderCreateArtificialType(System.IntPtr jarg1, System.IntPtr jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateLexicalBlock___")]
-  public static extern System.IntPtr DIBuilderCreateLexicalBlock(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4, uint jarg5);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DITypeGetName___")]
+  public static extern string DITypeGetName(System.IntPtr jarg1, out System.IntPtr jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateLexicalBlockFile___")]
-  public static extern System.IntPtr DIBuilderCreateLexicalBlockFile(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, uint jarg4);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DITypeGetSizeInBits___")]
+  public static extern ulong DITypeGetSizeInBits(System.IntPtr jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateFunction___")]
-  public static extern System.IntPtr DIBuilderCreateFunction(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, string jarg4, System.IntPtr jarg5, uint jarg6, System.IntPtr jarg7, int jarg8, int jarg9, uint jarg10, uint jarg11, int jarg12);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DITypeGetOffsetInBits___")]
+  public static extern ulong DITypeGetOffsetInBits(System.IntPtr jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateAutoVariable___")]
-  public static extern System.IntPtr DIBuilderCreateAutoVariable(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, System.IntPtr jarg4, uint jarg5, System.IntPtr jarg6, int jarg7, uint jarg8, uint jarg9);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DITypeGetAlignInBits___")]
+  public static extern uint DITypeGetAlignInBits(System.IntPtr jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateParameterVariable___")]
-  public static extern System.IntPtr DIBuilderCreateParameterVariable(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, System.IntPtr jarg7, int jarg8, uint jarg9);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DITypeGetLine___")]
+  public static extern uint DITypeGetLine(System.IntPtr jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateTypedef___")]
-  public static extern System.IntPtr DIBuilderCreateTypedef(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, System.IntPtr jarg4, uint jarg5, System.IntPtr jarg6);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DITypeGetFlags___")]
+  public static extern int DITypeGetFlags(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderGetOrCreateSubrange___")]
   public static extern System.IntPtr DIBuilderGetOrCreateSubrange(System.IntPtr jarg1, long jarg2, long jarg3);
@@ -2762,41 +2846,47 @@ class LLVMPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderGetOrCreateArray___")]
   public static extern System.IntPtr DIBuilderGetOrCreateArray(System.IntPtr jarg1, out System.IntPtr jarg2, uint jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderGetOrCreateTypeArray___")]
-  public static extern System.IntPtr DIBuilderGetOrCreateTypeArray(System.IntPtr jarg1, out System.IntPtr jarg2, uint jarg3);
-
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateExpression___")]
   public static extern System.IntPtr DIBuilderCreateExpression(System.IntPtr jarg1, System.Int64[] jarg2, uint jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderInsertDeclareAtEnd___")]
-  public static extern System.IntPtr DIBuilderInsertDeclareAtEnd(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, System.IntPtr jarg5);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateConstantValueExpression___")]
+  public static extern System.IntPtr DIBuilderCreateConstantValueExpression(System.IntPtr jarg1, long jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderInsertValueAtEnd___")]
-  public static extern System.IntPtr DIBuilderInsertValueAtEnd(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, System.IntPtr jarg5);
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_ConstantAsMetadata___")]
-  public static extern System.IntPtr ConstantAsMetadata(System.IntPtr jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MDString2___")]
-  public static extern System.IntPtr MDString2(System.IntPtr jarg1, string jarg2, uint jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MDNode2___")]
-  public static extern System.IntPtr MDNode2(System.IntPtr jarg1, out System.IntPtr jarg2, uint jarg3);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateGlobalVariableExpression___")]
+  public static extern System.IntPtr DIBuilderCreateGlobalVariableExpression(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, string jarg5, uint jarg6, System.IntPtr jarg7, uint jarg8, System.IntPtr jarg9, bool jarg10, System.IntPtr jarg11, System.IntPtr jarg12, uint jarg13);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_TemporaryMDNode___")]
   public static extern System.IntPtr TemporaryMDNode(System.IntPtr jarg1, out System.IntPtr jarg2, uint jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_AddNamedMetadataOperand2___")]
-  public static extern void AddNamedMetadataOperand2(System.IntPtr jarg1, string jarg2, System.IntPtr jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetMetadata2___")]
-  public static extern void SetMetadata2(System.IntPtr jarg1, uint jarg2, System.IntPtr jarg3);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DisposeTemporaryMDNode___")]
+  public static extern void DisposeTemporaryMDNode(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_MetadataReplaceAllUsesWith___")]
   public static extern void MetadataReplaceAllUsesWith(System.IntPtr jarg1, System.IntPtr jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetCurrentDebugLocation2___")]
-  public static extern void SetCurrentDebugLocation2(System.IntPtr jarg1, uint jarg2, uint jarg3, System.IntPtr jarg4, System.IntPtr jarg5);
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateTempGlobalVariableFwdDecl___")]
+  public static extern System.IntPtr DIBuilderCreateTempGlobalVariableFwdDecl(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, string jarg5, uint jarg6, System.IntPtr jarg7, uint jarg8, System.IntPtr jarg9, bool jarg10, System.IntPtr jarg11, uint jarg12);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderInsertDeclareBefore___")]
+  public static extern System.IntPtr DIBuilderInsertDeclareBefore(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, System.IntPtr jarg5, System.IntPtr jarg6);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderInsertDeclareAtEnd___")]
+  public static extern System.IntPtr DIBuilderInsertDeclareAtEnd(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, System.IntPtr jarg5, System.IntPtr jarg6);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderInsertDbgValueBefore___")]
+  public static extern System.IntPtr DIBuilderInsertDbgValueBefore(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, System.IntPtr jarg5, System.IntPtr jarg6);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderInsertDbgValueAtEnd___")]
+  public static extern System.IntPtr DIBuilderInsertDbgValueAtEnd(System.IntPtr jarg1, System.IntPtr jarg2, System.IntPtr jarg3, System.IntPtr jarg4, System.IntPtr jarg5, System.IntPtr jarg6);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateAutoVariable___")]
+  public static extern System.IntPtr DIBuilderCreateAutoVariable(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, System.IntPtr jarg5, uint jarg6, System.IntPtr jarg7, bool jarg8, int jarg9, uint jarg10);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_DIBuilderCreateParameterVariable___")]
+  public static extern System.IntPtr DIBuilderCreateParameterVariable(System.IntPtr jarg1, System.IntPtr jarg2, string jarg3, uint jarg4, uint jarg5, System.IntPtr jarg6, uint jarg7, System.IntPtr jarg8, bool jarg9, int jarg10);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_GetSubprogram___")]
+  public static extern System.IntPtr GetSubprogram(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-llvm-native", EntryPoint="CSharp_SwiggedfLLVM_SetSubprogram___")]
   public static extern void SetSubprogram(System.IntPtr jarg1, System.IntPtr jarg2);

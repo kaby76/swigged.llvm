@@ -142,6 +142,15 @@ public class LLVM {
     LLVMPINVOKE.SetModuleIdentifier(M.Value, Ident, Len);
   }
 
+  public unsafe static string GetSourceFileName(ModuleRef M, out System.IntPtr Len) {
+    string ret = LLVMPINVOKE.GetSourceFileName(M.Value, out Len);
+    return ret;
+  }
+
+  public unsafe static void SetSourceFileName(ModuleRef M, string Name, uint Len) {
+    LLVMPINVOKE.SetSourceFileName(M.Value, Name, Len);
+  }
+
   public unsafe static string GetDataLayoutStr(ModuleRef M) {
     string ret = LLVMPINVOKE.GetDataLayoutStr(M.Value);
     return ret;
@@ -165,6 +174,15 @@ public class LLVM {
     LLVMPINVOKE.SetTarget(M.Value, Triple);
   }
 
+  public unsafe static MetadataRef GetModuleFlag(ModuleRef M, string Key, uint KeyLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.GetModuleFlag(M.Value, Key, KeyLen));
+        return ret;
+    }
+
+  public unsafe static void AddModuleFlag(ModuleRef M, ModuleFlagBehavior Behavior, string Key, uint KeyLen, MetadataRef Val) {
+    LLVMPINVOKE.AddModuleFlag(M.Value, (int)Behavior, Key, KeyLen, Val.Value);
+  }
+
   public unsafe static void DumpModule(ModuleRef M) {
     LLVMPINVOKE.DumpModule(M.Value);
   }
@@ -179,9 +197,23 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static void SetModuleInlineAsm(ModuleRef M, string Asm) {
-    LLVMPINVOKE.SetModuleInlineAsm(M.Value, Asm);
+  public unsafe static string GetModuleInlineAsm(ModuleRef M, out System.IntPtr Len) {
+    string ret = LLVMPINVOKE.GetModuleInlineAsm(M.Value, out Len);
+    return ret;
   }
+
+  public unsafe static void SetModuleInlineAsm2(ModuleRef M, string Asm, uint Len) {
+    LLVMPINVOKE.SetModuleInlineAsm2(M.Value, Asm, Len);
+  }
+
+  public unsafe static void AppendModuleInlineAsm(ModuleRef M, string Asm, uint Len) {
+    LLVMPINVOKE.AppendModuleInlineAsm(M.Value, Asm, Len);
+  }
+
+  public unsafe static ValueRef GetInlineAsm(TypeRef Ty, string AsmString, uint AsmStringSize, string Constraints, uint ConstraintsSize, bool HasSideEffects, bool IsAlignStack, InlineAsmDialect Dialect) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.GetInlineAsm(Ty.Value, AsmString, AsmStringSize, Constraints, ConstraintsSize, HasSideEffects, IsAlignStack, (int)Dialect));
+        return ret;
+    }
 
   public unsafe static ContextRef GetModuleContext(ModuleRef M) {
         ContextRef ret = new ContextRef(LLVMPINVOKE.GetModuleContext(M.Value));
@@ -235,6 +267,10 @@ public class LLVM {
         ValueRef ret = new ValueRef(LLVMPINVOKE.GetPreviousFunction(Fn.Value));
         return ret;
     }
+
+  public unsafe static void SetModuleInlineAsm(ModuleRef M, string Asm) {
+    LLVMPINVOKE.SetModuleInlineAsm(M.Value, Asm);
+  }
 
   public unsafe static TypeKind GetTypeKind(TypeRef Ty) {
     TypeKind ret = (TypeKind)LLVMPINVOKE.GetTypeKind(Ty.Value);
@@ -575,13 +611,13 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static string GetValueName(ValueRef Val) {
-    string ret = LLVMPINVOKE.GetValueName(Val.Value);
+  public unsafe static string GetValueName2(ValueRef Val, out System.IntPtr Length) {
+    string ret = LLVMPINVOKE.GetValueName2(Val.Value, out Length);
     return ret;
   }
 
-  public unsafe static void SetValueName(ValueRef Val, string Name) {
-    LLVMPINVOKE.SetValueName(Val.Value, Name);
+  public unsafe static void SetValueName2(ValueRef Val, string Name, uint NameLen) {
+    LLVMPINVOKE.SetValueName2(Val.Value, Name, NameLen);
   }
 
   public unsafe static void DumpValue(ValueRef Val) {
@@ -1006,6 +1042,15 @@ public class LLVM {
         ValueRef ret = new ValueRef(LLVMPINVOKE.IsAMDString(Val.Value));
         return ret;
     }
+
+  public unsafe static string GetValueName(ValueRef Val) {
+    string ret = LLVMPINVOKE.GetValueName(Val.Value);
+    return ret;
+  }
+
+  public unsafe static void SetValueName(ValueRef Val, string Name) {
+    LLVMPINVOKE.SetValueName(Val.Value, Name);
+  }
 
   public unsafe static UseRef GetFirstUse(ValueRef Val) {
         UseRef ret = new UseRef(LLVMPINVOKE.GetFirstUse(Val.Value));
@@ -1516,13 +1561,13 @@ public class LLVM {
       }
   }
 
-  public unsafe static ValueRef ConstInlineAsm(TypeRef Ty, string AsmString, string Constraints, bool HasSideEffects, bool IsAlignStack) {
-        ValueRef ret = new ValueRef(LLVMPINVOKE.ConstInlineAsm(Ty.Value, AsmString, Constraints, HasSideEffects, IsAlignStack));
+  public unsafe static ValueRef BlockAddress(ValueRef F, BasicBlockRef BB) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.BlockAddress(F.Value, BB.Value));
         return ret;
     }
 
-  public unsafe static ValueRef BlockAddress(ValueRef F, BasicBlockRef BB) {
-        ValueRef ret = new ValueRef(LLVMPINVOKE.BlockAddress(F.Value, BB.Value));
+  public unsafe static ValueRef ConstInlineAsm(TypeRef Ty, string AsmString, string Constraints, bool HasSideEffects, bool IsAlignStack) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.ConstInlineAsm(Ty.Value, AsmString, Constraints, HasSideEffects, IsAlignStack));
         return ret;
     }
 
@@ -1570,6 +1615,15 @@ public class LLVM {
 
   public unsafe static void SetDLLStorageClass(ValueRef Global, DLLStorageClass Class) {
     LLVMPINVOKE.SetDLLStorageClass(Global.Value, (int)Class);
+  }
+
+  public unsafe static UnnamedAddr GetUnnamedAddress(ValueRef Global) {
+    UnnamedAddr ret = (UnnamedAddr)LLVMPINVOKE.GetUnnamedAddress(Global.Value);
+    return ret;
+  }
+
+  public unsafe static void SetUnnamedAddress(ValueRef Global, UnnamedAddr UnnamedAddr) {
+    LLVMPINVOKE.SetUnnamedAddress(Global.Value, (int)UnnamedAddr);
   }
 
   public unsafe static bool HasUnnamedAddr(ValueRef Global) {
@@ -1678,6 +1732,40 @@ public class LLVM {
         ValueRef ret = new ValueRef(LLVMPINVOKE.AddAlias(M.Value, Ty.Value, Aliasee.Value, Name));
         return ret;
     }
+
+  public unsafe static ValueRef GetNamedGlobalAlias(ModuleRef M, string Name, uint NameLen) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.GetNamedGlobalAlias(M.Value, Name, NameLen));
+        return ret;
+    }
+
+  public unsafe static ValueRef GetFirstGlobalAlias(ModuleRef M) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.GetFirstGlobalAlias(M.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef GetLastGlobalAlias(ModuleRef M) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.GetLastGlobalAlias(M.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef GetNextGlobalAlias(ValueRef GA) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.GetNextGlobalAlias(GA.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef GetPreviousGlobalAlias(ValueRef GA) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.GetPreviousGlobalAlias(GA.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef AliasGetAliasee(ValueRef Alias) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.AliasGetAliasee(Alias.Value));
+        return ret;
+    }
+
+  public unsafe static void AliasSetAliasee(ValueRef Alias, ValueRef Aliasee) {
+    LLVMPINVOKE.AliasSetAliasee(Alias.Value, Aliasee.Value);
+  }
 
   public unsafe static void DeleteFunction(ValueRef Fn) {
     LLVMPINVOKE.DeleteFunction(Fn.Value);
@@ -2273,8 +2361,8 @@ public class LLVM {
       }
   }
 
-  public unsafe static ValueRef BuildLandingPad(BuilderRef B, TypeRef Ty, ValueRef PersFn, uint NumClauses, string Name) {
-        ValueRef ret = new ValueRef(LLVMPINVOKE.BuildLandingPad(B.Value, Ty.Value, PersFn.Value, NumClauses, Name));
+  public unsafe static ValueRef BuildUnreachable(BuilderRef arg0) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.BuildUnreachable(arg0.Value));
         return ret;
     }
 
@@ -2283,8 +2371,39 @@ public class LLVM {
         return ret;
     }
 
-  public unsafe static ValueRef BuildUnreachable(BuilderRef arg0) {
-        ValueRef ret = new ValueRef(LLVMPINVOKE.BuildUnreachable(arg0.Value));
+  public unsafe static ValueRef BuildLandingPad(BuilderRef B, TypeRef Ty, ValueRef PersFn, uint NumClauses, string Name) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.BuildLandingPad(B.Value, Ty.Value, PersFn.Value, NumClauses, Name));
+        return ret;
+    }
+
+  public unsafe static ValueRef BuildCleanupRet(BuilderRef B, ValueRef CatchPad, BasicBlockRef BB) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.BuildCleanupRet(B.Value, CatchPad.Value, BB.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef BuildCatchRet(BuilderRef B, ValueRef CatchPad, BasicBlockRef BB) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.BuildCatchRet(B.Value, CatchPad.Value, BB.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef BuildCatchPad(BuilderRef B, ValueRef ParentPad, ValueRef[] Args, string Name) {
+    fixed (ValueRef* swig_ptrTo_Args = Args)
+    {
+          ValueRef ret = new ValueRef(LLVMPINVOKE.BuildCatchPad(B.Value, ParentPad.Value, (System.IntPtr)swig_ptrTo_Args, (uint)Args.Length, Name));
+          return ret;
+      }
+  }
+
+  public unsafe static ValueRef BuildCleanupPad(BuilderRef B, ValueRef ParentPad, ValueRef[] Args, string Name) {
+    fixed (ValueRef* swig_ptrTo_Args = Args)
+    {
+          ValueRef ret = new ValueRef(LLVMPINVOKE.BuildCleanupPad(B.Value, ParentPad.Value, (System.IntPtr)swig_ptrTo_Args, (uint)Args.Length, Name));
+          return ret;
+      }
+  }
+
+  public unsafe static ValueRef BuildCatchSwitch(BuilderRef B, ValueRef ParentPad, BasicBlockRef UnwindBB, uint NumHandlers, string Name) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.BuildCatchSwitch(B.Value, ParentPad.Value, UnwindBB.Value, NumHandlers, Name));
         return ret;
     }
 
@@ -2317,6 +2436,37 @@ public class LLVM {
 
   public unsafe static void SetCleanup(ValueRef LandingPad, bool Val) {
     LLVMPINVOKE.SetCleanup(LandingPad.Value, Val);
+  }
+
+  public unsafe static void AddHandler(ValueRef CatchSwitch, BasicBlockRef Dest) {
+    LLVMPINVOKE.AddHandler(CatchSwitch.Value, Dest.Value);
+  }
+
+  public unsafe static uint GetNumHandlers(ValueRef CatchSwitch) {
+    uint ret = LLVMPINVOKE.GetNumHandlers(CatchSwitch.Value);
+    return ret;
+  }
+
+  public unsafe static void GetHandlers(ValueRef CatchSwitch, out BasicBlockRef Handlers) {
+    LLVMPINVOKE.GetHandlers(CatchSwitch.Value, out Handlers.Value);
+  }
+
+  public unsafe static ValueRef GetArgOperand(ValueRef Funclet, uint i) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.GetArgOperand(Funclet.Value, i));
+        return ret;
+    }
+
+  public unsafe static void SetArgOperand(ValueRef Funclet, uint i, ValueRef value) {
+    LLVMPINVOKE.SetArgOperand(Funclet.Value, i, value.Value);
+  }
+
+  public unsafe static ValueRef GetParentCatchSwitch(ValueRef CatchPad) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.GetParentCatchSwitch(CatchPad.Value));
+        return ret;
+    }
+
+  public unsafe static void SetParentCatchSwitch(ValueRef CatchPad, ValueRef CatchSwitch) {
+    LLVMPINVOKE.SetParentCatchSwitch(CatchPad.Value, CatchSwitch.Value);
   }
 
   public unsafe static ValueRef BuildAdd(BuilderRef arg0, ValueRef LHS, ValueRef RHS, string Name) {
@@ -2949,13 +3099,13 @@ public class LLVM {
         return ret;
     }
 
-  public unsafe static int SetDisasmOptions(System.IntPtr DC, ulong Options) {
-    int ret = LLVMPINVOKE.SetDisasmOptions(DC, Options);
+  public unsafe static int SetDisasmOptions(DisasmContextRef DC, ulong Options) {
+    int ret = LLVMPINVOKE.SetDisasmOptions(DC.Value, Options);
     return ret;
   }
 
-  public unsafe static void DisasmDispose(System.IntPtr DC) {
-    LLVMPINVOKE.DisasmDispose(DC);
+  public unsafe static void DisasmDispose(DisasmContextRef DC) {
+    LLVMPINVOKE.DisasmDispose(DC.Value);
   }
 
   public unsafe static void ResetFatalErrorHandler() {
@@ -3106,6 +3256,21 @@ public class LLVM {
     LLVMPINVOKE.DisposeMCJITMemoryManager(MM.Value);
   }
 
+  public unsafe static JITEventListenerRef CreateGDBRegistrationListener() {
+        JITEventListenerRef ret = new JITEventListenerRef(LLVMPINVOKE.CreateGDBRegistrationListener());
+        return ret;
+    }
+
+  public unsafe static JITEventListenerRef CreateIntelJITEventListener() {
+        JITEventListenerRef ret = new JITEventListenerRef(LLVMPINVOKE.CreateIntelJITEventListener());
+        return ret;
+    }
+
+  public unsafe static JITEventListenerRef CreatePerfJITEventListener() {
+        JITEventListenerRef ret = new JITEventListenerRef(LLVMPINVOKE.CreatePerfJITEventListener());
+        return ret;
+    }
+
   public unsafe static void InitializeTransformUtils(PassRegistryRef R) {
     LLVMPINVOKE.InitializeTransformUtils(R.Value);
   }
@@ -3156,15 +3321,6 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static SharedModuleRef OrcMakeSharedModule(ModuleRef Mod) {
-        SharedModuleRef ret = new SharedModuleRef(LLVMPINVOKE.OrcMakeSharedModule(Mod.Value));
-        return ret;
-    }
-
-  public unsafe static void OrcDisposeSharedModuleRef(SharedModuleRef SharedMod) {
-    LLVMPINVOKE.OrcDisposeSharedModuleRef(SharedMod.Value);
-  }
-
   public unsafe static OrcJITStackRef OrcCreateInstance(TargetMachineRef TM) {
         OrcJITStackRef ret = new OrcJITStackRef(LLVMPINVOKE.OrcCreateInstance(TM.Value));
         return ret;
@@ -3198,17 +3354,17 @@ public class LLVM {
     return ret;
   }
 
-  public unsafe static OrcErrorCode OrcAddEagerlyCompiledIR(OrcJITStackRef JITStack, out uint RetHandle, SharedModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
+  public unsafe static OrcErrorCode OrcAddEagerlyCompiledIR(OrcJITStackRef JITStack, out System.IntPtr RetHandle, ModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
     OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcAddEagerlyCompiledIR(JITStack.Value, out RetHandle, Mod.Value, SymbolResolver, SymbolResolverCtx);
     return ret;
   }
 
-  public unsafe static OrcErrorCode OrcAddLazilyCompiledIR(OrcJITStackRef JITStack, out uint RetHandle, SharedModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
+  public unsafe static OrcErrorCode OrcAddLazilyCompiledIR(OrcJITStackRef JITStack, out System.IntPtr RetHandle, ModuleRef Mod, cppLLVMOrcSymbolResolverFn SymbolResolver, System.IntPtr SymbolResolverCtx) {
     OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcAddLazilyCompiledIR(JITStack.Value, out RetHandle, Mod.Value, SymbolResolver, SymbolResolverCtx);
     return ret;
   }
 
-  public unsafe static OrcErrorCode OrcRemoveModule(OrcJITStackRef JITStack, uint H) {
+  public unsafe static OrcErrorCode OrcRemoveModule(OrcJITStackRef JITStack, ulong H) {
     OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcRemoveModule(JITStack.Value, H);
     return ret;
   }
@@ -3218,9 +3374,22 @@ public class LLVM {
     return ret;
   }
 
+  public unsafe static OrcErrorCode OrcGetSymbolAddressIn(OrcJITStackRef JITStack, out System.IntPtr RetAddr, ulong H, string SymbolName) {
+    OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcGetSymbolAddressIn(JITStack.Value, out RetAddr, H, SymbolName);
+    return ret;
+  }
+
   public unsafe static OrcErrorCode OrcDisposeInstance(OrcJITStackRef JITStack) {
     OrcErrorCode ret = (OrcErrorCode)LLVMPINVOKE.OrcDisposeInstance(JITStack.Value);
     return ret;
+  }
+
+  public unsafe static void OrcRegisterJITEventListener(OrcJITStackRef JITStack, JITEventListenerRef L) {
+    LLVMPINVOKE.OrcRegisterJITEventListener(JITStack.Value, L.Value);
+  }
+
+  public unsafe static void OrcUnregisterJITEventListener(OrcJITStackRef JITStack, JITEventListenerRef L) {
+    LLVMPINVOKE.OrcUnregisterJITEventListener(JITStack.Value, L.Value);
   }
 
   public unsafe static bool LoadLibraryPermanently(string Filename) {
@@ -3487,6 +3656,21 @@ public class LLVM {
     return ret;
   }
 
+  public unsafe static string NormalizeTargetTriple(string triple) {
+    string ret = LLVMPINVOKE.NormalizeTargetTriple(triple);
+    return ret;
+  }
+
+  public unsafe static string GetHostCPUName() {
+    string ret = LLVMPINVOKE.GetHostCPUName();
+    return ret;
+  }
+
+  public unsafe static string GetHostCPUFeatures() {
+    string ret = LLVMPINVOKE.GetHostCPUFeatures();
+    return ret;
+  }
+
   public unsafe static void AddAnalysisPasses(TargetMachineRef T, PassManagerRef PM) {
     LLVMPINVOKE.AddAnalysisPasses(T.Value, PM.Value);
   }
@@ -3668,6 +3852,10 @@ public class LLVM {
     LLVMPINVOKE.AddLoopUnrollPass(PM.Value);
   }
 
+  public unsafe static void AddLoopUnrollAndJamPass(PassManagerRef PM) {
+    LLVMPINVOKE.AddLoopUnrollAndJamPass(PM.Value);
+  }
+
   public unsafe static void AddLoopUnswitchPass(PassManagerRef PM) {
     LLVMPINVOKE.AddLoopUnswitchPass(PM.Value);
   }
@@ -3678,14 +3866,6 @@ public class LLVM {
 
   public unsafe static void AddPartiallyInlineLibCallsPass(PassManagerRef PM) {
     LLVMPINVOKE.AddPartiallyInlineLibCallsPass(PM.Value);
-  }
-
-  public unsafe static void AddLowerSwitchPass(PassManagerRef PM) {
-    LLVMPINVOKE.AddLowerSwitchPass(PM.Value);
-  }
-
-  public unsafe static void AddPromoteMemoryToRegisterPass(PassManagerRef PM) {
-    LLVMPINVOKE.AddPromoteMemoryToRegisterPass(PM.Value);
   }
 
   public unsafe static void AddReassociatePass(PassManagerRef PM) {
@@ -3756,10 +3936,6 @@ public class LLVM {
     LLVMPINVOKE.AddBasicAliasAnalysisPass(PM.Value);
   }
 
-  public unsafe static void AddBBVectorizePass(PassManagerRef PM) {
-    LLVMPINVOKE.AddBBVectorizePass(PM.Value);
-  }
-
   public unsafe static void AddLoopVectorizePass(PassManagerRef PM) {
     LLVMPINVOKE.AddLoopVectorizePass(PM.Value);
   }
@@ -3811,8 +3987,73 @@ public class LLVM {
         return ret;
     }
 
+  public unsafe static MetadataRef DIBuilderCreateModule(DIBuilderRef Builder, MetadataRef ParentScope, string Name, uint NameLen, string ConfigMacros, uint ConfigMacrosLen, string IncludePath, uint IncludePathLen, string ISysRoot, uint ISysRootLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateModule(Builder.Value, ParentScope.Value, Name, NameLen, ConfigMacros, ConfigMacrosLen, IncludePath, IncludePathLen, ISysRoot, ISysRootLen));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateNameSpace(DIBuilderRef Builder, MetadataRef ParentScope, string Name, uint NameLen, bool ExportSymbols) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateNameSpace(Builder.Value, ParentScope.Value, Name, NameLen, ExportSymbols));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateFunction(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, string LinkageName, uint LinkageNameLen, MetadataRef File, uint LineNo, MetadataRef Ty, bool IsLocalToUnit, bool IsDefinition, uint ScopeLine, DIFlags Flags, bool IsOptimized) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateFunction(Builder.Value, Scope.Value, Name, NameLen, LinkageName, LinkageNameLen, File.Value, LineNo, Ty.Value, IsLocalToUnit, IsDefinition, ScopeLine, (int)Flags, IsOptimized));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateLexicalBlock(DIBuilderRef Builder, MetadataRef Scope, MetadataRef File, uint Line, uint Column) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateLexicalBlock(Builder.Value, Scope.Value, File.Value, Line, Column));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateLexicalBlockFile(DIBuilderRef Builder, MetadataRef Scope, MetadataRef File, uint Discriminator) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateLexicalBlockFile(Builder.Value, Scope.Value, File.Value, Discriminator));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateImportedModuleFromNamespace(DIBuilderRef Builder, MetadataRef Scope, MetadataRef NS, MetadataRef File, uint Line) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateImportedModuleFromNamespace(Builder.Value, Scope.Value, NS.Value, File.Value, Line));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateImportedModuleFromAlias(DIBuilderRef Builder, MetadataRef Scope, MetadataRef ImportedEntity, MetadataRef File, uint Line) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateImportedModuleFromAlias(Builder.Value, Scope.Value, ImportedEntity.Value, File.Value, Line));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateImportedModuleFromModule(DIBuilderRef Builder, MetadataRef Scope, MetadataRef M, MetadataRef File, uint Line) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateImportedModuleFromModule(Builder.Value, Scope.Value, M.Value, File.Value, Line));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateImportedDeclaration(DIBuilderRef Builder, MetadataRef Scope, MetadataRef Decl, MetadataRef File, uint Line, string Name, uint NameLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateImportedDeclaration(Builder.Value, Scope.Value, Decl.Value, File.Value, Line, Name, NameLen));
+        return ret;
+    }
+
   public unsafe static MetadataRef DIBuilderCreateDebugLocation(ContextRef Ctx, uint Line, uint Column, MetadataRef Scope, MetadataRef InlinedAt) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateDebugLocation(Ctx.Value, Line, Column, Scope.Value, InlinedAt.Value));
+        return ret;
+    }
+
+  public unsafe static uint DILocationGetLine(MetadataRef Location) {
+    uint ret = LLVMPINVOKE.DILocationGetLine(Location.Value);
+    return ret;
+  }
+
+  public unsafe static uint DILocationGetColumn(MetadataRef Location) {
+    uint ret = LLVMPINVOKE.DILocationGetColumn(Location.Value);
+    return ret;
+  }
+
+  public unsafe static MetadataRef DILocationGetScope(MetadataRef Location) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DILocationGetScope(Location.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderGetOrCreateTypeArray(DIBuilderRef Builder, out MetadataRef Data, uint NumElements) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderGetOrCreateTypeArray(Builder.Value, out Data.Value, NumElements));
         return ret;
     }
 
@@ -3824,22 +4065,22 @@ public class LLVM {
       }
   }
 
-  public unsafe static MetadataRef DIBuilderCreateEnumerationType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, uint SizeInBits, uint AlignInBits, out MetadataRef Elements, uint NumElements, MetadataRef ClassTy) {
+  public unsafe static MetadataRef DIBuilderCreateEnumerationType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, ulong SizeInBits, uint AlignInBits, out MetadataRef Elements, uint NumElements, MetadataRef ClassTy) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateEnumerationType(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNumber, SizeInBits, AlignInBits, out Elements.Value, NumElements, ClassTy.Value));
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreateUnionType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, uint SizeInBits, uint AlignInBits, DIFlags Flags, out MetadataRef Elements, uint NumElements, uint RunTimeLang, string UniqueId, uint UniqueIdLen) {
+  public unsafe static MetadataRef DIBuilderCreateUnionType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, ulong SizeInBits, uint AlignInBits, DIFlags Flags, out MetadataRef Elements, uint NumElements, uint RunTimeLang, string UniqueId, uint UniqueIdLen) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateUnionType(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNumber, SizeInBits, AlignInBits, (int)Flags, out Elements.Value, NumElements, RunTimeLang, UniqueId, UniqueIdLen));
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreateArrayType(DIBuilderRef Builder, uint Size, uint AlignInBits, MetadataRef Ty, out MetadataRef Subscripts, uint NumSubscripts) {
+  public unsafe static MetadataRef DIBuilderCreateArrayType(DIBuilderRef Builder, ulong Size, uint AlignInBits, MetadataRef Ty, out MetadataRef Subscripts, uint NumSubscripts) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateArrayType(Builder.Value, Size, AlignInBits, Ty.Value, out Subscripts.Value, NumSubscripts));
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreateVectorType(DIBuilderRef Builder, uint Size, uint AlignInBits, MetadataRef Ty, out MetadataRef Subscripts, uint NumSubscripts) {
+  public unsafe static MetadataRef DIBuilderCreateVectorType(DIBuilderRef Builder, ulong Size, uint AlignInBits, MetadataRef Ty, out MetadataRef Subscripts, uint NumSubscripts) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateVectorType(Builder.Value, Size, AlignInBits, Ty.Value, out Subscripts.Value, NumSubscripts));
         return ret;
     }
@@ -3849,22 +4090,22 @@ public class LLVM {
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreateBasicType(DIBuilderRef Builder, string Name, uint NameLen, uint SizeInBits, uint Encoding) {
+  public unsafe static MetadataRef DIBuilderCreateBasicType(DIBuilderRef Builder, string Name, uint NameLen, ulong SizeInBits, uint Encoding) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateBasicType(Builder.Value, Name, NameLen, SizeInBits, Encoding));
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreatePointerType(DIBuilderRef Builder, MetadataRef PointeeTy, uint SizeInBits, uint AlignInBits, uint AddressSpace, string Name, uint NameLen) {
+  public unsafe static MetadataRef DIBuilderCreatePointerType(DIBuilderRef Builder, MetadataRef PointeeTy, ulong SizeInBits, uint AlignInBits, uint AddressSpace, string Name, uint NameLen) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreatePointerType(Builder.Value, PointeeTy.Value, SizeInBits, AlignInBits, AddressSpace, Name, NameLen));
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreateStructType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, uint SizeInBits, uint AlignInBits, DIFlags Flags, MetadataRef DerivedFrom, out MetadataRef Elements, uint NumElements, uint RunTimeLang, MetadataRef VTableHolder, string UniqueId, uint UniqueIdLen) {
+  public unsafe static MetadataRef DIBuilderCreateStructType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNumber, ulong SizeInBits, uint AlignInBits, DIFlags Flags, MetadataRef DerivedFrom, out MetadataRef Elements, uint NumElements, uint RunTimeLang, MetadataRef VTableHolder, string UniqueId, uint UniqueIdLen) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateStructType(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNumber, SizeInBits, AlignInBits, (int)Flags, DerivedFrom.Value, out Elements.Value, NumElements, RunTimeLang, VTableHolder.Value, UniqueId, UniqueIdLen));
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreateMemberType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNo, uint SizeInBits, uint AlignInBits, uint OffsetInBits, DIFlags Flags, MetadataRef Ty) {
+  public unsafe static MetadataRef DIBuilderCreateMemberType(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNo, ulong SizeInBits, uint AlignInBits, ulong OffsetInBits, DIFlags Flags, MetadataRef Ty) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateMemberType(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNo, SizeInBits, AlignInBits, OffsetInBits, (int)Flags, Ty.Value));
         return ret;
     }
@@ -3874,8 +4115,18 @@ public class LLVM {
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreateMemberPointerType(DIBuilderRef Builder, MetadataRef PointeeType, MetadataRef ClassType, uint SizeInBits, uint AlignInBits, DIFlags Flags) {
+  public unsafe static MetadataRef DIBuilderCreateMemberPointerType(DIBuilderRef Builder, MetadataRef PointeeType, MetadataRef ClassType, ulong SizeInBits, uint AlignInBits, DIFlags Flags) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateMemberPointerType(Builder.Value, PointeeType.Value, ClassType.Value, SizeInBits, AlignInBits, (int)Flags));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateObjCIVar(DIBuilderRef Builder, string Name, uint NameLen, MetadataRef File, uint LineNo, ulong SizeInBits, uint AlignInBits, ulong OffsetInBits, DIFlags Flags, MetadataRef Ty, MetadataRef PropertyNode) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateObjCIVar(Builder.Value, Name, NameLen, File.Value, LineNo, SizeInBits, AlignInBits, OffsetInBits, (int)Flags, Ty.Value, PropertyNode.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateObjCProperty(DIBuilderRef Builder, string Name, uint NameLen, MetadataRef File, uint LineNo, string GetterName, uint GetterNameLen, string SetterName, uint SetterNameLen, uint PropertyAttributes, MetadataRef Ty) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateObjCProperty(Builder.Value, Name, NameLen, File.Value, LineNo, GetterName, GetterNameLen, SetterName, SetterNameLen, PropertyAttributes, Ty.Value));
         return ret;
     }
 
@@ -3899,7 +4150,22 @@ public class LLVM {
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreateReplaceableCompositeType(DIBuilderRef Builder, uint Tag, string Name, uint NameLen, MetadataRef Scope, MetadataRef File, uint Line, uint RuntimeLang, uint SizeInBits, uint AlignInBits, DIFlags Flags, string UniqueIdentifier, uint UniqueIdentifierLen) {
+  public unsafe static MetadataRef DIBuilderCreateTypedef(DIBuilderRef Builder, MetadataRef Type, string Name, uint NameLen, MetadataRef File, uint LineNo, MetadataRef Scope) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateTypedef(Builder.Value, Type.Value, Name, NameLen, File.Value, LineNo, Scope.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateInheritance(DIBuilderRef Builder, MetadataRef Ty, MetadataRef BaseTy, ulong BaseOffset, uint VBPtrOffset, DIFlags Flags) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateInheritance(Builder.Value, Ty.Value, BaseTy.Value, BaseOffset, VBPtrOffset, (int)Flags));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateForwardDecl(DIBuilderRef Builder, uint Tag, string Name, uint NameLen, MetadataRef Scope, MetadataRef File, uint Line, uint RuntimeLang, ulong SizeInBits, uint AlignInBits, string UniqueIdentifier, uint UniqueIdentifierLen) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateForwardDecl(Builder.Value, Tag, Name, NameLen, Scope.Value, File.Value, Line, RuntimeLang, SizeInBits, AlignInBits, UniqueIdentifier, UniqueIdentifierLen));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateReplaceableCompositeType(DIBuilderRef Builder, uint Tag, string Name, uint NameLen, MetadataRef Scope, MetadataRef File, uint Line, uint RuntimeLang, ulong SizeInBits, uint AlignInBits, DIFlags Flags, string UniqueIdentifier, uint UniqueIdentifierLen) {
         MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateReplaceableCompositeType(Builder.Value, Tag, Name, NameLen, Scope.Value, File.Value, Line, RuntimeLang, SizeInBits, AlignInBits, (int)Flags, UniqueIdentifier, UniqueIdentifierLen));
         return ret;
     }
@@ -3909,135 +4175,121 @@ public class LLVM {
         return ret;
     }
 
-  public unsafe static MetadataRef DIBuilderCreateLexicalBlock(DIBuilderRef D, MetadataRef Scope, MetadataRef File, uint Line, uint Column) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateLexicalBlock(D.Value, Scope.Value, File.Value, Line, Column));
-        return ret;
-    }
-
-  public unsafe static MetadataRef DIBuilderCreateLexicalBlockFile(DIBuilderRef D, MetadataRef Scope, MetadataRef File, uint Discriminator) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateLexicalBlockFile(D.Value, Scope.Value, File.Value, Discriminator));
-        return ret;
-    }
-
-  public unsafe static MetadataRef DIBuilderCreateFunction(DIBuilderRef D, MetadataRef Scope, string Name, string LinkageName, MetadataRef File, uint Line, MetadataRef CompositeType, int IsLocalToUnit, int IsDefinition, uint ScopeLine, uint Flags, int IsOptimized) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateFunction(D.Value, Scope.Value, Name, LinkageName, File.Value, Line, CompositeType.Value, IsLocalToUnit, IsDefinition, ScopeLine, Flags, IsOptimized));
-        return ret;
-    }
-
-  public unsafe static MetadataRef DIBuilderCreateAutoVariable(DIBuilderRef D, MetadataRef Scope, string Name, MetadataRef File, uint Line, MetadataRef Ty, int AlwaysPreserve, uint Flags, uint AlignInBits) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateAutoVariable(D.Value, Scope.Value, Name, File.Value, Line, Ty.Value, AlwaysPreserve, Flags, AlignInBits));
-        return ret;
-    }
-
-  public unsafe static MetadataRef DIBuilderCreateParameterVariable(DIBuilderRef D, MetadataRef Scope, string Name, uint ArgNo, MetadataRef File, uint Line, MetadataRef Ty, int AlwaysPreserve, uint Flags) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateParameterVariable(D.Value, Scope.Value, Name, ArgNo, File.Value, Line, Ty.Value, AlwaysPreserve, Flags));
-        return ret;
-    }
-
-  public unsafe static MetadataRef DIBuilderCreateTypedef(DIBuilderRef D, MetadataRef Ty, string Name, MetadataRef File, uint Line, MetadataRef Context) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateTypedef(D.Value, Ty.Value, Name, File.Value, Line, Context.Value));
-        return ret;
-    }
-
-  public unsafe static MetadataRef DIBuilderGetOrCreateSubrange(DIBuilderRef D, long Lo, long Count) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderGetOrCreateSubrange(D.Value, Lo, Count));
-        return ret;
-    }
-
-  public unsafe static MetadataRef DIBuilderGetOrCreateArray(DIBuilderRef D, out MetadataRef Data, uint Length) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderGetOrCreateArray(D.Value, out Data.Value, Length));
-        return ret;
-    }
-
-  public unsafe static MetadataRef DIBuilderGetOrCreateTypeArray(DIBuilderRef D, out MetadataRef Data, uint Length) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderGetOrCreateTypeArray(D.Value, out Data.Value, Length));
-        return ret;
-    }
-
-  public unsafe static MetadataRef DIBuilderCreateExpression(DIBuilderRef Dref, System.Int64[] Addr, uint Length) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateExpression(Dref.Value, Addr, Length));
-        return ret;
-    }
-
-  public unsafe static ValueRef DIBuilderInsertDeclareAtEnd(DIBuilderRef D, ValueRef Storage, MetadataRef VarInfo, MetadataRef Expr, BasicBlockRef Block) {
-        ValueRef ret = new ValueRef(LLVMPINVOKE.DIBuilderInsertDeclareAtEnd(D.Value, Storage.Value, VarInfo.Value, Expr.Value, Block.Value));
-        return ret;
-    }
-
-  public unsafe static ValueRef DIBuilderInsertValueAtEnd(DIBuilderRef D, ValueRef Val, MetadataRef VarInfo, MetadataRef Expr, BasicBlockRef Block) {
-        ValueRef ret = new ValueRef(LLVMPINVOKE.DIBuilderInsertValueAtEnd(D.Value, Val.Value, VarInfo.Value, Expr.Value, Block.Value));
-        return ret;
-    }
-
-  public unsafe static MetadataRef ConstantAsMetadata(ValueRef Val) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.ConstantAsMetadata(Val.Value));
-        return ret;
-    }
-
-  public unsafe static MetadataRef MDString2(ContextRef C, string Str, uint SLen) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.MDString2(C.Value, Str, SLen));
-        return ret;
-    }
-
-  public unsafe static MetadataRef MDNode2(ContextRef C, out MetadataRef MDs, uint Count) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.MDNode2(C.Value, out MDs.Value, Count));
-        return ret;
-    }
-
-  public unsafe static MetadataRef TemporaryMDNode(ContextRef C, out MetadataRef MDs, uint Count) {
-        MetadataRef ret = new MetadataRef(LLVMPINVOKE.TemporaryMDNode(C.Value, out MDs.Value, Count));
-        return ret;
-    }
-
-  public unsafe static void AddNamedMetadataOperand2(ModuleRef M, string name, MetadataRef Val) {
-    LLVMPINVOKE.AddNamedMetadataOperand2(M.Value, name, Val.Value);
+  public unsafe static string DITypeGetName(MetadataRef DType, out System.IntPtr Length) {
+    string ret = LLVMPINVOKE.DITypeGetName(DType.Value, out Length);
+    return ret;
   }
 
-  public unsafe static void SetMetadata2(ValueRef Inst, uint KindID, MetadataRef MD) {
-    LLVMPINVOKE.SetMetadata2(Inst.Value, KindID, MD.Value);
+  public unsafe static ulong DITypeGetSizeInBits(MetadataRef DType) {
+    ulong ret = LLVMPINVOKE.DITypeGetSizeInBits(DType.Value);
+    return ret;
   }
 
-  public unsafe static void MetadataReplaceAllUsesWith(MetadataRef MD, MetadataRef New) {
-    LLVMPINVOKE.MetadataReplaceAllUsesWith(MD.Value, New.Value);
+  public unsafe static ulong DITypeGetOffsetInBits(MetadataRef DType) {
+    ulong ret = LLVMPINVOKE.DITypeGetOffsetInBits(DType.Value);
+    return ret;
   }
 
-  public unsafe static void SetCurrentDebugLocation2(BuilderRef Bref, uint Line, uint Col, MetadataRef Scope, MetadataRef InlinedAt) {
-    LLVMPINVOKE.SetCurrentDebugLocation2(Bref.Value, Line, Col, Scope.Value, InlinedAt.Value);
+  public unsafe static uint DITypeGetAlignInBits(MetadataRef DType) {
+    uint ret = LLVMPINVOKE.DITypeGetAlignInBits(DType.Value);
+    return ret;
   }
 
-  public unsafe static void SetSubprogram(ValueRef Fn, MetadataRef SP) {
-    LLVMPINVOKE.SetSubprogram(Fn.Value, SP.Value);
+  public unsafe static uint DITypeGetLine(MetadataRef DType) {
+    uint ret = LLVMPINVOKE.DITypeGetLine(DType.Value);
+    return ret;
+  }
+
+  public unsafe static DIFlags DITypeGetFlags(MetadataRef DType) {
+    DIFlags ret = (DIFlags)LLVMPINVOKE.DITypeGetFlags(DType.Value);
+    return ret;
+  }
+
+  public unsafe static MetadataRef DIBuilderGetOrCreateSubrange(DIBuilderRef Builder, long LowerBound, long Count) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderGetOrCreateSubrange(Builder.Value, LowerBound, Count));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderGetOrCreateArray(DIBuilderRef Builder, out MetadataRef Data, uint NumElements) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderGetOrCreateArray(Builder.Value, out Data.Value, NumElements));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateExpression(DIBuilderRef Builder, System.Int64[] Addr, uint Length) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateExpression(Builder.Value, Addr, Length));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateConstantValueExpression(DIBuilderRef Builder, long Value) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateConstantValueExpression(Builder.Value, Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateGlobalVariableExpression(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, string Linkage, uint LinkLen, MetadataRef File, uint LineNo, MetadataRef Ty, bool LocalToUnit, MetadataRef Expr, MetadataRef Decl, uint AlignInBits) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateGlobalVariableExpression(Builder.Value, Scope.Value, Name, NameLen, Linkage, LinkLen, File.Value, LineNo, Ty.Value, LocalToUnit, Expr.Value, Decl.Value, AlignInBits));
+        return ret;
+    }
+
+  public unsafe static MetadataRef TemporaryMDNode(ContextRef Ctx, out MetadataRef Data, uint NumElements) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.TemporaryMDNode(Ctx.Value, out Data.Value, NumElements));
+        return ret;
+    }
+
+  public unsafe static void DisposeTemporaryMDNode(MetadataRef TempNode) {
+    LLVMPINVOKE.DisposeTemporaryMDNode(TempNode.Value);
+  }
+
+  public unsafe static void MetadataReplaceAllUsesWith(MetadataRef TempTargetMetadata, MetadataRef Replacement) {
+    LLVMPINVOKE.MetadataReplaceAllUsesWith(TempTargetMetadata.Value, Replacement.Value);
+  }
+
+  public unsafe static MetadataRef DIBuilderCreateTempGlobalVariableFwdDecl(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, string Linkage, uint LnkLen, MetadataRef File, uint LineNo, MetadataRef Ty, bool LocalToUnit, MetadataRef Decl, uint AlignInBits) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateTempGlobalVariableFwdDecl(Builder.Value, Scope.Value, Name, NameLen, Linkage, LnkLen, File.Value, LineNo, Ty.Value, LocalToUnit, Decl.Value, AlignInBits));
+        return ret;
+    }
+
+  public unsafe static ValueRef DIBuilderInsertDeclareBefore(DIBuilderRef Builder, ValueRef Storage, MetadataRef VarInfo, MetadataRef Expr, MetadataRef DebugLoc, ValueRef Instr) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.DIBuilderInsertDeclareBefore(Builder.Value, Storage.Value, VarInfo.Value, Expr.Value, DebugLoc.Value, Instr.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef DIBuilderInsertDeclareAtEnd(DIBuilderRef Builder, ValueRef Storage, MetadataRef VarInfo, MetadataRef Expr, MetadataRef DebugLoc, BasicBlockRef Block) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.DIBuilderInsertDeclareAtEnd(Builder.Value, Storage.Value, VarInfo.Value, Expr.Value, DebugLoc.Value, Block.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef DIBuilderInsertDbgValueBefore(DIBuilderRef Builder, ValueRef Val, MetadataRef VarInfo, MetadataRef Expr, MetadataRef DebugLoc, ValueRef Instr) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.DIBuilderInsertDbgValueBefore(Builder.Value, Val.Value, VarInfo.Value, Expr.Value, DebugLoc.Value, Instr.Value));
+        return ret;
+    }
+
+  public unsafe static ValueRef DIBuilderInsertDbgValueAtEnd(DIBuilderRef Builder, ValueRef Val, MetadataRef VarInfo, MetadataRef Expr, MetadataRef DebugLoc, BasicBlockRef Block) {
+        ValueRef ret = new ValueRef(LLVMPINVOKE.DIBuilderInsertDbgValueAtEnd(Builder.Value, Val.Value, VarInfo.Value, Expr.Value, DebugLoc.Value, Block.Value));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateAutoVariable(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, MetadataRef File, uint LineNo, MetadataRef Ty, bool AlwaysPreserve, DIFlags Flags, uint AlignInBits) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateAutoVariable(Builder.Value, Scope.Value, Name, NameLen, File.Value, LineNo, Ty.Value, AlwaysPreserve, (int)Flags, AlignInBits));
+        return ret;
+    }
+
+  public unsafe static MetadataRef DIBuilderCreateParameterVariable(DIBuilderRef Builder, MetadataRef Scope, string Name, uint NameLen, uint ArgNo, MetadataRef File, uint LineNo, MetadataRef Ty, bool AlwaysPreserve, DIFlags Flags) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.DIBuilderCreateParameterVariable(Builder.Value, Scope.Value, Name, NameLen, ArgNo, File.Value, LineNo, Ty.Value, AlwaysPreserve, (int)Flags));
+        return ret;
+    }
+
+  public unsafe static MetadataRef GetSubprogram(ValueRef Func) {
+        MetadataRef ret = new MetadataRef(LLVMPINVOKE.GetSubprogram(Func.Value));
+        return ret;
+    }
+
+  public unsafe static void SetSubprogram(ValueRef Func, MetadataRef SP) {
+    LLVMPINVOKE.SetSubprogram(Func.Value, SP.Value);
   }
 
   public unsafe static readonly int AttributeReturnIndex = LLVMPINVOKE.AttributeReturnIndex_get();
   public unsafe static readonly int AttributeFunctionIndex = LLVMPINVOKE.AttributeFunctionIndex_get();
 
-  public unsafe static readonly int Disassembler_VariantKind_None = LLVMPINVOKE.Disassembler_VariantKind_None_get();
-  public unsafe static readonly int Disassembler_VariantKind_ARM_HI16 = LLVMPINVOKE.Disassembler_VariantKind_ARM_HI16_get();
-  public unsafe static readonly int Disassembler_VariantKind_ARM_LO16 = LLVMPINVOKE.Disassembler_VariantKind_ARM_LO16_get();
-  public unsafe static readonly int Disassembler_VariantKind_ARM64_PAGE = LLVMPINVOKE.Disassembler_VariantKind_ARM64_PAGE_get();
-  public unsafe static readonly int Disassembler_VariantKind_ARM64_PAGEOFF = LLVMPINVOKE.Disassembler_VariantKind_ARM64_PAGEOFF_get();
-  public unsafe static readonly int Disassembler_VariantKind_ARM64_GOTPAGE = LLVMPINVOKE.Disassembler_VariantKind_ARM64_GOTPAGE_get();
-  public unsafe static readonly int Disassembler_VariantKind_ARM64_GOTPAGEOFF = LLVMPINVOKE.Disassembler_VariantKind_ARM64_GOTPAGEOFF_get();
-  public unsafe static readonly int Disassembler_VariantKind_ARM64_TLVP = LLVMPINVOKE.Disassembler_VariantKind_ARM64_TLVP_get();
-  public unsafe static readonly int Disassembler_VariantKind_ARM64_TLVOFF = LLVMPINVOKE.Disassembler_VariantKind_ARM64_TLVOFF_get();
-  public unsafe static readonly int Disassembler_ReferenceType_InOut_None = LLVMPINVOKE.Disassembler_ReferenceType_InOut_None_get();
-  public unsafe static readonly int Disassembler_ReferenceType_In_Branch = LLVMPINVOKE.Disassembler_ReferenceType_In_Branch_get();
-  public unsafe static readonly int Disassembler_ReferenceType_In_PCrel_Load = LLVMPINVOKE.Disassembler_ReferenceType_In_PCrel_Load_get();
-  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_ADRP = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_ADRP_get();
-  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_ADDXri = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_ADDXri_get();
-  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_LDRXui = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_LDRXui_get();
-  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_LDRXl = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_LDRXl_get();
-  public unsafe static readonly int Disassembler_ReferenceType_In_ARM64_ADR = LLVMPINVOKE.Disassembler_ReferenceType_In_ARM64_ADR_get();
-  public unsafe static readonly int Disassembler_ReferenceType_Out_SymbolStub = LLVMPINVOKE.Disassembler_ReferenceType_Out_SymbolStub_get();
-  public unsafe static readonly int Disassembler_ReferenceType_Out_LitPool_SymAddr = LLVMPINVOKE.Disassembler_ReferenceType_Out_LitPool_SymAddr_get();
-  public unsafe static readonly int Disassembler_ReferenceType_Out_LitPool_CstrAddr = LLVMPINVOKE.Disassembler_ReferenceType_Out_LitPool_CstrAddr_get();
-  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_CFString_Ref = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_CFString_Ref_get();
-  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_Message = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_Message_get();
-  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_Message_Ref = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_Message_Ref_get();
-  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_Selector_Ref = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_Selector_Ref_get();
-  public unsafe static readonly int Disassembler_ReferenceType_Out_Objc_Class_Ref = LLVMPINVOKE.Disassembler_ReferenceType_Out_Objc_Class_Ref_get();
-  public unsafe static readonly int Disassembler_ReferenceType_DeMangled_Name = LLVMPINVOKE.Disassembler_ReferenceType_DeMangled_Name_get();
   public unsafe static readonly int Disassembler_Option_UseMarkup = LLVMPINVOKE.Disassembler_Option_UseMarkup_get();
   public unsafe static readonly int Disassembler_Option_PrintImmHex = LLVMPINVOKE.Disassembler_Option_PrintImmHex_get();
   public unsafe static readonly int Disassembler_Option_AsmPrinterVariant = LLVMPINVOKE.Disassembler_Option_AsmPrinterVariant_get();

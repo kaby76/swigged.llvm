@@ -20,9 +20,6 @@ Get-Date
 Get-Location
 Invoke-CmdScript "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
 cd x64-Debug
-msbuild LLVM.sln /p:Configuration=Debug /p:Platform=x64
-
-exit 0
 
 # If all works, then clean up everything, and create .tar.gz file.
 rm Debug\bin\BuildingAJIT*.exe -Force -erroraction 'silentlycontinue'

@@ -24,8 +24,6 @@
 #include <llvm-c/Transforms/Vectorize.h>
 //#include "Additional.h"
 #include "llvm-c/DebugInfo.h"
-#include "llvm-c/DIBuilderBindings.h"
-#include "llvm-c/IRBindings.h"
 %}
 
 %csmethodmodifiers "public unsafe"
@@ -78,8 +76,19 @@ typedef uint64_t (*LLVMOrcSymbolResolverFn)(const char *Name, void *LookupCtx);
 
 %ignore LLVMDIBuilderCreateBitFieldMemberType;
 %ignore LLVMDIBuilderCreateClassType;
+%ignore LLVMModuleFlagEntry;
+%ignore LLVMCopyModuleFlagsMetadata;
+%ignore LLVMDisposeModuleFlagsMetadata;
+%ignore LLVMModuleFlagEntriesGetFlagBehavior;
+%ignore LLVMModuleFlagEntriesGetKey;
+%ignore LLVMModuleFlagEntriesGetMetadata;
 
-   
+%ignore LLVMAddAggressiveInstCombinerPass;
+%ignore LLVMCreateOprofileJITEventListener;
+%ignore LLVMInitializeAggressiveInstCombiner;
+
+
+
 typedef bool LLVMBool;
 
 REF_ARRAY(unsigned, uint)
@@ -87,7 +96,7 @@ REF_ARRAY(uint64_t, ulong)
 REF_ARRAY(int64_t, long)
 REF_ARRAY(uint8_t, byte)
 
-
+REF_CLASS(LLVMJITEventListenerRef, JITEventListenerRef)
 REF_CLASS(LLVMMCJITMemoryManagerRef, MCJITMemoryManagerRef)
 REF_CLASS(LLVMAttributeRef, AttributeRef)
 REF_CLASS(LLVMBasicBlockRef, BasicBlockRef)
@@ -103,7 +112,7 @@ REF_CLASS(LLVMGenericValueRef, GenericValueRef)
 REF_CLASS(LLVMPassManagerBuilderRef, PassManagerBuilderRef)
 REF_CLASS(LLVMPassManagerRef, PassManagerRef)
 REF_CLASS(LLVMObjectFileRef, ObjectFileRef)
-
+REF_CLASS(LLVMDisasmContextRef, DisasmContextRef)
 REF_CLASS(LLVMPassRegistryRef, PassRegistryRef)
 REF_CLASS(LLVMTargetDataRef, TargetDataRef)
 REF_CLASS(LLVMTargetLibraryInfoRef, TargetLibraryInfoRef)
@@ -165,6 +174,4 @@ REF_CLASS(LLVMDIBuilderRef, DIBuilderRef)
 %include "llvm-c/Transforms/Vectorize.h"
 //%include "Additional.h"
 %include "llvm-c/DebugInfo.h"
-%include "llvm-c/DIBuilderBindings.h"
-%include "llvm-c/IRBindings.h"
    
