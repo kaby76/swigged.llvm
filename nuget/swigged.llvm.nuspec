@@ -52,6 +52,9 @@ For further information, see https://github.com/kaby76/swigged.llvm.
       <group targetFramework="netcoreapp2.0" >
 	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
+      <group targetFramework="netcoreapp2.1" >
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
+      </group>
 
       <!-- All other targets are not supported/allowed, so they are not listed here. -->
 
