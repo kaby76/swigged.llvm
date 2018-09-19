@@ -22,14 +22,12 @@ rm x64-Release -Recurse -Force -erroraction 'silentlycontinue'
 rm x64-Release.tar -Force -erroraction 'silentlycontinue'
 rm x64-Release.tar.gz -Force -erroraction 'silentlycontinue'
 mkdir x64-Release
+echo "VSINSTALLDIR is this"
+Get-ChildItem Env:VSINSTALLDIR
 Invoke-CmdScript "%VSINSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
 cd x64-Release
 cmake -Thost=x64 -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 15 2017 Win64" ..\llvm
 msbuild LLVM.sln /p:Configuration=Release /p:Platform=x64
-
-exit 0
-
-
 
 # If all works, then clean up everything, and create .tar.gz file.
 rm Release\bin\BuildingAJIT*.exe -Force -erroraction 'silentlycontinue'

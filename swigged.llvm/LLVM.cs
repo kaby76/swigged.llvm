@@ -21,7 +21,7 @@ public class LLVM {
 
   public unsafe static string CreateMessage(string Message) {
     string ret = LLVMPINVOKE.CreateMessage(Message);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void DisposeMessage(string Message) {
@@ -46,7 +46,7 @@ public class LLVM {
 
   public unsafe static string GetDiagInfoDescription(DiagnosticInfoRef DI) {
     string ret = LLVMPINVOKE.GetDiagInfoDescription(DI.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static DiagnosticSeverity GetDiagInfoSeverity(DiagnosticInfoRef DI) {
@@ -56,22 +56,22 @@ public class LLVM {
 
   public unsafe static uint GetMDKindIDInContext(ContextRef C, string Name, uint SLen) {
     uint ret = LLVMPINVOKE.GetMDKindIDInContext(C.Value, Name, SLen);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint GetMDKindID(string Name, uint SLen) {
     uint ret = LLVMPINVOKE.GetMDKindID(Name, SLen);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint GetEnumAttributeKindForName(string Name, uint SLen) {
     uint ret = LLVMPINVOKE.GetEnumAttributeKindForName(Name, SLen);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint GetLastEnumAttributeKind() {
     uint ret = LLVMPINVOKE.GetLastEnumAttributeKind();
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static AttributeRef CreateEnumAttribute(ContextRef C, uint KindID, ulong Val) {
@@ -81,12 +81,12 @@ public class LLVM {
 
   public unsafe static uint GetEnumAttributeKind(AttributeRef A) {
     uint ret = LLVMPINVOKE.GetEnumAttributeKind(A.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static ulong GetEnumAttributeValue(AttributeRef A) {
     ulong ret = LLVMPINVOKE.GetEnumAttributeValue(A.Value);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static AttributeRef CreateStringAttribute(ContextRef C, string K, uint KLength, string V, uint VLength) {
@@ -96,22 +96,22 @@ public class LLVM {
 
   public unsafe static string GetStringAttributeKind(AttributeRef A, out uint Length) {
     string ret = LLVMPINVOKE.GetStringAttributeKind(A.Value, out Length);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static string GetStringAttributeValue(AttributeRef A, out uint Length) {
     string ret = LLVMPINVOKE.GetStringAttributeValue(A.Value, out Length);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static bool IsEnumAttribute(AttributeRef A) {
     bool ret = LLVMPINVOKE.IsEnumAttribute(A.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool IsStringAttribute(AttributeRef A) {
     bool ret = LLVMPINVOKE.IsStringAttribute(A.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static ModuleRef ModuleCreateWithName(string ModuleID) {
@@ -135,7 +135,7 @@ public class LLVM {
 
   public unsafe static string GetModuleIdentifier(ModuleRef M, out System.IntPtr Len) {
     string ret = LLVMPINVOKE.GetModuleIdentifier(M.Value, out Len);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void SetModuleIdentifier(ModuleRef M, string Ident, uint Len) {
@@ -144,7 +144,7 @@ public class LLVM {
 
   public unsafe static string GetSourceFileName(ModuleRef M, out System.IntPtr Len) {
     string ret = LLVMPINVOKE.GetSourceFileName(M.Value, out Len);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void SetSourceFileName(ModuleRef M, string Name, uint Len) {
@@ -153,12 +153,12 @@ public class LLVM {
 
   public unsafe static string GetDataLayoutStr(ModuleRef M) {
     string ret = LLVMPINVOKE.GetDataLayoutStr(M.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static string GetDataLayout(ModuleRef M) {
     string ret = LLVMPINVOKE.GetDataLayout(M.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void SetDataLayout(ModuleRef M, string DataLayoutStr) {
@@ -167,7 +167,7 @@ public class LLVM {
 
   public unsafe static string GetTarget(ModuleRef M) {
     string ret = LLVMPINVOKE.GetTarget(M.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void SetTarget(ModuleRef M, string Triple) {
@@ -189,17 +189,17 @@ public class LLVM {
 
   public unsafe static bool PrintModuleToFile(ModuleRef M, string Filename, MyString ErrorMessage) {
     bool ret = LLVMPINVOKE.PrintModuleToFile(M.Value, Filename, out ErrorMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static string PrintModuleToString(ModuleRef M) {
     string ret = LLVMPINVOKE.PrintModuleToString(M.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static string GetModuleInlineAsm(ModuleRef M, out System.IntPtr Len) {
     string ret = LLVMPINVOKE.GetModuleInlineAsm(M.Value, out Len);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void SetModuleInlineAsm2(ModuleRef M, string Asm, uint Len) {
@@ -227,7 +227,7 @@ public class LLVM {
 
   public unsafe static uint GetNamedMetadataNumOperands(ModuleRef M, string Name) {
     uint ret = LLVMPINVOKE.GetNamedMetadataNumOperands(M.Value, Name);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void GetNamedMetadataOperands(ModuleRef M, string Name, out ValueRef Dest) {
@@ -279,7 +279,7 @@ public class LLVM {
 
   public unsafe static bool TypeIsSized(TypeRef Ty) {
     bool ret = LLVMPINVOKE.TypeIsSized(Ty.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static ContextRef GetTypeContext(TypeRef Ty) {
@@ -289,7 +289,7 @@ public class LLVM {
 
   public unsafe static string PrintTypeToString(TypeRef Val) {
     string ret = LLVMPINVOKE.PrintTypeToString(Val.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static TypeRef Int1TypeInContext(ContextRef C) {
@@ -364,7 +364,7 @@ public class LLVM {
 
   public unsafe static uint GetIntTypeWidth(TypeRef IntegerTy) {
     uint ret = LLVMPINVOKE.GetIntTypeWidth(IntegerTy.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static TypeRef HalfTypeInContext(ContextRef C) {
@@ -437,7 +437,7 @@ public class LLVM {
 
   public unsafe static bool IsFunctionVarArg(TypeRef FunctionTy) {
     bool ret = LLVMPINVOKE.IsFunctionVarArg(FunctionTy.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static TypeRef GetReturnType(TypeRef FunctionTy) {
@@ -447,7 +447,7 @@ public class LLVM {
 
   public unsafe static uint CountParamTypes(TypeRef FunctionTy) {
     uint ret = LLVMPINVOKE.CountParamTypes(FunctionTy.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void GetParamTypes(TypeRef FunctionTy, TypeRef[] Dest) {
@@ -480,7 +480,7 @@ public class LLVM {
 
   public unsafe static string GetStructName(TypeRef Ty) {
     string ret = LLVMPINVOKE.GetStructName(Ty.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void StructSetBody(TypeRef StructTy, TypeRef[] ElementTypes, bool Packed) {
@@ -492,7 +492,7 @@ public class LLVM {
 
   public unsafe static uint CountStructElementTypes(TypeRef StructTy) {
     uint ret = LLVMPINVOKE.CountStructElementTypes(StructTy.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void GetStructElementTypes(TypeRef StructTy, TypeRef[] Dest) {
@@ -509,12 +509,12 @@ public class LLVM {
 
   public unsafe static bool IsPackedStruct(TypeRef StructTy) {
     bool ret = LLVMPINVOKE.IsPackedStruct(StructTy.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool IsOpaqueStruct(TypeRef StructTy) {
     bool ret = LLVMPINVOKE.IsOpaqueStruct(StructTy.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static TypeRef GetElementType(TypeRef Ty) {
@@ -528,7 +528,7 @@ public class LLVM {
 
   public unsafe static uint GetNumContainedTypes(TypeRef Tp) {
     uint ret = LLVMPINVOKE.GetNumContainedTypes(Tp.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static TypeRef ArrayType(TypeRef ElementType, uint ElementCount) {
@@ -538,7 +538,7 @@ public class LLVM {
 
   public unsafe static uint GetArrayLength(TypeRef ArrayTy) {
     uint ret = LLVMPINVOKE.GetArrayLength(ArrayTy.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static TypeRef PointerType(TypeRef ElementType, uint AddressSpace) {
@@ -548,7 +548,7 @@ public class LLVM {
 
   public unsafe static uint GetPointerAddressSpace(TypeRef PointerTy) {
     uint ret = LLVMPINVOKE.GetPointerAddressSpace(PointerTy.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static TypeRef VectorType(TypeRef ElementType, uint ElementCount) {
@@ -558,7 +558,7 @@ public class LLVM {
 
   public unsafe static uint GetVectorSize(TypeRef VectorTy) {
     uint ret = LLVMPINVOKE.GetVectorSize(VectorTy.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static TypeRef VoidTypeInContext(ContextRef C) {
@@ -613,7 +613,7 @@ public class LLVM {
 
   public unsafe static string GetValueName2(ValueRef Val, out System.IntPtr Length) {
     string ret = LLVMPINVOKE.GetValueName2(Val.Value, out Length);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void SetValueName2(ValueRef Val, string Name, uint NameLen) {
@@ -626,7 +626,7 @@ public class LLVM {
 
   public unsafe static string PrintValueToString(ValueRef Val) {
     string ret = LLVMPINVOKE.PrintValueToString(Val.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void ReplaceAllUsesWith(ValueRef OldVal, ValueRef NewVal) {
@@ -635,12 +635,12 @@ public class LLVM {
 
   public unsafe static bool IsConstant(ValueRef Val) {
     bool ret = LLVMPINVOKE.IsConstant(Val.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool IsUndef(ValueRef Val) {
     bool ret = LLVMPINVOKE.IsUndef(Val.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static ValueRef IsAArgument(ValueRef Val) {
@@ -1045,7 +1045,7 @@ public class LLVM {
 
   public unsafe static string GetValueName(ValueRef Val) {
     string ret = LLVMPINVOKE.GetValueName(Val.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void SetValueName(ValueRef Val, string Name) {
@@ -1088,7 +1088,7 @@ public class LLVM {
 
   public unsafe static int GetNumOperands(ValueRef Val) {
     int ret = LLVMPINVOKE.GetNumOperands(Val.Value);
-    return ret;
+    return ret;//int
   }
 
   public unsafe static ValueRef ConstNull(TypeRef Ty) {
@@ -1108,7 +1108,7 @@ public class LLVM {
 
   public unsafe static bool IsNull(ValueRef Val) {
     bool ret = LLVMPINVOKE.IsNull(Val.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static ValueRef ConstPointerNull(TypeRef Ty) {
@@ -1156,17 +1156,17 @@ public class LLVM {
 
   public unsafe static ulong ConstIntGetZExtValue(ValueRef ConstantVal) {
     ulong ret = LLVMPINVOKE.ConstIntGetZExtValue(ConstantVal.Value);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static long ConstIntGetSExtValue(ValueRef ConstantVal) {
     long ret = LLVMPINVOKE.ConstIntGetSExtValue(ConstantVal.Value);
-    return ret;
+    return ret;//long long
   }
 
   public unsafe static double ConstRealGetDouble(ValueRef ConstantVal, out bool losesInfo) {
     double ret = LLVMPINVOKE.ConstRealGetDouble(ConstantVal.Value, out losesInfo);
-    return ret;
+    return ret;//double
   }
 
   public unsafe static ValueRef ConstStringInContext(ContextRef C, string Str, uint Length, bool DontNullTerminate) {
@@ -1181,12 +1181,12 @@ public class LLVM {
 
   public unsafe static bool IsConstantString(ValueRef c) {
     bool ret = LLVMPINVOKE.IsConstantString(c.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static string GetAsString(ValueRef c, out System.IntPtr Length) {
     string ret = LLVMPINVOKE.GetAsString(c.Value, out Length);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static ValueRef ConstStructInContext(ContextRef C, ValueRef[] ConstantVals, bool Packed) {
@@ -1578,7 +1578,7 @@ public class LLVM {
 
   public unsafe static bool IsDeclaration(ValueRef Global) {
     bool ret = LLVMPINVOKE.IsDeclaration(Global.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static Linkage GetLinkage(ValueRef Global) {
@@ -1592,7 +1592,7 @@ public class LLVM {
 
   public unsafe static string GetSection(ValueRef Global) {
     string ret = LLVMPINVOKE.GetSection(Global.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void SetSection(ValueRef Global, string Section) {
@@ -1628,7 +1628,7 @@ public class LLVM {
 
   public unsafe static bool HasUnnamedAddr(ValueRef Global) {
     bool ret = LLVMPINVOKE.HasUnnamedAddr(Global.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void SetUnnamedAddr(ValueRef Global, bool HasUnnamedAddr) {
@@ -1637,7 +1637,7 @@ public class LLVM {
 
   public unsafe static uint GetAlignment(ValueRef V) {
     uint ret = LLVMPINVOKE.GetAlignment(V.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void SetAlignment(ValueRef V, uint Bytes) {
@@ -1694,7 +1694,7 @@ public class LLVM {
 
   public unsafe static bool IsThreadLocal(ValueRef GlobalVar) {
     bool ret = LLVMPINVOKE.IsThreadLocal(GlobalVar.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void SetThreadLocal(ValueRef GlobalVar, bool IsThreadLocal) {
@@ -1703,7 +1703,7 @@ public class LLVM {
 
   public unsafe static bool IsGlobalConstant(ValueRef GlobalVar) {
     bool ret = LLVMPINVOKE.IsGlobalConstant(GlobalVar.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void SetGlobalConstant(ValueRef GlobalVar, bool IsConstant) {
@@ -1721,7 +1721,7 @@ public class LLVM {
 
   public unsafe static bool IsExternallyInitialized(ValueRef GlobalVar) {
     bool ret = LLVMPINVOKE.IsExternallyInitialized(GlobalVar.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void SetExternallyInitialized(ValueRef GlobalVar, bool IsExtInit) {
@@ -1773,7 +1773,7 @@ public class LLVM {
 
   public unsafe static bool HasPersonalityFn(ValueRef Fn) {
     bool ret = LLVMPINVOKE.HasPersonalityFn(Fn.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static ValueRef GetPersonalityFn(ValueRef Fn) {
@@ -1787,12 +1787,12 @@ public class LLVM {
 
   public unsafe static uint GetIntrinsicID(ValueRef Fn) {
     uint ret = LLVMPINVOKE.GetIntrinsicID(Fn.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint GetFunctionCallConv(ValueRef Fn) {
     uint ret = LLVMPINVOKE.GetFunctionCallConv(Fn.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void SetFunctionCallConv(ValueRef Fn, uint CC) {
@@ -1801,7 +1801,7 @@ public class LLVM {
 
   public unsafe static string GetGC(ValueRef Fn) {
     string ret = LLVMPINVOKE.GetGC(Fn.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void SetGC(ValueRef Fn, string Name) {
@@ -1814,7 +1814,7 @@ public class LLVM {
 
   public unsafe static uint GetAttributeCountAtIndex(ValueRef F, uint Idx) {
     uint ret = LLVMPINVOKE.GetAttributeCountAtIndex(F.Value, Idx);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void GetAttributesAtIndex(ValueRef F, uint Idx, out AttributeRef Attrs) {
@@ -1845,7 +1845,7 @@ public class LLVM {
 
   public unsafe static uint CountParams(ValueRef Fn) {
     uint ret = LLVMPINVOKE.CountParams(Fn.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void GetParams(ValueRef Fn, out ValueRef Params) {
@@ -1924,12 +1924,12 @@ public class LLVM {
 
   public unsafe static string GetMDString(ValueRef V, out uint Length) {
     string ret = LLVMPINVOKE.GetMDString(V.Value, out Length);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static uint GetMDNodeNumOperands(ValueRef V) {
     uint ret = LLVMPINVOKE.GetMDNodeNumOperands(V.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void GetMDNodeOperands(ValueRef V, out ValueRef Dest) {
@@ -1943,7 +1943,7 @@ public class LLVM {
 
   public unsafe static bool ValueIsBasicBlock(ValueRef Val) {
     bool ret = LLVMPINVOKE.ValueIsBasicBlock(Val.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static BasicBlockRef ValueAsBasicBlock(ValueRef Val) {
@@ -1953,7 +1953,7 @@ public class LLVM {
 
   public unsafe static string GetBasicBlockName(BasicBlockRef BB) {
     string ret = LLVMPINVOKE.GetBasicBlockName(BB.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static ValueRef GetBasicBlockParent(BasicBlockRef BB) {
@@ -1968,7 +1968,7 @@ public class LLVM {
 
   public unsafe static uint CountBasicBlocks(ValueRef Fn) {
     uint ret = LLVMPINVOKE.CountBasicBlocks(Fn.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void GetBasicBlocks(ValueRef Fn, out BasicBlockRef BasicBlocks) {
@@ -2048,7 +2048,7 @@ public class LLVM {
 
   public unsafe static int HasMetadata(ValueRef Val) {
     int ret = LLVMPINVOKE.HasMetadata(Val.Value);
-    return ret;
+    return ret;//int
   }
 
   public unsafe static ValueRef GetMetadata(ValueRef Val, uint KindID) {
@@ -2105,7 +2105,7 @@ public class LLVM {
 
   public unsafe static uint GetNumArgOperands(ValueRef Instr) {
     uint ret = LLVMPINVOKE.GetNumArgOperands(Instr.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void SetInstructionCallConv(ValueRef Instr, uint CC) {
@@ -2114,7 +2114,7 @@ public class LLVM {
 
   public unsafe static uint GetInstructionCallConv(ValueRef Instr) {
     uint ret = LLVMPINVOKE.GetInstructionCallConv(Instr.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void SetInstrParamAlignment(ValueRef Instr, uint index, uint Align) {
@@ -2127,7 +2127,7 @@ public class LLVM {
 
   public unsafe static uint GetCallSiteAttributeCount(ValueRef C, uint Idx) {
     uint ret = LLVMPINVOKE.GetCallSiteAttributeCount(C.Value, Idx);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void GetCallSiteAttributes(ValueRef C, uint Idx, out AttributeRef Attrs) {
@@ -2159,7 +2159,7 @@ public class LLVM {
 
   public unsafe static bool IsTailCall(ValueRef CallInst) {
     bool ret = LLVMPINVOKE.IsTailCall(CallInst.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void SetTailCall(ValueRef CallInst, bool IsTailCall) {
@@ -2186,7 +2186,7 @@ public class LLVM {
 
   public unsafe static uint GetNumSuccessors(ValueRef Term) {
     uint ret = LLVMPINVOKE.GetNumSuccessors(Term.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static BasicBlockRef GetSuccessor(ValueRef Term, uint i) {
@@ -2200,7 +2200,7 @@ public class LLVM {
 
   public unsafe static bool IsConditional(ValueRef Branch) {
     bool ret = LLVMPINVOKE.IsConditional(Branch.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static ValueRef GetCondition(ValueRef Branch) {
@@ -2224,7 +2224,7 @@ public class LLVM {
 
   public unsafe static bool IsInBounds(ValueRef GEP) {
     bool ret = LLVMPINVOKE.IsInBounds(GEP.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void SetIsInBounds(ValueRef GEP, bool InBounds) {
@@ -2241,7 +2241,7 @@ public class LLVM {
 
   public unsafe static uint CountIncoming(ValueRef PhiNode) {
     uint ret = LLVMPINVOKE.CountIncoming(PhiNode.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static ValueRef GetIncomingValue(ValueRef PhiNode, uint Index) {
@@ -2256,7 +2256,7 @@ public class LLVM {
 
   public unsafe static uint GetNumIndices(ValueRef Inst) {
     uint ret = LLVMPINVOKE.GetNumIndices(Inst.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static BuilderRef CreateBuilderInContext(ContextRef C) {
@@ -2417,7 +2417,7 @@ public class LLVM {
 
   public unsafe static uint GetNumClauses(ValueRef LandingPad) {
     uint ret = LLVMPINVOKE.GetNumClauses(LandingPad.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static ValueRef GetClause(ValueRef LandingPad, uint Idx) {
@@ -2431,7 +2431,7 @@ public class LLVM {
 
   public unsafe static bool IsCleanup(ValueRef LandingPad) {
     bool ret = LLVMPINVOKE.IsCleanup(LandingPad.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void SetCleanup(ValueRef LandingPad, bool Val) {
@@ -2444,7 +2444,7 @@ public class LLVM {
 
   public unsafe static uint GetNumHandlers(ValueRef CatchSwitch) {
     uint ret = LLVMPINVOKE.GetNumHandlers(CatchSwitch.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static void GetHandlers(ValueRef CatchSwitch, out BasicBlockRef Handlers) {
@@ -2697,7 +2697,7 @@ public class LLVM {
 
   public unsafe static bool GetVolatile(ValueRef MemoryAccessInst) {
     bool ret = LLVMPINVOKE.GetVolatile(MemoryAccessInst.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void SetVolatile(ValueRef MemoryAccessInst, bool IsVolatile) {
@@ -2903,7 +2903,7 @@ public class LLVM {
 
   public unsafe static bool IsAtomicSingleThread(ValueRef AtomicInst) {
     bool ret = LLVMPINVOKE.IsAtomicSingleThread(AtomicInst.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void SetAtomicSingleThread(ValueRef AtomicInst, bool SingleThread) {
@@ -2939,12 +2939,12 @@ public class LLVM {
 
   public unsafe static bool CreateMemoryBufferWithContentsOfFile(string Path, out MemoryBufferRef OutMemBuf, MyString OutMessage) {
     bool ret = LLVMPINVOKE.CreateMemoryBufferWithContentsOfFile(Path, out OutMemBuf.Value, out OutMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool CreateMemoryBufferWithSTDIN(out MemoryBufferRef OutMemBuf, MyString OutMessage) {
     bool ret = LLVMPINVOKE.CreateMemoryBufferWithSTDIN(out OutMemBuf.Value, out OutMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static MemoryBufferRef CreateMemoryBufferWithMemoryRange(string InputData, uint InputDataLength, string BufferName, bool RequiresNullTerminator) {
@@ -2959,12 +2959,12 @@ public class LLVM {
 
   public unsafe static string GetBufferStart(MemoryBufferRef MemBuf) {
     string ret = LLVMPINVOKE.GetBufferStart(MemBuf.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static uint GetBufferSize(MemoryBufferRef MemBuf) {
     uint ret = LLVMPINVOKE.GetBufferSize(MemBuf.Value);
-    return ret;
+    return ret;//unsigned long
   }
 
   public unsafe static void DisposeMemoryBuffer(MemoryBufferRef MemBuf) {
@@ -2993,22 +2993,22 @@ public class LLVM {
 
   public unsafe static bool RunPassManager(PassManagerRef PM, ModuleRef M) {
     bool ret = LLVMPINVOKE.RunPassManager(PM.Value, M.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool InitializeFunctionPassManager(PassManagerRef FPM) {
     bool ret = LLVMPINVOKE.InitializeFunctionPassManager(FPM.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool RunFunctionPassManager(PassManagerRef FPM, ValueRef F) {
     bool ret = LLVMPINVOKE.RunFunctionPassManager(FPM.Value, F.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool FinalizeFunctionPassManager(PassManagerRef FPM) {
     bool ret = LLVMPINVOKE.FinalizeFunctionPassManager(FPM.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void DisposePassManager(PassManagerRef PM) {
@@ -3017,7 +3017,7 @@ public class LLVM {
 
   public unsafe static bool StartMultithreaded() {
     bool ret = LLVMPINVOKE.StartMultithreaded();
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void StopMultithreaded() {
@@ -3026,72 +3026,72 @@ public class LLVM {
 
   public unsafe static bool IsMultithreaded() {
     bool ret = LLVMPINVOKE.IsMultithreaded();
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool VerifyModule(ModuleRef M, VerifierFailureAction Action, MyString OutMessage) {
     bool ret = LLVMPINVOKE.VerifyModule(M.Value, (int)Action, out OutMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool VerifyFunction(ValueRef Fn, VerifierFailureAction Action) {
     bool ret = LLVMPINVOKE.VerifyFunction(Fn.Value, (int)Action);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool ParseBitcode(MemoryBufferRef MemBuf, out ModuleRef OutModule, MyString OutMessage) {
     bool ret = LLVMPINVOKE.ParseBitcode(MemBuf.Value, out OutModule.Value, out OutMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool ParseBitcode2(MemoryBufferRef MemBuf, out ModuleRef OutModule) {
     bool ret = LLVMPINVOKE.ParseBitcode2(MemBuf.Value, out OutModule.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool ParseBitcodeInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutModule, MyString OutMessage) {
     bool ret = LLVMPINVOKE.ParseBitcodeInContext(ContextRef.Value, MemBuf.Value, out OutModule.Value, out OutMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool ParseBitcodeInContext2(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutModule) {
     bool ret = LLVMPINVOKE.ParseBitcodeInContext2(ContextRef.Value, MemBuf.Value, out OutModule.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool GetBitcodeModuleInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutM, MyString OutMessage) {
     bool ret = LLVMPINVOKE.GetBitcodeModuleInContext(ContextRef.Value, MemBuf.Value, out OutM.Value, out OutMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool GetBitcodeModuleInContext2(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutM) {
     bool ret = LLVMPINVOKE.GetBitcodeModuleInContext2(ContextRef.Value, MemBuf.Value, out OutM.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool GetBitcodeModule(MemoryBufferRef MemBuf, out ModuleRef OutM, MyString OutMessage) {
     bool ret = LLVMPINVOKE.GetBitcodeModule(MemBuf.Value, out OutM.Value, out OutMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool GetBitcodeModule2(MemoryBufferRef MemBuf, out ModuleRef OutM) {
     bool ret = LLVMPINVOKE.GetBitcodeModule2(MemBuf.Value, out OutM.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static int WriteBitcodeToFile(ModuleRef M, string Path) {
     int ret = LLVMPINVOKE.WriteBitcodeToFile(M.Value, Path);
-    return ret;
+    return ret;//int
   }
 
   public unsafe static int WriteBitcodeToFD(ModuleRef M, int FD, int ShouldClose, int Unbuffered) {
     int ret = LLVMPINVOKE.WriteBitcodeToFD(M.Value, FD, ShouldClose, Unbuffered);
-    return ret;
+    return ret;//int
   }
 
   public unsafe static int WriteBitcodeToFileHandle(ModuleRef M, int Handle) {
     int ret = LLVMPINVOKE.WriteBitcodeToFileHandle(M.Value, Handle);
-    return ret;
+    return ret;//int
   }
 
   public unsafe static MemoryBufferRef WriteBitcodeToMemoryBuffer(ModuleRef M) {
@@ -3101,7 +3101,7 @@ public class LLVM {
 
   public unsafe static int SetDisasmOptions(DisasmContextRef DC, ulong Options) {
     int ret = LLVMPINVOKE.SetDisasmOptions(DC.Value, Options);
-    return ret;
+    return ret;//int
   }
 
   public unsafe static void DisasmDispose(DisasmContextRef DC) {
@@ -3141,19 +3141,19 @@ public class LLVM {
 
   public unsafe static uint GenericValueIntWidth(GenericValueRef GenValRef) {
     uint ret = LLVMPINVOKE.GenericValueIntWidth(GenValRef.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static ulong GenericValueToInt(GenericValueRef GenVal, bool IsSigned) {
     ulong ret = LLVMPINVOKE.GenericValueToInt(GenVal.Value, IsSigned);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static System.IntPtr GenericValueToPointer(GenericValueRef GenVal) { return LLVMPINVOKE.GenericValueToPointer(GenVal.Value); }
 
   public unsafe static double GenericValueToFloat(TypeRef TyRef, GenericValueRef GenVal) {
     double ret = LLVMPINVOKE.GenericValueToFloat(TyRef.Value, GenVal.Value);
-    return ret;
+    return ret;//double
   }
 
   public unsafe static void DisposeGenericValue(GenericValueRef GenVal) {
@@ -3162,17 +3162,17 @@ public class LLVM {
 
   public unsafe static bool CreateExecutionEngineForModule(out ExecutionEngineRef OutEE, ModuleRef M, MyString OutError) {
     bool ret = LLVMPINVOKE.CreateExecutionEngineForModule(out OutEE.Value, M.Value, out OutError.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool CreateInterpreterForModule(out ExecutionEngineRef OutInterp, ModuleRef M, MyString OutError) {
     bool ret = LLVMPINVOKE.CreateInterpreterForModule(out OutInterp.Value, M.Value, out OutError.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool CreateJITCompilerForModule(out ExecutionEngineRef OutJIT, ModuleRef M, uint OptLevel, MyString OutError) {
     bool ret = LLVMPINVOKE.CreateJITCompilerForModule(out OutJIT.Value, M.Value, OptLevel, out OutError.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void InitializeMCJITCompilerOptions(MCJITCompilerOptions Options, uint SizeOfOptions) {
@@ -3181,7 +3181,7 @@ public class LLVM {
 
   public unsafe static bool CreateMCJITCompilerForModule(out ExecutionEngineRef OutJIT, ModuleRef M, MCJITCompilerOptions Options, uint SizeOfOptions, MyString OutError) {
     bool ret = LLVMPINVOKE.CreateMCJITCompilerForModule(out OutJIT.Value, M.Value, Options.Value, SizeOfOptions, out OutError.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void DisposeExecutionEngine(ExecutionEngineRef EE) {
@@ -3198,7 +3198,7 @@ public class LLVM {
 
   public unsafe static int RunFunctionAsMain(ExecutionEngineRef EE, ValueRef F, uint ArgC, MyString ArgV, MyString EnvP) {
     int ret = LLVMPINVOKE.RunFunctionAsMain(EE.Value, F.Value, ArgC, out ArgV.Value, out EnvP.Value);
-    return ret;
+    return ret;//int
   }
 
   public unsafe static GenericValueRef RunFunction(ExecutionEngineRef EE, ValueRef F, uint NumArgs, out GenericValueRef Args) {
@@ -3216,12 +3216,12 @@ public class LLVM {
 
   public unsafe static bool RemoveModule(ExecutionEngineRef EE, ModuleRef M, out ModuleRef OutMod, MyString OutError) {
     bool ret = LLVMPINVOKE.RemoveModule(EE.Value, M.Value, out OutMod.Value, out OutError.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool FindFunction(ExecutionEngineRef EE, string Name, out ValueRef OutFn) {
     bool ret = LLVMPINVOKE.FindFunction(EE.Value, Name, out OutFn.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static System.IntPtr RecompileAndRelinkFunction(ExecutionEngineRef EE, ValueRef Fn) { return LLVMPINVOKE.RecompileAndRelinkFunction(EE.Value, Fn.Value); }
@@ -3244,12 +3244,12 @@ public class LLVM {
 
   public unsafe static ulong GetGlobalValueAddress(ExecutionEngineRef EE, string Name) {
     ulong ret = LLVMPINVOKE.GetGlobalValueAddress(EE.Value, Name);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static ulong GetFunctionAddress(ExecutionEngineRef EE, string Name) {
     ulong ret = LLVMPINVOKE.GetFunctionAddress(EE.Value, Name);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static void DisposeMCJITMemoryManager(MCJITMemoryManagerRef MM) {
@@ -3313,12 +3313,12 @@ public class LLVM {
 
   public unsafe static bool ParseIRInContext(ContextRef ContextRef, MemoryBufferRef MemBuf, out ModuleRef OutM, MyString OutMessage) {
     bool ret = LLVMPINVOKE.ParseIRInContext(ContextRef.Value, MemBuf.Value, out OutM.Value, out OutMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool LinkModules2(ModuleRef Dest, ModuleRef Src) {
     bool ret = LLVMPINVOKE.LinkModules2(Dest.Value, Src.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static OrcJITStackRef OrcCreateInstance(TargetMachineRef TM) {
@@ -3328,7 +3328,7 @@ public class LLVM {
 
   public unsafe static string OrcGetErrorMsg(OrcJITStackRef JITStack) {
     string ret = LLVMPINVOKE.OrcGetErrorMsg(JITStack.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void OrcGetMangledSymbol(OrcJITStackRef JITStack, MyString MangledSymbol, string Symbol) {
@@ -3394,7 +3394,7 @@ public class LLVM {
 
   public unsafe static bool LoadLibraryPermanently(string Filename) {
     bool ret = LLVMPINVOKE.LoadLibraryPermanently(Filename);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static void ParseCommandLineOptions(int argc, MyString argv, string Overview) {
@@ -3433,22 +3433,22 @@ public class LLVM {
 
   public unsafe static bool InitializeNativeTarget() {
     bool ret = LLVMPINVOKE.InitializeNativeTarget();
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool InitializeNativeAsmParser() {
     bool ret = LLVMPINVOKE.InitializeNativeAsmParser();
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool InitializeNativeAsmPrinter() {
     bool ret = LLVMPINVOKE.InitializeNativeAsmPrinter();
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool InitializeNativeDisassembler() {
     bool ret = LLVMPINVOKE.InitializeNativeDisassembler();
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static TargetDataRef GetModuleDataLayout(ModuleRef M) {
@@ -3475,7 +3475,7 @@ public class LLVM {
 
   public unsafe static string CopyStringRepOfTargetData(TargetDataRef TD) {
     string ret = LLVMPINVOKE.CopyStringRepOfTargetData(TD.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static ByteOrdering ByteOrder(TargetDataRef TD) {
@@ -3485,12 +3485,12 @@ public class LLVM {
 
   public unsafe static uint PointerSize(TargetDataRef TD) {
     uint ret = LLVMPINVOKE.PointerSize(TD.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint PointerSizeForAS(TargetDataRef TD, uint AS) {
     uint ret = LLVMPINVOKE.PointerSizeForAS(TD.Value, AS);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static TypeRef IntPtrType(TargetDataRef TD) {
@@ -3515,47 +3515,47 @@ public class LLVM {
 
   public unsafe static ulong SizeOfTypeInBits(TargetDataRef TD, TypeRef Ty) {
     ulong ret = LLVMPINVOKE.SizeOfTypeInBits(TD.Value, Ty.Value);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static ulong StoreSizeOfType(TargetDataRef TD, TypeRef Ty) {
     ulong ret = LLVMPINVOKE.StoreSizeOfType(TD.Value, Ty.Value);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static ulong ABISizeOfType(TargetDataRef TD, TypeRef Ty) {
     ulong ret = LLVMPINVOKE.ABISizeOfType(TD.Value, Ty.Value);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static uint ABIAlignmentOfType(TargetDataRef TD, TypeRef Ty) {
     uint ret = LLVMPINVOKE.ABIAlignmentOfType(TD.Value, Ty.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint CallFrameAlignmentOfType(TargetDataRef TD, TypeRef Ty) {
     uint ret = LLVMPINVOKE.CallFrameAlignmentOfType(TD.Value, Ty.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint PreferredAlignmentOfType(TargetDataRef TD, TypeRef Ty) {
     uint ret = LLVMPINVOKE.PreferredAlignmentOfType(TD.Value, Ty.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint PreferredAlignmentOfGlobal(TargetDataRef TD, ValueRef GlobalVar) {
     uint ret = LLVMPINVOKE.PreferredAlignmentOfGlobal(TD.Value, GlobalVar.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint ElementAtOffset(TargetDataRef TD, TypeRef StructTy, ulong Offset) {
     uint ret = LLVMPINVOKE.ElementAtOffset(TD.Value, StructTy.Value, Offset);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static ulong OffsetOfElement(TargetDataRef TD, TypeRef StructTy, uint Element) {
     ulong ret = LLVMPINVOKE.OffsetOfElement(TD.Value, StructTy.Value, Element);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static TargetRef GetFirstTarget() {
@@ -3575,32 +3575,32 @@ public class LLVM {
 
   public unsafe static bool GetTargetFromTriple(string Triple, out TargetRef T, MyString ErrorMessage) {
     bool ret = LLVMPINVOKE.GetTargetFromTriple(Triple, out T.Value, out ErrorMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static string GetTargetName(TargetRef T) {
     string ret = LLVMPINVOKE.GetTargetName(T.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static string GetTargetDescription(TargetRef T) {
     string ret = LLVMPINVOKE.GetTargetDescription(T.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static bool TargetHasJIT(TargetRef T) {
     bool ret = LLVMPINVOKE.TargetHasJIT(T.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool TargetHasTargetMachine(TargetRef T) {
     bool ret = LLVMPINVOKE.TargetHasTargetMachine(T.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool TargetHasAsmBackend(TargetRef T) {
     bool ret = LLVMPINVOKE.TargetHasAsmBackend(T.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static TargetMachineRef CreateTargetMachine(TargetRef T, string Triple, string CPU, string Features, CodeGenOptLevel Level, RelocMode Reloc, CodeModel CodeModel) {
@@ -3619,17 +3619,17 @@ public class LLVM {
 
   public unsafe static string GetTargetMachineTriple(TargetMachineRef T) {
     string ret = LLVMPINVOKE.GetTargetMachineTriple(T.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static string GetTargetMachineCPU(TargetMachineRef T) {
     string ret = LLVMPINVOKE.GetTargetMachineCPU(T.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static string GetTargetMachineFeatureString(TargetMachineRef T) {
     string ret = LLVMPINVOKE.GetTargetMachineFeatureString(T.Value);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static TargetDataRef CreateTargetDataLayout(TargetMachineRef T) {
@@ -3643,32 +3643,32 @@ public class LLVM {
 
   public unsafe static bool TargetMachineEmitToFile(TargetMachineRef T, ModuleRef M, string Filename, CodeGenFileType codegen, MyString ErrorMessage) {
     bool ret = LLVMPINVOKE.TargetMachineEmitToFile(T.Value, M.Value, Filename, (int)codegen, out ErrorMessage.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static bool TargetMachineEmitToMemoryBuffer(TargetMachineRef T, ModuleRef M, CodeGenFileType codegen, MyString ErrorMessage, out MemoryBufferRef OutMemBuf) {
     bool ret = LLVMPINVOKE.TargetMachineEmitToMemoryBuffer(T.Value, M.Value, (int)codegen, out ErrorMessage.Value, out OutMemBuf.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static string GetDefaultTargetTriple() {
     string ret = LLVMPINVOKE.GetDefaultTargetTriple();
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static string NormalizeTargetTriple(string triple) {
     string ret = LLVMPINVOKE.NormalizeTargetTriple(triple);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static string GetHostCPUName() {
     string ret = LLVMPINVOKE.GetHostCPUName();
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static string GetHostCPUFeatures() {
     string ret = LLVMPINVOKE.GetHostCPUFeatures();
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static void AddAnalysisPasses(TargetMachineRef T, PassManagerRef PM) {
@@ -3946,17 +3946,17 @@ public class LLVM {
 
   public unsafe static uint DebugMetadataVersion() {
     uint ret = LLVMPINVOKE.DebugMetadataVersion();
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint GetModuleDebugMetadataVersion(ModuleRef Module) {
     uint ret = LLVMPINVOKE.GetModuleDebugMetadataVersion(Module.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static bool StripModuleDebugInfo(ModuleRef Module) {
     bool ret = LLVMPINVOKE.StripModuleDebugInfo(Module.Value);
-    return ret;
+    return ret;//bool
   }
 
   public unsafe static DIBuilderRef CreateDIBuilderDisallowUnresolved(ModuleRef M) {
@@ -4039,12 +4039,12 @@ public class LLVM {
 
   public unsafe static uint DILocationGetLine(MetadataRef Location) {
     uint ret = LLVMPINVOKE.DILocationGetLine(Location.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint DILocationGetColumn(MetadataRef Location) {
     uint ret = LLVMPINVOKE.DILocationGetColumn(Location.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static MetadataRef DILocationGetScope(MetadataRef Location) {
@@ -4177,27 +4177,27 @@ public class LLVM {
 
   public unsafe static string DITypeGetName(MetadataRef DType, out System.IntPtr Length) {
     string ret = LLVMPINVOKE.DITypeGetName(DType.Value, out Length);
-    return ret;
+    return ret;//char *
   }
 
   public unsafe static ulong DITypeGetSizeInBits(MetadataRef DType) {
     ulong ret = LLVMPINVOKE.DITypeGetSizeInBits(DType.Value);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static ulong DITypeGetOffsetInBits(MetadataRef DType) {
     ulong ret = LLVMPINVOKE.DITypeGetOffsetInBits(DType.Value);
-    return ret;
+    return ret;//unsigned long long
   }
 
   public unsafe static uint DITypeGetAlignInBits(MetadataRef DType) {
     uint ret = LLVMPINVOKE.DITypeGetAlignInBits(DType.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static uint DITypeGetLine(MetadataRef DType) {
     uint ret = LLVMPINVOKE.DITypeGetLine(DType.Value);
-    return ret;
+    return ret;//unsigned int
   }
 
   public unsafe static DIFlags DITypeGetFlags(MetadataRef DType) {
