@@ -4,7 +4,7 @@
     <!-- The identifier that must be unique within the hosting gallery -->
     <id>swigged.llvm</id>
     <title>swigged.llvm</title>
-    <version>70.0.0</version>
+    <version>70.0.1</version>
     <authors>Ken Domino</authors>
     <owners>Ken Domino</owners>
     <projectUrl>https://github.com/kaby76/swigged.llvm</projectUrl>
@@ -14,8 +14,8 @@
 
     <description>A Swig-generated C#/NET wrapper of LLVM-C for Windows 10 (x64), Ubuntu 16.04 (x64).</description>
     <releaseNotes>
-* Version 70.0.0
-Pre-release of LLVM 7.0.0, taken Aug 8, 2018.
+* Version 70.0.1
+Official release of LLVM 7.0.0, taken Sep 19, 2018.
 
 When building with Swigged.llvm, select Platform = "AnyCPU", config = "Debug" or "Release".
 

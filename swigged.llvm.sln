@@ -11,12 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		swig\LLVM.i = swig\LLVM.i
 		swig\LLVMCommon.i = swig\LLVMCommon.i
 		swig\MCJITCompilerOptions.i = swig\MCJITCompilerOptions.i
-		nuget\nuget.exe = nuget\nuget.exe
+		README.md = README.md
 		nuget\pack.bat = nuget\pack.bat
-		..\README.md = ..\README.md
-		swigged.llvm.nuspec = swigged.llvm.nuspec
 		nuget\swigged.llvm.nuspec = nuget\swigged.llvm.nuspec
-		swigged.llvm.targets = swigged.llvm.targets
+		nuget\swigged.llvm.targets = nuget\swigged.llvm.targets
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "swigged.llvm", "swigged.llvm\swigged.llvm.csproj", "{DCF9C0B3-961F-40E4-87BC-A2CC20E4B5A1}"

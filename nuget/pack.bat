@@ -1,1 +1,1 @@
-nuget pack swigged.llvm.nuspec -Version 70.0.0
+nuget pack swigged.llvm.nuspec -Version 70.0.1
