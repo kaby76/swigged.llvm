@@ -2,17 +2,17 @@
 # RUN ON UBUNTU
 set -e
 date
-cd ../llvm
-rm -rf llvm
-rm -rf ubuntu-16.04-Release
-rm -rf ubuntu-16.04-Release.tar
-rm -rf ubuntu-16.04-Release.tar.gz
-wget https://github.com/kaby76/llvm/releases/download/v70.0.1/ubuntu-16.04-Release.tar.gz
-pwd
-gzip -d ubuntu-16.04-Release.tar.gz
-tar -xvf ubuntu-16.04-Release.tar
-rm -rf ubuntu-16.04-Release.tar
-cd ../swigged.llvm.native
+#cd ../llvm
+#rm -rf llvm
+#rm -rf ubuntu-16.04-Release
+#rm -rf ubuntu-16.04-Release.tar
+#rm -rf ubuntu-16.04-Release.tar.gz
+#wget https://github.com/kaby76/llvm/releases/download/v70.0.1/ubuntu-16.04-Release.tar.gz
+#pwd
+#gzip -d ubuntu-16.04-Release.tar.gz
+#tar -xvf ubuntu-16.04-Release.tar
+#rm -rf ubuntu-16.04-Release.tar
+#cd ../swigged.llvm.native
 echo "Cmake/make of ubuntu-16.04-Release"
 rm -rf ubuntu-16.04-Release
 mkdir ubuntu-16.04-Release
