@@ -53,6 +53,7 @@ typedef uint64_t (*LLVMOrcSymbolResolverFn)(const char *Name, void *LookupCtx);
 %ignore LLVMViewFunctionCFGOnly;
 
 // Not sure to handle these. Implement one at a time in future.
+%ignore LLVMConstIntOfArbitraryPrecision;
 %ignore LLVMGetIndices;
 %ignore LLVMDisasmInstruction;
 %ignore LLVMCreateDisasm;

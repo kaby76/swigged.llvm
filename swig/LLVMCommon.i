@@ -126,6 +126,23 @@
 %typemap(cstype) int64_t* "System.Int64[]"
 %typemap(csin) int64_t* "$csinput"
 
+%typemap(cstype) size_t* arg3 "out System.IntPtr"
+// Output garbage to catch cases not handled.
+%typemap(imtype) size_t* "out System.IntPtr"
+%typemap(cstype) size_t* "out System.IntPtr"
+%typemap(csin) size_t* "out $csinput"
+
+%typemap(cstype) uint64_t* arg3 "out System.IntPtr"
+// Output garbage to catch cases not handled.
+%typemap(imtype) uint64_t* "out System.IntPtr"
+%typemap(cstype) uint64_t* "out System.IntPtr"
+%typemap(csin) uint64_t* "out $csinput"
+
+%typemap(cstype) int64_t* arg3 "System.Int64[]"
+%typemap(imtype) int64_t* "System.Int64[]"
+%typemap(cstype) int64_t* "System.Int64[]"
+%typemap(csin) int64_t* "$csinput"
+
 %typemap(cstype) uint32_t*  "out uint"
 
 %typemap(cstype) unsigned * Length "out uint"
