@@ -22,8 +22,6 @@ When building with Swigged.llvm, select Platform = "AnyCPU", config = "Debug" or
 On Windows, in the properties for the executable, un-check "Prefer 32-bit" in Build properties, and check "Enable native code debugging". If you are using Net Core or Standard, this option is unavailable--I'm not sure why it is.
 If you are delivering your app, you will need to copy the dll to the directory containing your app.
 
-*** THIS VERSION DOES NOT HAVE A LINUX BUILD, LINUX SUPPORTED IN THE NEXT RELEASE! ***
-
 For further information, see https://github.com/kaby76/swigged.llvm.
     </releaseNotes>
 
@@ -70,6 +68,7 @@ For further information, see https://github.com/kaby76/swigged.llvm.
      
     <file src="..\swigged.llvm.native\x64-Release\swigged-llvm-native.dll" target="lib/native/" />
     <file src="..\swigged.llvm.native\x64-Release\swigged-llvm-native.pdb" target="lib/native/" />
+    <file src="..\swigged.llvm.native\swigged-llvm-native.so" target="lib/native/" />
     <file src="..\swigged.llvm\bin\Release\netstandard2.0\swigged.llvm.dll" target="lib/net461" />
     <file src="..\swigged.llvm\bin\Release\netstandard2.0\swigged.llvm.dll" target="lib/net462" />
     <file src="..\swigged.llvm\bin\Release\netstandard2.0\swigged.llvm.dll" target="lib/net47" />

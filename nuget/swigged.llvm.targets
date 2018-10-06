@@ -6,4 +6,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\..\lib\native\swigged-llvm-native.so">
+      <Link>swigged-llvm-native.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
