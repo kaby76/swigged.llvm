@@ -29,7 +29,7 @@ echo "Downloading LLVM binaries from github.com/kaby76/llvm/..."
   [Net.SecurityProtocolType]::Tls12 -bor `
   [Net.SecurityProtocolType]::Tls11 -bor `
   [Net.SecurityProtocolType]::Tls
-curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v6.0.4/x64-Release.tar.gz
+curl -O x64-Release.tar.gz https://github.com/kaby76/llvm/releases/download/v70.0.1/x64-Release.tar.gz
 echo "Unpacking binaries..."
 bash -lc "pwd"
 bash -lc "gzip -d x64-Release.tar.gz"
