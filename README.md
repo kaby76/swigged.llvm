@@ -82,7 +82,7 @@ application: un-check "Prefer 32-bit" to run as 64-bit app.
 
 # Example #
 
-~~~~
+```cs
 using System;
 using System.Runtime.InteropServices;
 using Swigged.LLVM;
@@ -131,7 +131,7 @@ namespace core.sanity_test
         }
     }
 }
-~~~~
+```
 
 For more examples, see .../Examples/NetcoreApp
 
